@@ -1,0 +1,47 @@
+# YAML file to configure PDF builds and sidebar links
+
+# PDF builds configuration
+# 
+# all: If you want to build PDFs of all the listed hardware, guides, experiments, etc.
+# 
+# name1, name2, name3: If you want to build PDF for specific hardware, guides, experiments, etc.
+# Example: pdf_build: BioAmp EXG Pill, BioAmp v1.5
+
+pdf_build: all
+
+# Hardware 
+# 
+# Example:
+# hardware:
+#     name:
+#         path: First level hardware documentation path for hardware 'index.rst'
+#         pdf: RST source for PDF generatation from _static/latex folder
+
+PDFs:
+   BioAmp EXG Pill:
+      path: hardware/bioamp/bioamp-exg-pill
+      pdf: _static/latex/bioamp-exg-pill
+   BioAmp v1.5:
+      path: hardware/bioamp/bioamp-v1.5
+      pdf: _static/latex/bioamp-v1.5
+   Muscle BioAmp BisCute:
+      path: hardware/bioamp/muscle-bioamp-biscute
+      pdf: _static/latex/muscle-bioamp-biscute
+   Muscle BioAmp Blip:
+      path: hardware/bioamp/muscle-bioamp-blip
+      pdf: _static/latex/muscle-bioamp-blip
+   Muscle BioAmp Candy:
+      path: hardware/bioamp/muscle-bioamp-candy
+      pdf: _static/latex/muscle-bioamp-candy
+   Muscle BioAmp Patchy:
+      path: hardware/bioamp/muscle-bioamp-patchy
+      pdf: _static/latex/muscle-bioamp-patchy
+   Muscle BioAmp Shield:
+      path: hardware/bioamp/muscle-bioamp-shield
+      pdf: _static/latex/muscle-bioamp-shield
+   DIY Neuroscience Kit Pro:
+      path: kits/diy-neuroscience/pro
+      pdf: _static/latex/diy-neuroscience-kit-pro
+   DIY Neuroscience Kit Basic:
+      path: kits/diy-neuroscience/basic
+      pdf: _static/latex/diy-neuroscience-kit-basic

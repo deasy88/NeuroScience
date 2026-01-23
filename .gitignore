@@ -1,0 +1,17 @@
+.cache
+.build/*
+_build/*
+build/*
+public/*
+.*project
+.settings
+.envrc
+.venv/*
+.vscode
+.history/
+*.vsix
+hide-defaults-note
+venv
+.venv
+.DS_Store
+.clangd
