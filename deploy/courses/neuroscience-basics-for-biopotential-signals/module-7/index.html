@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modul 7: EMG &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/neuroscience-basics-for-biopotential-signals/module-7/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/courses/neuroscience-basics-for-biopotential-signals/module-7/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Module 8: ECG/EKG" href="../module-8/index.html" />
+    <link rel="prev" title="Modul 6: Sinyal Biopotensial" href="../module-6/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Neuroscience Basics For Biopotential Signals</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module-1/index.html">Modul 1: Sistem Saraf Manusia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-2/index.html">Modul 2: Memahami potensial istirahat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-3/index.html">Modul 3 : Sifat Membran Pasif</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-4/index.html">Modul 4 : Potensial Aksi dan Propagasinya</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-5/index.html">Modul 5 : Sinaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-6/index.html">Modul 6: Sinyal Biopotensial</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modul 7: EMG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-8/index.html">Module 8: ECG/EKG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-9/index.html">Module 9 : EEG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-10/index.html">Module 10 : EOG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-11/index.html">Module 11 : Conclusion</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extracellular Electrophysiology Acquisition</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../open-ephys/index.html">Course Curriculum</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-1/index.html">Teori Hari 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-2/index.html">Teori Hari 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-3/index.html">Teori Hari 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-4/index.html">Teori Hari 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/exday1-nokit.html">Latihan Hari ke-1: Tanpa Perangkat Keras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/exday2-nokit.html">Latihan Hari 2: Tanpa Perangkat Keras</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Courses</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">&lt;no title&gt;</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Modul 7: EMG</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="modul-7-emg">
+<span id="neuroscience-basics-for-biopotential-signals-module-7"></span><h1>Modul 7: EMG<a class="headerlink" href="#modul-7-emg" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Terminologi Dasar</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Elektromiografi</strong> : Teknik untuk mengukur aktivitas elektrik otot.</p></li>
+<li><p><strong>Elektromiograf</strong> : Perangkat yang digunakan untuk mengukur aktivitas elektrik otot.</p></li>
+<li><p><strong>Elektromiogram</strong> : Representasi grafis dari aktivitas elektrik otot.</p></li>
+</ol>
+</li>
+<li><p><strong>Jika Anda ingin mengetahui sejarah detail EMG, Anda dapat merujuk ke bagian ini:</strong> <a class="reference external" href="https://www.jalimedical.com/CC01132024">Sejarah EMG</a></p></li>
+<li><p><strong>Jenis EMG</strong>: Ada banyak jenis EMG yang berbeda. Dua jenis utama adalah</p>
+<ol class="arabic simple">
+<li><p>Surface EMG (non-invasif)</p></li>
+<li><p>Needle (atau Intramuskular) EMG</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>Karena perangkat kami dapat merekam surface EMG, kami akan membahasnya secara detail.</strong></p>
+<section id="surface-emg">
+<h2>Surface EMG<a class="headerlink" href="#surface-emg" title="Link to this heading">#</a></h2>
+<section id="pengantar">
+<h3>7.1 Pengantar<a class="headerlink" href="#pengantar" title="Link to this heading">#</a></h3>
+<p>Surface Electromyography (sEMG) adalah teknik <strong>non-invasif</strong> (prosedur yang tidak memerlukan penyisipan instrumen melalui kulit atau ke dalam pembukaan tubuh) yang digunakan untuk mengukur aktivitas elektrik otot, yang dapat memberikan informasi berharga tentang fungsi <strong>junction neuromuskular (NMJ)</strong>, situs di mana serat saraf terhubung ke serat otot. Meskipun sEMG tidak secara langsung mengukur aktivitas di NMJ, ia dapat memberikan wawasan tidak langsung ke dalam fungsi situs kritis ini melalui aktivitas elektrik yang dideteksi di otot.</p>
+<p><strong>Rentang frekuensi EMG</strong>: Sinyal EMG berkisar dari <strong>10 hingga 500 Hz</strong> dalam frekuensi, tetapi sebagian besar energi bergunanya terkonsentrasi antara <strong>50 dan 150 Hz</strong>.</p>
+</section>
+<section id="prinsip-dasar">
+<h3>7.2 Prinsip Dasar<a class="headerlink" href="#prinsip-dasar" title="Link to this heading">#</a></h3>
+<p>Surface EMG mendeteksi sinyal elektrik yang dihasilkan oleh serat otot selama kontraksi atau istirahat. Sinyal ini, dikenal sebagai <strong>potensial aksi unit motor (MUAPs)</strong>, ditransmisikan melalui kulit dan dapat dideteksi oleh elektroda yang ditempatkan di permukaan kulit di atas otot.</p>
+</section>
+<section id="bagaimana-cara-kerjanya">
+<h3>7.3 Bagaimana Cara Kerjanya<a class="headerlink" href="#bagaimana-cara-kerjanya" title="Link to this heading">#</a></h3>
+<section id="penempatan-elektroda">
+<h4>7.3.1 Penempatan Elektroda<a class="headerlink" href="#penempatan-elektroda" title="Link to this heading">#</a></h4>
+<p>Dalam surface EMG, sensor kecil yang disebut elektroda ditempatkan di kulit langsung di atas otot yang dipelajari. Ini biasanya elektroda pre-gelled <a class="reference external" href="https://store.upsidedownlabs.tech/?s=gel+electrodes&amp;post_type=product">(Elektroda Gel)</a> atau elektroda kering <a class="reference external" href="https://store.upsidedownlabs.tech/?s=bioamp+band&amp;post_type=product">(BioAmp bands)</a> yang menempel di kulit dan tidak selalu memerlukan gel.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Untuk mengetahui lebih lanjut tentang elektroda silakan lihat tautan berikut :</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="../../../guides/usage-guides/using-gel-electrodes/index.html#using-gel-electrodes"><span class="std std-ref">Menggunakan Elektroda Gel</span></a></p></li>
+<li><p><a class="reference internal" href="../../../guides/usage-guides/using-bioamp-bands/index.html#using-bioamp-bands"><span class="std std-ref">Menggunakan Elektroda Kering (BioAmp Bands)</span></a></p></li>
+</ol>
+</div>
+</section>
+<section id="deteksi-sinyal">
+<h4>7.3.2 Deteksi Sinyal<a class="headerlink" href="#deteksi-sinyal" title="Link to this heading">#</a></h4>
+<p>Ketika otot berkontraksi, ia menciptakan sinyal elektrik kecil. Elektroda menangkap perubahan tegangan ini yang disebut potensial aksi.</p>
+</section>
+<section id="amplifikasi-dan-filtering-sinyal">
+<h4>7.3.3 Amplifikasi dan Filtering Sinyal<a class="headerlink" href="#amplifikasi-dan-filtering-sinyal" title="Link to this heading">#</a></h4>
+<p>Karena sinyal ini sangat lemah (diukur dalam mikrovolt), mereka pertama kali diperkuat untuk membuatnya dapat dibaca. Kemudian, noise yang tidak diinginkan seperti gangguan gerakan atau interferensi dari sinyal tubuh lain, seperti sinyal jantung, difilter untuk memastikan data yang direkam bersih dan akurat.</p>
+</section>
+</section>
+<section id="komponen-utama-sistem-semg">
+<h3>7.4 Komponen Utama Sistem sEMG<a class="headerlink" href="#komponen-utama-sistem-semg" title="Link to this heading">#</a></h3>
+<section id="elektroda-permukaan">
+<h4>7.4.1 Elektroda Permukaan<a class="headerlink" href="#elektroda-permukaan" title="Link to this heading">#</a></h4>
+<p>Ini ditempatkan di kulit untuk mendeteksi aktivitas elektrik. Mereka biasanya ditempatkan paralel dengan serat otot untuk mendapatkan sinyal terbaik.</p>
+</section>
+<section id="amplifier">
+<h4>7.4.2 Amplifier<a class="headerlink" href="#amplifier" title="Link to this heading">#</a></h4>
+<p>Ini digunakan untuk memperkuat sinyal elektrik kecil yang dihasilkan oleh serat otot, seringkali dengan faktor x1000 sehingga ADC papan pengembangan kami dapat mendigitalkan sinyal bio-potensial kecil dari tubuh.</p>
+<p><strong>Perangkat Keras Upside Down Labs yang kompatibel dengan akuisisi dan pemrosesan sinyal sEMG:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../hardware/bioamp/neuro-play-ground-lite/index.html#neuro-play-ground-lite"><span class="std std-ref">Neuro PlayGround Lite</span></a></p></li>
+<li><p><a class="reference internal" href="../../../hardware/bioamp/bioamp-exg-pill/index.html#bioamp-exg-pill"><span class="std std-ref">Bioamp EXG Pill</span></a></p></li>
+<li><p><a class="reference internal" href="../../../hardware/bioamp/heart-bioamp-candy/index.html#heart-bioamp-candy"><span class="std std-ref">Heart Bioamp Candy</span></a></p></li>
+<li><p><a class="reference internal" href="../../../hardware/bioamp/muscle-bioamp-patchy/index.html#muscle-bioamp-patchy"><span class="std std-ref">Muscle Bioamp Patchy</span></a></p></li>
+<li><p><a class="reference internal" href="../../../hardware/bioamp/muscle-bioamp-blip/index.html#muscle-bioamp-blip"><span class="std std-ref">Muscle Bioamp Blip</span></a></p></li>
+<li><p><a class="reference internal" href="../../../hardware/bioamp/muscle-bioamp-biscute/index.html#muscle-bioamp-biscute"><span class="std std-ref">Muscle Bioamp BisCute</span></a></p></li>
+<li><p><a class="reference internal" href="../../../hardware/bioamp/muscle-bioamp-shield/index.html#muscle-bioamp-shield"><span class="std std-ref">Muscle Bioamp Shield</span></a></p></li>
+</ul>
+</section>
+<section id="analog-to-digital-converter-adc">
+<h4>7.4.3 Analog-to-Digital Converter (ADC)<a class="headerlink" href="#analog-to-digital-converter-adc" title="Link to this heading">#</a></h4>
+<p>Setelah amplifikasi, sinyal didigitalkan untuk analisis. Kami menggunakan berbagai jenis papan pengembangan seperti Arduino UNO R3, Arduino UNO R4 Minima/WiFi, Raspberry Pi Pico, dll. Beberapa BioAmps seperti BioAmp EXG Pill dan Muscle BioAmp Patchy hanya kompatibel dengan 5v jadi Anda harus menggunakan Arduino UNO.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Kami merekomendasikan menggunakan Arduino UNO R4 Minima untuk kompatibilitas terbaik dan resolusi ADC tinggi 14 bit.</strong></p>
+</div>
+</section>
+<section id="perangkat-lunak-untuk-pemrosesan-sinyal">
+<h4>7.4.4 Perangkat Lunak untuk Pemrosesan Sinyal<a class="headerlink" href="#perangkat-lunak-untuk-pemrosesan-sinyal" title="Link to this heading">#</a></h4>
+<p>Kami menawarkan suite perangkat lunak <strong>open source</strong> kami sendiri <a class="reference internal" href="../../../software/index.html#upsidedownlabs-software-home"><span class="std std-ref">Chords</span></a>, yang menampilkan alat untuk visualisasi sinyal, perekaman data (dengan opsi simpan dan unduh mudah), plotting berbasis waktu, dan banyak manfaat lainnya—seperti menganalisis frekuensi sinyal dan bandpower.</p>
+</section>
+</section>
+<section id="aplikasi-semg">
+<h3>7.5 Aplikasi sEMG<a class="headerlink" href="#aplikasi-semg" title="Link to this heading">#</a></h3>
+<section id="aplikasi-klinis">
+<h4>7.5.1 Aplikasi Klinis<a class="headerlink" href="#aplikasi-klinis" title="Link to this heading">#</a></h4>
+<p>Surface EMG (sEMG) memainkan peran penting dalam perawatan kesehatan, terutama untuk mendiagnosis dan mengobati masalah otot dan saraf:</p>
+<ol class="arabic simple">
+<li><p><strong>Gangguan neurologis</strong>: Klinisi menggunakan sEMG untuk mendiagnosis kondisi seperti distrofi muskular, amyotrophic lateral sclerosis (ALS), myasthenia gravis, dan sindrom carpal tunnel. Dengan melihat pola aktivasi otot abnormal, klinisi dapat menemukan masalah yang mungkin tidak muncul pada tes standar.</p></li>
+<li><p><strong>Kelemahan Otot dan Kelelahan</strong>: Sangat berguna untuk menilai seberapa baik otot bekerja pada pasien yang mengalami kelemahan, kelelahan kronis, atau paralisis (misalnya, setelah stroke atau cedera sumsum tulang belakang).</p></li>
+<li><p><strong>Terapi Biofeedback</strong>: Pasien dapat melihat aktivitas otot mereka sendiri secara real-time di layar dan belajar mengontrolnya lebih baik. Ini sangat membantu dalam rehabilitasi setelah cedera, operasi, atau kejadian neurologis.</p></li>
+</ol>
+</section>
+<section id="ilmu-olahraga-dan-biomekanik">
+<h4>7.5.2 Ilmu Olahraga dan Biomekanik<a class="headerlink" href="#ilmu-olahraga-dan-biomekanik" title="Link to this heading">#</a></h4>
+<p>Dalam olahraga dan olahraga, sEMG memberikan wawasan detail kepada pelatih dan atlet tentang apa yang sebenarnya dilakukan otot:</p>
+<ol class="arabic simple">
+<li><p><strong>Pemantauan Performa</strong>: Dengan merekam otot mana yang menembak, kapan, dan seberapa keras selama latihan atau kompetisi, atlet dan pelatih dapat membuat program yang lebih efektif, meningkatkan kekuatan dan daya, dan mengurangi risiko cedera.</p></li>
+<li><p><strong>Analisis Gerakan</strong>: Mengungkapkan waktu dan intensitas aktivasi otot yang tepat dalam aksi seperti berlari, melompat, melempar, atau angkat beban. Informasi ini membantu menyempurnakan teknik, memperbaiki ketidakseimbangan, dan meningkatkan performa keseluruhan.</p></li>
+</ol>
+</section>
+<section id="prostetik-dan-robotik">
+<h4>7.5.3 Prostetik dan Robotik<a class="headerlink" href="#prostetik-dan-robotik" title="Link to this heading">#</a></h4>
+<p>Salah satu penggunaan paling mengubah hidup sEMG adalah dalam mengontrol anggota tubuh buatan dan perangkat bantu:</p>
+<ol class="arabic simple">
+<li><p><strong>Kontrol Anggota Tubuh Prostetik</strong>: Orang dengan amputasi dapat menggunakan sinyal otot yang tersisa di tunggul mereka (anggota tubuh residual) untuk mengoperasikan lengan atau tangan prostetik canggih. Ketika mereka memikirkan tentang menggerakkan anggota tubuh yang hilang, sinyal elektrik kecil yang dihasilkan oleh otot ditangkap oleh elektroda permukaan dan diterjemahkan menjadi gerakan alami (meraih, memutar pergelangan tangan, dll.).</p></li>
+<li><p><strong>Robotik dan Eksoskeleton</strong>: Prinsip yang sama memberdayakan eksoskeleton robotik dan robot bantu. Untuk seseorang dengan paralisis atau kelemahan parah, sinyal otot kecil yang masih dapat mereka hasilkan memungkinkan kontrol intuitif dari eksoskeleton bertenaga yang membantu mereka berdiri, berjalan, atau mengangkat objek.</p></li>
+</ol>
+</section>
+</section>
+<section id="proyek-menggunakan-emg">
+<h3>Proyek Menggunakan EMG<a class="headerlink" href="#proyek-menggunakan-emg" title="Link to this heading">#</a></h3>
+<p>Anda dapat memanfaatkan Perangkat Keras BioAmp kami untuk membuat berbagai aplikasi. Kami telah berhasil mengembangkan beberapa aplikasi, jadi tidak ada yang menghalangi Anda untuk membuat sesuatu yang inovatif dan luar biasa. Beberapa aplikasi perangkat kami disorot di bawah ini:</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mt-4 sd-mb-4 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Rekam dan Visualisasikan Sinyal Otot menggunakan Muscle BioAmp Patchy</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Recording-Muscle-Signals-Using-Muscle-BioAmp-Patch/"><span>https://www.instructables.com/Recording-Muscle-Signals-Using-Muscle-BioAmp-Patch/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Visualisasikan Sinyal Otot menggunakan Sensor Otot DIY Termurah</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Visualizing-Muscle-Signals-EMG-Using-Worlds-Most-A/"><span>https://www.instructables.com/Visualizing-Muscle-Signals-EMG-Using-Worlds-Most-A/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Rekam, Visualisasikan &amp; Dengarkan Sinyal Otot Menggunakan Muscle BioAmp Shield</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Record-Visualize-Listen-to-Muscle-Signals-Using-Mu/"><span>https://www.instructables.com/Record-Visualize-Listen-to-Muscle-Signals-Using-Mu/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Mengukur Sinyal Otot Menggunakan Sensor Otot Ukuran Permen (EMG)</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Measuring-Muscle-Signals-Using-Candy-Size-Muscle-S/"><span>https://www.instructables.com/Measuring-Muscle-Signals-Using-Candy-Size-Muscle-S/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Menggunakan Setup No-Code untuk Visualisasikan dan Dengarkan Sinyal Otot Anda (EMG)</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Using-a-No-Code-Setup-to-Visualize-and-Listen-to-Y/"><span>https://www.instructables.com/Using-a-No-Code-Setup-to-Visualize-and-Listen-to-Y/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Rekam Sinyal Otot (EMG) Menggunakan Muscle BioAmp Blip</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Record-Muscle-Signals-EMG-Using-Muscle-BioAmp-Blip/"><span>https://www.instructables.com/Record-Muscle-Signals-EMG-Using-Muscle-BioAmp-Blip/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Merekam Sinyal Otot Grade Publikasi Menggunakan BioAmp EXG Pill</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Recording-Publication-Grade-Muscle-Signals-Using-B/"><span>https://www.instructables.com/Recording-Publication-Grade-Muscle-Signals-Using-B/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Memvisualisasikan 2 Channel EMG pada Modul Display LCD</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Visualizing-2-Channel-EMG-on-LCD-Display-Module/"><span>https://www.instructables.com/Visualizing-2-Channel-EMG-on-LCD-Display-Module/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+“Permainan Cakar Servo” Ultimate</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Servo-Claw-Game/"><span>https://www.instructables.com/Servo-Claw-Game/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Membuat Permainan Kekuatan Otot Menggunakan Muscle BioAmp Shield &amp; Arduino Uno</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Making-a-Muscle-Strength-Game-Using-Muscle-BioAmp-/"><span>https://www.instructables.com/Making-a-Muscle-Strength-Game-Using-Muscle-BioAmp-/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Mengontrol Tangan Prostetik (versi kardus) Menggunakan Sensor EMG</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Controlling-Prosthetic-Hand-cardboard-Version-Usin/"><span>https://www.instructables.com/Controlling-Prosthetic-Hand-cardboard-Version-Usin/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Pemantauan Latihan Menggunakan Sensor Otot Wearable (EMG)</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Exercise-Monitoring-Using-Wearable-Muscle-Sensor-E/"><span>https://www.instructables.com/Exercise-Monitoring-Using-Wearable-Muscle-Sensor-E/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Gulir YouTube Shorts Menggunakan Sinyal EMG 2 Channel</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Scroll-YouTube-Shorts-Using-2-Channel-EMG-Signals/"><span>https://www.instructables.com/Scroll-YouTube-Shorts-Using-2-Channel-EMG-Signals/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Mengontrol Permainan Video Menggunakan Sinyal Otot (EMG)</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Controlling-Video-Games-Using-Muscle-Signals-EMG/"><span>https://www.instructables.com/Controlling-Video-Games-Using-Muscle-Signals-EMG/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Melody Otot: Buat Musik Dengan Gerakan Otot Anda (EMG)</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Muscle-Melody-Play-Music-With-Your-Muscle-Movement/"><span>https://www.instructables.com/Muscle-Melody-Play-Music-With-Your-Muscle-Movement/</span></a></div>
+</div>
+</div>
+</div>
+</section>
+<section id="keuntungan-surface-emg">
+<h3>7.6 Keuntungan Surface EMG<a class="headerlink" href="#keuntungan-surface-emg" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Non invasif</p></li>
+<li><p>Mudah dan cepat</p></li>
+<li><p>Feedback real-time</p></li>
+<li><p>Aman untuk semua orang</p></li>
+<li><p>Biaya rendah</p></li>
+<li><p>Tidak ada radiasi</p></li>
+<li><p>Pemantauan waktu lama mungkin</p></li>
+</ul>
+</section>
+<section id="keterbatasan-semg">
+<h3>7.7 Keterbatasan sEMG<a class="headerlink" href="#keterbatasan-semg" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Tidak dapat merekam aktivitas otot dalam</strong> :</p>
+<ul class="simple">
+<li><p>sEMG hanya mengukur aktivitas otot superfisial.</p></li>
+<li><p>Otot dalam memerlukan EMG intramuskular (fine-wire).</p></li>
+</ul>
+</li>
+<li><p><strong>Sensitivitas terhadap persiapan kulit</strong> :</p>
+<ul class="simple">
+<li><p>Persiapan kulit yang buruk, keringat, rambut, atau penempatan elektroda yang tidak tepat mempengaruhi pembacaan.</p></li>
+<li><p>Impedansi kulit tinggi mengurangi akurasi.</p></li>
+</ul>
+</li>
+<li><p><strong>Crosstalk (Interferensi dari Otot Terdekat)</strong> :</p>
+<ul class="simple">
+<li><p>Elektroda menangkap sinyal dari beberapa otot tetangga.</p></li>
+<li><p>Sulit mengisolasi aktivitas otot kecil atau dalam.</p></li>
+</ul>
+</li>
+<li><p><strong>Artefak gerakan</strong> :</p>
+<ul class="simple">
+<li><p>Gerakan tubuh menyebabkan perpindahan elektroda yang menghasilkan sinyal palsu.</p></li>
+<li><p>Gerakan kabel juga dapat memperkenalkan noise.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>sEMG juga dipengaruhi oleh jaringan adiposa (lapisan lemak tebal b/w otot dan kulit) yang dapat meredam sinyal.</strong></p>
+</section>
+<section id="ringkasan">
+<h3>7.8 Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h3>
+<p>Dalam modul ini, kita mempelajari dasar-dasar EMG, terminologinya, dan fokus pada Surface EMG (sEMG) sebagai metode non-invasif untuk mengukur aktivitas elektrik otot. Kita belajar bagaimana sEMG bekerja, termasuk penempatan elektroda, deteksi sinyal, amplifikasi, dan pemrosesan. Modul ini membahas aplikasi utamanya dalam diagnosis klinis, olahraga, rehabilitasi, prostetik, dan robotik, bersama dengan keuntungan seperti feedback real-time dan non-invasivitas. Kita juga membahas keterbatasan seperti crosstalk, artefak gerakan, dan ketidakmampuan mendeteksi otot dalam, dan menyoroti potensinya dalam inovasi biomedis dan teknologi masa depan.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

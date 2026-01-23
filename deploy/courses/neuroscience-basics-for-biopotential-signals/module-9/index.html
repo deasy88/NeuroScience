@@ -1,0 +1,690 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 9 : EEG &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/neuroscience-basics-for-biopotential-signals/module-9/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/courses/neuroscience-basics-for-biopotential-signals/module-9/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Module 10 : EOG" href="../module-10/index.html" />
+    <link rel="prev" title="Module 8: ECG/EKG" href="../module-8/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Neuroscience Basics For Biopotential Signals</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module-1/index.html">Modul 1: Sistem Saraf Manusia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-2/index.html">Modul 2: Memahami potensial istirahat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-3/index.html">Modul 3 : Sifat Membran Pasif</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-4/index.html">Modul 4 : Potensial Aksi dan Propagasinya</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-5/index.html">Modul 5 : Sinaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-6/index.html">Modul 6: Sinyal Biopotensial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-7/index.html">Modul 7: EMG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-8/index.html">Module 8: ECG/EKG</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 9 : EEG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-10/index.html">Module 10 : EOG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-11/index.html">Module 11 : Conclusion</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extracellular Electrophysiology Acquisition</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../open-ephys/index.html">Course Curriculum</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-1/index.html">Teori Hari 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-2/index.html">Teori Hari 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-3/index.html">Teori Hari 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-4/index.html">Teori Hari 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/exday1-nokit.html">Latihan Hari ke-1: Tanpa Perangkat Keras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/exday2-nokit.html">Latihan Hari 2: Tanpa Perangkat Keras</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Courses</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">&lt;no title&gt;</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Module 9 : EEG</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-9-eeg">
+<span id="neuroscience-basics-for-biopotential-signals-module-9"></span><h1>Module 9 : EEG<a class="headerlink" href="#module-9-eeg" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Terminologi Dasar</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Elektroensefalografi (Electroencephalography)</strong> : Teknik untuk mengukur aktivitas listrik otak</p></li>
+<li><p><strong>Elektroensefalograf (Electroencephalograph)</strong> : Perangkat yang digunakan untuk mengukur aktivitas listrik otak</p></li>
+<li><p><strong>Elektroensefalogram (Electroencephalogram)</strong> : Representasi grafis dari aktivitas listrik otak</p></li>
+</ol>
+</li>
+<li><p><strong>Jika Anda ingin mengetahui sejarah lengkap EEG, silakan merujuk ke bagian ini:</strong>
+<a class="reference external" href="https://www.neuroelectrics.com/blog/the-evolution-of-eeg-a-journey-through-time">History of EEG</a></p></li>
+</ul>
+<section id="pendahuluan">
+<h2>9.1 Pendahuluan<a class="headerlink" href="#pendahuluan" title="Link to this heading">#</a></h2>
+<p>EEG adalah pemeriksaan medis non-invasif yang merekam aktivitas listrik otak menggunakan elektroda kecil yang ditempatkan
+di kulit kepala. EEG membantu mendeteksi pola gelombang otak yang abnormal dan umum digunakan untuk mendiagnosis epilepsi,
+gangguan tidur, cedera otak, serta untuk mempelajari kondisi psikiatri seperti gangguan bipolar dan skizofrenia.</p>
+<p><strong>Rentang frekuensi EEG normal :</strong> <a class="footnote-reference brackets" href="#id9" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<ol class="arabic simple">
+<li><p>Gelombang Delta : 0,5–4 Hz</p></li>
+<li><p>Gelombang Theta : 4–7 Hz</p></li>
+<li><p>Gelombang Alpha : 8–12 Hz</p></li>
+<li><p>Gelombang Beta  : 13–30 Hz</p></li>
+<li><p>Gelombang Gamma : 30–80 Hz</p></li>
+</ol>
+</section>
+<section id="prinsip-dasar">
+<h2>9.2 Prinsip Dasar<a class="headerlink" href="#prinsip-dasar" title="Link to this heading">#</a></h2>
+<p>EEG mengukur tegangan listrik yang sangat kecil (dalam mikrovolt) yang dihasilkan di kulit kepala ketika sejumlah besar
+neuron otak menembak secara sinkron. EEG terutama merekam penjumlahan potensial pascasinaptik dari neuron piramidal kortikal,
+yang kemudian diperkuat dan ditampilkan sebagai gelombang otak terhadap waktu.</p>
+</section>
+<section id="cara-kerja">
+<h2>9.3 Cara Kerja<a class="headerlink" href="#cara-kerja" title="Link to this heading">#</a></h2>
+<section id="penempatan-elektroda">
+<h3>9.3.1 Penempatan Elektroda<a class="headerlink" href="#penempatan-elektroda" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Pada <strong>EEG permukaan (surface EEG)</strong>, elektroda kecil ditempatkan di kulit kepala sesuai dengan sistem standar seperti
+sistem 10–20, yang memastikan posisi elektroda konsisten di atas area otak tertentu.</p></li>
+<li><p><strong>Electrode Cap</strong>: Penutup kepala yang dapat dikenakan dan berisi banyak elektroda. Alat ini memastikan penempatan
+elektroda yang konsisten dan memudahkan perekaman dalam durasi yang panjang.</p></li>
+</ol>
+</section>
+<section id="deteksi-sinyal">
+<h3>9.3.2 Deteksi Sinyal<a class="headerlink" href="#deteksi-sinyal" title="Link to this heading">#</a></h3>
+<p>Ketika kelompok neuron di otak menembak secara sinkron, mereka menghasilkan medan listrik kecil yang merambat hingga ke
+kulit kepala. Elektroda mendeteksi fluktuasi tegangan ini, yang dikenal sebagai gelombang otak, dan merepresentasikan
+penjumlahan potensial pascasinaptik dari neuron kortikal.</p>
+</section>
+<section id="penguatan-dan-penyaringan-sinyal">
+<h3>9.3.3 Penguatan dan Penyaringan Sinyal<a class="headerlink" href="#penguatan-dan-penyaringan-sinyal" title="Link to this heading">#</a></h3>
+<p>Karena sinyal EEG sangat lemah (dalam satuan mikrovolt), sinyal tersebut terlebih dahulu diperkuat agar dapat dibaca.
+Selanjutnya, gangguan yang tidak diinginkan seperti kedipan mata, artefak otot, atau interferensi listrik 50/60 Hz
+disaring untuk memastikan data yang direkam bersih dan akurat.</p>
+<p><strong>Perangkat keras Upside Down Labs yang kompatibel untuk akuisisi dan pemrosesan sinyal EEG:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../hardware/bioamp/neuro-play-ground-lite/index.html#neuro-play-ground-lite"><span class="std std-ref">Neuro PlayGround Lite</span></a></p></li>
+<li><p><a class="reference internal" href="../../../hardware/bioamp/bioamp-exg-pill/index.html#bioamp-exg-pill"><span class="std std-ref">Bioamp EXG Pill</span></a></p></li>
+</ul>
+<p>Kami menyediakan perangkat lunak <strong>open source</strong> <a class="reference internal" href="../../../software/index.html#upsidedownlabs-software-home"><span class="std std-ref">Chords</span></a> dengan fitur visualisasi
+sinyal, perekaman data (opsi simpan dan unduh yang mudah), plotting berbasis waktu, serta analisis frekuensi dan bandpower.</p>
+</section>
+</section>
+<section id="komponen-utama-eeg">
+<h2>9.4 Komponen Utama EEG<a class="headerlink" href="#komponen-utama-eeg" title="Link to this heading">#</a></h2>
+<section id="sistem-penempatan-elektroda">
+<h3>9.4.1 Sistem Penempatan Elektroda<a class="headerlink" href="#sistem-penempatan-elektroda" title="Link to this heading">#</a></h3>
+<section id="sistem-1020">
+<h4>1. Sistem 10–20<a class="headerlink" href="#sistem-1020" title="Link to this heading">#</a></h4>
+<p>Ini adalah sistem standar untuk penempatan elektroda di kulit kepala. Sistem ini membagi kulit kepala menjadi beberapa
+wilayah dan menentukan posisi elektroda berdasarkan titik anatomi tertentu (misalnya nasion, inion, dan daun telinga),
+sehingga membantu konsistensi penempatan elektroda.</p>
+<p>Untuk penjelasan lebih detail mengenai sistem 10–20, silakan merujuk ke:
+<a class="reference external" href="https://en.wikipedia.org/wiki/10%E2%80%9320_system_(EEG)">10-20 system wikipedia</a></p>
+</section>
+<section id="eeg-kepadatan-tinggi-high-density-eeg">
+<h4>2. EEG Kepadatan Tinggi (High-Density EEG)<a class="headerlink" href="#eeg-kepadatan-tinggi-high-density-eeg" title="Link to this heading">#</a></h4>
+<p>Pada konfigurasi lanjutan, digunakan elektroda tambahan untuk memperoleh informasi spasial yang lebih detail,
+misalnya dengan 64, 128, atau bahkan 256 elektroda.</p>
+</section>
+</section>
+<section id="karakteristik-berbagai-jenis-gelombang-eeg">
+<h3>9.4.2 Karakteristik Berbagai Jenis Gelombang EEG<a class="headerlink" href="#karakteristik-berbagai-jenis-gelombang-eeg" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Gelombang Delta</strong></p>
+<ul class="simple">
+<li><p>Frekuensi rendah dengan amplitudo tinggi</p></li>
+<li><p>Rentang frekuensi : 0,5–4 Hz</p></li>
+<li><p>Berkaitan dengan tidur dalam (Non-REM) tahap 3 dan 4 pada orang dewasa</p></li>
+</ul>
+</li>
+<li><p><strong>Gelombang Theta</strong></p>
+<ul class="simple">
+<li><p>Rentang frekuensi : 4–7 Hz</p></li>
+<li><p>Berkaitan dengan rasa mengantuk dan tahap awal tidur</p></li>
+</ul>
+</li>
+<li><p><strong>Gelombang Alpha</strong></p>
+<ul class="simple">
+<li><p>Rentang frekuensi : 8–12 Hz</p></li>
+<li><p>Berkaitan dengan kondisi terjaga yang rileks, terutama saat seseorang tenang dan tidak fokus pada tugas tertentu</p></li>
+<li><p>Gelombang alpha paling dominan saat mata tertutup</p></li>
+</ul>
+</li>
+<li><p><strong>Gelombang Beta</strong></p>
+<ul class="simple">
+<li><p>Rentang frekuensi : 13–30 Hz</p></li>
+<li><p>Pola EEG paling umum pada orang dewasa dan anak-anak yang sadar dan waspada</p></li>
+<li><p>Pola beta abnormal dapat mengindikasikan gangguan neurologis seperti penyakit Parkinson</p></li>
+</ul>
+</li>
+<li><p><strong>Gelombang Gamma</strong></p>
+<ul class="simple">
+<li><p>Rentang frekuensi : 30–80 Hz</p></li>
+<li><p>Berkaitan dengan aktivitas mental tingkat tinggi, pemrosesan kognitif, dan integrasi informasi</p></li>
+<li><p>Umumnya muncul saat tugas yang membutuhkan konsentrasi dan pemecahan masalah</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="aplikasi-eeg">
+<h2>9.5 Aplikasi EEG<a class="headerlink" href="#aplikasi-eeg" title="Link to this heading">#</a></h2>
+<section id="aplikasi-klinis">
+<h3>1. Aplikasi Klinis<a class="headerlink" href="#aplikasi-klinis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Diagnosis Epilepsi</strong> : EEG merupakan alat utama untuk mendiagnosis epilepsi dengan mendeteksi pola gelombang abnormal
+seperti spike atau sharp wave. <a class="footnote-reference brackets" href="#id10" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
+<li><p><strong>Gangguan Tidur</strong> : EEG digunakan dalam studi tidur (polisomnografi) untuk memantau tahap tidur dan mengidentifikasi
+gangguan seperti sleep apnea, insomnia, dan narkolepsi. <a class="footnote-reference brackets" href="#id11" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></li>
+<li><p><strong>Pemantauan Aktivitas Otak</strong> : Digunakan pada perawatan intensif untuk memantau pasien koma, kondisi vegetatif,
+atau selama anestesi.</p></li>
+<li><p><strong>Diagnosis Kematian Otak</strong> : EEG dapat digunakan untuk mengonfirmasi kematian otak yang ditandai dengan tidak adanya
+aktivitas listrik otak. <a class="footnote-reference brackets" href="#id12" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></li>
+<li><p><strong>Gangguan Neurokognitif</strong> : EEG membantu mengevaluasi kondisi seperti demensia, Alzheimer, dan ensefalitis. <a class="footnote-reference brackets" href="#id13" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a></p></li>
+</ul>
+</section>
+<section id="aplikasi-penelitian">
+<h3>2. Aplikasi Penelitian<a class="headerlink" href="#aplikasi-penelitian" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Brain-Computer Interface (BCI)</strong> : EEG mengubah sinyal otak menjadi perintah untuk mengendalikan perangkat seperti
+komputer atau anggota tubuh buatan. <a class="footnote-reference brackets" href="#id14" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a></p></li>
+<li><p><strong>Neurosains Kognitif</strong> : EEG digunakan untuk mempelajari perhatian, memori, persepsi, dan pemrosesan bahasa. <a class="footnote-reference brackets" href="#id15" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p></li>
+</ul>
+</section>
+<section id="neurofeedback">
+<h3>3. Neurofeedback<a class="headerlink" href="#neurofeedback" title="Link to this heading">#</a></h3>
+<p>EEG juga digunakan dalam terapi neurofeedback, di mana individu dilatih untuk mengendalikan aktivitas otaknya sendiri.
+Metode ini digunakan untuk menangani ADHD, kecemasan, depresi, serta peningkatan performa atlet dan musisi. <a class="footnote-reference brackets" href="#id16" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p>
+</section>
+</section>
+<section id="kelebihan-eeg">
+<h2>9.6 Kelebihan EEG<a class="headerlink" href="#kelebihan-eeg" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Non-invasif dan aman</p></li>
+<li><p>Biaya relatif rendah</p></li>
+<li><p>Efektif untuk diagnosis gangguan neurologis</p></li>
+<li><p>Pemantauan real-time</p></li>
+<li><p>Cocok untuk pemantauan jangka panjang</p></li>
+<li><p>Digunakan dalam penelitian kognitif dan psikofisiologi</p></li>
+<li><p>Portabel dan mudah diakses</p></li>
+</ul>
+</section>
+<section id="keterbatasan-eeg">
+<h2>9.7 Keterbatasan EEG<a class="headerlink" href="#keterbatasan-eeg" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Resolusi Spasial Rendah</strong> : Tidak dapat menentukan lokasi aktivitas otak secara presisi</p></li>
+<li><p><strong>Memerlukan Analisis Ahli</strong> : Interpretasi kompleks dan subjektif</p></li>
+<li><p><strong>Sensitif terhadap Gangguan Eksternal</strong> : Artefak otot, kedipan mata, dan interferensi listrik</p></li>
+<li><p><strong>Informasi Kedalaman Terbatas</strong> : Kurang efektif mendeteksi aktivitas struktur otak bagian dalam</p></li>
+</ol>
+</section>
+<section id="ringkasan">
+<h2>9.8 Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
+<p>EEG adalah teknik non-invasif untuk merekam aktivitas listrik otak menggunakan elektroda di kulit kepala. EEG digunakan
+dalam diagnosis klinis, penelitian kognitif, serta brain-computer interface. Meskipun memiliki keterbatasan seperti
+resolusi spasial rendah dan sensitivitas terhadap noise, EEG tetap sangat bernilai karena kemampuan pemantauan real-time
+dan resolusi temporal yang sangat baik.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Konten ini disediakan hanya untuk tujuan pembelajaran. Selalu konsultasikan dengan tenaga medis profesional
+untuk penerapan klinis.</strong></p>
+</div>
+</section>
+<section id="referensi">
+<h2>9.9 Referensi<a class="headerlink" href="#referensi" title="Link to this heading">#</a></h2>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id9" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK539805/">Nayak CS, Anilkumar AC. EEG Normal Waveforms. [Updated 2025 Aug 3]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2025 Jan-.</a></p>
+</aside>
+<aside class="footnote brackets" id="id10" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK390347/">Britton JW, Frey LC, Hopp JLet al., authors; St. Louis EK, Frey LC, editors. Electroencephalography (EEG): An Introductory Text and Atlas of Normal and Abnormal Findings in Adults, Children, and Infants [Internet]. Chicago: American Epilepsy Society; 2016. EEG in the Epilepsies.</a></p>
+</aside>
+<aside class="footnote brackets" id="id11" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK537023/">Nayak CS, Anilkumar AC. EEG Normal Sleep. [Updated 2023 May 23]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2025 Jan-.</a></p>
+</aside>
+<aside class="footnote brackets" id="id12" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/27303609/">Szurhaj W, Lamblin MD, Kaminska A, Sediri H; Société de Neurophysiologie Clinique de Langue Française. EEG guidelines in the diagnosis of brain death. Neurophysiol Clin. 2015 Mar;45(1):97-104. doi: 10.1016/j.neucli.2014.11.005. Epub 2015 Jan 14. PMID: 25687591.</a></p>
+</aside>
+<aside class="footnote brackets" id="id13" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/29213628/">Kanda PAM, Anghinah R, Smidth MT, Silva JM. The clinical use of quantitative EEG in cognitive disorders. Dement Neuropsychol. 2009;3(3):195-203. doi:10.1590/S1980-57642009DN30300004</a></p>
+</aside>
+<aside class="footnote brackets" id="id14" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/35591021/">Värbu K, Muhammad N, Muhammad Y. Past, Present, and Future of EEG-Based BCI Applications. Sensors (Basel). 2022;22(9):3331. Published 2022 Apr 26. doi:10.3390/s22093331</a></p>
+</aside>
+<aside class="footnote brackets" id="id15" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/33921596/">Höller Y. Quantitative EEG in Cognitive Neuroscience. Brain Sci. 2021;11(4):517. Published 2021 Apr 19. doi:10.3390/brainsci11040517</a></p>
+</aside>
+<aside class="footnote brackets" id="id16" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">8</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4892319/">Marzbani H, Marateb HR, Mansourian M. Neurofeedback: A Comprehensive Review on System Design, Methodology and Clinical Applications. Basic Clin Neurosci. 2016;7(2):143-158. doi:10.15412/J.BCN.03070208</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1062 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>BioAmp EXG Pill &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hardware/bioamp/bioamp-exg-pill/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/hardware/bioamp/bioamp-exg-pill/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Muscle BioAmp Shield" href="../muscle-bioamp-shield/index.html" />
+    <link rel="prev" title="Neuro PlayGround (NPG) Lite" href="../neuro-play-ground-lite/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">BioAmp Hardware</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../neuro-play-ground-lite/index.html">Neuro PlayGround (NPG) Lite</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">BioAmp EXG Pill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-shield/index.html">Muscle BioAmp Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-patchy/index.html">Muscle BioAmp Patchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-blip/index.html">Muscle BioAmp Blip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../heart-bioamp-candy/index.html">Heart BioAmp Candy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bioamp-v1.5/index.html">BioAmp v1.5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-candy/index.html">Muscle BioAmp Candy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-biscute/index.html">Muscle BioAmp Biscute</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Hardware</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">BioAmp EXG Pill</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="bioamp-exg-pill">
+<span id="id1"></span><h1>BioAmp EXG Pill<a class="headerlink" href="#bioamp-exg-pill" title="Link to this heading">#</a></h1>
+<p><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">v1.0</span></p>
+<section id="ringkasan">
+<h2>Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
+<p>BioAmp EXG Pill adalah papan akuisisi sinyal biopotensial analog-front-end (AFE) yang kecil dan kuat yang dapat dipasangkan
+dengan unit mikrokontroler (MCU) atau komputer papan tunggal (SBC) dengan konverter analog-ke-digital (ADC) seperti
+Arduino UNO &amp; Nano, Adafruit QtPy, STM32 Blue Pill, BeagleBone Black, dan Raspberry Pi Pico, untuk beberapa nama saja. It juga bekerja dengan ADC khusus apa pun, seperti Texas Instruments ADS1115 dan ADS131M0x, di antara lainnya.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dianjurkan untuk menggunakan Arduino UNO R4 saat merekam sinyal biopotensial karena memiliki ADC 14-bit dan dapat merekam sinyal dengan lebih akurat.</p>
+</div>
+<figure class="align-center">
+<img alt="../../../_images/bioamp-exg-pill.png" src="../../../_images/bioamp-exg-pill.png" />
+</figure>
+</section>
+<section id="apa-yang-membuatnya-berbeda">
+<h2>Apa yang membuatnya berbeda?<a class="headerlink" href="#apa-yang-membuatnya-berbeda" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Rekam sinyal biopotensial berkualitas publikasi seperti ECG, EMG, EOG, atau EEG.</p></li>
+<li><p>Ukuran kecil (25.4 x 10.0mm) memungkinkan integrasi mudah ke dalam proyek mobile dan terbatas ruang.</p></li>
+<li><p>Penolakan kebisingan yang kuat membuatnya dapat digunakan bahkan saat perangkat dekat dengan pasokan AC mains.</p></li>
+<li><p>Kabel apa pun dengan diameter 1.5 mm dapat digunakan sebagai kabel elektroda yang mengurangi tegangan, menjadikannya sangat hemat biaya.</p></li>
+<li><p>Pasangkan dengan MCU apa pun dengan ADC. Itu secara default kompatibel dengan 5V tetapi Anda dapat membuatnya kompatibel dengan 3.3V juga menggunakan pembagi tegangan.</p></li>
+<li><p>Konfigurasikan gain, filter band pass dan jumlah elektroda sesuai kebutuhan Anda.</p></li>
+</ol>
+</section>
+<section id="fitur-spesifikasi">
+<h2>Fitur &amp; Spesifikasi<a class="headerlink" href="#fitur-spesifikasi" title="Link to this heading">#</a></h2>
+</section>
+<section id="tata-letak-papan">
+<h2>Tata letak papan<a class="headerlink" href="#tata-letak-papan" title="Link to this heading">#</a></h2>
+<p>Desain elegan BioAmp EXG Pill memungkinkannya digunakan dalam 3 cara:</p>
+<ol class="arabic simple">
+<li><p>Lubang pin-header memungkinkan Anda menyolder header pin (berg strip) untuk penggunaan mudah dengan breadboard.</p></li>
+<li><p>Lubang castellated memungkinkan Anda menyolder BioAmp EXG Pill langsung ke PCB kustom yang memerlukan kemampuan amplifikasi biopotensial.</p></li>
+<li><p>Lubang elektroda memungkinkan Anda menggunakan kabel apa pun dengan diameter 1.5 mm sebagai kabel elektroda dengan tegangan minimal.</p></li>
+</ol>
+<figure class="align-center">
+<img alt="../../../_images/Front_Specifications.jpg" src="../../../_images/Front_Specifications.jpg" />
+</figure>
+<figure class="align-center">
+<img alt="../../../_images/Back_Specifications.jpg" src="../../../_images/Back_Specifications.jpg" />
+</figure>
+<section id="bioamp-exg-pill-sepenuhnya-dapat-dikonfigurasi">
+<h3>BioAmp EXG Pill sepenuhnya dapat dikonfigurasi<a class="headerlink" href="#bioamp-exg-pill-sepenuhnya-dapat-dikonfigurasi" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Tingkatkan gain amplifier instrumentasi dengan menggunakan resistor 0603 di <code class="docutils literal notranslate"><span class="pre">R6</span></code>. Kurangi gain dan konfigurasikan filter bandpass dengan menggunakan bagian 0603 di <code class="docutils literal notranslate"><span class="pre">R12</span></code> dan <code class="docutils literal notranslate"><span class="pre">C5</span></code>. Pembatasan band sangat berguna untuk perekaman EOG dan EEG. Juga, sinyal terkadang klip saat merekam ECG dengan elektroda sangat dekat dengan jantung. Membuat jumper solder untuk filter band-pass membantu dengan itu. Secara default, BioAmp EXG Pill dikonfigurasi untuk merekam EEG dan EOG tetapi Anda dapat menjembatani pad (di bawah bandpass) dengan solder untuk membuatnya dapat dikonfigurasi untuk EMG dan ECG.</p></li>
+<li><p>Metode operasi normal untuk amplifikasi sinyal berkualitas terbaik adalah menggunakan 3 elektroda secara default tetapi Anda dapat menjembatani pad (di bawah elektroda) untuk membuatnya dapat dikonfigurasi untuk 2 elektroda. Mode 2-elektroda secara khusus disertakan untuk proyek seperti patch jantung (ECG) untuk HRV. Itu hanya dimaksudkan untuk digunakan dengan setup beroperasi baterai dan cukup rentan terhadap kebisingan interferensi tinggi karena kurangnya referensi yang tepat pada tubuh (Opsi ini tidak direkomendasikan untuk sebagian besar operasi)</p></li>
+</ol>
+</section>
+</section>
+<section id="persyaratan-perangkat-lunak">
+<h2>Persyaratan perangkat lunak<a class="headerlink" href="#persyaratan-perangkat-lunak" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Sebelum Anda mulai menggunakan kit, silakan unduh <a class="reference external" href="https://www.arduino.cc/en/software">Arduino IDE v1.8.19 (legacy IDE)</a>. Dengan menggunakan ini Anda akan dapat mengunggah sketsa arduino di papan pengembangan Anda dan memvisualisasikan data di laptop Anda.</p></li>
+</ul>
+<figure class="align-center" id="id8">
+<img alt="Arduino IDE v1.8.19 (legacy IDE)" src="../../../_images/arduino-ide.png" />
+<figcaption>
+<p><span class="caption-text">Arduino IDE v1.8.19 (legacy IDE)</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Kunjungi Upside Down Labs <a class="reference external" href="https://chords.upsidedownlabs.tech">Chords Web</a> untuk memvisualisasikan sinyal bio-potensial Anda langsung di browser.</p></li>
+</ul>
+<figure class="align-center" id="id9">
+<img alt="Halaman Peluncuran Chords Web" src="../../../_images/chords_landing_page.png" />
+<figcaption>
+<p><span class="caption-text">Halaman Peluncuran Chords Web</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Memulai dengan Chords Web</strong></p>
+<div class="video_wrapper align-center" style="padding-bottom: 56.250000%; padding-top: 30px; position: relative; text-align: center; width: 100%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/IVIPnk9z75g" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Untuk mengetahui lebih lanjut tentang Chords Web <a class="reference internal" href="../../../software/chords/chords-web/index.html#chords"><span class="std std-ref">klik di sini</span></a>.</p>
+</div>
+</section>
+<section id="menggunakan-perangkat-keras">
+<h2>Menggunakan Perangkat Keras<a class="headerlink" href="#menggunakan-perangkat-keras" title="Link to this heading">#</a></h2>
+<p>Jika Anda telah menerima BioAmp EXG Pill yang dirakit maka Anda dapat melewati langkah 1 dan langsung ke langkah 2.</p>
+<section id="langkah-1-solder-konektor">
+<h3>Langkah 1: Solder Konektor<a class="headerlink" href="#langkah-1-solder-konektor" title="Link to this heading">#</a></h3>
+<p>Masukkan konektor JST PH kabel BioAmp yang disediakan dan header pin dari atas seperti yang ditunjukkan di gambar dan solder dari bawah.</p>
+<figure class="align-center" id="id10">
+<img alt="Menyolder konektor &amp; header pin pada BioAmp EXG Pill" src="../../../_images/assembly-step1.png" />
+<figcaption>
+<p><span class="caption-text">Menyolder konektor &amp; header pin pada BioAmp EXG Pill</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id11">
+<img alt="Setelah menyolder, BioAmp EXG Pill harus terlihat seperti ini" src="../../../_images/bioamp-exg-pill-soldered.png" />
+<figcaption>
+<p><span class="caption-text">Setelah menyolder, BioAmp EXG Pill harus terlihat seperti ini</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="langkah-2-opsional-konfigurasikan-untuk-ecg-emg">
+<h3>Langkah 2 (opsional): Konfigurasikan untuk ECG/EMG<a class="headerlink" href="#langkah-2-opsional-konfigurasikan-untuk-ecg-emg" title="Link to this heading">#</a></h3>
+<p>BioAmp EXG Pill secara default dikonfigurasi untuk merekam EEG atau EOG tetapi jika Anda ingin merekam ECG atau EMG berkualitas baik, maka disarankan untuk mengkonfigurasinya dengan membuat sambungan solder seperti yang ditunjukkan di gambar.</p>
+<figure class="align-center">
+<img alt="../../../_images/assembly-step2.png" src="../../../_images/assembly-step2.png" />
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Bahkan tanpa membuat sambungan solder BioAmp EXG Pill mampu merekam ECG atau EMG tetapi sinyal akan lebih akurat jika Anda mengkonfigurasinya.</p>
+</div>
+</section>
+<section id="langkah-3-hubungkan-mcu-adc">
+<h3>Langkah 3: Hubungkan MCU/ADC<a class="headerlink" href="#langkah-3-hubungkan-mcu-adc" title="Link to this heading">#</a></h3>
+<p>Hubungkan BioAmp EXG Pill Anda ke MCU/ADC sesuai tabel koneksi yang ditunjukkan di bawah:</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id12">
+<caption><span class="caption-text">Koneksi BioAmp ke MCU/ADC</span><a class="headerlink" href="#id12" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>BioAmp</p></th>
+<th class="head"><p>MCU/ADC</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>VCC</p></td>
+<td><p>5V</p></td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>OUT</p></td>
+<td><p>Input ADC</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Untuk semua contoh yang disediakan, kami menggunakan pin A0 Arduino UNO R3. Hubungkan BioAmp Anda ke MCU/ADC melalui kabel jumper yang disediakan di kit. Jika Anda menghubungkan pin OUT BioAmp ke pin analog lain (A0-A5) Arduino UNO board, maka Anda harus mengubah PIN INPUT di sketsa Arduino sesuai.</p>
+<figure class="align-center" id="id13">
+<img alt="Koneksi dengan Arduino UNO R3" src="../../../_images/connections-with-arduino.png" />
+<figcaption>
+<p><span class="caption-text">Koneksi dengan Arduino UNO R3</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pastikan laptop Anda tidak terhubung ke charger dan duduk 5m jauh dari peralatan AC apa pun untuk akuisisi sinyal terbaik.</p>
+</div>
+</section>
+<section id="langkah-4-menghubungkan-kabel-elektroda">
+<h3>Langkah 4: Menghubungkan kabel elektroda<a class="headerlink" href="#langkah-4-menghubungkan-kabel-elektroda" title="Link to this heading">#</a></h3>
+<p>Hubungkan kabel BioAmp ke BioAmp EXG Pill dengan memasukkan ujung kabel ke konektor JST PH seperti yang ditunjukkan di grafik di bawah.</p>
+<figure class="align-center" id="id14">
+<img alt="Koneksi dengan Kabel BioAmp v3" src="../../../_images/connection-with-cable.png" />
+<figcaption>
+<p><span class="caption-text">Koneksi dengan Kabel BioAmp v3</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="langkah-5-persiapan-kulit">
+<h3>Langkah 5: Persiapan Kulit<a class="headerlink" href="#langkah-5-persiapan-kulit" title="Link to this heading">#</a></h3>
+<p>Oleskan Gel Persiapan Kulit Nuprep pada permukaan kulit tempat elektroda akan ditempatkan untuk menghilangkan sel kulit mati dan membersihkan kulit dari kotoran. Setelah menggosok permukaan kulit secara menyeluruh, bersihkan dengan tisu alkohol atau tisu basah.</p>
+<p>Untuk informasi lebih lanjut, silakan lihat langkah-langkah detail <span class="xref std std-ref">persiapan kulit</span>.</p>
+</section>
+<section id="langkah-6-mengukur-elektromiografi-emg">
+<h3>Langkah 6: Mengukur Elektromiografi (EMG)<a class="headerlink" href="#langkah-6-mengukur-elektromiografi-emg" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Elektromiografi (EMG) adalah teknik untuk mengevaluasi dan merekam aktivitas listrik yang dihasilkan oleh otot rangka.
+EMG juga digunakan sebagai prosedur diagnostik untuk menilai kesehatan otot dan sel saraf yang mengontrolnya (neuron motor).
+Hasil EMG mengungkap disfungsi saraf, disfungsi otot, atau masalah transmisi sinyal saraf-ke-otot.</p>
+</div>
+<section id="penempatan-elektroda">
+<h4>Penempatan elektroda<a class="headerlink" href="#penempatan-elektroda" title="Link to this heading">#</a></h4>
+<p>Kami memiliki 2 opsi untuk mengukur sinyal EMG, baik menggunakan elektroda gel atau menggunakan band BioAmp Otot berbasis elektroda kering. Anda dapat mencoba keduanya satu per satu.</p>
+<ul class="simple">
+<li><p><strong>Menggunakan elektroda gel:</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Hubungkan kabel BioAmp ke elektroda gel,</p></li>
+<li><p>Kupas backing plastik dari elektroda</p></li>
+<li><p>Tempatkan kabel IN+ dan IN- di lengan dekat saraf ulnar &amp; REF (referensi) di bagian belakang tangan Anda seperti yang ditunjukkan di diagram koneksi.</p></li>
+</ol>
+<figure class="align-default">
+<img alt="../../../_images/emg.png" src="../../../_images/emg.png" />
+</figure>
+<ul class="simple">
+<li><p><strong>Menggunakan Band BioAmp Otot:</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Hubungkan kabel BioAmp ke Band BioAmp Otot dengan cara sehingga IN+ dan IN- ditempatkan di lengan dekat saraf ulnar &amp; REF (referensi) di sisi jauh band.</p></li>
+<li><p>Sekarang letakkan tetesan kecil gel elektroda antara kulit dan bagian logam kabel BioAmp untuk mendapatkan hasil terbaik.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Kunjungi dokumentasi lengkap tentang cara <a class="reference internal" href="../../../guides/usage-guides/using-bioamp-bands/index.html#using-bioamp-bands"><span class="std std-ref">merakit dan menggunakan Band BioAmp</span></a> atau ikuti video youtube yang diberikan di bawah.</p>
+<p><strong>Tutorial tentang cara menggunakan band:</strong></p>
+<div class="video_wrapper align-center" style="padding-bottom: 56.250000%; padding-top: 30px; position: relative; text-align: center; width: 100%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/xYZdw0aesa0" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dalam demonstrasi ini kami merekam sinyal EMG dari saraf ulnar, tetapi Anda dapat merekam EMG dari area lain juga (bisep, trisep, kaki, rahang dll) sesuai kebutuhan proyek Anda. Pastikan untuk menempatkan elektroda IN+, IN- pada otot yang ditargetkan dan REF pada bagian tulang.</p>
+</div>
+</section>
+<section id="mengunggah-kode">
+<h4>Mengunggah kode<a class="headerlink" href="#mengunggah-kode" title="Link to this heading">#</a></h4>
+<p>Hubungkan Arduino Uno ke laptop Anda menggunakan kabel USB (Type A to Type B). Salin tempel salah satu Sketsa Arduino yang diberikan di bawah di Arduino IDE v1.8.19 yang Anda unduh sebelumnya:</p>
+<p><span class="fab fa-github pst-color-primary"></span> <a class="reference external" href="https://github.com/upsidedownlabs/Muscle-BioAmp-Arduino-Firmware/blob/main/2_EMGFilter/2_EMGFilter.ino">EMG Filter</a></p>
+<p><span class="fab fa-github pst-color-primary"></span> <a class="reference external" href="https://github.com/upsidedownlabs/Muscle-BioAmp-Arduino-Firmware/blob/main/3_EMGEnvelope/3_EMGEnvelope.ino">EMG Envelope</a></p>
+<p>Pergi ke <code class="docutils literal notranslate"><span class="pre">tools</span></code> dari menu bar, pilih opsi <code class="docutils literal notranslate"><span class="pre">board</span></code> lalu pilih Arduino UNO. Di menu yang sama,
+pilih port COM tempat Arduino Uno Anda terhubung. Untuk mengetahui port COM yang benar,
+putuskan sambungan papan Anda dan buka kembali menu. Entri yang menghilang harus
+port COM yang benar. Sekarang unggah kode, &amp; buka serial plotter dari menu tools untuk memvisualisasikan
+sinyal EMG.</p>
+<p>Setelah membuka serial plotter pastikan untuk memilih baud rate ke 115200.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Kunjungi dokumentasi lengkap tentang cara <a class="reference internal" href="../../../software/bioamp/muscle-bioamp-arduino-firmware/index.html#muscle-bioamp-arduino-firmware-code-upload"><span class="std std-ref">mengunggah kode</span></a>.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Pastikan laptop Anda tidak terhubung ke charger dan duduk 5m jauh dari peralatan AC apa pun untuk akuisisi sinyal terbaik.</p>
+</div>
+</section>
+<section id="memvisualisasikan-sinyal-emg">
+<h4>Memvisualisasikan sinyal EMG<a class="headerlink" href="#memvisualisasikan-sinyal-emg" title="Link to this heading">#</a></h4>
+<p>Untuk memvisualisasikan sinyal EMG, gunakan <a class="reference external" href="https://chords.upsidedownlabs.tech/">Chords Web</a> untuk visualisasi sinyal bio-potensial real-time yang cepat dan tanpa masalah langsung dari browser Anda, tanpa menginstal perangkat lunak apa pun.</p>
+<figure class="align-center" id="id15">
+<img alt="Memvisualisasikan sinyal EMG di Chords Web" src="../../../_images/chords_emg_signal.png" />
+<figcaption>
+<p><span class="caption-text">Memvisualisasikan sinyal EMG di Chords Web</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Sekarang tekuk lengan Anda untuk memvisualisasikan sinyal otot secara real-time di laptop Anda.</p>
+<figure class="align-center" id="id16">
+<img alt="Memvisualisasikan sinyal EMG di Arduino IDE v1.8.x" src="../../../_images/EMGEnvelop.jpg" />
+<figcaption>
+<p><span class="caption-text">Memvisualisasikan sinyal EMG di Arduino IDE v1.8.x</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="langkah-6-mengukur-elektrokardiografi-ecg">
+<h3>Langkah 6: Mengukur Elektrokardiografi (ECG)<a class="headerlink" href="#langkah-6-mengukur-elektrokardiografi-ecg" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Elektrokardiografi (ECG) adalah proses menghasilkan elektrokardiogram (ECG atau EKG). It adalah grafik tegangan versus waktu
+dari aktivitas listrik jantung menggunakan elektroda yang ditempatkan pada kulit. Elektroda ini mendeteksi perubahan listrik kecil
+yang merupakan konsekuensi depolarisasi otot jantung diikuti oleh repolarisasi selama setiap siklus jantung (detak jantung).</p>
+</div>
+<section id="id2">
+<h4>Penempatan elektroda<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Kami memiliki 2 opsi untuk mengukur sinyal ECG, baik menggunakan elektroda gel atau menggunakan band BioAmp Jantung berbasis elektroda kering. Anda dapat mencoba keduanya satu per satu.</p>
+<ul class="simple">
+<li><p><strong>Menggunakan elektroda gel:</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Hubungkan kabel BioAmp ke elektroda gel</p></li>
+<li><p>Kupas backing plastik dari elektroda</p></li>
+<li><p>Tempatkan kabel IN- di sisi kiri, IN+ di tengah dan REF (referensi) di sisi kanan jauh seperti yang ditunjukkan di diagram.</p></li>
+</ol>
+<figure class="align-center">
+<img alt="../../../_images/ecg.png" src="../../../_images/ecg.png" />
+</figure>
+<ul class="simple">
+<li><p><strong>Menggunakan Band BioAmp Jantung:</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Pakai band seperti yang ditunjukkan di video tutorial yang diberikan di bawah</p></li>
+<li><p>Tempatkan kabel IN- di sisi kiri, IN+ di tengah dan REF (referensi) di sisi kanan jauh.</p></li>
+<li><p>Sekarang letakkan tetesan kecil gel elektroda antara kulit dan bagian logam kabel BioAmp untuk mendapatkan hasil terbaik.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Kunjungi dokumentasi lengkap tentang cara <a class="reference internal" href="../../../guides/usage-guides/using-bioamp-bands/index.html#using-bioamp-bands"><span class="std std-ref">merakit dan menggunakan Band BioAmp</span></a> atau ikuti video youtube yang diberikan di bawah.</p>
+<p><strong>Tutorial tentang cara menggunakan band:</strong></p>
+<div class="video_wrapper align-center" style="padding-bottom: 56.250000%; padding-top: 30px; position: relative; text-align: center; width: 100%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/fr5iORsVyUM" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></div>
+</section>
+<section id="id3">
+<h4>Mengunggah kode<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>Hubungkan Arduino Uno ke laptop Anda menggunakan kabel USB (Type A to Type B). Salin tempel Sketsa Arduino yang diberikan di bawah di Arduino IDE v1.8.19 yang Anda unduh sebelumnya:</p>
+<p><span class="fab fa-github pst-color-primary"></span> <a class="reference external" href="https://github.com/upsidedownlabs/Heart-BioAmp-Arduino-Firmware/blob/main/2_ECGFilter/2_ECGFilter.ino">ECG Filter</a></p>
+<p>Pergi ke <code class="docutils literal notranslate"><span class="pre">tools</span></code> dari menu bar, pilih opsi <code class="docutils literal notranslate"><span class="pre">board</span></code> lalu pilih Arduino UNO. Di menu yang sama,
+pilih port COM tempat Arduino Uno Anda terhubung. Untuk mengetahui port COM yang benar,
+putuskan sambungan papan Anda dan buka kembali menu. Entri yang menghilang harus
+port COM yang benar. Sekarang unggah kode, &amp; buka serial plotter dari menu tools untuk memvisualisasikan
+sinyal.</p>
+<p>Setelah membuka serial plotter pastikan untuk memilih baud rate ke 115200.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Kunjungi dokumentasi lengkap tentang cara <a class="reference internal" href="../../../software/bioamp/heart-bioamp-arduino-firmware/index.html#heart-bioamp-arduino-firmware-code-upload"><span class="std std-ref">mengunggah kode</span></a>.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Pastikan laptop Anda tidak terhubung ke charger dan duduk 5m jauh dari peralatan AC apa pun untuk akuisisi sinyal terbaik.</p>
+</div>
+</section>
+<section id="memvisualisasikan-sinyal-ecg">
+<h4>Memvisualisasikan sinyal ECG<a class="headerlink" href="#memvisualisasikan-sinyal-ecg" title="Link to this heading">#</a></h4>
+<p>Untuk memvisualisasikan sinyal ECG, gunakan <a class="reference external" href="https://chords.upsidedownlabs.tech/">Chords Web</a> untuk visualisasi sinyal bio-potensial real-time yang cepat dan tanpa masalah langsung dari browser Anda, tanpa menginstal perangkat lunak apa pun.</p>
+<figure class="align-center" id="id17">
+<img alt="Memvisualisasikan sinyal ECG di Chords Web" src="../../../_images/chords_ecg_signal.png" />
+<figcaption>
+<p><span class="caption-text">Memvisualisasikan sinyal ECG di Chords Web</span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Duduklah santai dan lihat sinyal ECG Anda secara real-time di laptop Anda.</p>
+<figure class="align-center" id="id18">
+<img alt="Memvisualisasikan sinyal ECG di Arduino IDE v1.8.x" src="../../../_images/bioamp-Exg-Pill-ECG.jpg" />
+<figcaption>
+<p><span class="caption-text">Memvisualisasikan sinyal ECG di Arduino IDE v1.8.x</span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="langkah-7-mengukur-elektrookulografi-eog">
+<h3>Langkah 7: Mengukur Elektrookulografi (EOG)<a class="headerlink" href="#langkah-7-mengukur-elektrookulografi-eog" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Elektrookulografi (EOG) adalah teknik untuk mengukur potensi korneo-retinal yang ada antara depan dan
+belakang mata manusia. Sinyal yang dihasilkan disebut EOG. Untuk mengukur gerakan mata, pasangan elektroda biasanya ditempatkan
+baik di atas dan di bawah mata atau ke kiri dan kanan mata. Jika mata bergerak dari posisi tengah menuju salah satu dari dua
+elektroda, elektroda itu “melihat” sisi positif retina, dan elektroda yang berlawanan “melihat” sisi negatif retina.
+Akibatnya, perbedaan potensi terjadi antara elektroda. Dengan asumsi potensi istirahat konstan, potensi yang direkam
+adalah ukuran posisi mata.</p>
+</div>
+<section id="id4">
+<h4>Penempatan elektroda<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>Kami memiliki 2 cara untuk mengukur sinyal EOG, baik merekam gerakan mata horizontal atau gerakan mata vertikal. Anda dapat merekam kedua sinyal satu per satu.</p>
+<ul class="simple">
+<li><p><strong>Perekaman EOG horizontal:</strong></p></li>
+</ul>
+<figure class="align-center">
+<img alt="../../../_images/eog-horizontal.png" src="../../../_images/eog-horizontal.png" />
+</figure>
+<ol class="arabic simple">
+<li><p>Hubungkan kabel BioAmp ke elektroda gel.</p></li>
+<li><p>Kupas backing plastik dari elektroda.</p></li>
+<li><p>Tempatkan kabel IN- di sisi kanan mata, IN+ di sisi kiri mata dan REF (referensi) di bagian tulang, di sisi belakang cuping telinga Anda seperti yang ditunjukkan di diagram di atas.</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Perekaman EOG vertikal:</strong></p></li>
+</ul>
+<figure class="align-center">
+<img alt="../../../_images/eog-vertical.png" src="../../../_images/eog-vertical.png" />
+</figure>
+<ol class="arabic simple">
+<li><p>Hubungkan kabel BioAmp ke elektroda gel.</p></li>
+<li><p>Kupas backing plastik dari elektroda.</p></li>
+<li><p>Tempatkan kabel IN- &amp; IN+ di atas dan di bawah mata masing-masing dan REF (referensi) di bagian tulang, di sisi belakang cuping telinga Anda seperti yang ditunjukkan di diagram di atas.</p></li>
+</ol>
+</section>
+<section id="id5">
+<h4>Mengunggah kode<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>Hubungkan Arduino Uno ke laptop Anda menggunakan kabel USB (Type A to Type B). Salin tempel Sketsa Arduino yang diberikan di bawah di Arduino IDE v1.8.19 yang Anda unduh sebelumnya:</p>
+<p><span class="fab fa-github pst-color-primary"></span> <a class="reference external" href="https://github.com/upsidedownlabs/Eye-BioAmp-Arduino-Firmware/blob/main/2_EOGFilter/2_EOGFilter.ino">EOG Filter</a></p>
+<p>Pergi ke <code class="docutils literal notranslate"><span class="pre">tools</span></code> dari menu bar, pilih opsi <code class="docutils literal notranslate"><span class="pre">board</span></code> lalu pilih Arduino UNO. Di menu yang sama,
+pilih port COM tempat Arduino Uno Anda terhubung. Untuk mengetahui port COM yang benar,
+putuskan sambungan papan Anda dan buka kembali menu. Entri yang menghilang harus
+port COM yang benar. Sekarang unggah kode, &amp; buka serial plotter dari menu tools untuk memvisualisasikan
+sinyal.</p>
+<p>Setelah membuka serial plotter pastikan untuk memilih baud rate ke 115200.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Visit the complete documentation on how to <a class="reference internal" href="../../../software/bioamp/eye-bioamp-arduino-firmware/index.html#eye-bioamp-arduino-firmware-code-upload"><span class="std std-ref">How to upload the code</span></a>.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Pastikan laptop Anda tidak terhubung ke charger dan duduk 5m jauh dari peralatan AC apa pun untuk akuisisi sinyal terbaik.</p>
+</div>
+</section>
+<section id="memvisualisasikan-sinyal-eog">
+<h4>Memvisualisasikan sinyal EOG<a class="headerlink" href="#memvisualisasikan-sinyal-eog" title="Link to this heading">#</a></h4>
+<p>Untuk memvisualisasikan sinyal EOG, gunakan <a class="reference external" href="https://chords.upsidedownlabs.tech/">Chords Web</a> untuk visualisasi sinyal bio-potensial real-time yang cepat dan tanpa masalah langsung dari browser Anda, tanpa menginstal perangkat lunak apa pun.</p>
+<figure class="align-center" id="id19">
+<img alt="Memvisualisasikan sinyal EOG di Chords Web" src="../../../_images/chords_eog_signal.png" />
+<figcaption>
+<p><span class="caption-text">Memvisualisasikan sinyal EOG di Chords Web</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Gerakkan mata Anda atas-bawah atau kiri-kanan untuk melihat sinyal EOG Anda secara real-time di laptop Anda.</p>
+<figure class="align-center" id="id20">
+<img alt="Memvisualisasikan sinyal EOG di Arduino IDE v1.8.x" src="../../../_images/bioamp-exg-pill-eog.jpg" />
+<figcaption>
+<p><span class="caption-text">Memvisualisasikan sinyal EOG di Arduino IDE v1.8.x</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="langkah-8-mengukur-elektroensefalografi-eeg">
+<h3>Langkah 8: Mengukur Elektroensefalografi (EEG)<a class="headerlink" href="#langkah-8-mengukur-elektroensefalografi-eeg" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Elektroensefalografi (EEG) adalah metode pemantauan elektrofisiologis untuk merekam aktivitas listrik pada kulit kepala. Selama
+prosedur, elektroda yang terdiri dari cakram logam kecil dengan kawat tipis ditempelkan ke kulit kepala Anda. Elektroda mendeteksi muatan listrik kecil
+yang dihasilkan oleh aktivitas sel otak Anda yang kemudian diperkuat untuk muncul di layar komputer.
+Itu biasanya non-invasif, dengan elektroda ditempatkan di sepanjang kulit kepala.</p>
+</div>
+<p>Untuk merekam EEG dari bagian otak yang berbeda, Anda harus menempatkan elektroda sesuai dengan <a class="reference external" href="https://en.wikipedia.org/wiki/10%E2%80%9320_system_(EEG)">sistem 10-20 internasional untuk merekam EEG</a>.</p>
+<figure class="align-center">
+<img alt="../../../_images/10-20-system.png" src="../../../_images/10-20-system.png" />
+</figure>
+<section id="id6">
+<h4>Penempatan elektroda<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>Kami memiliki 2 opsi untuk mengukur sinyal EEG, baik menggunakan elektroda gel atau menggunakan band BioAmp Otak berbasis elektroda kering. Anda dapat mencoba keduanya satu per satu.</p>
+<ul class="simple">
+<li><p><strong>Menggunakan elektroda gel untuk merekam dari korteks prefrontal bagian otak:</strong></p></li>
+</ul>
+<figure class="align-center">
+<img alt="../../../_images/eeg_placement.png" src="../../../_images/eeg_placement.png" />
+</figure>
+<ol class="arabic simple">
+<li><p>Hubungkan kabel BioAmp ke elektroda gel.</p></li>
+<li><p>Kupas backing plastik dari elektroda.</p></li>
+<li><p>Tempatkan kabel IN+ dan IN- pada Fp1 dan Fp2 sesuai sistem 10-20 internasional &amp; REF (referensi) di bagian tulang, di sisi belakang cuping telinga Anda seperti yang ditunjukkan di atas.</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Menggunakan Band BioAmp Otak untuk merekam dari korteks prefrontal bagian otak:</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Hubungkan kabel BioAmp ke Band BioAmp Otak dengan cara sehingga IN+ dan IN- ditempatkan pada Fp1 dan Fp2 sesuai sistem 10-20 internasional.</p></li>
+<li><p>Dalam hal ini, REF (referensi) harus dihubungkan menggunakan elektroda gel. Jadi hubungkan referensi kabel BioAmp ke elektroda gel, kupas backing plastik dan tempatkan di bagian tulang, di sisi belakang cuping telinga Anda.</p></li>
+<li><p>Sekarang letakkan tetesan kecil gel elektroda pada elektroda kering (IN+ dan IN-) antara kulit dan bagian logam kabel BioAmp untuk mendapatkan hasil terbaik.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Kunjungi dokumentasi lengkap tentang cara <a class="reference internal" href="../../../guides/usage-guides/using-bioamp-bands/index.html#using-bioamp-bands"><span class="std std-ref">merakit dan menggunakan Band BioAmp</span></a> atau ikuti video youtube yang diberikan di bawah.</p>
+<p><strong>Tutorial tentang cara menggunakan band:</strong></p>
+<div class="video_wrapper align-center" style="padding-bottom: 56.250000%; padding-top: 30px; position: relative; text-align: center; width: 100%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/O6qp7teT-sM" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Demikian pula Anda dapat menggunakan band untuk merekam sinyal EEG dari korteks visual bagian otak dengan menempatkan elektroda kering pada O1 dan O2 alih-alih Fp1 dan Fp2. Semuanya akan tetap sama.</p>
+</div>
+</section>
+<section id="data-eeg-2-saluran">
+<h4>Data EEG 2-saluran<a class="headerlink" href="#data-eeg-2-saluran" title="Link to this heading">#</a></h4>
+<p>Untuk merekam data Elektroensefalografi (EEG) 2-saluran menggunakan dua BioAmp EXG Pill dalam hubungannya dengan Arduino Uno R4 Minima, setup perangkat keras yang cermat diperlukan.</p>
+<p><strong>Komponen yang Diperlukan</strong></p>
+<ol class="arabic simple">
+<li><p>Dua BioAmp EXG Pill</p></li>
+<li><p>Arduino Uno R4 minima</p></li>
+<li><p>Breadboard</p></li>
+<li><p>Kabel jumper</p></li>
+<li><p>Elektroda gel</p></li>
+</ol>
+<p><strong>Setup perangkat keras</strong></p>
+<p>Untuk mengatur perangkat keras untuk perekaman EEG 2-saluran menggunakan dua modul BioAmp EXG Pill dan Arduino Uno R4 Minima, mulailah dengan menghubungkan pin 5V dan GND Arduino ke rel daya breadboard, lalu pasok VCC dan GND dari breadboard ke kedua BioAmp EXG Pills. Hubungkan pin OUT dari EXG pill pertama ke pin analog Arduino A0 (saluran 1) dan OUT dari EXG Pill kedua ke pin analog A1 (saluran 2). Untuk penempatan elektroda, hubungkan IN+ dari setiap modul (kabel merah) ke situs perekaman EEG yang berbeda di dahi (mis. Fp1 dan Fp2), dan hubungkan IN- (kabel hitam) dan kedua pin REF (kabel kuning) dari EXG Pills ke elektroda referensi umum yang ditempatkan di lokasi netral seperti mastoid atau cuping telinga untuk memastikan akuisisi sinyal yang bersih dan sinkron.</p>
+<figure class="align-center">
+<img alt="Koneksi EEG 2 Saluran" src="../../../_images/channel-2-eeg-connection.png" />
+</figure>
+</section>
+<section id="id7">
+<h4>Mengunggah kode<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p>Hubungkan Arduino Uno ke laptop Anda menggunakan kabel USB (Type A to Type B). Salin tempel Sketsa Arduino yang diberikan di bawah di Arduino IDE v1.8.19 yang Anda unduh sebelumnya:</p>
+<p><span class="fab fa-github pst-color-primary"></span> <a class="reference external" href="https://github.com/upsidedownlabs/Brain-BioAmp-Arduino-Firmware/blob/main/02-eeg-filter/02-eeg-filter.ino">Kode Filter EEG</a></p>
+<p>Pergi ke <code class="docutils literal notranslate"><span class="pre">tools</span></code> dari menu bar, pilih opsi <code class="docutils literal notranslate"><span class="pre">board</span></code> lalu pilih Arduino UNO. Di menu yang sama,
+pilih port COM tempat papan pengembangan Anda terhubung. Untuk mengetahui port COM yang benar, layar
+putuskan sambungan papan Anda dan buka kembali menu. Entri yang menghilang harus
+port COM yang benar. Sekarang unggah kode.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Kunjungi dokumentasi lengkap tentang cara <a class="reference internal" href="../../../software/bioamp/brain-bioamp-arduino-firmware/index.html#brain-bioamp-arduino-firmware-code-upload"><span class="std std-ref">mengunggah kode</span></a>.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Pastikan laptop Anda tidak terhubung ke charger dan duduk 5m jauh dari peralatan AC apa pun untuk akuisisi sinyal terbaik.</p>
+</div>
+</section>
+<section id="memvisualisasikan-sinyal-eeg">
+<h4>Memvisualisasikan sinyal EEG<a class="headerlink" href="#memvisualisasikan-sinyal-eeg" title="Link to this heading">#</a></h4>
+<p>Untuk memvisualisasikan sinyal EEG, gunakan <a class="reference external" href="https://chords.upsidedownlabs.tech/">Chords Web</a> untuk visualisasi sinyal bio-potensial real-time yang cepat dan tanpa masalah langsung dari browser Anda, tanpa menginstal perangkat lunak apa pun.</p>
+<figure class="align-center" id="id21">
+<img alt="Memvisualisasikan sinyal EEG di Chords Web" src="../../../_images/chords_eeg_signal.png" />
+<figcaption>
+<p><span class="caption-text">Memvisualisasikan sinyal EEG di Chords Web</span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Sinyal yang dapat Anda lihat di layar sekarang berasal dari korteks prefrontal bagian otak Anda dan menyebar melalui semua lapisan ke permukaan kulit Anda.</p>
+<p>Anda telah menempatkan elektroda di dahi (Fp1 &amp; Fp2), BioAmp EXG Pill memperkuat sinyal tersebut sehingga kita dapat mendeteksinya dan akhirnya mengirimkannya ke ADC (Konverter Analog ke Digital) Arduino Uno Anda dan sinyal divisualisasikan di Chords Web.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Untuk memastikan Anda merekam sinyal berkualitas tinggi, lihat panduan detail di sini: <a class="reference internal" href="../../../guides/troubleshoot/recording_quality_eeg/index.html#recording-quality-eeg"><span class="std std-ref">Memecahkan Masalah Kualitas Sinyal EEG</span></a>.</p>
+</div>
+<p>Kami harap semuanya jelas sekarang dan Anda memahami bagaimana sinyal menyebar dari otak Anda ke layar laptop.</p>
+</section>
+</section>
+</section>
+<section id="glimpses-dari-versi-sebelumnya">
+<h2>Glimpses dari versi sebelumnya<a class="headerlink" href="#glimpses-dari-versi-sebelumnya" title="Link to this heading">#</a></h2>
+<p>BioAmp EXG Pill dapat digunakan dalam berbagai cara, video YouTube di bawah menunjukkan cara potensial menggunakan <code class="docutils literal notranslate"><span class="pre">v0.7</span></code> dari
+BioAmp EXG Pill.</p>
+<div class="video_wrapper align-center" style="padding-bottom: 56.250000%; padding-top: 30px; position: relative; text-align: center; width: 100%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/-G3z9fvQnuw" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div><p>Banyak yang meningkat dalam hal penolakan interferensi dan fleksibilitas dari <code class="docutils literal notranslate"><span class="pre">v0.7</span></code> ke <code class="docutils literal notranslate"><span class="pre">v1.0</span></code> dari BioAmp EXG Pill. Video YouTube
+di bawah menunjukkan perekaman ECG, EMG, EOG, dan EEG menggunakan <code class="docutils literal notranslate"><span class="pre">v1.0b</span></code> dari perangkat.</p>
+<div class="video_wrapper align-center" style="padding-bottom: 56.250000%; padding-top: 30px; position: relative; text-align: center; width: 100%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/z9-B9bHWuhg" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></section>
+<section id="aplikasi-dunia-nyata">
+<h2>Aplikasi Dunia Nyata<a class="headerlink" href="#aplikasi-dunia-nyata" title="Link to this heading">#</a></h2>
+<p>BioAmp EXG Pill sempurna untuk peneliti, pembuat, dan hobi yang mencari cara baru untuk sampling data biopotensial. It dapat
+digunakan untuk berbagai proyek biosensing menarik, termasuk:</p>
+<ul class="simple">
+<li><p>Deteksi congestive heart failure menggunakan CNN (ECG)</p></li>
+<li><p>Perhitungan variabilitas detak jantung untuk mendeteksi penyakit jantung (ECG)</p></li>
+<li><p>Kontrol lengan prostetik (servo) (EMG)</p></li>
+<li><p>Kontrol lengan robotik 3DOF (EMG)</p></li>
+<li><p>Kontroler permainan real-time (EOG)</p></li>
+<li><p>Deteksi kedipan mata (EOG)</p></li>
+<li><p>Mengambil foto dengan kedipan mata (EOG) dan banyak contoh lainnya.</p></li>
+</ul>
+</section>
+<section id="ide-proyek-tutorial">
+<h2>Ide proyek &amp; tutorial<a class="headerlink" href="#ide-proyek-tutorial" title="Link to this heading">#</a></h2>
+<p>Di bawah ini adalah beberapa proyek yang dibuat oleh siswa menggunakan BioAmp EXG Pill.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mt-4 sd-mb-4 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Mengontrol video game menggunakan gelombang otak (EEG)</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Controlling-Video-Game-Using-Brainwaves-EEG/"><span>https://www.instructables.com/Controlling-Video-Game-Using-Brainwaves-EEG/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Memvisualisasikan impuls listrik dari mata (EOG)</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Visualizing-Electrical-Impulses-of-Eyes-EOG-Using-/"><span>https://www.instructables.com/Visualizing-Electrical-Impulses-of-Eyes-EOG-Using-/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Merekam EEG dari korteks visual</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Recording-EEG-From-Visual-Cortex-of-Brain-Using-Bi/"><span>https://www.instructables.com/Recording-EEG-From-Visual-Cortex-of-Brain-Using-Bi/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Merekam EEG dari korteks prefrontal</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Recording-EEG-From-Pre-Frontal-Cortex-of-Brain-Usi/"><span>https://www.instructables.com/Recording-EEG-From-Pre-Frontal-Cortex-of-Brain-Usi/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Deteksi kedipan mata</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Eye-Blink-Detection-by-Recording-EOG-Using-BioAmp-/"><span>https://www.instructables.com/Eye-Blink-Detection-by-Recording-EOG-Using-BioAmp-/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Membuat detektor kantuk</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Drowsiness-Detector-by-Detecting-EOG-Signals-Using/"><span>https://www.instructables.com/Drowsiness-Detector-by-Detecting-EOG-Signals-Using/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Merekam ECG berkualitas publikasi</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Record-Publication-Grade-ECG-at-Your-Home-Using-Bi/"><span>https://www.instructables.com/Record-Publication-Grade-ECG-at-Your-Home-Using-Bi/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Mengukur detak jantung</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Measuring-Heart-Rate-Using-BioAmp-EXG-Pill/"><span>https://www.instructables.com/Measuring-Heart-Rate-Using-BioAmp-EXG-Pill/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Mendeteksi detak jantung</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Detecting-Heart-Beats-Using-BioAmp-EXG-Pill/"><span>https://www.instructables.com/Detecting-Heart-Beats-Using-BioAmp-EXG-Pill/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Merekam EMG berkualitas publikasi</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Recording-Publication-Grade-Muscle-Signals-Using-B/"><span>https://www.instructables.com/Recording-Publication-Grade-Muscle-Signals-Using-B/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Mendeteksi gerakan mata atas dan bawah</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Tracking-UP-and-DOWN-Movements-of-Eyes-Using-EOG/"><span>https://www.instructables.com/Tracking-UP-and-DOWN-Movements-of-Eyes-Using-EOG/</span></a></div>
+</div>
+</div>
+</div>
+<p>Ini adalah beberapa ide proyek tetapi kemungkinannya tak terbatas. Jadi buat proyek Human Computer Interface (HCI) dan
+Brain Computer Interface (BCI) Anda sendiri dan bagikan dengan kami di <a class="reference external" href="mailto:contact&#37;&#52;&#48;upsidedownlabs&#46;tech">contact<span>&#64;</span>upsidedownlabs<span>&#46;</span>tech</a>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

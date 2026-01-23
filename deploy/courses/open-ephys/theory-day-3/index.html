@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Teori Hari 3 &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/open-ephys/theory-day-3/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/courses/open-ephys/theory-day-3/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Teori Hari 4" href="../theory-day-4/index.html" />
+    <link rel="prev" title="Teori Hari 2" href="../theory-day-2/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Neuroscience Basics For Biopotential Signals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-1/index.html">Modul 1: Sistem Saraf Manusia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-2/index.html">Modul 2: Memahami potensial istirahat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-3/index.html">Modul 3 : Sifat Membran Pasif</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-4/index.html">Modul 4 : Potensial Aksi dan Propagasinya</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-5/index.html">Modul 5 : Sinaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-6/index.html">Modul 6: Sinyal Biopotensial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-7/index.html">Modul 7: EMG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-8/index.html">Module 8: ECG/EKG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-9/index.html">Module 9 : EEG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-10/index.html">Module 10 : EOG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-11/index.html">Module 11 : Conclusion</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extracellular Electrophysiology Acquisition</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Course Curriculum</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../theory-day-1/index.html">Teori Hari 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theory-day-2/index.html">Teori Hari 2</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Teori Hari 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theory-day-4/index.html">Teori Hari 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exday1-nokit.html">Latihan Hari ke-1: Tanpa Perangkat Keras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exday2-nokit.html">Latihan Hari 2: Tanpa Perangkat Keras</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Courses</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Course Curriculum</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Teori Hari 3</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <span class="target" id="theory-day-3"></span><section id="teori-hari-3">
+<h1>Teori Hari 3<a class="headerlink" href="#teori-hari-3" title="Link to this heading">#</a></h1>
+<nav class="contents local" id="daftar-isi">
+<p class="topic-title">Daftar Isi</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#penguat-diferensial-menghilangkan-noise-bersama" id="id2">Penguat diferensial menghilangkan noise bersama</a></p>
+<ul>
+<li><p><a class="reference internal" href="#referensi" id="id3">Referensi</a></p></li>
+<li><p><a class="reference internal" href="#penguat-diferensial" id="id4">Penguat Diferensial</a></p></li>
+<li><p><a class="reference internal" href="#talk" id="id5">Talk</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#penguat-instrumentasi" id="id6">Penguat Instrumentasi</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id1" id="id7">Talk</a></p></li>
+<li><p><a class="reference internal" href="#mengapa-kita-membutuhkan-penguat-instrumentasi" id="id8">Mengapa kita membutuhkan penguat instrumentasi?</a></p></li>
+<li><p><a class="reference internal" href="#common-mode-rejection-ratio-cmrr" id="id9">Common Mode Rejection Ratio (CMRR)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#mengapa-kita-membutuhkan-elektroda-ground" id="id10">Mengapa kita membutuhkan elektroda ground?</a></p></li>
+<li><p><a class="reference internal" href="#low-pass-dan-high-pass-filtering" id="id11">Low-pass dan High-pass Filtering</a></p>
+<ul>
+<li><p><a class="reference internal" href="#filter-low-pass" id="id12">Filter low-pass</a></p></li>
+<li><p><a class="reference internal" href="#filter-high-pass" id="id13">Filter high-pass</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Sebuah sistem akuisisi harus:</p>
+<ul class="simple">
+<li><p><em>Mendeteksi</em> perubahan perbedaan potensial listrik</p></li>
+<li><p><em>Mentransfer</em> sinyal ini secara akurat ke keluaran sistem akuisisi</p></li>
+<li><p><strong>Membedakan sinyal biologis yang penting dari sumber gangguan listrik lainnya</strong></p></li>
+</ul>
+<section id="penguat-diferensial-menghilangkan-noise-bersama">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Penguat diferensial menghilangkan noise bersama</a><a class="headerlink" href="#penguat-diferensial-menghilangkan-noise-bersama" title="Link to this heading">#</a></h2>
+<section id="referensi">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Referensi</a><a class="headerlink" href="#referensi" title="Link to this heading">#</a></h3>
+<p>Kita hidup di dunia yang (secara listrik) sangat bising. Untuk mengurangi sebagian gangguan ini dari perekaman kita, kita dapat menggunakan titik referensi. Titik ini bisa berupa elektroda lain di otak atau sekrup pada tengkorak hewan. Pilihan referensi ini sangat penting untuk perekaman Anda: penguat akan menghasilkan keluaran berupa selisih antara elektroda perekaman dan titik referensi. Artinya, penguat akan berusaha menghilangkan sinyal apa pun yang sama-sama muncul pada keduanya.</p>
+<p>Jika elektroda perekaman menangkap noise 50 Hz yang dihasilkan oleh listrik PLN di dinding, Anda ingin penguat menghilangkannya, sehingga sebaiknya menggunakan titik referensi yang juga menangkap noise tersebut. Namun, jika referensi Anda menangkap sinyal yang justru Anda inginkan, maka penguat juga akan menghilangkannya. Oleh karena itu, untuk memilih referensi yang tepat, Anda harus menentukan apa yang dianggap sebagai noise dalam eksperimen Anda.</p>
+</section>
+<section id="penguat-diferensial">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Penguat Diferensial</a><a class="headerlink" href="#penguat-diferensial" title="Link to this heading">#</a></h3>
+</section>
+<section id="talk">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Talk</a><a class="headerlink" href="#talk" title="Link to this heading">#</a></h3>
+<center><iframe width="560" height="340" src="https://www.youtube.com/embed/91SVSdoEFzU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center><p>Penguatan perbedaan potensial antara elektroda pengukuran dan elektroda referensi (dalam orde mikrovolt) merupakan langkah yang sangat penting. Hal ini dilakukan dengan penguat diferensial yang memperkuat perbedaannya dan menolak noise <em>common-mode</em> (yaitu noise yang identik pada elektroda perekaman dan referensi, biasanya disebabkan oleh artefak gerakan dan kopling kapasitif tubuh serta kabel elektroda dengan medan listrik jaringan listrik (Nunez &amp; Srinivasan, 2009)).</p>
+</section>
+</section>
+<section id="penguat-instrumentasi">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Penguat Instrumentasi</a><a class="headerlink" href="#penguat-instrumentasi" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Talk</a><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<br>
+<center><iframe width="560" height="340" src="https://www.youtube.com/embed/uPcv0gBjqbA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<br></section>
+<section id="mengapa-kita-membutuhkan-penguat-instrumentasi">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Mengapa kita membutuhkan penguat instrumentasi?</a><a class="headerlink" href="#mengapa-kita-membutuhkan-penguat-instrumentasi" title="Link to this heading">#</a></h3>
+<p>Mengapa kita tidak bisa menggunakan satu penguat operasional saja untuk mendapatkan sinyal yang baik?</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://tinyurl.com/y4aps4r2"><img alt="../../../_images/op_amp_spikes_ref.png" src="../../../_images/op_amp_spikes_ref.png" />
+</a>
+</figure>
+<p>Untuk membuat rangkaian ini menjadi diferensial, kita memerlukan pembagi tegangan. Namun, pembagi ini justru menghubungkan sinyal yang sangat lemah ke ground! Selain itu, ketidaksesuaian impedansi input antara ‘+’ dan ‘-’ akan merusak sinyal jika terdapat banyak noise common-mode.</p>
+<p>Dalam praktiknya, selalu ada perbedaan antara resistor-resistor ini; mereka tidak dapat diproduksi dengan nilai yang benar-benar sama.</p>
+<p>Mengapa? Karena resistor ini <em>juga merupakan elektroda Anda</em>. Jika Anda bekerja dengan elektroda, apakah Anda pernah mengukur impedansinya? Seberapa mirip nilainya? Jika resistor-resistor ini berbeda sebesar variasi elektroda Anda, rangkaian ini tidak akan mampu menghilangkan noise common-mode dan memperkuat spike kita.</p>
+<p>Solusinya adalah menggunakan <em>tiga</em> penguat operasional:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/three_op_amps.png"><img alt="../../../_images/three_op_amps.png" height="228" src="../../../_images/three_op_amps.png" width="568" />
+</a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Berikut tampilannya di simulator:
+|</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://tinyurl.com/yjxekrv5"><img alt="dua penguat operasional dengan umpan balik negatif menerima elektroda pengukuran dan elektroda referensi. Keluaran keduanya diteruskan ke penguat operasional ketiga dengan umpan balik negatif untuk membentuk penguat instrumentasi." src="../../../_images/instrumentation_amp_simulator.png" />
+</a>
+</figure>
+<section id="resistor-gain">
+<h4>Resistor Gain<a class="headerlink" href="#resistor-gain" title="Link to this heading">#</a></h4>
+<p>Tegangan di kedua sisi resistor gain bersifat tetap karena penguat operasional menjaganya tetap stabil. Jika kita memiliki tegangan yang sama dan nilai RGain lebih kecil, maka arus yang mengalir melalui resistor menjadi lebih besar, dan akibatnya arus melalui resistor umpan balik pada dua penguat buffer juga meningkat.</p>
+<p>Resistor-resistor tersebut bernilai tetap: sekarang kita memiliki arus yang lebih besar untuk resistansi yang sama, sehingga terjadi penurunan tegangan yang lebih besar. Kedua penguat buffer harus bekerja lebih keras untuk mengatasi penurunan tegangan ini dan menghasilkan tegangan keluaran yang lebih ekstrem.</p>
+<p>Dengan menurunkan nilai RGain, kita pada dasarnya membuat perbedaan antara input ke penguat akhir menjadi lebih besar, sehingga meningkatkan gain dari penguat instrumentasi.</p>
+</section>
+</section>
+<section id="common-mode-rejection-ratio-cmrr">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Common Mode Rejection Ratio (CMRR)</a><a class="headerlink" href="#common-mode-rejection-ratio-cmrr" title="Link to this heading">#</a></h3>
+<p>Ketika impedansi input dari penguat diferensial tidak cocok, sebagian sinyal input yang seharusnya sama pada kedua input dan dibatalkan justru muncul pada keluaran.</p>
+<p>Cara umum untuk memodelkan seberapa baik sebuah penguat mengurangkan satu input dari input lainnya adalah sebagai berikut: kita mendefinisikan setiap input (+ dan -) sebagai penjumlahan antara tegangan individual (V1 atau V2) dan tegangan yang sama pada keduanya.</p>
+<p>Pada lengan kita atau otak hewan, tegangan bersama ini (Vc) dapat berupa noise listrik atau aktivitas otot yang tidak kita inginkan dan ingin kita buang. Dalam hal ini, inputnya adalah:</p>
+<div class="math notranslate nohighlight">
+\[V+ = V1 + Vc\]</div>
+<div class="math notranslate nohighlight">
+\[V- = V2 + Vc\]</div>
+<p>(Dalam beberapa contoh penguat diferensial, V2 adalah ground 0V, yang merupakan nilai yang sepenuhnya valid).</p>
+<p>Dalam penguat diferensial <strong>ideal</strong>, keluaran seharusnya merupakan selisih dari kedua input yang diperkuat oleh suatu faktor:</p>
+<div class="math notranslate nohighlight">
+\[Vout = Ad (V+ - V-)\]</div>
+<div class="math notranslate nohighlight">
+\[= Ad ((V1+Vc)-(V2+Vc))\]</div>
+<div class="math notranslate nohighlight">
+\[= Ad (V1-V2)\]</div>
+<p>Di sini, sinyal bersama yang tidak diinginkan saling menghilangkan dan hanya sinyal yang kita inginkan yang diperkuat.</p>
+<p>Namun, penguat <strong>nyata</strong> berperilaku berbeda. Seperti yang telah kita lihat, ketidaksempurnaan kecil dapat menyebabkan sebagian tegangan bersama ikut diperkuat. Dalam kasus ini, keluaran penguat nyata menjadi:</p>
+<div class="math notranslate nohighlight">
+\[Vout = Ad (V1 - V2 ) + Ac * Vc\]</div>
+<p>Selain gain diferensial, muncul istilah baru yaitu ‘Ac’ atau gain bersama, yang memperkuat sinyal yang sama pada kedua input.</p>
+<p>Tentu saja, kita menginginkan gain diferensial setinggi mungkin dan gain bersama serendah mungkin (idealnya Ac = 0). Perbandingan antara kedua gain ini menunjukkan seberapa baik penguat hanya memperkuat sinyal diferensial. Ini disebut Common Mode Rejection Ratio (CMRR), yang didefinisikan sebagai:</p>
+<div class="math notranslate nohighlight">
+\[CMRR = \frac{Ad}{Ac}\]</div>
+<p>atau</p>
+<div class="math notranslate nohighlight">
+\[CMRR = 20log\frac{Ad}{Ac}\]</div>
+<p>jika diukur dalam desibel.</p>
+<p>Semakin tinggi CMRR, semakin baik penguat dalam menghilangkan sinyal yang sama pada kedua input.</p>
+<p>Penguat instrumentasi tidak sepenuhnya kebal terhadap noise input bersama. Mereka adalah rangkaian nyata dan terdapat banyak jalur di mana sinyal bersama dapat bocor ke keluaran. Namun, mereka memiliki CMRR yang sangat tinggi.</p>
+<p>Sebagai perbandingan, penguat operasional LM358 memiliki CMRR sebesar 80 dB, sedangkan penguat instrumentasi memiliki CMRR sebesar 120 dB, yaitu 100 kali lebih tinggi! (Terdengar kurang mengesankan? Ingat bahwa desibel bersifat logaritmik; perbedaan antara 80 dan 120 dB dalam hal suara setara dengan perbedaan antara suara toilet disiram dan mesin jet).</p>
+</section>
+</section>
+<section id="mengapa-kita-membutuhkan-elektroda-ground">
+<span id="refgroundref"></span><h2><a class="toc-backref" href="#id10" role="doc-backlink">Mengapa kita membutuhkan elektroda ground?</a><a class="headerlink" href="#mengapa-kita-membutuhkan-elektroda-ground" title="Link to this heading">#</a></h2>
+<p>Saat kita membangun rangkaian EMG, kita akan menggunakan tiga elektroda: pengukuran (+), referensi (-), dan ground. Mengapa kita memerlukan elektroda ground (atau pin ground atau sekrup) padahal kita sudah memiliki input ‘+’ dan ‘-’? Ini cukup rumit, dan ada beberapa cara untuk memahaminya.</p>
+<br>
+<center><iframe width="560" height="340" src="https://www.youtube.com/embed/YE2cdXtzlF4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+<br><p>Bayangkan Anda baru saja berjalan di atas karpet dan tubuh Anda bermuatan hingga 10 kV. Sekarang Anda ingin melakukan pengukuran diferensial EMG (atau EEG). Secara teori, ini seharusnya bekerja berkat penolakan common-mode. Namun, ingat rangkaian di dalam penguat instrumentasi:</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://tinyurl.com/yjxekrv5"><img alt="../../../_images/instrumentation_amp_simulator.png" src="../../../_images/instrumentation_amp_simulator.png" />
+</a>
+</figure>
+<p>Input ‘-’ dari dua penguat input terhubung ke ground melalui sejumlah resistor. Jika tubuh Anda bermuatan 10 kV terhadap ground, kita meminta penguat ini menangani perbedaan tegangan yang sangat besar, dan mereka akan mengalami saturasi.</p>
+<p>Ingat rasio penolakan common-mode. Jika penguat kita mampu menolak 99,99% sinyal common-mode, tetapi 0,01% masih lolos, dalam skala volt hal ini masih cukup untuk mencegah kita mendeteksi spike mikrovolt.</p>
+<p>Dengan menempelkan elektroda ground ke tubuh dan menghubungkannya ke ground sistem akuisisi, kita membawa tubuh ke 0V dari sudut pandang sistem akuisisi. Noise yang tersisa masih ada, tetapi perbedaan tegangannya jauh lebih kecil.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Masalah terakhir yang terkait adalah bahwa keluaran sistem ini relatif terhadap ground. Pada suatu titik, Anda ingin menghubungkannya ke PC, yang berada pada level ground.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Secara praktis, semua ini berarti kita ingin meng-ground-kan subjek sebaik mungkin.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Satu detail tambahan: ground tidak selalu berarti bumi. Dalam banyak kasus, ground hanyalah rangkaian tertentu yang kita perlakukan sebagai 0 dan mampu menyerap atau menyuplai arus besar.</p>
+</section>
+<section id="low-pass-dan-high-pass-filtering">
+<span id="reffilter"></span><h2><a class="toc-backref" href="#id11" role="doc-backlink">Low-pass dan High-pass Filtering</a><a class="headerlink" href="#low-pass-dan-high-pass-filtering" title="Link to this heading">#</a></h2>
+<p>Filter digunakan untuk menghilangkan frekuensi tertentu dari data kita. Filter dapat diterapkan pada perangkat keras maupun perangkat lunak. Biasanya, filtering perangkat keras digunakan untuk meningkatkan rasio sinyal terhadap noise dan mencegah aliasing sinyal.</p>
+<p>Oleh karena itu, filter high-pass menghilangkan komponen DC besar dan sinyal frekuensi rendah yang tidak diinginkan, sementara filter low-pass mencegah sinyal frekuensi tinggi melewati batas Nyquist.</p>
+<section id="filter-low-pass">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Filter low-pass</a><a class="headerlink" href="#filter-low-pass" title="Link to this heading">#</a></h3>
+<p>Filter ini memblokir frekuensi tinggi. Ini pada dasarnya adalah pembagi tegangan dengan komponen yang bergantung pada frekuensi.</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://www.falstad.com/circuit/e-filt-lopass.html"><img alt="resistor dengan kapasitor ke ground membentuk filter low-pass" height="171" src="../../../_images/low_pass.png" width="426" />
+</a>
+</figure>
+</section>
+<section id="filter-high-pass">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Filter high-pass</a><a class="headerlink" href="#filter-high-pass" title="Link to this heading">#</a></h3>
+<p>Ini menggunakan prinsip yang sama.</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://www.falstad.com/circuit/e-filt-hipass.html"><img alt="kapasitor dengan resistor ke ground membentuk filter high-pass" height="200" src="../../../_images/high_pass.png" width="497" />
+</a>
+</figure>
+<p>Filter ini disebut filter RC karena dibangun dari resistor (R) dan kapasitor (C). Karena hanya ada satu pasang, filter ini disebut single-pole.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

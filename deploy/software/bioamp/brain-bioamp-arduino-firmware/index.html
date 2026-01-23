@@ -1,0 +1,910 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Brain (EEG) BioAmp Arduino Firmware &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'software/bioamp/brain-bioamp-arduino-firmware/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/software/bioamp/brain-bioamp-arduino-firmware/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Research" href="../../../research/index.html" />
+    <link rel="prev" title="Firmware Arduino BioAmp Jantung (ECG)" href="../heart-bioamp-arduino-firmware/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Chords</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-web/index.html">Chords-Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-python/index.html">Chords-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-lsl-connector/index.html">Chords-LSL-Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-lsl-visualizer/index.html">Chords-LSL-Visualizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-java/index.html">Chords-Java</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../tools/npg-lite-flasher/index.html">NPG Lite Flasher</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">BioAmp Software</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-arduino-firmware/index.html">Muscle (EMG) BioAmp Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eye-bioamp-arduino-firmware/index.html">Firmware Arduino BioAmp Mata (EOG)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../heart-bioamp-arduino-firmware/index.html">Firmware Arduino BioAmp Jantung (ECG)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Brain (EEG) BioAmp Arduino Firmware</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Software</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Brain (EEG) BioAmp Arduino Firmware</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="brain-eeg-bioamp-arduino-firmware">
+<span id="brain-bioamp-arduino-firmware"></span><h1>Brain (EEG) BioAmp Arduino Firmware<a class="headerlink" href="#brain-eeg-bioamp-arduino-firmware" title="Link to this heading">#</a></h1>
+<section id="apa-itu-elektroensefalografi-eeg">
+<h2>Apa itu Elektroensefalografi (EEG)?<a class="headerlink" href="#apa-itu-elektroensefalografi-eeg" title="Link to this heading">#</a></h2>
+<p>Elektroensefalografi (EEG) <a class="reference external" href="https://www.mayoclinic.org/tests-procedures/eeg/about/pac-20393875">[1]</a>
+adalah metode untuk merekam elektrogram dari aktivitas listrik spontan
+otak. Sinyal bio potensial yang terdeteksi oleh EEG telah terbukti mewakili potensial pascasinapsis dari
+neuron piramidal di neokorteks dan alokorteks. Biasanya non-invasif, dengan elektroda EEG
+ditempatkan di sepanjang kulit kepala (umumnya disebut “EEG kulit kepala”) menggunakan sistem Internasional 10–20,
+atau variasinya. Interpretasi klinis rekaman EEG paling sering dilakukan dengan inspeksi visual dari
+pelacakan atau analisis EEG kuantitatif</p>
+<p>Untuk mengetahui lebih lanjut tentang EEG: <a class="reference external" href="https://en.wikipedia.org/wiki/Electroencephalography">https://en.wikipedia.org/wiki/Electroencephalography</a></p>
+<p>Sistem Internasional 10–20 adalah metode standar untuk menempatkan elektroda EEG di kulit kepala sehubungan
+dengan korteks serebral otak. Posisi elektroda diberi label dengan huruf (seperti Fp, F, T, C, P, O, dan Z untuk
+garis tengah) dan angka (ganjil untuk hemisfer kiri, genap untuk hemisfer kanan). “10” dan “20” merujuk pada persentase jarak
+antara elektroda berdasarkan ukuran kepala. Titik referensi kunci seperti nasion, inion, dan titik preaurikular
+digunakan untuk penempatan yang akurat. Sistem ini membantu memastikan rekaman EEG yang konsisten, dapat diulang, dan dapat dibandingkan. Versi yang lebih detail seperti sistem 10–10 atau 10–5 memberikan resolusi yang lebih tinggi dengan menambahkan elektroda ekstra.</p>
+<p>Untuk mengetahui lebih lanjut tentang sistem Internasional 10–20 <a class="reference external" href="https://en.wikipedia.org/wiki/10%E2%80%9320_system_(EEG)">kunjungi di sini</a>.</p>
+<section id="untuk-siapa-ini">
+<h3>Untuk siapa ini?<a class="headerlink" href="#untuk-siapa-ini" title="Link to this heading">#</a></h3>
+<p>Siapa pun yang menggunakan Hardware BioAmp untuk pertama kali — baik Anda siswa, hobiis, pendidik atau hanya penasaran. Tidak perlu pengalaman!</p>
+<p>👉 Untuk mempelajari Hardware BioAmp kami, lihat <a class="reference internal" href="../../../hardware/index.html#upsidedownlabs-hardware-home"><span class="std std-ref">halaman hardware</span></a>.</p>
+</section>
+</section>
+<section id="step-by-step-setup-guide">
+<h2>Step-by-Step Setup Guide<a class="headerlink" href="#step-by-step-setup-guide" title="Link to this heading">#</a></h2>
+<p>Dengan hardware di tangan Anda, Anda hanya beberapa langkah lagi untuk membuka potensinya sepenuhnya — mari siapkan perangkat lunaknya!</p>
+<section id="step-1-downloading-github-repository-for-hardware">
+<h3>Step 1: Downloading GitHub Repository for Hardware<a class="headerlink" href="#step-1-downloading-github-repository-for-hardware" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ini adalah kode yang dibutuhkan Arduino Anda untuk membaca sinyal Otak (EEG).</p></li>
+<li><p>Anda memiliki dua cara mudah untuk mendapatkan kode yang akan membantu Anda membaca sinyal EEG Anda:</p></li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Cukup Unduh (direkomendasikan untuk pemula)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Kunjungi halaman GitHub: <a class="reference external" href="https://github.com/upsidedownlabs/Brain-BioAmp-Arduino-Firmware">Brain BioAmp Arduino Firmware</a></p></li>
+<li><p class="sd-card-text">Klik tombol “<strong>Code</strong>” hijau &gt; Download ZIP</p></li>
+<li><p class="sd-card-text">Ekstrak folder dan simpan di tempat yang mudah ditemukan.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Kloning menggunakan Git (untuk pengguna yang mahir teknologi)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul>
+<li><p class="sd-card-text">Instal Git untuk OS Anda: <a class="reference external" href="https://git-scm.com/">https://git-scm.com/</a></p></li>
+<li><p class="sd-card-text">Klon repositori GitHub ini menggunakan</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/upsidedownlabs/Brain-BioAmp-Arduino-Firmware
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</details></section>
+<section id="step-2-application-required">
+<h3>Step 2: Application Required<a class="headerlink" href="#step-2-application-required" title="Link to this heading">#</a></h3>
+<p>Sebelum mulai menggunakan kit, silakan unduh atau buka yang berikut:</p>
+<ol class="arabic simple">
+<li><p><strong>Arduino IDE</strong></p>
+<ul class="simple">
+<li><p>Kami membutuhkan Arduino IDE untuk mengunggah kode ke papan Arduino Anda.</p></li>
+<li><p>Tautan untuk mengunduh IDE untuk OS Anda: <a class="reference external" href="https://www.arduino.cc/en/software">https://www.arduino.cc/en/software</a></p></li>
+</ul>
+</li>
+<li><p><strong>Situs Web Chords</strong></p>
+<ul class="simple">
+<li><p>Kami akan menggunakan Situs Web Chords untuk memvisualisasikan Sinyal Otak!</p></li>
+<li><p>Buka situs web ini: <a class="reference external" href="https://chords.upsidedownlabs.tech">Chords Web</a></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="step-3-connect-your-hardware">
+<span id="brain-bioamp-arduino-firmware-connect-hardware"></span><h3>Step 3: Connect Your Hardware<a class="headerlink" href="#step-3-connect-your-hardware" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Hubungkan Hardware ke Arduino UNO menggunakan kabel jumper.</p></li>
+<li><p>Ikuti diagram wiring yang tepat dari <a class="reference internal" href="../../../hardware/index.html#upsidedownlabs-hardware-home"><span class="std std-ref">dokumentasi hardware</span></a> dari hardware yang Anda gunakan.</p></li>
+<li><p>Hardware yang kompatibel dengan Firmware Brain BioAmp:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../hardware/bioamp/bioamp-exg-pill/index.html#bioamp-exg-pill"><span class="std std-ref">Bioamp EXG Pill</span></a></p></li>
+</ul>
+</li>
+<li><p>Untuk program <code class="docutils literal notranslate"><span class="pre">Fixed</span> <span class="pre">Sampling</span></code> dan <code class="docutils literal notranslate"><span class="pre">EEG</span> <span class="pre">Filter</span></code> papan Arduino apa pun dapat digunakan.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Untuk eksperimen yang diberikan di bawah, Anda akan memerlukan : <strong>Papan Arduino UNO R4 Minima / WiFi</strong></p>
+</div>
+<p>Itu seperti merakit puzzle!</p>
+</section>
+<section id="step-4-persiapan-kulit-dan-penempatan-elektroda">
+<h3>Step 4: Persiapan Kulit dan Penempatan Elektroda<a class="headerlink" href="#step-4-persiapan-kulit-dan-penempatan-elektroda" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Menggunakan Elektroda Gel:</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>Siapkan kulit Anda</strong></p>
+<ul class="simple">
+<li><p>Pilih area di mana Anda akan menempatkan elektroda.</p></li>
+<li><p>Bersihkan kulit menggunakan <strong>swab alkohol</strong> atau <strong>Gel Nuprep</strong> untuk menghilangkan minyak dan sel mati — ini meningkatkan kejelasan sinyal.</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Butuh bantuan dengan persiapan kulit? Lihat panduan lengkap di sini: <a class="reference internal" href="../../../guides/usage-guides/skin-preparation/index.html#skin-preparation"><span class="std std-ref">Panduan Persiapan Kulit</span></a></p></li>
+<li><p>Penempatan elektroda yang dijelaskan <strong>bukan universal</strong>. Selalu rujuk ke bagian <strong>“Hubungkan Hardware Anda”</strong> untuk persyaratan spesifik eksperimen Anda</p></li>
+</ul>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Untuk <strong>EEG Prefrontal (untuk aktivitas otak frontal)</strong>, hubungkan kabel ke elektroda, lalu tempelkan elektroda ke kulit (lihat diagram di bawah):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IN+</span></code> (kabel merah): Tempatkan di tengah dahi (di atas jembatan hidung).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN–</span></code> (kabel hitam): Tempatkan di sisi kiri dahi (di atas alis kiri).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REF</span></code> (kabel kuning/putih): Tempatkan di belakang telinga (area tulang).</p></li>
+</ul>
+</li>
+<li><p>Untuk <strong>EEG Korteks Visual (untuk aktivitas belakang otak)</strong>, hubungkan kabel ke elektroda, lalu tempelkan elektroda ke kulit (lihat diagram di bawah):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IN+</span></code> (kabel merah): Tempatkan di sisi kanan lobus oksipital (belakang kepala).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN–</span></code> (kabel hitam): Tempatkan di sisi kiri lobus oksipital.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REF</span></code> (kabel kuning/putih): Tempatkan di belakang telinga (seperti di atas).</p></li>
+</ul>
+</li>
+</ol>
+<p>Pastikan sisi lengket elektroda menyentuh kulit Anda dengan kuat.</p>
+<figure class="align-center" id="id6">
+<img alt="Penempatan EEG" src="../../../_images/skin-prep-eeg.png" />
+<figcaption>
+<p><span class="caption-text">Penempatan EEG</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Menggunakan BioAmp Band:</strong> Untuk BioAmp Band, rujuk ke dokumentasi berikut: <a class="reference internal" href="../../../guides/usage-guides/using-bioamp-bands/index.html#using-bioamp-bands"><span class="std std-ref">Menggunakan BioAmp Bands</span></a></p></li>
+</ul>
+</section>
+<section id="step-5-cara-mengunggah-kode-ke-arduino">
+<span id="brain-bioamp-arduino-firmware-code-upload"></span><h3>Step 5: Cara Mengunggah Kode ke Arduino<a class="headerlink" href="#step-5-cara-mengunggah-kode-ke-arduino" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Buka folder yang Anda unduh: <strong>Brain-BioAmp-Arduino-Firmware</strong></p></li>
+<li><p>Di dalamnya, Anda akan menemukan beberapa subfolder.</p></li>
+<li><p>Pilih folder untuk eksperimen yang ingin Anda coba. (Untuk pemula: mulai dengan yang pertama dan lanjutkan langkah demi langkah melalui yang lain untuk pengalaman belajar yang lebih baik )</p></li>
+<li><p>Di dalam folder itu, buka file <strong>.ino</strong> menggunakan <strong>Arduino IDE</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Sebagai contoh:</p>
+<ul>
+<li><p>Untuk mencoba sinyal mentah: buka <code class="docutils literal notranslate"><span class="pre">01-fixed-sampling.ino</span></code></p></li>
+<li><p>Untuk mencoba sinyal yang difilter: buka <code class="docutils literal notranslate"><span class="pre">02-eeg-filter.ino</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Anda akan menemukan semua eksperimen yang tercantum di bawah, masing-masing dengan <a class="reference internal" href="#brain-bioamp-arduino-firmware-exp-list"><span class="std std-ref">instruksi langkah demi langkah</span></a>. Gulir ke yang sedang Anda kerjakan untuk memulai dengan setup yang tepat.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Hubungkan Arduino Anda</p>
+<ul class="simple">
+<li><p>Hubungkan papan Arduino ke port USB komputer Anda menggunakan kabel USB.</p></li>
+<li><p>Tunggu sistem operasi menginstal driver USB yang diperlukan.</p></li>
+</ul>
+</li>
+<li><p>Di Arduino IDE:</p>
+<ul class="simple">
+<li><p>Pergi ke <strong>Tools &gt; Board &gt; Arduino UNO</strong> pilih model papan Anda (misalnya, “Arduino UNO R4”)</p></li>
+<li><p>Pergi ke <strong>Tools &gt; Port &gt; [pilih port COM yang benar]</strong></p></li>
+</ul>
+</li>
+<li><p>Verifikasi (Kompilasi) Sketch</p>
+<ul class="simple">
+<li><p>Klik tombol <strong>“✔️ Verify”</strong> (atau tekan <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">R</span></code>).</p></li>
+<li><p>Tunggu <strong>“Done compiling.”</strong> Jika muncul kesalahan, periksa kembali Anda membuka file .ino yang benar.</p></li>
+</ul>
+</li>
+<li><p>Klik tombol <strong>✓</strong> Upload (atau tekan <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">U</span></code>) untuk mengirim kode ke Arduino.</p>
+<ul class="simple">
+<li><p>IDE akan mengkompilasi lagi dan kemudian mengirim kode ke papan Anda.</p></li>
+<li><p>LED onboard yang diberi label <strong>“L”</strong> mungkin berkedip selama upload. Ketika Anda melihat <strong>“Done uploading”</strong>, firmware baru sedang berjalan.</p></li>
+</ul>
+</li>
+<li><p>Buka Serial Monitor dan Serial Plotter (Opsional)</p>
+<ul class="simple">
+<li><p>Untuk serial monitor dan plotter, kami merekomendasikan menggunakan <a class="reference external" href="https://chords.upsidedownlabs.tech">Chords Web</a>. Namun, jika Anda belajar mengembangkan, Anda mungkin juga menemukan opsi ini berguna.</p></li>
+<li><p>Untuk Serial Monitor: Di IDE, klik <strong>Tools → Serial Monitor</strong> (atau tekan <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">M</span></code>).</p></li>
+<li><p>Pastikan baud rate di kanan bawah Serial Monitor disetel ke <code class="docutils literal notranslate"><span class="pre">115200</span></code> (atau apa pun yang ditentukan oleh Serial.begin(115200); sketch).</p></li>
+<li><p>Anda harus mulai melihat baris-baris angka. Itu adalah pembacaan Anda.</p></li>
+<li><p>Untuk Serial Plotter: Di IDE, klik <strong>Tools → Serial Plotter</strong>.</p></li>
+<li><p>Anda harus mulai melihat plotting grafik dan memvisualisasikan gelombang.</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Ingat untuk menutup <strong>Serial Monitor &amp; Serial Plotter</strong> di <strong>Arduino IDE</strong> sebelum memulai Chords Visualizer.</p></li>
+</ul>
+</div>
+</section>
+<section id="step-6-visualisasikan-sinyal-otak-anda">
+<span id="brain-bioamp-arduino-firmware-visualize-signals"></span><h3>Step 6: Visualisasikan Sinyal Otak Anda!<a class="headerlink" href="#step-6-visualisasikan-sinyal-otak-anda" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Buka situs web ini: <a class="reference external" href="https://chords.upsidedownlabs.tech">https://chords.upsidedownlabs.tech</a></p></li>
+<li><p>Klik: Visualize Now → lalu pilih Serial Wizard.</p></li>
+<li><p>Pilih port COM yang benar (sama dari Arduino IDE).</p></li>
+<li><p>Klik Connect.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Ingat untuk menutup <strong>Serial Monitor</strong> di <strong>Arduino IDE</strong> sebelum memulai Chords Visualizer.</p></li>
+<li><p>Selalu <strong>cabut charger laptop</strong> saat testing. Mengapa? Pengisian dapat memperkenalkan noise 50 Hz yang mempengaruhi sinyal.</p></li>
+</ul>
+</div>
+<p>🎉 Sekarang duduk diam dan biarkan pikiran Anda mengembara—atau berkedip dan geser pandangan Anda—Anda akan melihat gelombang EEG real-time di layar!</p>
+</section>
+</section>
+<section id="mari-jelajahi-semua-eksperimen-langkah-demi-langkah">
+<span id="brain-bioamp-arduino-firmware-exp-list"></span><h2>Mari jelajahi semua eksperimen langkah demi langkah<a class="headerlink" href="#mari-jelajahi-semua-eksperimen-langkah-demi-langkah" title="Link to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">1. Fixed Sampling</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>1. Tujuan &amp; Gambaran Program</strong></p>
+<p class="sd-card-text">Sketch <strong>Fixed Sampling</strong> memperoleh data EEG/biopotensial mentah dari ADC Brain‑BioAmp pada
+tingkat konstan yang ditentukan pengguna. Dengan menggunakan interupsi timer hardware daripada loop delay,
+ini menjamin sampel yang terpisah secara seragam—kritis untuk filtering digital yang akurat, analisis spektral,
+atau pipeline machine-learning hilir.</p>
+<p class="sd-card-text"><strong>2. Cara Kerjanya</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Inisialisasi Pin Sensor</p>
+<ul class="simple">
+<li><p class="sd-card-text">Sketch menyetel pin input analog Arduino (misalnya, A0) untuk membaca nilai tegangan dari sensor BioAmp.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Set Tingkat Sampling</p>
+<ul class="simple">
+<li><p class="sd-card-text">Timer (menggunakan <code class="docutils literal notranslate"><span class="pre">micros()</span></code> atau <code class="docutils literal notranslate"><span class="pre">delayMicroseconds()</span></code>) memastikan kita memanggil <code class="docutils literal notranslate"><span class="pre">analogRead(A0)</span></code> pada interval yang tepat.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Cetak Nilai Mentah</p>
+<ul class="simple">
+<li><p class="sd-card-text">Pengguna melihat fluktuasi tegangan mentah yang sesuai dengan gelombang otak.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Loop Selamanya</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">loop()</span></code> berlanjut tanpa batas, terus membaca dan mencetak.</p></li>
+</ul>
+</li>
+</ol>
+<p class="sd-card-text"><strong>3. Lakukan Hardware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Rujuk wiring sesuai instruksi yang diberikan di <a class="reference internal" href="#brain-bioamp-arduino-firmware-connect-hardware"><span class="std std-ref">Hubungkan Hardware</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>4. Unggah Firmware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk proyek ini, navigasi ke folder repositori (Brain-BioAmp-Arduino-Firmware/01-fixed-sampling) dan pilih <code class="docutils literal notranslate"><span class="pre">01-fixed-sampling.ino</span></code>.</p></li>
+<li><p class="sd-card-text">Untuk mengunggah firmware, rujuk ke <a class="reference internal" href="#brain-bioamp-arduino-firmware-code-upload"><span class="std std-ref">Cara Mengunggah Kode ke Arduino</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>5. Visualisasikan sinyal Anda</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Ikuti langkah-langkah yang diberikan di <a class="reference internal" href="#brain-bioamp-arduino-firmware-visualize-signals"><span class="std std-ref">Visualisasikan Sinyal Otak Anda!</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>6. Menjalankan &amp; Mengamati Hasil</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Baseline Tenang (Tidak Ada Sinyal): Jejak melayang dekat mid‑rail.</p></li>
+<li><p class="sd-card-text">Burst EEG (misalnya Gelombang Alpha): Anda mengamati osilasi ritmis.</p></li>
+<li><p class="sd-card-text">Artefak Otot atau Gerakan: Defleksi lambat besar yang menunggangi baseline.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">2. EEG Filter</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>1. Tujuan &amp; Gambaran Program</strong></p>
+<p class="sd-card-text">Sketch EEG Filter memperoleh data EEG mentah dari sensor BioAmp EXG Pill pada 256 Hz dan menerapkan
+filter band-pass Butterworth orde ke-4 0.5 – 29.5 Hz (diimplementasikan sebagai empat bagian biquad) untuk
+mengisolasi ritme EEG sejati. Dengan menghilangkan drift DC lambat dan noise frekuensi tinggi, Anda mendapatkan
+stream EEG bersih yang ideal untuk visualisasi real-time, deteksi event, atau analisis spektral lebih lanjut.</p>
+<p class="sd-card-text"><strong>2. Cara Kerjanya</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Inisialisasi Pin Sensor</p>
+<ul class="simple">
+<li><p class="sd-card-text">Sketch mengkonfigurasi pin input analog Arduino (misalnya, A0) untuk membaca nilai tegangan dari sensor BioAmp.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Hitung Waktu Berlalu</p>
+<ul class="simple">
+<li><p class="sd-card-text">Timestamp <code class="docutils literal notranslate"><span class="pre">past</span></code> statis menahan hitungan mikrodetik sampel sebelumnya.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">present</span> <span class="pre">=</span> <span class="pre">micros()</span></code> dan <code class="docutils literal notranslate"><span class="pre">interval</span> <span class="pre">=</span> <span class="pre">present</span> <span class="pre">–</span> <span class="pre">past</span></code> memberikan waktu sejak loop terakhir.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">past</span></code> diperbarui ke present untuk iterasi berikutnya.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Jalankan Timer Sampel</p>
+<ul class="simple">
+<li><p class="sd-card-text">Variabel <code class="docutils literal notranslate"><span class="pre">timer</span></code> statis menghitung mundur oleh <code class="docutils literal notranslate"><span class="pre">interval</span></code> setiap loop.</p></li>
+<li><p class="sd-card-text">Ketika <code class="docutils literal notranslate"><span class="pre">timer</span> <span class="pre">&lt;</span> <span class="pre">0</span></code>, saatnya mengambil sampel berikutnya:</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>timer += 1000000 / SAMPLE_RATE;  // ≈3906 µs untuk 256 Hz
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p class="sd-card-text">Peroleh Sampel Mentah</p>
+<ul class="simple">
+<li><p class="sd-card-text">Memanggil <code class="docutils literal notranslate"><span class="pre">analogRead(INPUT_PIN)</span></code> (misalnya <code class="docutils literal notranslate"><span class="pre">A0</span></code>) untuk mendapatkan hitungan ADC terbaru dari output BioAmp.</p></li>
+<li><p class="sd-card-text">Mengkonversi pembacaan integer ke <code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">sensor_value</span></code>.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Terapkan Band-Pass Butterworth Orde ke-4.</p>
+<ul class="simple">
+<li><p class="sd-card-text">Melewatkan <code class="docutils literal notranslate"><span class="pre">sensor_value</span></code> ke <code class="docutils literal notranslate"><span class="pre">EEGFilter(input)</span></code>, yang mengimplementasikan empat bagian biquad berantai.</p></li>
+<li><p class="sd-card-text">Koefisien (<code class="docutils literal notranslate"><span class="pre">a1,</span> <span class="pre">a2,</span> <span class="pre">b0,</span> <span class="pre">b1,</span> <span class="pre">b2</span></code>) dihasilkan melalui <code class="docutils literal notranslate"><span class="pre">butter()</span></code> SciPy dan diekspor oleh <code class="docutils literal notranslate"><span class="pre">filter_gen.py</span></code>.</p></li>
+<li><p class="sd-card-text">Setiap bagian mempertahankan dua status statis (<code class="docutils literal notranslate"><span class="pre">z1</span></code>, <code class="docutils literal notranslate"><span class="pre">z2</span></code>), menghitung persamaan perbedaan:</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>x = output – a1*z1 – a2*z2;
+output = b0*x + b1*z1 + b2*z2;
+z2 = z1;
+z1 = x;
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p class="sd-card-text">Stream Output yang Difilter</p>
+<ul class="simple">
+<li><p class="sd-card-text">Setelah filtering, Serial.println(signal); mengirim nilai EEG bersih ke PC atau host Anda.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Loop Selamanya</p>
+<ul class="simple">
+<li><p class="sd-card-text">Sketch tidak pernah memblokir: logika timing dan filtering berjalan setiap ≈3.9 ms (256 Hz), lalu segera ulangi.</p></li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk mempelajari lebih lanjut tentang filter dan cara menghasilkan filter baru, kunjungi:  <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html</a></p></li>
+</ul>
+<p class="sd-card-text"><strong>3. Lakukan Hardware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Rujuk wiring sesuai instruksi yang diberikan di <a class="reference internal" href="#brain-bioamp-arduino-firmware-connect-hardware"><span class="std std-ref">Hubungkan Hardware</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>4. Unggah Firmware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk proyek ini, pergi ke folder repositori (Brain-BioAmp-Arduino-Firmware/02-eeg-filter) dan pilih <code class="docutils literal notranslate"><span class="pre">02-eeg-filter.ino</span></code>.</p></li>
+<li><p class="sd-card-text">Untuk mengunggah firmware, rujuk ke <a class="reference internal" href="#brain-bioamp-arduino-firmware-code-upload"><span class="std std-ref">Cara Mengunggah Kode ke Arduino</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>5. Visualisasikan sinyal Anda</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Ikuti langkah-langkah yang diberikan di <a class="reference internal" href="#brain-bioamp-arduino-firmware-visualize-signals"><span class="std std-ref">Visualisasikan Sinyal Otak Anda!</span></a></p></li>
+<li><p class="sd-card-text">Anda akan melihat gelombang EEG yang halus memperbarui pada 256 Hz, bebas dari drift dan spike frekuensi tinggi.</p></li>
+</ul>
+<p class="sd-card-text"><strong>6. Menjalankan &amp; Mengamati Hasil</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Istirahat Tenang (Mata Tertutup): Jejak harus sebagian besar noise amplitudo rendah di sekitar nol.</p></li>
+<li><p class="sd-card-text">Ritme Alpha (8–12 Hz): Osilasi ritmis menjadi terlihat jelas setelah Anda menutup mata dan rileks.</p></li>
+<li><p class="sd-card-text">Artefak Gerakan (&gt;30 Hz): Spike dari kedipan atau ketegangan otot sangat diperlemah, menjaga fokus pada band EEG.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">3. BCI FFT</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Sketch dasar ini dirancang untuk menampilkan nilai bandpower EEG real-time—Delta, Theta, Alpha, Beta,
+dan Gamma—di Serial Monitor Arduino IDE. Ini berfungsi sebagai alat yang kuat untuk mengamati bagaimana keadaan otak Anda
+mempengaruhi aktivitas gelombang otak. Misalnya, Anda akan melihat peningkatan gelombang beta saat fokus pada satu titik,
+dan peningkatan gelombang alpha saat Anda menutup mata dan rileks. Ini ideal untuk memahami bagaimana
+aktivitas berbeda di otak mempengaruhi sinyal EEG Anda.</p>
+<p class="sd-card-text">Untuk proyek ini, Anda perlu melakukan <strong>penempatan elektroda</strong> sesuai gambar yang diberikan:</p>
+<figure class="align-center">
+<img alt="Penempatan antara F1 dan F2" src="../../../_images/eeg-f1-f2.png" />
+</figure>
+<p class="sd-card-text">Untuk panduan detail, kunjungi <strong>Halaman Instructables</strong> kami: <a class="reference external" href="https://www.instructables.com/Controlling-LEDs-of-Arduino-Uno-R4-With-Your-Mind-/">Mengontrol LED Arduino Uno R4 Dengan Pikiran Anda (EEG)</a></p>
+<p class="sd-card-text">Untuk walkthrough detail, ikuti tutorial <strong>YouTube</strong> untuk proyek ini:</p>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/_GDfogfElII" style="border: 0; height: 345px; width: 560px">
+</iframe></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">Proyek ini hanya akan berfungsi dengan papan <strong>Arduino UNO R4 Minima dan R4 WiFi</strong>.</p>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">4. BCI LED</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Sketch ini memungkinkan Anda mengontrol LED built-in di Arduino UNO R4 menggunakan fokus Anda.
+Ketika aktivitas beta Anda naik (menunjukkan konsentrasi kuat), LED menyala. As your mind relaxes
+dan power beta turun, LED mati. Ini menciptakan neurofeedback sederhana namun efektif untuk melatih dan
+mengamati tingkat konsentrasi Anda.</p>
+<p class="sd-card-text">Untuk proyek ini, Anda perlu melakukan <strong>penempatan elektroda</strong> sesuai gambar yang diberikan:</p>
+<figure class="align-center" id="id7">
+<img alt="Penempatan antara F1 dan F2" src="../../../_images/eeg-f1-f2.png" />
+<figcaption>
+<p><span class="caption-text">Penempatan antara F1 dan F2</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p class="sd-card-text">Untuk panduan detail, kunjungi <strong>Halaman Instructables</strong> kami: <a class="reference external" href="https://www.instructables.com/Controlling-LEDs-of-Arduino-Uno-R4-With-Your-Mind-/">Mengontrol LED Arduino Uno R4 Dengan Pikiran Anda (EEG)</a></p>
+<p class="sd-card-text">Untuk walkthrough detail, ikuti tutorial <strong>YouTube</strong> untuk proyek ini:</p>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/_GDfogfElII" style="border: 0; height: 345px; width: 560px">
+</iframe></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">Proyek ini hanya akan berfungsi dengan papan <strong>Arduino UNO R4 Minima dan R4 WiFi</strong>.</p>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">5. BCI Toggle</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The BCI Toggle program enables hands-free toggling of the built-in LED using sustained focus.
+By maintaining your concentration for 4–5 seconds, the system switches the LED on or off,
+like flipping a switch using your brain. This method can be extended to control other devices,
+making it a stepping stone for brain-controlled automation.</p>
+<p class="sd-card-text">For this project, you need to do <strong>electrode placement</strong> as per the given figure:</p>
+<figure class="align-center" id="id8">
+<img alt="Placement between F1 and F2" src="../../../_images/eeg-f1-f2.png" />
+<figcaption>
+<p><span class="caption-text">Electrode Placement between F1 and F2</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p class="sd-card-text">For detailed guide, visit our <strong>Instructables Page</strong>: <a class="reference external" href="https://www.instructables.com/Controlling-LEDs-of-Arduino-Uno-R4-With-Your-Mind-/">Controlling LEDs of Arduino Uno R4 With Your Mind (EEG)</a></p>
+<p class="sd-card-text">For a detailed walkthrough, follow along with the <strong>YouTube</strong> tutorial for this project:</p>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/_GDfogfElII" style="border: 0; height: 345px; width: 560px">
+</iframe></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">This project will only work with <strong>Arduino UNO R4 Minima and R4 WiFi</strong> board.</p>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">6. BCI Spiral</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The BCI Spiral program is one of the most engaging and interesting sketch as it transforms your focus into gameplay.</p>
+<p class="sd-card-text">Running on the Arduino UNO R4 WiFi, it controls the 12×8 LED matrix on the board.
+As you concentrate, LEDs begin to light up in a clockwise spiral pattern.</p>
+<p class="sd-card-text">The more intense and sustained your focus, the more the spiral progresses.
+If your concentration lapses, the spiral unwinds in reverse. This sketch creates an immersive and intuitive
+brain-training game driven entirely by your EEG signals.</p>
+<p class="sd-card-text">For this project, you need to do <strong>electrode placement</strong> as per the given figure:</p>
+<figure class="align-center">
+<img alt="Placement between F1 and F2" src="../../../_images/eeg-f1-f2.png" />
+</figure>
+<p class="sd-card-text">For detailed guide, visit our <strong>Instructables Page</strong>: <a class="reference external" href="https://www.instructables.com/Controlling-LEDs-of-Arduino-Uno-R4-With-Your-Mind-/">Controlling LEDs of Arduino Uno R4 With Your Mind (EEG)</a></p>
+<p class="sd-card-text">For a detailed walkthrough, follow along with the <strong>YouTube</strong> tutorial for this project:</p>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/_GDfogfElII" style="border: 0; height: 345px; width: 560px">
+</iframe></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">This project will only work with <strong>Arduino UNO R4 WiFi</strong> board.</p>
+</div>
+</div>
+</details><p>✅ <strong>And That’s it!, Congrats on making your neuroscience project using BioAmp Hardware.</strong></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

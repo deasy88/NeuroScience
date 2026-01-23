@@ -1,0 +1,882 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NPG Lite Flasher &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'software/tools/npg-lite-flasher/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/software/tools/npg-lite-flasher/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Muscle (EMG) BioAmp Firmware" href="../../bioamp/muscle-bioamp-arduino-firmware/index.html" />
+    <link rel="prev" title="Chords-Java" href="../../chords/chords-java/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Chords</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-web/index.html">Chords-Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-python/index.html">Chords-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-lsl-connector/index.html">Chords-LSL-Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-lsl-visualizer/index.html">Chords-LSL-Visualizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-java/index.html">Chords-Java</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">NPG Lite Flasher</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">BioAmp Software</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../bioamp/muscle-bioamp-arduino-firmware/index.html">Muscle (EMG) BioAmp Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bioamp/eye-bioamp-arduino-firmware/index.html">Firmware Arduino BioAmp Mata (EOG)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bioamp/heart-bioamp-arduino-firmware/index.html">Firmware Arduino BioAmp Jantung (ECG)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bioamp/brain-bioamp-arduino-firmware/index.html">Brain (EEG) BioAmp Arduino Firmware</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Software</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">NPG Lite Flasher</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="npg-lite-flasher">
+<span id="id1"></span><h1>NPG Lite Flasher<a class="headerlink" href="#npg-lite-flasher" title="Link to this heading">#</a></h1>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/2rH9ivyHv-s" style="border: 0; height: 345px; width: 560px">
+</iframe></div><section id="ringkasan">
+<h2>Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
+<p>NPG Lite Flasher adalah aplikasi desktop open-source yang memungkinkan Anda untuk flash firmware ke Neuro PlayGround Lite, serta papan berbasis ESP32 lainnya menggunakan file biner.
+GUI yang dipoles (dan CLI) untuk mengunggah bundel firmware baru ke perangkat NPG Lite Anda (atau papan ESP32).</p>
+<ul class="simple">
+<li><p><strong>🖥️ UI Baru yang Elegan</strong></p>
+<ul>
+<li><p>Antarmuka yang didesain ulang untuk kejelasan</p></li>
+<li><p>Langkah-langkah built-in untuk mengambil firmware dari GitHub</p></li>
+<li><p>Dukungan unggahan firmware kustom</p></li>
+</ul>
+</li>
+<li><p><strong>🔄 Integrasi Satu-Klik</strong></p>
+<ul>
+<li><p>Luncurkan <a class="reference internal" href="../../chords/chords-web/index.html#chords"><span class="std std-ref">Chords-Web</span></a> atau <a class="reference internal" href="../../chords/chords-python/index.html#chords-pythons"><span class="std std-ref">Chords-Python</span></a> langsung untuk visualisasi real-time</p></li>
+</ul>
+</li>
+<li><p><strong>🧠 Manajemen Firmware yang Lebih Pintar</strong></p>
+<ul>
+<li><p>Auto-deteksi nama firmware duplikat</p></li>
+<li><p>Menampilkan status unduhan langsung dengan tanda centang hijau</p></li>
+<li><p>Auto-fill nama firmware dari metadata file</p></li>
+</ul>
+</li>
+<li><p><strong>⚡ Alur Kerja Flashing yang Ditingkatkan</strong></p>
+<ul>
+<li><p>“Add &amp; Flash” sekarang mendukung unggahan kustom dalam satu langkah yang mulus</p></li>
+</ul>
+</li>
+</ul>
+<figure class="align-center" id="id2">
+<img alt="NPG Lite Flasher" src="../../../_images/npg-lite-flasher-launch-page.jpg" />
+<figcaption>
+<p><span class="caption-text">NPG Lite Flasher</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="persyaratan-sistem">
+<h2>Persyaratan Sistem<a class="headerlink" href="#persyaratan-sistem" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Sistem Operasi: Windows 10+ / macOS 10.15+ / Linux (glibc 2.27+)</p></li>
+</ul>
+</section>
+<section id="persyaratan-perangkat-keras">
+<h2>Persyaratan Perangkat Keras<a class="headerlink" href="#persyaratan-perangkat-keras" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../hardware/bioamp/neuro-play-ground-lite/index.html#neuro-play-ground-lite"><span class="std std-ref">Neuro PlayGround Lite Board</span></a>  atau papan ESP32 lainnya.</p></li>
+<li><p>USB type-C cable</p></li>
+</ul>
+</section>
+<section id="menyiapkan-perangkat-keras">
+<h2>Menyiapkan perangkat keras<a class="headerlink" href="#menyiapkan-perangkat-keras" title="Link to this heading">#</a></h2>
+<p>Mari kita mulai dengan menyiapkan papan NPG Lite atau ESP32 development board Anda.</p>
+</section>
+<section id="instalasi">
+<h2>Instalasi<a class="headerlink" href="#instalasi" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Unduh <strong>installer</strong> dari rilis terbaru: <a class="reference external" href="https://github.com/upsidedownlabs/NPG-Lite-Flasher/releases/latest">NPG Lite Flasher Release</a></p></li>
+<li><p>Pilih installer untuk OS Anda:</p>
+<ul class="simple">
+<li><p>Fedora → <code class="docutils literal notranslate"><span class="pre">.rpm</span></code></p></li>
+<li><p>Debian/Ubuntu → <code class="docutils literal notranslate"><span class="pre">.deb</span></code></p></li>
+<li><p>macOS → <code class="docutils literal notranslate"><span class="pre">.dmg</span></code></p></li>
+<li><p>Windows → <code class="docutils literal notranslate"><span class="pre">.msi</span></code></p></li>
+<li><p>Atau unduh <strong>source bundle</strong> untuk membangun sendiri</p></li>
+</ul>
+</li>
+<li><p>Jalankan installer untuk <strong>OS Anda</strong>:</p></li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>Windows (.msi)</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Klik dua kali file <cite>.msi</cite> yang diunduh.</p></li>
+<li><p class="sd-card-text">Jika Anda melihat peringatan SmartScreen, klik <strong>More Info</strong> → <strong>Run Anyway</strong>.</p></li>
+<li><p class="sd-card-text">Lanjutkan melalui wizard installer: <strong>Next</strong> → pilih lokasi instalasi → <strong>Install</strong> → <strong>Finish</strong>.</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>Fedora (.rpm)</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Buka terminal dan jalankan:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">dnf</span> <span class="n">install</span> <span class="n">npg</span><span class="o">-</span><span class="n">lite</span><span class="o">-</span><span class="n">flasher</span><span class="o">-&lt;</span><span class="n">version</span><span class="o">&gt;.</span><span class="n">rpm</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p class="sd-card-text">Masukkan kata sandi Anda dan konfirmasi instalasi saat diminta.</p></li>
+<li><p class="sd-card-text">Setelah instalasi, luncurkan <strong>NPG Lite Flasher</strong> dari menu Applications Anda.</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>Debian/Ubuntu (.deb)</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Buka terminal dan jalankan:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">./</span><span class="n">npg</span><span class="o">-</span><span class="n">lite</span><span class="o">-</span><span class="n">flasher_</span><span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="n">_amd64</span><span class="o">.</span><span class="n">deb</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p class="sd-card-text">Jika Anda menemukan dependensi yang hilang, jalankan:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="o">--</span><span class="n">fix</span><span class="o">-</span><span class="n">broken</span> <span class="n">install</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p class="sd-card-text">Luncurkan <strong>NPG Lite Flasher</strong> dari launcher desktop Anda atau via:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">npg</span><span class="o">-</span><span class="n">lite</span><span class="o">-</span><span class="n">flasher</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>macOS (.dmg)</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Klik dua kali file <cite>npg-lite-flasher.dmg</cite> yang diunduh.</p></li>
+<li><p class="sd-card-text">Ketika Anda melihat peringatan macOS:</p></li>
+<li><p class="sd-card-text">“npg-lite-flasher.dmg” diunduh dari Internet.</p></li>
+</ol>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Apakah</span> <span class="pre">Anda</span> <span class="pre">yakin</span> <span class="pre">ingin</span> <span class="pre">membukanya?</span></code></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">klik</span> <span class="pre">**Open**</span></code></p>
+<ol class="arabic simple" start="3">
+<li><p class="sd-card-text">Seret <strong>NPG Lite Flasher.app</strong> ke folder <strong>Applications</strong> Anda.</p></li>
+<li><p class="sd-card-text">Keluarkan image yang dipasang dan buka aplikasi dari <strong>Applications</strong>.</p></li>
+</ol>
+</div>
+</details><ol class="arabic simple" start="4">
+<li><p>(Opsional) Bangun dari source</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/upsidedownlabs/NPG-Lite-Flasher.git
+<span class="nb">cd</span><span class="w"> </span>NPG-Lite-Flasher
+npm<span class="w"> </span>i
+cargo<span class="w"> </span>tauri<span class="w"> </span>build
+</pre></div>
+</div>
+</section>
+<section id="mengunggah-firmware">
+<span id="npg-lite-flasher-uploading-firmware"></span><h2>Mengunggah Firmware<a class="headerlink" href="#mengunggah-firmware" title="Link to this heading">#</a></h2>
+<p>Anda dapat memilih dari beberapa opsi firmware tergantung pada bagaimana Anda berencana menggunakan NPG Lite - termasuk Bluetooth Low Energy (BLE), Serial, Wi-Fi, atau bahkan unggah firmware kustom Anda sendiri.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Bluetooth LE</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Buka NPG Lite Flasher.</p></li>
+<li><p>Pilih tab <code class="docutils literal notranslate"><span class="pre">Bluetooth</span> <span class="pre">LE</span></code>, di bagian atas jendela Anda akan melihat tab untuk setiap jenis firmware - klik pada Bluetooth LE untuk menampilkan antarmuka khusus BLE.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-ble-select.png"><img alt="NPG Lite Flasher BLE Selection" src="../../../_images/npg-lite-flasher-ble-select.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Bluetooth LE specific interface will appear.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-ble.png"><img alt="NPG Lite Flasher BLE Interface" src="../../../_images/npg-lite-flasher-ble.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Hubungkan perangkat NPG Lite Anda via USB-C. Flasher harus mendeteksi port COM serial baru. Dari dropdown Port, pilih port yang sesuai dengan NPG Lite Anda.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-ble-select-com.png"><img alt="NPG Lite Flasher BLE Select COM" src="../../../_images/npg-lite-flasher-ble-select-com.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="5">
+<li><p>Klik <code class="docutils literal notranslate"><span class="pre">Flash</span></code>, tombol Flash untuk mulai mengunggah firmware BLE.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-ble-click-flash.png"><img alt="NPG Lite Flasher BLE Click Flash" src="../../../_images/npg-lite-flasher-ble-click-flash.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="6">
+<li><p>Tunggu konfirmasi, Anda akan melihat pesan “Success”. Ini menunjukkan bahwa firmware telah berhasil di-flash.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-ble-flash-wait.png"><img alt="NPG Lite Flasher BLE Flashing" src="../../../_images/npg-lite-flasher-ble-flash-wait.png" style="width: 400px;" />
+</a>
+</figure>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-ble-flash-comp.png"><img alt="NPG Lite Flasher BLE Flash Complete" src="../../../_images/npg-lite-flasher-ble-flash-comp.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="7">
+<li><p>Restart perangkat Anda, Cabut kabel USB, alihkan saklar power NPG Lite mati lalu nyala, dan papan Anda sekarang akan boot ke firmware Bluetooth LE baru.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Serial</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Buka NPG Lite Flasher.</p></li>
+<li><p>Pilih tab <code class="docutils literal notranslate"><span class="pre">Serial</span></code>, di bagian atas jendela Anda akan melihat tab untuk setiap jenis firmware - klik pada Serial untuk menampilkan antarmuka khusus Serial.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-serial-select.png"><img alt="NPG Lite Flasher Serial Selection" src="../../../_images/npg-lite-flasher-serial-select.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Antarmuka khusus Serial akan muncul.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-serial.png"><img alt="NPG Lite Flasher Serial Interface" src="../../../_images/npg-lite-flasher-serial.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Hubungkan perangkat NPG Lite Anda via USB-C. Flasher harus mendeteksi port COM serial baru. Dari dropdown Port, pilih port yang sesuai dengan NPG Lite Anda.</p></li>
+<li><p>Klik <code class="docutils literal notranslate"><span class="pre">Flash</span></code>, tombol Flash untuk mulai mengunggah firmware Serial.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-serial-click-flash.png"><img alt="NPG Lite Flasher Serial Click Flash" src="../../../_images/npg-lite-flasher-serial-click-flash.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="6">
+<li><p>Tunggu konfirmasi, Anda akan melihat pesan “Success”. Ini menunjukkan bahwa firmware telah berhasil di-flash.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-serial-flash-wait.png"><img alt="NPG Lite Flasher Serial Flashing" src="../../../_images/npg-lite-flasher-serial-flash-wait.png" style="width: 400px;" />
+</a>
+</figure>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-serial-flash-comp.png"><img alt="NPG Lite Flasher Serial Flash Complete" src="../../../_images/npg-lite-flasher-serial-flash-comp.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="7">
+<li><p>Restart perangkat Anda, Cabut kabel USB, alihkan saklar power NPG Lite mati lalu nyala, dan papan Anda sekarang akan boot ke firmware Serial baru.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+WiFi</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Buka NPG Lite Flasher.</p></li>
+<li><p>Pilih tab <code class="docutils literal notranslate"><span class="pre">WiFi</span></code>, di bagian atas jendela Anda akan melihat tab untuk setiap jenis firmware - klik pada WiFi untuk menampilkan antarmuka khusus WiFi.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-wifi-select.png"><img alt="NPG Lite Flasher WiFi Selection" src="../../../_images/npg-lite-flasher-wifi-select.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Antarmuka khusus WiFi akan muncul.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-wifi.png"><img alt="NPG Lite Flasher WiFi Interface" src="../../../_images/npg-lite-flasher-wifi.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Hubungkan perangkat NPG Lite Anda via USB-C. Flasher harus mendeteksi port COM serial baru. Dari dropdown Port, pilih port yang sesuai dengan NPG Lite Anda.</p></li>
+<li><p>Klik <code class="docutils literal notranslate"><span class="pre">Flash</span></code>, tombol Flash untuk mulai mengunggah firmware WiFi.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-wifi-click-flash.png"><img alt="NPG Lite Flasher WiFi Click Flash" src="../../../_images/npg-lite-flasher-wifi-click-flash.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="6">
+<li><p>Tunggu konfirmasi, Anda akan melihat pesan “Success”. Ini menunjukkan bahwa firmware telah berhasil di-flash.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-wifi-flash-wait.png"><img alt="NPG Lite Flasher WiFi Flashing" src="../../../_images/npg-lite-flasher-wifi-flash-wait.png" style="width: 400px;" />
+</a>
+</figure>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-wifi-flash-comp.png"><img alt="NPG Lite Flasher WiFi Flash Complete" src="../../../_images/npg-lite-flasher-wifi-flash-comp.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="7">
+<li><p>Restart perangkat Anda, Cabut kabel USB, alihkan saklar power NPG Lite mati lalu nyala, dan papan Anda sekarang akan boot ke firmware WiFi baru.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
++ Add Custom</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Buka NPG Lite Flasher.</p></li>
+<li><p>Pilih tab <code class="docutils literal notranslate"><span class="pre">+Add</span> <span class="pre">Custom</span></code>, di bagian atas jendela untuk beralih ke mode firmware-kustom.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-custom-select.png"><img alt="NPG Lite Flasher Custom Selection" src="../../../_images/npg-lite-flasher-custom-select.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Antarmuka khusus <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Add</span> <span class="pre">Custom</span></code> akan muncul.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-custom.png"><img alt="NPG Lite Flasher Custom Interface" src="../../../_images/npg-lite-flasher-custom.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p><strong>Tambahkan file firmware Anda</strong>: Klik tombol <code class="docutils literal notranslate"><span class="pre">Choose</span> <span class="pre">File</span></code> untuk menemukan firmware Anda dan pilih file .bin yang dikompilasi.</p></li>
+<li><p>Setelah diimpor Anda akan melihat nama file firmware Anda di Firmware Name.</p></li>
+<li><p>Hubungkan perangkat NPG Lite Anda via USB-C. Flasher harus mendeteksi port COM serial baru. Dari dropdown Port, pilih port yang sesuai dengan NPG Lite Anda.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-custom-select-com-file.png"><img alt="NPG Lite Flasher Custom Select Firmware" src="../../../_images/npg-lite-flasher-custom-select-com-file.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="7">
+<li><p>Klik <code class="docutils literal notranslate"><span class="pre">Flash</span></code>, tombol Flash untuk mulai mengunggah firmware Custom.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-custom-click-flash.png"><img alt="NPG Lite Flasher Custom Click Flash" src="../../../_images/npg-lite-flasher-custom-click-flash.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="8">
+<li><p>Tunggu konfirmasi, Anda akan melihat pesan “Success”. Ini menunjukkan bahwa firmware telah berhasil di-flash.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-custom-flash-comp.png"><img alt="NPG Lite Flasher Custom Flash Complete" src="../../../_images/npg-lite-flasher-custom-flash-comp.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="9">
+<li><p>Restart perangkat Anda, Cabut kabel USB, alihkan saklar power NPG Lite mati lalu nyala, dan papan Anda sekarang akan boot ke firmware Custom baru.</p></li>
+<li><p>Klik <code class="docutils literal notranslate"><span class="pre">Add</span></code>, ini akan menambahkan firmware di daftar +Add Custom untuk flash di masa depan - sehingga Anda dapat melewati langkah pemilihan file lain kali.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-custom-click-add.png"><img alt="NPG Lite Flasher Custom Click Add" src="../../../_images/npg-lite-flasher-custom-click-add.png" style="width: 400px;" />
+</a>
+</figure>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-custom-firmware-main-page.png"><img alt="NPG Lite Flasher Custom Main Page" src="../../../_images/npg-lite-flasher-custom-firmware-main-page.png" style="width: 600px;" />
+</a>
+</figure>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-custom-flash-direct.png"><img alt="NPG Lite Flasher Custom Flash Directly" src="../../../_images/npg-lite-flasher-custom-flash-direct.png" style="width: 400px;" />
+</a>
+</figure>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Get from GitHub</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Buka NPG Lite Flasher.</p></li>
+<li><p>Pilih tab <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">From</span> <span class="pre">GitHub</span></code>, di bagian atas jendela untuk memilih firmware yang dirancang oleh Upside Down Labs untuk perangkat NPG Lite dan ESP32.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-get-github-select.png"><img alt="NPG Lite Flasher Get from GitHub" src="../../../_images/npg-lite-flasher-get-github-select.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Daftar firmware akan muncul. Anda dapat mengunduh beberapa firmware secara simultan, tetapi hanya satu yang dapat di-flash pada satu waktu.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-get-github-list-downloads.png"><img alt="NPG Lite Flasher Get from GitHub List Downloads" src="../../../_images/npg-lite-flasher-get-github-list-downloads.png" style="width: 700px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Setelah diunduh, layar <code class="docutils literal notranslate"><span class="pre">Flash</span> <span class="pre">Custom</span> <span class="pre">Firmware</span></code> akan muncul, klik <code class="docutils literal notranslate"><span class="pre">Flash</span></code> untuk flash firmware ke perangkat Anda. Pastikan perangkat NPG Lite Anda terhubung via USB-C. Flasher akan mendeteksi port COM serial secara otomatis. Anda juga dapat memilih port COM dari dropdown Port, sesuai dengan perangkat Anda.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-get-github-click-flash.png"><img alt="NPG Lite Flasher Get from GitHub Flash" src="../../../_images/npg-lite-flasher-get-github-click-flash.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="5">
+<li><p>Tunggu konfirmasi, Anda akan melihat pesan “Success”. Ini menunjukkan bahwa firmware telah berhasil di-flash.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-get-github-flash-comp.png"><img alt="NPG Lite Flasher Get from GitHub Flash Completed" src="../../../_images/npg-lite-flasher-get-github-flash-comp.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="6">
+<li><p>Restart perangkat Anda, Cabut kabel USB, alihkan saklar power NPG Lite mati lalu nyala, dan papan Anda sekarang akan boot ke firmware baru.</p></li>
+<li><p>Periksa tab <code class="docutils literal notranslate"><span class="pre">Custom</span> <span class="pre">Firmwares</span></code> untuk flash di masa depan; ini menghemat Anda dari mengunduh file firmware yang sama lagi.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-get-github-custom-list-main.png"><img alt="NPG Lite Flasher Custom Click Add" src="../../../_images/npg-lite-flasher-get-github-custom-list-main.png" style="width: 600px;" />
+</a>
+</figure>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-alert-fill" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575ZM8 5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 0 1.5 0v-2.5A.75.75 0 0 0 8 5Zm1 6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"></path></svg></span><span class="sd-summary-text">Pemecahan Masalah</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Perangkat tidak ditemukan:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Verifikasi kabel USB-C dan saklar power</p></li>
+<li><p class="sd-card-text">Instal driver USB-serial yang sesuai</p></li>
+</ul>
+<p class="sd-card-text">Kesalahan izin (macOS/Linux):</p>
+<ul class="simple">
+<li><p class="sd-card-text">Jalankan dengan sudo atau tambahkan pengguna Anda ke grup dialout</p></li>
+</ul>
+<p class="sd-card-text">Peringatan SmartScreen (Windows):</p>
+<ul class="simple">
+<li><p class="sd-card-text">Gunakan More Info → Run Anyway seperti yang dijelaskan di atas</p></li>
+</ul>
+</div>
+</details></section>
+<section id="visualisasi-real-time">
+<h2>Visualisasi Real-Time<a class="headerlink" href="#visualisasi-real-time" title="Link to this heading">#</a></h2>
+<p>Setelah flashing, visualisasikan sinyal biopotensial Anda dengan Chords-Web atau Chords-Python:</p>
+<ol class="arabic simple">
+<li><p>Di flasher, klik Buka <code class="docutils literal notranslate"><span class="pre">Chords-Web</span></code> atau <code class="docutils literal notranslate"><span class="pre">Chords-Python</span></code> sesuai preferensi Anda (di bawah “Visualize”).</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-flasher-visualise.png"><img alt="NPG Lite Flasher Visualize options" src="../../../_images/npg-lite-flasher-visualise.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Untuk <code class="docutils literal notranslate"><span class="pre">Chords-Web</span></code> tab browser terbuka ke <code class="docutils literal notranslate"><span class="pre">Chords-Web</span></code>.</p></li>
+<li><p>Klik <code class="docutils literal notranslate"><span class="pre">Connect</span> <span class="pre">→</span> <span class="pre">pilih</span> <span class="pre">NPG</span> <span class="pre">Lite</span> <span class="pre">Anda</span> <span class="pre">→</span> <span class="pre">mulai</span> <span class="pre">streaming</span></code>.</p></li>
+<li><p>Untuk <code class="docutils literal notranslate"><span class="pre">Chords-Python</span></code> ikuti <a class="reference internal" href="../../chords/chords-python/index.html#chords-pythons"><span class="std std-ref">dokumentasi Chords Python</span></a> .</p></li>
+</ol>
+<section id="gunakan-ui-untuk">
+<h3>Gunakan UI untuk:<a class="headerlink" href="#gunakan-ui-untuk" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Pilih 1–3 channel untuk dilihat</p></li>
+<li><p>Play/Pause stream langsung</p></li>
+<li><p>Terapkan filter bandpass atau notch 50/60 Hz</p></li>
+<li><p>Rekam dan ekspor data ke CSV</p></li>
+</ul>
+</section>
+</section>
+<section id="repositori-github">
+<h2>Repositori GitHub<a class="headerlink" href="#repositori-github" title="Link to this heading">#</a></h2>
+<p>Untuk kode sumber lengkap, pelacakan masalah, dan panduan kontribusi, kunjungi repo GitHub NPG Lite Flasher.</p>
+<p>Anda akan menemukan panduan setup dan dapat melacak pengembangan berkelanjutan - termasuk perbaikan bug dan peningkatan fitur: <a class="reference external" href="https://github.com/upsidedownlabs/NPG-Lite-Flasher">NPG Lite Flasher GitHub</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,931 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Neuro PlayGround (NPG) Lite &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hardware/bioamp/neuro-play-ground-lite/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/hardware/bioamp/neuro-play-ground-lite/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="BioAmp EXG Pill" href="../bioamp-exg-pill/index.html" />
+    <link rel="prev" title="Hardware" href="../../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">BioAmp Hardware</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Neuro PlayGround (NPG) Lite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bioamp-exg-pill/index.html">BioAmp EXG Pill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-shield/index.html">Muscle BioAmp Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-patchy/index.html">Muscle BioAmp Patchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-blip/index.html">Muscle BioAmp Blip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../heart-bioamp-candy/index.html">Heart BioAmp Candy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bioamp-v1.5/index.html">BioAmp v1.5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-candy/index.html">Muscle BioAmp Candy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-biscute/index.html">Muscle BioAmp Biscute</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Hardware</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Neuro PlayGround (NPG) Lite</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="neuro-playground-npg-lite">
+<span id="neuro-play-ground-lite"></span><h1>Neuro PlayGround (NPG) Lite<a class="headerlink" href="#neuro-playground-npg-lite" title="Link to this heading">#</a></h1>
+<p><strong>BioAmp nirkabel 3-saluran yang dapat diperluas untuk HCI &amp; BCI</strong></p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://www.crowdsupply.com/upside-down-labs/neuro-playground-lite"><img alt="Spanduk Crowd Supply NPG Lite" src="../../../_images/npg-lite-banner.png" />
+</a>
+</figure>
+<section id="ringkasan">
+<h2>Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/9ZnYd7bmcgY" style="border: 0; height: 345px; width: 560px">
+</iframe></div><p><strong>Neuro PlayGround Lite (NPG Lite)</strong> adalah papan akuisisi sinyal bio-fisiologis nirkabel multikanal dengan form-factor Adafruit feather.
+It dapat digunakan untuk Elektrokardiografi (ECG), Elektromiografi (EMG),
+Elektrookulografi (EOG), atau Elektroensefalografi (EEG). Footprint kompak dan setup tanpa masalah memastikan
+portabilitas, penerapan cepat dan pengalaman tanpa kekacauan, menjadikannya ideal untuk penelitian, pendidikan dan
+aplikasi wearable.</p>
+<figure class="align-center" id="id3">
+<img alt="Neuro PlayGround (NPG) Lite" src="../../../_images/npg-lite-front-back.jpg" />
+<figcaption>
+<p><span class="caption-text">Neuro PlayGround (NPG) Lite</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Dengan penambahan <strong>Papan Playmate NPG</strong> dan papan FeatherWing pihak ketiga,
+pengguna dapat dengan mudah meningkatkan kemampuan perangkat, memungkinkan mereka
+membuat aplikasi Human-Computer Interface (HCI) dan Brain-Computer Interface (BCI) yang luar biasa.
+Kompatibilitas luasnya memungkinkan Anda melengkapi perangkat dengan fitur seperti motor getar untuk
+umpan balik haptic, buzzer untuk umpan balik audio, dan konektivitas I2C, menjadikannya sangat serbaguna untuk berbagai
+aplikasi.</p>
+<p>It memanfaatkan suite perangkat lunak <strong>Chords</strong> open source lintas platform yang kuat kami
+(<a class="reference internal" href="../../../software/chords/chords-web/index.html#chords"><span class="std std-ref">Chords-Web</span></a>, <a class="reference internal" href="../../../software/chords/chords-python/index.html#chords-pythons"><span class="std std-ref">Chords-Python</span></a>, <a class="reference internal" href="../../../software/chords/chords-lsl-connector/index.html#chords-lsl-connector"><span class="std std-ref">Chords LSL Connector</span></a> dan <a class="reference internal" href="../../../software/chords/chords-lsl-visualizer/index.html#chords-lsl-visualizer"><span class="std std-ref">Chords LSL Visualizer</span></a>),
+memungkinkan pengguna memvisualisasikan sinyal bio-potensial yang ditangkap secara real-time, menerapkan penyaringan, melakukan analisis FFT, dan banyak lagi.
+Untuk menyederhanakan proses <strong>mem-flash papan NPG Lite</strong> kami, kami juga telah membuat alat flasher khusus
+disebut <a class="reference internal" href="../../../software/tools/npg-lite-flasher/index.html#npg-lite-flasher"><span class="std std-ref">NPG Lite Flasher</span></a>, yang memungkinkan Anda mengunduh biner firmware pra-build dari GitHub
+dan Anda dapat mem-flash biner Anda sendiri juga.</p>
+<p>Karena ekspansibilitasnya, berbagai aplikasi, dan kemampuan jaringan yang kuat
+(menggunakan Bluetooth, Zigbee, Wi-Fi, atau Thread untuk jaringan mesh), NPG Lite memungkinkan Anda menangkap sinyal bio-potensial
+bagaimana Anda inginkan dan di mana Anda inginkan.</p>
+<figure class="align-center" id="id4">
+<img alt="Data 3 Saluran menggunakan Chords Web" src="../../../_images/npg-lite-chords-3-ch-data.png" />
+<figcaption>
+<p><span class="caption-text">Data 3 Saluran menggunakan Chords Web</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="fitur-spesifikasi">
+<h2>Fitur &amp; Spesifikasi<a class="headerlink" href="#fitur-spesifikasi" title="Link to this heading">#</a></h2>
+</section>
+<section id="tata-letak-papan-diagram-pinout">
+<h2>Tata Letak Papan &amp; Diagram Pinout<a class="headerlink" href="#tata-letak-papan-diagram-pinout" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="id5">
+<img alt="Anotasi Neuro PlayGround (NPG) Lite" src="../../../_images/npg-lite-annotated.png" />
+<figcaption>
+<p><span class="caption-text">Anotasi Neuro PlayGround (NPG) Lite</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
+<img alt="Pinout Neuro PlayGround (NPG) Lite" src="../../../_images/npg-lite-pinout.png" />
+<figcaption>
+<p><span class="caption-text">Pinout Neuro PlayGround (NPG) Lite</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="komponen">
+<h2>Komponen<a class="headerlink" href="#komponen" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../../_images/npg-lite-components.png"><img alt="Komponen Neuro PlayGround (NPG) Lite" src="../../../_images/npg-lite-components.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Komponen Neuro PlayGround (NPG) Lite</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="explorer-ninja-dan-beast">
+<h2>Explorer, Ninja, dan Beast!<a class="headerlink" href="#explorer-ninja-dan-beast" title="Link to this heading">#</a></h2>
+<p>Jika Anda nyaman dengan penyolderan dan hanya membutuhkan BioAmp nirkabel 3-saluran, <strong>Paket Explorer</strong> adalah pilihan yang bagus. Untuk pengalaman NPG Lite yang paling lengkap langsung dari kotak, pilih <strong>Paket Ninja</strong>. Jika Anda memerlukan saluran tambahan untuk akuisisi sinyal seluruh tubuh atau eksperimen lanjutan, <strong>Paket Beast</strong> menawarkan konfigurasi yang paling komprehensif.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mt-3 sd-mb-3 sd-ml-3 sd-mr-3 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<img alt="Kotak NPG Lite Explorer" class="sd-card-img-top" src="../../../_images/npg-lite-explorer-box.png" />
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+NPG Lite - Paket Explorer</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="../../../kits/npg-lite-kits/npg-lite-explorer/index.html#npg-lite-explorer"><span class="std std-ref">NPG Lite - Explorer Pack</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<img alt="Kotak NPG Lite Ninja" class="sd-card-img-top" src="../../../_images/npg-lite-ninja-box.png" />
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+NPG Lite - Paket Ninja</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="../../../kits/npg-lite-kits/npg-lite-ninja/index.html#npg-lite-ninja"><span class="std std-ref">NPG Lite - Ninja Pack</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<img alt="Kotak NPG Lite Beast" class="sd-card-img-top" src="../../../_images/npg-lite-beast-box.png" />
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+NPG Lite - Paket Beast</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="../../../kits/npg-lite-kits/npg-lite-beast/index.html#npg-lite-beast"><span class="std std-ref">NPG Lite - Beast Pack</span></a></div>
+</div>
+</div>
+</div>
+</section>
+<section id="playmate">
+<h2>Playmate<a class="headerlink" href="#playmate" title="Link to this heading">#</a></h2>
+<p>Playmate adalah papan ekspansi modular yang dirancang untuk meningkatkan fungsionalitas Neuro PlayGround (NPG) Lite. Add-on ini terintegrasi dengan mulus dengan sistem inti, memungkinkan pengguna memperluas kemampuan mereka untuk membuat aplikasi Human-Computer Interface (HCI) &amp; Brain-Computer Interface (BCI).</p>
+<figure class="align-center" id="id8">
+<img alt="Playmate Neuro PlayGround (NPG) Lite" src="../../../_images/npg-playmates-grouped.jpg" />
+<figcaption>
+<p><span class="caption-text">Playmate Neuro PlayGround (NPG) Lite</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="npg-proto-playmate">
+<h3>1. NPG Proto Playmate<a class="headerlink" href="#npg-proto-playmate" title="Link to this heading">#</a></h3>
+<p><strong>Proto Playmate</strong> menawarkan ruang prototyping fleksibel dengan area khusus untuk menambahkan komponen atau
+sirkuit Anda sendiri. Ini termasuk port QWIIC untuk integrasi sensor cepat, pin header elektroda 2.54 mm,
+saklar geser ON/OFF, dan antarmuka konektor untuk elektroda. Dengan menggabungkan elektroda dengan elektronik khusus,
+pengguna dapat dengan cepat membuat prototipe eksperimen yang didorong sinyal bio-potensial, membangun sirkuit add-on, atau menguji desain baru tanpa perlu breadboard terpisah.</p>
+</section>
+<section id="npg-vibz-playmate">
+<h3>2. NPG VibZ Playmate<a class="headerlink" href="#npg-vibz-playmate" title="Link to this heading">#</a></h3>
+<p><strong>VibZ Playmate</strong> memperkenalkan motor getar untuk umpan balik haptic, buzzer untuk umpan balik audio, port QWIIC untuk integrasi sensor I2C yang mudah, saklar geser ON/OFF, pin header elektroda 2.54 mm
+dan opsi elektroda negatif umum. Dengan Playmate ini, pengguna dapat menyesuaikan setup mereka untuk aplikasi spesifik, baik dalam penelitian, pendidikan, atau
+eksperimen biofeedback interaktif. Pendekatan modular ini memastikan fleksibilitas, skalabilitas, dan pengalaman pengguna yang lebih baik.</p>
+</section>
+<section id="id1">
+<h3>3. NPG VibZ+ Playmate<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><strong>VibZ+ Playmate</strong> membangun di atas VibZ dengan menyertakan BioAmp 3-saluran tambahan, memungkinkan perekaman dan
+visualisasi hingga 6 saluran sinyal Bio-potensial secara simultan. Ini mempertahankan motor getar untuk umpan balik haptic,
+buzzer untuk isyarat audio, saklar geser ON/OFF, port QWIIC, dan antarmuka konektor elektroda.
+Ini membuat VibZ+ ideal untuk eksperimen yang memerlukan input resolusi lebih tinggi atau cakupan spasial yang lebih besar,
+seperti EEG multi-saluran, EMG, atau aplikasi biofeedback kompleks.</p>
+</section>
+</section>
+<section id="panduan-penggunaan">
+<h2>Panduan Penggunaan<a class="headerlink" href="#panduan-penggunaan" title="Link to this heading">#</a></h2>
+<p>Untuk membantu Anda memulai dengan cepat, kami telah menyiapkan tutorial video langkah demi langkah.
+Panduan ini memandu Anda melalui setup, koneksi, dan menjalankan eksperimen dengan Neuro PlayGround Lite.</p>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/hBrbw9vF-m4" style="border: 0; height: 345px; width: 560px">
+</iframe></div><div class="admonition-pemecahan-masalah admonition">
+<p class="admonition-title">Pemecahan Masalah</p>
+<p>Mengalami masalah menghubungkan <strong>Perangkat NPG</strong> Anda dengan <a class="reference internal" href="../../../software/chords/chords-web/index.html#chords"><span class="std std-ref">Chords Web</span></a>?</p>
+<p>Jika Anda mencoba menghubungkan perangkat dan jendela popup untuk <strong>Koneksi Bluetooth</strong> tidak muncul, pastikan browser berbasis chromium Anda memiliki
+fitur berikut Diaktifkan:</p>
+<ol class="arabic simple">
+<li><p>Buka tab baru dan buka <code class="docutils literal notranslate"><span class="pre">chrome://flags</span></code></p></li>
+<li><p>Cari dan aktifkan flag berikut:</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Web Bluetooth</strong></p></li>
+<li><p><strong>Gunakan backend izin baru untuk Web Bluetooth</strong></p></li>
+<li><p><strong>Dukungan konfirmasi pairing Web Bluetooth</strong></p></li>
+<li><p><strong>Fitur Platform Web Eksperimental</strong></p></li>
+</ul>
+</div>
+</section>
+<section id="perangkat-lunak-kompatibel">
+<h2>Perangkat Lunak Kompatibel<a class="headerlink" href="#perangkat-lunak-kompatibel" title="Link to this heading">#</a></h2>
+<section id="npg-lite-flasher">
+<h3>NPG Lite Flasher<a class="headerlink" href="#npg-lite-flasher" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../software/tools/npg-lite-flasher/index.html#npg-lite-flasher"><span class="std std-ref">NPG Lite Flasher</span></a> adalah utilitas flashing lintas platform untuk papan Neuro PlayGround Lite, menyediakan pembaruan firmware yang mulus melalui serial atau DFU melalui CLI sederhana.</p></li>
+</ul>
+<figure class="align-center" id="id9">
+<img alt="Halaman Peluncuran NPG Lite Flasher" src="../../../_images/npg-lite-flasher-launch-page.jpg" />
+<figcaption>
+<p><span class="caption-text">Halaman Peluncuran NPG Lite Flasher</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Untuk mengetahui lebih lanjut tentang NPG Lite Flasher tonton video YouTube.</p></li>
+</ul>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/NDk-P3nob_0" style="border: 0; height: 345px; width: 560px">
+</iframe></div></section>
+<section id="chords-web">
+<h3>Chords Web<a class="headerlink" href="#chords-web" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Kunjungi <a class="reference external" href="https://chords.upsidedownlabs.tech/">Chords Web</a> untuk visualisasi sinyal biopotensial real-time (EEG, EMG, ECG, EOG), dengan plotting lanjutan, snapshotting dan perekaman CSV.</p></li>
+</ul>
+<figure class="align-center" id="id10">
+<img alt="Halaman Peluncuran Chords Web" src="../../../_images/chords_landing_page.png" />
+<figcaption>
+<p><span class="caption-text">Halaman Peluncuran Chords Web</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Untuk mengetahui lebih lanjut tentang Chords Web <a class="reference internal" href="../../../software/chords/chords-web/index.html#chords"><span class="std std-ref">klik di sini</span></a> atau tonton video YouTube.</p></li>
+</ul>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/Tqor4mo2Ji8" style="border: 0; height: 345px; width: 560px">
+</iframe></div></section>
+<section id="chords-python">
+<h3>Chords Python<a class="headerlink" href="#chords-python" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../software/chords/chords-python/index.html#chords-pythons"><span class="std std-ref">Chords Python</span></a> adalah tas alat open-source untuk merekam sinyal biopotensial seperti ECG, EMG, EEG, atau EOG, bersama dengan visualisasi menggunakan perangkat keras BioAmp.</p></li>
+</ul>
+<figure class="align-center" id="id11">
+<img alt="Halaman Peluncuran Chords Python" src="../../../_images/dark-interface.png" />
+<figcaption>
+<p><span class="caption-text">Halaman Peluncuran Chords Python</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Untuk mengetahui lebih lanjut tentang Chords Python tonton video YouTube.</p></li>
+</ul>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/TiDwSQEY2eY" style="border: 0; height: 345px; width: 560px">
+</iframe></div></section>
+<section id="chords-lsl-connector">
+<h3>Chords LSL Connector<a class="headerlink" href="#chords-lsl-connector" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../software/chords/chords-lsl-connector/index.html#chords-lsl-connector"><span class="std std-ref">Chords LSL Connector</span></a> adalah jembatan berbasis Rust yang mengalirkan data dari perangkat yang menjalankan firmware Chords ke Lab Streaming Layer (LSL), memungkinkan akuisisi dan analisis yang disinkronkan dengan perangkat lunak BCI/EEG.</p></li>
+</ul>
+<figure class="align-center" id="id12">
+<img alt="Halaman Peluncuran Chords LSL Connector" src="../../../_images/chords-lsl-connector-landing-page.png" />
+<figcaption>
+<p><span class="caption-text">Halaman Peluncuran Chords LSL Connector</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Untuk mengetahui lebih lanjut tentang Chords LSL Connector tonton video YouTube.</p></li>
+</ul>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/94lPImB0eRo" style="border: 0; height: 345px; width: 560px">
+</iframe></div></section>
+<section id="chords-lsl-visualizer">
+<h3>Chords LSL Visualizer<a class="headerlink" href="#chords-lsl-visualizer" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../software/chords/chords-lsl-visualizer/index.html#chords-lsl-visualizer"><span class="std std-ref">Chords LSL Visualizer</span></a> adalah program berbasis Rust untuk memvisualisasikan sinyal biopotensial dari aliran LSL apa pun.</p></li>
+</ul>
+<figure class="align-center" id="id13">
+<img alt="Halaman Peluncuran Chords LSL Visualizer" src="../../../_images/chords-lsl-visualizer-landing-page.png" />
+<figcaption>
+<p><span class="caption-text">Halaman Peluncuran Chords LSL Visualizer</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="tutorial-proyek">
+<span id="neuro-play-ground-lite-project-tutorials"></span><h2>Tutorial Proyek<a class="headerlink" href="#tutorial-proyek" title="Link to this heading">#</a></h2>
+<p>NPG Lite, dengan BioAmp multi-saluran, konektivitas nirkabel, operasi baterai, dan antarmuka ekspansi, memungkinkan
+pengguna membuat aplikasi HCI dan BCI dengan mudah. Kami telah membuat proyek yang memanfaatkan sinyal ECG, EMG, EOG, dan EEG untuk
+menginspirasi Anda, tetapi kemungkinannya mencakup lebih banyak kasus penggunaan.</p>
+<p>Setiap proyek ini berjalan pada <code class="docutils literal notranslate"><span class="pre">firmware</span> <span class="pre">BLE</span></code>, yang dapat Anda flash menggunakan alat flasher berikut:</p>
+<ul class="simple">
+<li><p>Kami merekomendasikan menggunakan <a class="reference internal" href="../../../software/tools/npg-lite-flasher/index.html#npg-lite-flasher-uploading-firmware"><span class="std std-ref">NPG Lite Flasher</span></a> untuk flashing Firmware BLE.</p></li>
+<li><p>Atau, Anda dapat menggunakan <a class="reference external" href="https://github.com/upsidedownlabs/Chords-Arduino-Firmware">Arduino IDE</a> untuk mengunggah firmware secara manual.</p></li>
+</ul>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+1. Buat Musik Otot</div>
+<p class="sd-card-text">Ini adalah antarmuka manusia-komputer (HCI) yang menggunakan data EMG 3-saluran untuk mendeteksi sinyal otot dari
+tangan kiri, tangan kanan, dan dada untuk mengontrol instrumen musik virtual. Saat otot berkontraksi, setiap saluran
+memicu efek suara yang berbeda, mengubah tubuh Anda menjadi orkestra organik.</p>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/O36z_YhaDqg" style="border: 0; height: 345px; width: 560px">
+</iframe></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk mempelajari proyek ini, kunjungi halaman Instructables kami untuk panduan detail: <a class="reference external" href="https://www.instructables.com/Muscle-Melody-Play-Music-With-Your-Muscle-Movement/">Muscle Melody: Buat Musik Dengan Gerakan Otot Anda (EMG)</a></p></li>
+<li><p class="sd-card-text">Kunjungi <a class="reference external" href="https://amanmahe.github.io/Muscle_game/">Antarmuka Web</a> untuk memvisualisasikan secara real-time.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+2. Lacak Ticker Anda</div>
+<p class="sd-card-text">Proyek ini berfokus pada penangkapan sinyal elektrokardiogram (ECG) untuk menghitung detak jantung menggunakan
+Neuro PlayGround Lite dan menampilkannya di browser berbasis Chrome di ponsel secara real-time
+melalui koneksi Bluetooth LE.</p>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/2UDBqEsjJSI" style="border: 0; height: 345px; width: 560px">
+</iframe></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk mempelajari proyek ini, kunjungi halaman Instructables kami untuk panduan detail: <a class="reference external" href="https://www.instructables.com/Monitor-ECG-and-Heartrate-on-Your-Mobile-Phone/">Pantau ECG dan Detak Jantung di Ponsel Anda</a></p></li>
+<li><p class="sd-card-text">Kunjungi <a class="reference external" href="https://ciumsy.github.io/ECG_Monitor/">Antarmuka Web</a> untuk memvisualisasikan secara real-time.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+3. Lompat dalam Sekejap Mata</div>
+<p class="sd-card-text">Alih-alih menggunakan keyboard, Anda dapat mengontrol permainan hanya dengan berkedip. Setup mendeteksi sinyal EOG dari mata,
+mengirim data melalui Bluetooth LE ke PC, mendeteksi kedipan mata, dan kemudian mengambil kedipan mata sebagai pemicu untuk meniru penekanan
+spasi. Anda dapat mengonfigurasi kode untuk menyimulasikan penekanan tombol lainnya juga.</p>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/ZJmUUtHJj08" style="border: 0; height: 345px; width: 560px">
+</iframe></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk mempelajari proyek ini, kunjungi halaman Instructables kami untuk panduan detail: <a class="reference external" href="https://www.instructables.com/Controlling-Keyboard-With-Eye-Blinks-Using-Neuro-P/">Mengontrol Keyboard Dengan Kedipan Mata Menggunakan Neuro PlayGround Lite</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+4. Pop Gelembung Dengan Pikiran Anda</div>
+<p class="sd-card-text">Proyek ini menampilkan aplikasi antarmuka otak-komputer (BCI) yang menggunakan sinyal elektroensefalografi (EEG)
+untuk mengoperasikan permainan pop gelembung interaktif di browser web. Sistem mengidentifikasi aktivitas gelombang beta (12–30 Hz),
+yang menunjukkan tingkat konsentrasi dan perhatian. Gelembung muncul dan pop saat pengguna mempertahankan fokus, tetapi berhenti pop
+saat konsentrasi berkurang.</p>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/MGTNjFtikZE" style="border: 0; height: 345px; width: 560px">
+</iframe></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk mempelajari proyek ini, kunjungi halaman Instructables kami untuk panduan detail: <a class="reference external" href="https://www.instructables.com/Pop-Bubbles-With-Your-Mind-EEG-Neuro-PlayGround-NP/">Pop Gelembung Dengan Pikiran Anda (EEG) | Neuro PlayGround (NPG) Lite</a></p></li>
+<li><p class="sd-card-text">Kunjungi <a class="reference external" href="https://upsidedownlabs.github.io/Focion/">Antarmuka Web</a> untuk memvisualisasikan secara real-time.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+5. CortEX</div>
+<p class="sd-card-text">CortEX adalah platform neurofeedback meditasi open-source yang menggabungkan sinyal EEG dan ECG
+untuk memberikan umpan balik real-time tentang keadaan mental dan emosional Anda. Dirancang untuk meningkatkan mindfulness,
+ini memvisualisasikan aktivitas gelombang otak, detak jantung, dan keseimbangan belahan untuk membantu Anda bermeditasi lebih
+efektif - semua dari browser Anda, menggunakan perangkat NPG Lite.</p>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/O3F-0UWxNfA" style="border: 0; height: 345px; width: 560px">
+</iframe></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk mempelajari proyek ini, kunjungi halaman Instructables kami untuk panduan detail: <a class="reference external" href="https://www.instructables.com/A-Neurofeedback-Meditation-Journey/">Perjalanan Neurofeedback Meditasi</a></p></li>
+<li><p class="sd-card-text">Kunjungi <a class="reference external" href="https://upsidedownlabs.github.io/CortEX/">Antarmuka Web</a>  untuk memvisualisasikan secara real-time.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+6. Mobil Terkontrol Otak: Kontrol Robotik EEG + EMG</div>
+<p class="sd-card-text">Mobil Terkontrol Otak mengubah gelombang otak (EEG) dan aktivitas otot (EMG) menjadi kontrol robotik real-time,
+memungkinkan Anda mengemudikan mobil tanpa remote tradisional - cukup fokuskan pikiran Anda untuk maju,
+tekuk lengan kiri atau kanan Anda untuk belok, atau kedua lengan untuk mundur. Didukung oleh Neuro PlayGround Lite,
+perangkat biopotensial nirkabel, sistem menangkap sinyal Anda melalui elektroda dan mengirimkannya melalui BLE ke penerima berbasis ESP32 yang menggerakkan motor.
+Proyek ini menawarkan pandangan langsung ke masa depan interaksi manusia-mesin,
+di mana pikiran dan gerakan secara mulus memerintah mesin.</p>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/US_cDCRjV6c" style="border: 0; height: 345px; width: 560px">
+</iframe></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk mempelajari proyek ini, kunjungi halaman Instructables kami untuk panduan detail: <a class="reference external" href="https://www.instructables.com/Brain-Controlled-Car-EEG-EMG-Robotic-Control/">Mobil Terkontrol Otak : Kontrol Robotik EEG + EMG</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+7. Bermain GTA V Dengan Fokus &amp; Otot Anda</div>
+<p class="sd-card-text">Kontrol GTA V menggunakan pikiran Anda! Sistem Gaming Terkontrol Otak menggunakan
+Neuro PlayGround Lite nirkabel untuk menerjemahkan gelombang otak (EEG) dan kontraksi otot (EMG)
+Anda menjadi kontrol permainan. Fokus untuk mempercepat, dan tekuk lengan kiri atau kanan Anda untuk mengemudi. Proyek BCI ini
+memberikan pandangan menakjubkan ke masa depan gaming, memungkinkan Anda memerintah mobil Anda dengan
+sinyal tubuh Anda saja.</p>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/LhvBo8MP7iQ" style="border: 0; height: 345px; width: 560px">
+</iframe></div></div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+8. Cuboid</div>
+<p class="sd-card-text">Cuboid adalah permainan bertenaga neurofeedback yang mengubah fokus Anda menjadi aksi. Menggunakan data gelombang otak
+real-time dari perangkat NPG Lite, permainan menantang Anda untuk memindahkan kuboid geometris ke atas dengan
+mempertahankan fokus mental. Dengan beberapa tingkat kesulitan, streaming EEG langsung, dan umpan balik visual,
+Cuboid mengubah konsentrasi menjadi pengalaman terkontrol otak yang imersif.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p class="sd-card-text">Kunjungi <a class="reference external" href="https://upsidedownlabs.github.io/Cuboid/">Antarmuka Web</a> untuk memvisualisasikan secara real-time.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+9. Kekuatan Otot</div>
+<p class="sd-card-text">Permainan Kekuatan Otot mengubah upaya fisik Anda menjadi data yang bermakna. Cukup hubungkan
+ke kelompok otot mana pun yang ingin Anda fokuskan, dan Anda akan langsung memvisualisasikan aktivitas listrik mentah
+yang dihasilkan otot Anda. Tapi itu lebih dari data mentah; permainan juga memproses informasi ini
+untuk menampilkan kekuatan otot real-time Anda. Ini memungkinkan Anda melacak kemajuan, mengidentifikasi area untuk perbaikan, dan terlibat dengan latihan Anda dengan cara yang benar-benar berbasis data.
+Baik Anda atlet, memulihkan dari cedera, atau hanya penasaran tentang tubuh Anda, proyek ini
+menawarkan jendela unik ke kemampuan otot Anda.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p class="sd-card-text">Kunjungi <a class="reference external" href="https://chords.upsidedownlabs.tech/muscle-strength">Antarmuka Web</a>  untuk memvisualisasikan secara real-time.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+10. Pikiran-ke-Kata Menggunakan EEG</div>
+<p class="sd-card-text">Aplikasi Pikiran-ke-Kata (M2W) adalah alat Komunikasi Asistif inovatif yang memungkinkan pengguna
+mengontrol antarmuka menu hanya melalui kedipan mata. Ini menggunakan artefak EOG yang ada di sinyal EEG saluran tunggal,
+yang ditangkap oleh perangkat NPG Lite. Fungsi inti bergantung pada algoritma novel yang memisahkan dan mengenali sinyal kontrol yang berbeda: kedipan ganda digunakan untuk mengaktifkan atau beralih antara opsi, sementara kedipan tiga digunakan untuk mengonfirmasi dan membuat pilihan.</p>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/UyXsqCrVxh4" style="border: 0; height: 345px; width: 560px">
+</iframe></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p class="sd-card-text">Aplikasi Web M2W: <a class="reference external" href="https://upsidedownlabs.github.io/M2W/">Antarmuka Web</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Neuro-PlayGround Lite C3 (Usang)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="rubric">Ringkasan</p>
+<p class="sd-card-text">Neuro Playground (NPG) Lite adalah perangkat amplifikasi sinyal bio-potensial nirkabel multichannel
+dirancang untuk merekam EMG, ECG, EOG, dan EEG. It datang dalam
+form factor <a class="reference external" href="https://learn.adafruit.com/adafruit-feather/overview">Adafruit feather</a> kompak dan
+menawarkan konektivitas WiFi/BLE. Dengan penambahan papan anak disebut Playmate, pengguna dapat
+dengan mudah meningkatkan kemampuan perangkat, memungkinkan siswa/peneliti/hobi untuk membuat aplikasi HCI dan BCI yang luar biasa.</p>
+<figure class="align-center" id="id14">
+<img alt="Neuro PlayGround (NPG) Lite C3" src="../../../_images/npg-C3-hero-1.png" />
+<figcaption>
+<p><span class="caption-text">Neuro PlayGround (NPG) Lite C3</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p class="rubric">Fitur &amp; Spesifikasi</p>
+<p class="rubric">Tata Letak Papan</p>
+<figure class="align-center" id="id15">
+<img alt="Anotasi Neuro PlayGround (NPG) Lite C3" src="../../../_images/npg-C3-front-annotations.png" />
+<figcaption>
+<p><span class="caption-text">Anotasi Neuro PlayGround (NPG) Lite C3</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p class="rubric">Playmate</p>
+<p class="sd-card-text">Playmate adalah papan ekspansi modular yang dirancang untuk meningkatkan fungsionalitas <strong>Neuro Play Ground (NPG) Lite</strong>. Add-on ini terintegrasi dengan mulus dengan sistem inti, memungkinkan pengguna memperluas kemampuan mereka untuk membuat aplikasi HCI &amp; BCI yang luar biasa.</p>
+<p class="sd-card-text"><strong>VibZ</strong></p>
+<p class="sd-card-text">Playmate pertama, <strong>VibZ</strong>, memperkenalkan umpan balik haptic, buzzer, port QWIIC untuk integrasi sensor yang mudah, saklar ON/OFF, dan pin header elektroda. Dengan Playmate ini, pengguna dapat menyesuaikan setup mereka untuk aplikasi spesifik, baik dalam penelitian, pendidikan, atau eksperimen biofeedback interaktif. Pendekatan modular ini memastikan fleksibilitas, skalabilitas, dan pengalaman pengguna yang lebih baik.</p>
+<figure class="align-center" id="id16">
+<img alt="Playmate VibZ" src="../../../_images/npg-C3-playmate-annotations.png" />
+<figcaption>
+<p><span class="caption-text">Playmate VibZ</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p class="rubric">Fitur &amp; Spesifikasi</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p class="sd-card-text">Pin header Dupont 2.54mm untuk koneksi elektroda</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Motor getar untuk umpan balik haptic</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">Buzzer untuk umpan balik audio</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Port QWIIC / STEMMA QT I2C</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">Saklar ON/OFF</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details></section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,744 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chords-LSL-Connector &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'software/chords/chords-lsl-connector/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/software/chords/chords-lsl-connector/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Chords-LSL-Visualizer" href="../chords-lsl-visualizer/index.html" />
+    <link rel="prev" title="Chords-Python" href="../chords-python/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Chords</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chords-web/index.html">Chords-Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chords-python/index.html">Chords-Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chords-LSL-Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chords-lsl-visualizer/index.html">Chords-LSL-Visualizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chords-java/index.html">Chords-Java</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../tools/npg-lite-flasher/index.html">NPG Lite Flasher</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">BioAmp Software</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../bioamp/muscle-bioamp-arduino-firmware/index.html">Muscle (EMG) BioAmp Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bioamp/eye-bioamp-arduino-firmware/index.html">Firmware Arduino BioAmp Mata (EOG)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bioamp/heart-bioamp-arduino-firmware/index.html">Firmware Arduino BioAmp Jantung (ECG)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bioamp/brain-bioamp-arduino-firmware/index.html">Brain (EEG) BioAmp Arduino Firmware</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Software</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Chords-LSL-Connector</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="chords-lsl-connector">
+<span id="id1"></span><h1>Chords-LSL-Connector<a class="headerlink" href="#chords-lsl-connector" title="Link to this heading">#</a></h1>
+<section id="ringkasan">
+<h2>Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
+<p><strong>Chords-LSL-Connector</strong> menghubungkan Neuro Playground Lite Anda (yang menjalankan Chords Firmware) ke ekosistem LSL, menyediakan:</p>
+<ul class="simple">
+<li><p><strong>Streaming data real-time</strong> dengan latensi rendah.</p></li>
+<li><p><strong>Dukungan lintas platform</strong> (Windows, macOS, Linux).</p></li>
+<li><p><strong>Mode GUI</strong> untuk alur kerja yang fleksibel.</p></li>
+<li><p><strong>Penemuan perangkat otomatis</strong> dan iklan stream LSL.</p></li>
+</ul>
+<figure class="align-center" id="id10">
+<img alt="Chords-LSL-Connector Landing Page" src="../../../_images/chords-lsl-connector-landing-page.png" />
+<figcaption>
+<p><span class="caption-text">Chords-LSL-Connector</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="fitur">
+<h3>Fitur<a class="headerlink" href="#fitur" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Streaming sinyal bio-potensial multi-saluran melalui LSL.</p></li>
+<li><p>Bekerja dengan build firmware yang kompatibel Chords apa pun.</p></li>
+</ul>
+</section>
+<section id="apa-itu-lab-streaming-layer-lsl">
+<h3>Apa itu Lab Streaming Layer (LSL)?<a class="headerlink" href="#apa-itu-lab-streaming-layer-lsl" title="Link to this heading">#</a></h3>
+<p>Lab Streaming Layer (LSL) adalah protokol sumber terbuka dan kerangka kerja perangkat lunak untuk streaming data waktu-sinkron secara real-time, terutama dalam eksperimen neurosains dan biomedis.</p>
+<p>LSL adalah ekosistem middleware jaringan sumber terbuka untuk streaming, menerima, menyinkronkan, dan merekam stream data neural, fisiologis, dan perilaku yang diperoleh dari perangkat keras sensor yang beragam.</p>
+<p>Untuk mengetahui lebih lanjut tentang LSL <a class="reference external" href="https://labstreaminglayer.org/#/">klik di sini</a>.</p>
+</section>
+</section>
+<section id="persyaratan-sistem">
+<h2>Persyaratan Sistem<a class="headerlink" href="#persyaratan-sistem" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Sistem Operasi: Windows 10+ / macOS 10.15+ / Linux (glibc 2.27+)</p></li>
+</ul>
+</section>
+<section id="persyaratan-perangkat-keras">
+<h2>Persyaratan Perangkat Keras<a class="headerlink" href="#persyaratan-perangkat-keras" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../hardware/bioamp/neuro-play-ground-lite/index.html#neuro-play-ground-lite"><span class="std std-ref">Papan Neuro PlayGround Lite</span></a>.</p></li>
+<li><p>Kabel USB type-C</p></li>
+<li><p>Atau repositori firmware Chords Arduino di <a class="reference external" href="https://github.com/upsidedownlabs/Chords-Arduino-Firmware">Chords Arduino Firmware GitHub</a>.</p></li>
+</ul>
+</section>
+<section id="menyiapkan-perangkat-keras">
+<h2>Menyiapkan perangkat keras<a class="headerlink" href="#menyiapkan-perangkat-keras" title="Link to this heading">#</a></h2>
+<p>Buat semua koneksi sesuai dengan perangkat keras yang Anda gunakan, termasuk koneksi sensor dengan papan pengembangan, koneksi tubuh dengan sensor, dan koneksi dari papan pengembangan ke laptop Anda.</p>
+</section>
+<section id="instalasi">
+<h2>Instalasi<a class="headerlink" href="#instalasi" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Unduh <strong>installer</strong> dari rilis terbaru: <a class="reference external" href="https://github.com/upsidedownlabs/Chords-LSL-Connector/releases">Chords LSL Connector Release</a></p></li>
+<li><p>Pilih installer untuk OS Anda:</p>
+<ul class="simple">
+<li><p>Fedora → <code class="docutils literal notranslate"><span class="pre">.rpm</span></code></p></li>
+<li><p>Debian/Ubuntu → <code class="docutils literal notranslate"><span class="pre">.deb</span></code></p></li>
+<li><p>macOS → <code class="docutils literal notranslate"><span class="pre">.dmg</span></code></p></li>
+<li><p>Windows → <code class="docutils literal notranslate"><span class="pre">.msi</span></code></p></li>
+<li><p>Atau unduh <strong>source bundle</strong> untuk membangun sendiri</p></li>
+</ul>
+</li>
+<li><p>Jalankan installer untuk <strong>OS Anda</strong>:</p></li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>Windows (.msi)</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Klik ganda file <cite>.msi</cite> yang diunduh.</p></li>
+<li><p class="sd-card-text">Jika Anda melihat peringatan SmartScreen, klik <strong>More Info</strong> → <strong>Run Anyway</strong>.</p></li>
+<li><p class="sd-card-text">Lanjutkan melalui wizard installer: <strong>Next</strong> → pilih lokasi instal → <strong>Install</strong> → <strong>Finish</strong>.</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>Fedora (.rpm)</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Buka terminal dan jalankan:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">dnf</span> <span class="n">install</span> <span class="n">chords</span><span class="o">-</span><span class="n">lsl</span><span class="o">-</span><span class="n">connector</span><span class="o">-</span><span class="mf">0.3.0</span><span class="o">-</span><span class="mf">1.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p class="sd-card-text">Masukkan kata sandi Anda dan konfirmasi instalasi saat diminta.</p></li>
+<li><p class="sd-card-text">Setelah instalasi, luncurkan <strong>Chords LSL Connector</strong> dari menu Applications Anda.</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>Debian/Ubuntu (.deb)</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Buka terminal dan jalankan:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">./</span><span class="n">chords</span><span class="o">-</span><span class="n">lsl</span><span class="o">-</span><span class="n">connector_</span><span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="n">_amd64</span><span class="o">.</span><span class="n">deb</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p class="sd-card-text">Jika Anda menemukan dependensi yang hilang, jalankan:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="o">--</span><span class="n">fix</span><span class="o">-</span><span class="n">broken</span> <span class="n">install</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p class="sd-card-text">Luncurkan <strong>Chords LSL Connector</strong> dari launcher desktop Anda atau via:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chords</span><span class="o">-</span><span class="n">lsl</span><span class="o">-</span><span class="n">connector</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>macOS (.dmg)</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Klik ganda file <cite>chords-lsl-connector.dmg</cite> yang diunduh.</p></li>
+<li><p class="sd-card-text">Ketika Anda melihat peringatan macOS:</p></li>
+<li><p class="sd-card-text">“chords-lsl-connector.dmg” diunduh dari Internet.</p></li>
+</ol>
+<p class="sd-card-text">Apakah Anda yakin ingin membukanya?</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">klik</span> <span class="pre">**Open**</span></code></p>
+<ol class="arabic simple" start="3">
+<li><p class="sd-card-text">Seret <strong>Chords LSL Connector.app</strong> ke folder <strong>Applications</strong> Anda.</p></li>
+<li><p class="sd-card-text">Keluarkan image yang dipasang dan buka aplikasi dari <strong>Applications</strong>.</p></li>
+</ol>
+</div>
+</details><ol class="arabic simple" start="4">
+<li><p>(Optional) Build from source</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/upsidedownlabs/Chords-LSL-Connector.git
+<span class="nb">cd</span><span class="w"> </span>Chords-LSL-Connector
+npm<span class="w"> </span>i
+cargo<span class="w"> </span>tauri<span class="w"> </span>build
+</pre></div>
+</div>
+</section>
+<section id="mem-flash-firmware">
+<span id="chords-lsl-connector-flashing-firmware"></span><h2>Mem-flash Firmware<a class="headerlink" href="#mem-flash-firmware" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Untuk mem-flash firmware: Kunjungi Halaman GitHub dengan mengklik <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">Firmware</span></code>, dan kemudian unduh firmware sesuai dengan papan pengembangan Anda.</p></li>
+</ul>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/chords-lsl-connector-get-firmware.png"><img alt="Chords LSL Connector Get Firmware Button" src="../../../_images/chords-lsl-connector-get-firmware.png" style="width: 600px;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p>Anda juga dapat menggunakan NPG Lite Flasher untuk mem-flash firmware yang diinginkan, untuk mengetahui lebih lanjut kunjungi <a class="reference internal" href="../../tools/npg-lite-flasher/index.html#npg-lite-flasher"><span class="std std-ref">dokumentasi NPG Lite Flasher</span></a>.</p></li>
+</ul>
+</section>
+<section id="visualisasi-lsl">
+<h2>Visualisasi LSL<a class="headerlink" href="#visualisasi-lsl" title="Link to this heading">#</a></h2>
+<p>Setelah perangkat Anda terhubung, Anda dapat memilih dari beberapa opsi tergantung pada bagaimana
+Anda berencana menggunakan NPG Lite - termasuk Bluetooth Low Energy (BLE), Serial atau Wi-Fi.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Using Bluetooth LE</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Luncurkan aplikasi Chords LSL Connector.</p></li>
+<li><p>Klik tab <code class="docutils literal notranslate"><span class="pre">Bluetooth</span> <span class="pre">LE</span></code>.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/chords-lsl-connector-ble.png"><img alt="Chords LSL Connector BLE Device" src="../../../_images/chords-lsl-connector-ble.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Jika Anda tidak dapat menemukan perangkat, flash firmware BLE dari langkah <a class="reference internal" href="#chords-lsl-connector-flashing-firmware"><span class="std std-ref">Mem-flash Firmware</span></a> dan nyalakan papan Anda.</p></li>
+<li><p>Tunggu dialog Available Devices untuk mencantumkan perangkat NPG Anda (misalnya NPG-54:32:04:29:39:b6) dan klik ikon link-nya.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/chords-lsl-connector-ble-device-scan.png"><img alt="Chords LSL Connector BLE Device Scan" src="../../../_images/chords-lsl-connector-ble-device-scan.png" style="width: 400px;" />
+</a>
+</figure>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/chords-lsl-connector-ble-device-connect.png"><img alt="Chords LSL Connector BLE Device Connect" src="../../../_images/chords-lsl-connector-ble-device-connect.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="5">
+<li><p>Amati panel <code class="docutils literal notranslate"><span class="pre">Connection</span> <span class="pre">Statistics</span></code> yang menampilkan laju sampling dan total sampel.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/chords-lsl-connector-ble-visualise.png"><img alt="Chords LSL Connector BLE Device Visualise" src="../../../_images/chords-lsl-connector-ble-visualise.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="6">
+<li><p>Gunakan tombol built-in</p></li>
+</ol>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/upsidedownlabs/Chords-LSL-Visualizer/">Chords LSL Visualizer</a></p></li>
+<li><p><a class="reference external" href="https://www.brainproducts.com/downloads/more-software/">Brain Vision LSL Viewer</a></p></li>
+<li><p><a class="reference external" href="https://open-ephys.org/gui">Open EEG GUI</a></p></li>
+<li><p><a class="reference external" href="https://github.com/labstreaminglayer/App-LabRecorder">LabRecorder</a></p></li>
+</ul>
+<p>untuk memvisualisasikan atau merekam stream LSL langsung Anda.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/chords-lsl-connector-visualise.png"><img alt="Chords LSL Connector Visualise Tab" src="../../../_images/chords-lsl-connector-visualise.png" style="width: 600px;" />
+</a>
+</figure>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Using Serial</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Luncurkan aplikasi Chords LSL Connector.</p></li>
+<li><p>Klik tab <code class="docutils literal notranslate"><span class="pre">Serial</span></code>.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/chords-lsl-connector-serial.png"><img alt="Chords LSL Connector Serial Device" src="../../../_images/chords-lsl-connector-serial.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Jika Anda tidak dapat menemukan perangkat, flash firmware Serial dari langkah <a class="reference internal" href="#chords-lsl-connector-flashing-firmware"><span class="std std-ref">Mem-flash Firmware</span></a> dan nyalakan papan Anda.</p></li>
+<li><p>Tunggu dialog Available Devices untuk mencantumkan perangkat NPG Anda, jika menggunakan beberapa perangkat maka klik ikon link-nya, untuk perangkat terhubung tunggal akan terdeteksi dan terhubung secara otomatis.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/chords-lsl-connector-serial-connect.png"><img alt="Chords LSL Connector Serial Device Connect" src="../../../_images/chords-lsl-connector-serial-connect.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="5">
+<li><p>Amati panel <code class="docutils literal notranslate"><span class="pre">Connection</span> <span class="pre">Statistics</span></code> yang menampilkan laju sampling dan total sampel.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/chords-lsl-connector-serial-visualise.png"><img alt="Chords LSL Connector Serial Device Visualise" src="../../../_images/chords-lsl-connector-serial-visualise.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="6">
+<li><p>Gunakan tombol built-in</p></li>
+</ol>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/upsidedownlabs/Chords-LSL-Visualizer/">Chords LSL Visualizer</a></p></li>
+<li><p><a class="reference external" href="https://www.brainproducts.com/downloads/more-software/">Brain Vision LSL Viewer</a></p></li>
+<li><p><a class="reference external" href="https://open-ephys.org/gui">Open EEG GUI</a></p></li>
+<li><p><a class="reference external" href="https://github.com/labstreaminglayer/App-LabRecorder">LabRecorder</a></p></li>
+</ul>
+<p>untuk memvisualisasikan atau merekam stream LSL langsung Anda.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/chords-lsl-connector-visualise.png"><img alt="Chords LSL Connector Visualise Tab" src="../../../_images/chords-lsl-connector-visualise.png" style="width: 600px;" />
+</a>
+</figure>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Using WiFi</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Luncurkan aplikasi Chords LSL Connector.</p></li>
+<li><p>Buka pengaturan Wi-Fi komputer Anda, pilih jaringan perangkat NPG Lite (misalnya npg-lite-2) dari daftar, dan klik Connect - Anda akan melihat “Connecting” diikuti oleh “Connected” setelah link terjalin.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/chords-lsl-connector-wifi-connect.png"><img alt="Chords LSL Connector WiFi Connect" src="../../../_images/chords-lsl-connector-wifi-connect.png" style="width: 300px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Jika Anda tidak dapat menemukan perangkat, flash firmware WiFi dari langkah <a class="reference internal" href="#chords-lsl-connector-flashing-firmware"><span class="std std-ref">Mem-flash Firmware</span></a> dan nyalakan papan Anda.</p></li>
+<li><p>Sekarang, Klik tab <code class="docutils literal notranslate"><span class="pre">WiFi</span></code>.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/chords-lsl-connector-wifi.png"><img alt="Chords LSL Connector WiFi Device" src="../../../_images/chords-lsl-connector-wifi.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="5">
+<li><p>Amati panel <code class="docutils literal notranslate"><span class="pre">Connection</span> <span class="pre">Statistics</span></code> yang menampilkan laju sampling dan total sampel.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/chords-lsl-connector-wifi-visualise.png"><img alt="Chords LSL Connector WiFi Device Visualise" src="../../../_images/chords-lsl-connector-wifi-visualise.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="6">
+<li><p>Gunakan tombol built-in</p></li>
+</ol>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/upsidedownlabs/Chords-LSL-Visualizer/">Chords LSL Visualizer</a></p></li>
+<li><p><a class="reference external" href="https://www.brainproducts.com/downloads/more-software/">Brain Vision LSL Viewer</a></p></li>
+<li><p><a class="reference external" href="https://open-ephys.org/gui">Open EEG GUI</a></p></li>
+<li><p><a class="reference external" href="https://github.com/labstreaminglayer/App-LabRecorder">LabRecorder</a></p></li>
+</ul>
+<p>untuk memvisualisasikan atau merekam stream LSL langsung Anda.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../_images/chords-lsl-connector-visualise.png"><img alt="Chords LSL Connector Visualise Tab" src="../../../_images/chords-lsl-connector-visualise.png" style="width: 600px;" />
+</a>
+</figure>
+</div>
+</div>
+</section>
+<section id="repositori-github">
+<h2>Repositori GitHub<a class="headerlink" href="#repositori-github" title="Link to this heading">#</a></h2>
+<p>Untuk kode sumber lengkap, pelacakan masalah, dan panduan kontribusi, kunjungi repo GitHub Chords-LSL-Connector.</p>
+<p>Anda akan menemukan panduan setup dan dapat melacak pengembangan berkelanjutan - termasuk perbaikan bug dan peningkatan fitur: <a class="reference external" href="https://github.com/upsidedownlabs/Chords-LSL-Connector">Chords LSL GitHub</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

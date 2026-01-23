@@ -1,0 +1,760 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modul 2: Memahami potensial istirahat &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/neuroscience-basics-for-biopotential-signals/module-2/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/courses/neuroscience-basics-for-biopotential-signals/module-2/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Modul 3 : Sifat Membran Pasif" href="../module-3/index.html" />
+    <link rel="prev" title="Modul 1: Sistem Saraf Manusia" href="../module-1/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Neuroscience Basics For Biopotential Signals</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module-1/index.html">Modul 1: Sistem Saraf Manusia</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modul 2: Memahami potensial istirahat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-3/index.html">Modul 3 : Sifat Membran Pasif</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-4/index.html">Modul 4 : Potensial Aksi dan Propagasinya</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-5/index.html">Modul 5 : Sinaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-6/index.html">Modul 6: Sinyal Biopotensial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-7/index.html">Modul 7: EMG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-8/index.html">Module 8: ECG/EKG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-9/index.html">Module 9 : EEG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-10/index.html">Module 10 : EOG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-11/index.html">Module 11 : Conclusion</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extracellular Electrophysiology Acquisition</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../open-ephys/index.html">Course Curriculum</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-1/index.html">Teori Hari 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-2/index.html">Teori Hari 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-3/index.html">Teori Hari 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-4/index.html">Teori Hari 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/exday1-nokit.html">Latihan Hari ke-1: Tanpa Perangkat Keras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/exday2-nokit.html">Latihan Hari 2: Tanpa Perangkat Keras</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Courses</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">&lt;no title&gt;</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Modul 2: Memahami potensial istirahat</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="modul-2-memahami-potensial-istirahat">
+<span id="neuroscience-basics-for-biopotential-signals-module-2"></span><h1>Modul 2: Memahami potensial istirahat<a class="headerlink" href="#modul-2-memahami-potensial-istirahat" title="Link to this heading">#</a></h1>
+<p>Potensial istirahat neuron adalah perbedaan potensial elektrik/tegangan di seluruh membran plasma di mana neuron dalam keadaan tidak tereksitasi (yaitu, tidak mengirim atau menerima sinyal apa pun). <a class="footnote-reference brackets" href="#id24" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>
+Memahami potensial istirahat sangat penting untuk memahami bagaimana neuron tetap siap menembakkan potensial aksi dan bagaimana mereka memproses dan mentransmisikan informasi. Namun, sebelum membahas topik ini, penting untuk terlebih dahulu menjelajahi sifat elektrik neuron, karena listrik adalah sarana utama di mana neuron berkomunikasi.</p>
+<section id="dasar-dasar-listrik">
+<h2>2.1 Dasar-dasar listrik<a class="headerlink" href="#dasar-dasar-listrik" title="Link to this heading">#</a></h2>
+<p>Mari kita tinjau beberapa konsep dasar listrik yang akan membantu kita menjelajahi sifat elektrik neuron.</p>
+<section id="arus">
+<h3>2.1.1 Arus<a class="headerlink" href="#arus" title="Link to this heading">#</a></h3>
+<p>Ini didefinisikan sebagai laju aliran muatan. Di neuron, ini adalah gerakan ion seperti natrium (Na<sup>+</sup>), kalium (K<sup>+</sup>), Klorida (Cl<sup>-</sup>), dan Kalsium (Ca<sup>2+</sup>)  di seluruh membran, yang penting untuk menghasilkan sinyal elektrik.</p>
+<figure class="align-center" id="id35">
+<img alt="current in neurons" src="../../../_images/current.png" />
+<figcaption>
+<p><span class="caption-text">Arus: Gerakan ion di seluruh membran</span><a class="headerlink" href="#id35" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="tegangan">
+<h3>2.1.2 Tegangan<a class="headerlink" href="#tegangan" title="Link to this heading">#</a></h3>
+<p>Ini adalah potensial elektrik yang mendorong aliran muatan yang ditemukan oleh Alessandro Volta pada tahun 1778. Dalam konteks neuron, tegangan mengacu pada perbedaan potensial elektrik di seluruh membran neuron, yang penting untuk menghasilkan dan mentransmisikan sinyal elektrik.</p>
+<figure class="align-center" id="id36">
+<img alt="voltage in neurons" src="../../../_images/voltage.png" />
+<figcaption>
+<p><span class="caption-text">Tegangan: perbedaan potensial elektrik di seluruh membran neuron</span><a class="headerlink" href="#id36" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Untuk lebih memahami potensial elektrik, penting untuk mendefinisikan gaya elektrostatik.</p>
+</section>
+<section id="gaya-elektrostatik">
+<h3>2.1.3 Gaya elektrostatik<a class="headerlink" href="#gaya-elektrostatik" title="Link to this heading">#</a></h3>
+<p>Ini adalah gaya yang timbul karena interaksi antara objek atau partikel bermuatan. Gaya-gaya ini
+adalah bagian dari gaya fundamental alam dan dijelaskan oleh hukum Coulomb.</p>
+<figure class="align-center" id="id37">
+<img alt="electrostatic force" src="../../../_images/electrostatic-force.png" />
+<figcaption>
+<p><span class="caption-text">Gaya elektrostatik</span><a class="headerlink" href="#id37" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="hukum-coulomb">
+<h3>2.1.4 Hukum Coulomb<a class="headerlink" href="#hukum-coulomb" title="Link to this heading">#</a></h3>
+<p>Gaya elektrostatik (F) antara dua muatan titik (q1​ dan q2) diberikan oleh:</p>
+<div class="math notranslate nohighlight">
+\[F= F1= F2= k\frac{q1q2}{r^2}\]</div>
+<p>Persamaan 1:</p>
+<ul class="simple">
+<li><p>F = Gaya elektrostatik</p></li>
+<li><p>k = Konstanta Coulomb (8.99×10*9 Nm*2/C*2)</p></li>
+<li><p>q1,q2 = muatan</p></li>
+<li><p>r = jarak antara pusat dua muatan</p></li>
+</ul>
+<div class="admonition-info-tambahan admonition">
+<p class="admonition-title">Info Tambahan</p>
+<p>Hukum Coulomb pertama kali diterbitkan pada tahun 1785 oleh fisikawan Prancis Charles-Augustin de Coulomb.</p>
+</div>
+</section>
+<section id="hukum-tarik-menarik-tolak-menolak">
+<h3>2.1.5 Hukum tarik-menarik &amp; tolak-menolak<a class="headerlink" href="#hukum-tarik-menarik-tolak-menolak" title="Link to this heading">#</a></h3>
+<p><strong>Gaya tarik-menarik:</strong> Jika muatan memiliki tanda berlawanan (positif dan negatif), gaya tersebut bersifat tarik-menarik.</p>
+<figure class="align-center" id="id38">
+<img alt="Attractive force" src="../../../_images/attractive-forces.png" />
+<figcaption>
+<p><span class="caption-text">Gaya tarik-menarik</span><a class="headerlink" href="#id38" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Gaya tolak-menolak:</strong> Jika muatan memiliki tanda sama (keduanya positif atau keduanya negatif), gaya tersebut bersifat tolak-menolak.</p>
+<figure class="align-center" id="id39">
+<img alt="Repulsive force" src="../../../_images/repulsive-forces.png" />
+<figcaption>
+<p><span class="caption-text">Gaya tolak-menolak</span><a class="headerlink" href="#id39" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="potensial-istirahat">
+<h2>2.2 Potensial Istirahat<a class="headerlink" href="#potensial-istirahat" title="Link to this heading">#</a></h2>
+<p>Potensial istirahat mengacu pada perbedaan potensial elektrik di seluruh membran neuron ketika neuron sedang istirahat. Ini terutama ditentukan oleh distribusi ion yang tidak merata, khususnya kalium (K<sup>+</sup>) dan natrium (Na<sup>+</sup>), di seluruh membran neuron. <a class="footnote-reference brackets" href="#id24" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<figure class="align-center" id="id40">
+<img alt="Resting potential" src="../../../_images/resting-potential.png" />
+<figcaption>
+<p><span class="caption-text">Potensial istirahat</span><a class="headerlink" href="#id40" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Potensial membran adalah tegangan di seluruh membran pada saat tertentu, sedangkan potensial istirahat adalah potensial membran ketika neuron sedang istirahat (yaitu, tidak mengirim atau menerima sinyal apa pun).</p></li>
+<li><dl class="simple">
+<dt>Tegangan di seluruh membran adalah pengukuran komparatif. Ahli saraf secara konsisten menggunakan luar sel sebagai titik referensi untuk mengukur tegangan di seluruh membran. Misalnya, jika bagian dalam sel 70 mV lebih negatif daripada luar, kita akan menyatakan tegangan sebagai -70 mV. <a class="footnote-reference brackets" href="#id24" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></dt><dd><ul>
+<li><p>Rentang tegangan potensial membran : -60 mV SAMPAI +90 mV</p></li>
+<li><p>Tegangan potensial istirahat: Sekitar -70 mV</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<p>Potensial istirahat neuron terutama dipengaruhi oleh dua faktor utama: difusi dan gaya elektrostatik. Mari kita pahami mereka secara individual. <a class="footnote-reference brackets" href="#id24" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<section id="difusi-1">
+<h3>2.2.1 Difusi <a class="footnote-reference brackets" href="#id24" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#difusi-1" title="Link to this heading">#</a></h3>
+<section id="gradien-konsentrasi-ion">
+<h4>Gradien Konsentrasi Ion<a class="headerlink" href="#gradien-konsentrasi-ion" title="Link to this heading">#</a></h4>
+<p>Neuron mempertahankan konsentrasi spesifik ion, khususnya natrium (Na<sup>+</sup>), kalium (K<sup>+</sup>), klorida (Cl<sup>-</sup>), dan anion organik (A⁻), di seluruh membran mereka. Biasanya, ada konsentrasi K<sup>+</sup> yang lebih tinggi di dalam neuron dan konsentrasi Na<sup>+</sup> yang lebih tinggi di luar.</p>
+</section>
+<section id="gerakan-ion">
+<h4>Gerakan Ion<a class="headerlink" href="#gerakan-ion" title="Link to this heading">#</a></h4>
+<p>Karena gradien konsentrasi, ion cenderung bergerak dari area konsentrasi lebih tinggi ke konsentrasi lebih rendah melalui saluran di membran neuron. Misalnya, ion K<sup>+</sup> berdifusi keluar dari neuron, sementara ion Na<sup>+</sup> cenderung berdifusi masuk ke neuron.</p>
+<figure class="align-center" id="id41">
+<img alt="Diffusion of ions" src="../../../_images/diffusion.png" />
+<figcaption>
+<p><span class="caption-text">Difusi ion</span><a class="headerlink" href="#id41" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="gaya-elektrostatik-1">
+<h3>2.2.2 Gaya elektrostatik <a class="footnote-reference brackets" href="#id24" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#gaya-elektrostatik-1" title="Link to this heading">#</a></h3>
+<p>Gaya elektrostatik penting dalam menciptakan potensial istirahat neuron. Ini timbul dari gerakan ion seperti kalium dan natrium, yang dipengaruhi oleh gradien konsentrasi dan gaya tarik-menolak antara partikel bermuatan. Distribusi ion yang tidak merata di seluruh membran, dikombinasikan dengan gaya elektrostatik, menghasilkan muatan negatif di dalam neuron relatif terhadap luar, yang mengarah ke potensial istirahat khas sekitar -70mV, yang penting untuk kemampuan neuron menghasilkan potensial aksi dan berkomunikasi dengan neuron lain.</p>
+</section>
+</section>
+<section id="potensial-kesetimbangan">
+<h2>2.3 Potensial kesetimbangan<a class="headerlink" href="#potensial-kesetimbangan" title="Link to this heading">#</a></h2>
+<p>Potensial kesetimbangan (juga dikenal sebagai potensial Nernst) untuk ion spesifik adalah potensial membran di mana aliran bersih ion tersebut di seluruh membran adalah nol. Pada potensial ini, gradien konsentrasi (gaya difusif) seimbang dengan gradien elektrik (gaya elektrostatik). Ini berarti bahwa gaya elektrostatik yang menarik ion ke dalam sel seimbang persis dengan gradien konsentrasi yang mendorongnya keluar (atau sebaliknya). <a class="footnote-reference brackets" href="#id24" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<figure class="align-center" id="id42">
+<img alt="Equilibrium potential" src="../../../_images/equilibrium-potential.png" />
+<figcaption>
+<p><span class="caption-text">Potensial kesetimbangan</span><a class="headerlink" href="#id42" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Persamaan Nernst:</strong> Potensial kesetimbangan untuk ion spesifik dapat dihitung menggunakan persamaan Nernst: <a class="footnote-reference brackets" href="#id25" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<div class="math notranslate nohighlight">
+\[E_{ion} = \frac{RT}{zF} ln \frac{I_{out}}{I_{in}}\]</div>
+<p>Di mana:</p>
+<ul class="simple">
+<li><p>E<sub>ion</sub> adalah potensial kesetimbangan untuk ion.</p></li>
+<li><p>R adalah konstanta gas universal.</p></li>
+<li><p>T adalah suhu absolut dalam Kelvin.</p></li>
+<li><p>z adalah valensi (muatan) ion.</p></li>
+<li><p>F adalah konstanta Faraday.</p></li>
+<li><p>I<sub>out</sub> dan I<sub>in</sub> adalah konsentrasi ion di luar dan di dalam sel, masing-masing.</p></li>
+</ul>
+<p>Potensial Kesetimbangan untuk ion utama: <a class="footnote-reference brackets" href="#id24" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<ul class="simple">
+<li><p>K<sup>+</sup>: Sekitar -90 mV (ketika K<sup>+</sup> memiliki konsentrasi intraseluler 120 mM dan ekstraseluler 4 mM)</p></li>
+<li><p>Na<sup>+</sup>: Sekitar +60 mV (ketika Na<sup>+</sup> memiliki konsentrasi intraseluler 14 mM dan ekstraseluler 140 mM)</p></li>
+</ul>
+</section>
+<section id="persamaan-goldman-3">
+<h2>2.4 Persamaan Goldman <a class="footnote-reference brackets" href="#id26" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a><a class="headerlink" href="#persamaan-goldman-3" title="Link to this heading">#</a></h2>
+<p>Persamaan Goldman, sering disebut sebagai persamaan GHK, menghitung potensial istirahat sel berdasarkan permeabilitas dan konsentrasi beberapa ion. Ini memperhitungkan kontribusi relatif ion berbeda terhadap potensial istirahat. Persamaannya adalah sebagai berikut:</p>
+<div class="math notranslate nohighlight">
+\[V_m = \frac{RT}{F} \ln \left( \frac{P_{K^+}[K^+]_{out} + P_{Na^+}[Na^+]_{out} + P_{Cl^-}[Cl^-]_{in}}{P_{K^+}[K^+]_{in} + P_{Na^+}[Na^+]_{in} + P_{Cl^-}[Cl^-]_{out}} \right)\]</div>
+<p>di mana:</p>
+<ul class="simple">
+<li><p>V<sub>m</sub> adalah potensial membran</p></li>
+<li><p>R adalah konstanta gas universal</p></li>
+<li><p>T adalah suhu absolut dalam Kelvin</p></li>
+<li><p>F adalah konstanta Faraday</p></li>
+<li><p>P<sub>X</sub> adalah permeabilitas ion X</p></li>
+<li><p>X<sub>in</sub> adalah konsentrasi ion X di dalam sel</p></li>
+<li><p>X<sub>out</sub> adalah konsentrasi ion X di luar sel</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Potensial Nernst (atau potensial kesetimbangan) menunjukkan tegangan untuk ion spesifik, tetapi karena potensial istirahat dipengaruhi oleh beberapa ion, kita menggunakan persamaan Goldman untuk menghitung potensial istirahat keseluruhan sel. <a class="footnote-reference brackets" href="#id24" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+</div>
+</section>
+<section id="saluran-ion">
+<h2>2.5 Saluran ion<a class="headerlink" href="#saluran-ion" title="Link to this heading">#</a></h2>
+<p>Saluran ion (juga disebut filter ion atau saluran ion-selektif) adalah protein khusus di sel saraf (neuron) yang mengontrol gerakan ion di seluruh membran sel. <a class="footnote-reference brackets" href="#id27" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> Saluran ini membantu ion tertentu - seperti natrium (Na<sup>+</sup>), kalium (K<sup>+</sup>), kalsium (Ca<sup>2+</sup>), atau klorida (Cl<sup>-</sup>) - bergerak cepat di seluruh membran berdasarkan gradien konsentrasi (yaitu, dari tinggi ke rendah konsentrasi). <a class="footnote-reference brackets" href="#id28" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a></p>
+<p>Ada dua jenis saluran ion utama:</p>
+<section id="saluran-kebocoran">
+<h3>Saluran Kebocoran<a class="headerlink" href="#saluran-kebocoran" title="Link to this heading">#</a></h3>
+<p>Ini sebagian besar terbuka, membiarkan ion mengalir bebas berdasarkan gradien konsentrasi mereka.</p>
+</section>
+<section id="saluran-berpintu-tegangan">
+<h3>Saluran Berpintu Tegangan<a class="headerlink" href="#saluran-berpintu-tegangan" title="Link to this heading">#</a></h3>
+<p>Saluran ini membuka dan menutup sebagai respons terhadap perubahan potensial membran sel. Mereka penting untuk menghasilkan dan mentransmisikan sinyal elektrik, seperti potensial aksi.</p>
+<p>Saluran ion sangat selektif, yang berarti mereka hanya membiarkan ion tertentu melewati sambil memblokir yang lain. Misalnya, saluran kalium memungkinkan hanya ion kalium (K<sup>+</sup>) melewati sambil memblokir semua ion lainnya. Demikian pula, saluran natrium memungkinkan hanya ion natrium melewati sambil memblokir semua ion lainnya.</p>
+</section>
+<section id="bagaimana-cara-kerjanya">
+<h3>Bagaimana cara kerjanya?<a class="headerlink" href="#bagaimana-cara-kerjanya" title="Link to this heading">#</a></h3>
+<p>Anda mungkin berpikir bahwa saluran ion bisa memblokir semua ion positif dengan menambahkan muatan positif ke pembukaannya, tetapi ini tidak akan berhasil karena baik K<sup>+</sup> dan Na<sup>+</sup> bermuatan positif. Sebaliknya, saluran ion ini memilih ion berdasarkan ukuran mereka. Ion natrium lebih kecil (116 pikometer), sedangkan ion kalium sedikit lebih besar (152 pikometer).
+Masih, natrium bisa melewati saluran ion natrium dan bukan saluran kalium.</p>
+<p>Apa yang bisa menjadi alasan? Mari kita lihat.</p>
+<p>Di neuron, ion natrium (Na<sup>+</sup>) dan kalium (K<sup>+</sup>) dikelilingi oleh “cangkang hidrasi,” yang mengacu pada struktur molekul air yang diatur di sekitar setiap ion karena interaksi elektrostatik. Cangkang hidrasi untuk ion natrium lebih kuat daripada ion kalium karena kepadatan muatan tinggi mereka (yaitu, muatan per unit area).</p>
+<p><strong>Apa yang terjadi ketika keduanya mencoba melewati saluran ion natrium?</strong> <a class="footnote-reference brackets" href="#id29" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a></p>
+<p>Susunan asam amino di saluran ion natrium lebih menyukai lintasan ion natrium tetapi bukan ion kalium . Ketika kedua ion datang untuk melewati saluran ion bersama dengan cangkang hidrasi mereka, susunan asam amino di saluran ion natrium menolak dan menghilangkan ion natrium dari cangkang hidrasinya tetapi tidak dapat menghilangkan ion kalium dari cangkang hidrasinya. Itulah sebabnya ion natrium hanya melewati saluran ion natrium.</p>
+<p>Demikian pula ion kalium hanya melewati saluran ion kalium.</p>
+</section>
+</section>
+<section id="pompa-natrium-kalium">
+<h2>2.6 Pompa natrium kalium<a class="headerlink" href="#pompa-natrium-kalium" title="Link to this heading">#</a></h2>
+<p>Pompa natrium-kalium (Na<sup>+</sup>/K<sup>+</sup> ATPase) adalah protein membran penting yang membantu mempertahankan keseimbangan yang tepat ion natrium (Na<sup>+</sup>) dan kalium (K<sup>+</sup>) di seluruh membran sel, khususnya di neuron. <a class="footnote-reference brackets" href="#id30" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p>
+<p>Ini bertanggung jawab atas transport aktif ion Na<sup>+</sup> dan K<sup>+</sup>, yang penting untuk mempertahankan potensial istirahat. Ini adalah proses yang bergantung pada energi, dan pompa natrium-kalium menggunakan energi yang dihasilkan dari hidrolisis ATP menjadi ADP + Pi untuk memindahkan ion Na<sup>+</sup> dan K<sup>+</sup> melawan gradien konsentrasi alami mereka (yaitu, dari tinggi ke rendah konsentrasi). <a class="footnote-reference brackets" href="#id31" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p>
+<div class="math notranslate nohighlight">
+\[\text{ATP} \rightarrow \text{ADP} + P_i\]</div>
+<p>di mana:</p>
+<ul class="simple">
+<li><p>ATP adalah Adenosin trifosfat</p></li>
+<li><p>ADP adalah Adenosin difosfat</p></li>
+<li><p>P<sub>i</sub> adalah ion fosfat</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Transport Aktif adalah proses yang melibatkan gerakan molekul dari wilayah konsentrasi lebih rendah ke area konsentrasi lebih tinggi melawan gradien konsentrasi alami mereka. <a class="footnote-reference brackets" href="#id32" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p>
+</div>
+<section id="fungsi-pompa-natrium-kalium">
+<h3>Fungsi Pompa Natrium-Kalium<a class="headerlink" href="#fungsi-pompa-natrium-kalium" title="Link to this heading">#</a></h3>
+<p>Biasanya ada konsentrasi natrium yang lebih tinggi di luar sel dan konsentrasi ion kalium yang lebih tinggi di dalam sel.</p>
+<p>Dengan setiap siklus, pompa natrium-kalium memindahkan 3 ion Na<sup>+</sup> keluar dari neuron dan 2 ion K<sup>+</sup> masuk ke neuron. Ini menghasilkan ekspor bersih muatan positif dari neuron, berkontribusi pada potensial membran istirahat negatif. <a class="footnote-reference brackets" href="#id30" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p>
+<figure class="align-center" id="id43">
+<img alt="Sodium-Potassium pump" src="../../../_images/sodium-potassium-pump.png" />
+<figcaption>
+<p><span class="caption-text">Pompa Natrium-Kalium</span><a class="headerlink" href="#id43" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Pompa membantu mempertahankan gradien elektrokimia penting untuk potensial istirahat, biasanya sekitar -70 mV di neuron. Gradien ini penting untuk generasi potensial aksi. <a class="footnote-reference brackets" href="#id33" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></p></li>
+<li><p>Potensial aksi adalah perubahan cepat, sementara potensial elektrik di seluruh membran neuron yang memungkinkannya mentransmisikan sinyal sepanjang aksonnya. Ini adalah mekanisme fundamental di mana neuron berkomunikasi satu sama lain dan sel lain.</p></li>
+</ol>
+</div>
+<div class="admonition-fakta-menarik admonition">
+<p class="admonition-title">Fakta Menarik</p>
+<p>Pompa natrium-kalium mengkonsumsi sekitar 70% (2/3) energi sel saraf. <a class="footnote-reference brackets" href="#id34" id="id23" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a></p>
+</div>
+</section>
+</section>
+<section id="ringkasan">
+<h2>2.7 Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
+<p>Dalam modul ini, kita belajar bagaimana neuron mempertahankan keadaan elektrik stabil yang disebut potensial istirahat (sekitar ~70 mV). Kita meninjau konsep elektrik penting - arus, tegangan, gaya elektrostatik, dan hukum Coulomb - untuk memahami bagaimana ion mendorong tegangan membran. Kita menjelajahi bagaimana difusi dan gaya elektrostatik bersama-sama menetapkan potensial membran, dan belajar bagaimana ion individu memiliki potensial kesetimbangan mereka sendiri (melalui persamaan Nernst). Kita juga mempelajari persamaan Goldman (GHK), yang menghitung potensial istirahat keseluruhan berdasarkan permeabilitas ion.
+Kita memeriksa saluran ion, selektivitas mereka, dan bagaimana saluran kebocoran mempertahankan potensial istirahat, bersama dengan peran penting pompa natrium-kalium, yang menggunakan ATP untuk melestarikan gradien ion dengan memompa 3 Na⁺ keluar dan 2 K⁺ masuk.
+Modul ini membentuk fondasi elektrik yang diperlukan untuk memahami:</p>
+<ul class="simple">
+<li><p>Sifat membran pasif (Modul 3), yang menentukan bagaimana sinyal menyebar sepanjang neuron, dan</p></li>
+<li><p>Potensial aksi (Modul 4), yang merupakan lonjakan cepat yang digunakan untuk komunikasi jarak jauh.</p></li>
+</ul>
+</section>
+<section id="referensi">
+<h2>2.8 Referensi<a class="headerlink" href="#referensi" title="Link to this heading">#</a></h2>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id24" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>,<a role="doc-backlink" href="#id6">6</a>,<a role="doc-backlink" href="#id7">7</a>,<a role="doc-backlink" href="#id9">8</a>,<a role="doc-backlink" href="#id11">9</a>)</span>
+<p><a class="reference external" href="https://europepmc.org/article/NBK/nbk538338#article-28427.r1">Chrysafides SM, Bordes SJ, Sharma S. Physiology, Resting Potential. In: StatPearls. StatPearls Publishing, Treasure Island (FL); 2023. PMID: 30855922</a></p>
+</aside>
+<aside class="footnote brackets" id="id25" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/8788226">Veech RL, Kashiwaya Y, King MT. The resting membrane potential of cells are measures of electrical work, not of ionic currents. Integr Physiol Behav Sci. 1995 Sep-Dec;30(4):283-307</a></p>
+</aside>
+<aside class="footnote brackets" id="id26" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">3</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.researchgate.net/publication/229720102_Ionic_Basis_of_Resting_and_Action_Potentials">Hille, Bertil. (2011). Ionic Basis of Resting and Action Potentials</a></p>
+</aside>
+<aside class="footnote brackets" id="id27" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">4</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.3389/fnmol.2013.00005">Mourot, A., Tochitsky, I., &amp; Kramer, R. H. (2013). Light at the end of the channel: Optical manipulation of intrinsic neuronal excitability with chemical photoswitches.</a></p>
+</aside>
+<aside class="footnote brackets" id="id28" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">5</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK26910/">Alberts B, Johnson A, Lewis J, et al. Molecular Biology of the Cell. 4th edition. New York: Garland Science; 2002. Ion Channels and the Electrical Properties of Membranes</a></p>
+</aside>
+<aside class="footnote brackets" id="id29" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">6</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4972134/">Kühlbrandt W. Three in a row-how sodium ions cross the channel. EMBO J. 2016 Apr 15;35(8):793-5. doi: 10.15252/embj.201694094. Epub 2016 Mar 21. PMID: 27002160; PMCID: PMC4972134</a></p>
+</aside>
+<aside class="footnote brackets" id="id30" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id18">1</a>,<a role="doc-backlink" href="#id21">2</a>)</span>
+<p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK537088/">Pirahanchi Y, Jessu R, Aeddula NR. Physiology, Sodium Potassium Pump. [Updated 2023 Mar 13]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2024 Jan</a></p>
+</aside>
+<aside class="footnote brackets" id="id31" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">8</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1007/978-1-4684-4601-2_2">Glynn, I.M. (1985). The Na+, K+-Transporting Adenosine Triphosphatase. In: Martonosi, A.N. (eds) The Enzymes of Biological Membranes. Springer, Boston, MA</a></p>
+</aside>
+<aside class="footnote brackets" id="id32" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">9</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1007/978-1-4614-7516-3_5">Skou, J.C. (1989). Sodium-Potassium Pump. In: Tosteson, D.C. (eds) Membrane Transport. People and Ideas. Springer, New York, NY</a></p>
+</aside>
+<aside class="footnote brackets" id="id33" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">10</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1038/nature06419">Morth, J., Pedersen, B., Toustrup-Jensen, M. et al. Crystal structure of the sodium-potassium pump. Nature 450, 1043–1049 (2007)</a></p>
+</aside>
+<aside class="footnote brackets" id="id34" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">11</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK26896/">Alberts B, Johnson A, Lewis J, et al. Molecular Biology of the Cell. 4th edition. New York: Garland Science; 2002. Carrier Proteins and Active Membrane Transport</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>
