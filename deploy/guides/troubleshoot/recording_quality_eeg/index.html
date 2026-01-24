@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Kualitas Perekaman EEG &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'guides/troubleshoot/recording_quality_eeg/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/guides/troubleshoot/recording_quality_eeg/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Berkontribusi pada Dokumentasi" href="../../contribute/index.html" />
+    <link rel="prev" title="Mengatasi masalah perangkat lunak" href="../resolve-software-issues/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../usage-guides/skin-preparation/index.html">Panduan Persiapan Kulit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage-guides/using-bioamp-bands/index.html">Menggunakan BioAmp Bands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage-guides/using-gel-electrodes/index.html">Menggunakan Elektroda Gel</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Troubleshoot</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tips/index.html">Tips untuk akuisisi sinyal terbaik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fix-hardware-setup/index.html">Memperbaiki setup hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resolve-software-issues/index.html">Mengatasi masalah perangkat lunak</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Kualitas Perekaman EEG</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contribution Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Berkontribusi pada Dokumentasi</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Guides</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Kualitas Perekaman EEG</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="kualitas-perekaman-eeg">
+<span id="recording-quality-eeg"></span><h1>Kualitas Perekaman EEG<a class="headerlink" href="#kualitas-perekaman-eeg" title="Link to this heading">#</a></h1>
+<p>Panduan ini akan membantu Anda mengatur dan memverifikasi sinyal EEG Anda menggunakan Hardware BioAmp dan perangkat lunak Chords.</p>
+<section id="langkah-1-persiapan-kulit">
+<h2>Langkah 1: Persiapan Kulit<a class="headerlink" href="#langkah-1-persiapan-kulit" title="Link to this heading">#</a></h2>
+<p>Persiapan kulit yang tepat sangat penting sebelum merekam sinyal biopoten sial apa pun, baik itu Elektrokardiografi (ECG), Elektromiografi (EMG), Elektroensefalografi (EEG), atau Elektrookulografi (EOG). Ini membantu untuk:</p>
+<ul class="simple">
+<li><p>Membersihkan permukaan kulit</p></li>
+<li><p>Mengurangi impedansi elektroda-kulit</p></li>
+<li><p>Meningkatkan kualitas sinyal secara keseluruhan</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Butuh bantuan dengan persiapan kulit? Lihat panduan lengkap di sini: <a class="reference internal" href="../../usage-guides/skin-preparation/index.html#skin-preparation"><span class="std std-ref">Panduan Persiapan Kulit</span></a></p>
+</div>
+</section>
+<section id="langkah-2-menghubungkan-kabel-bioamp-ke-hardware">
+<h2>Langkah 2: Menghubungkan Kabel BioAmp ke Hardware<a class="headerlink" href="#langkah-2-menghubungkan-kabel-bioamp-ke-hardware" title="Link to this heading">#</a></h2>
+<p>Hubungkan kabel BioAmp ke saluran input yang sesuai dari perangkat EEG Anda. Pastikan elektroda ground dan referensi terhubung dengan aman ke tubuh.</p>
+<figure class="align-center" id="id1">
+<img alt="Koneksi hardware BioAmp" src="../../../_images/connections.png" />
+<figcaption>
+<p><span class="caption-text">Koneksi hardware BioAmp</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="langkah-3-menempelkan-elektroda-gel-pada-area-target">
+<h2>Langkah 3: Menempelkan Elektroda Gel pada Area Target<a class="headerlink" href="#langkah-3-menempelkan-elektroda-gel-pada-area-target" title="Link to this heading">#</a></h2>
+<p>Tempatkan elektroda berbasis gel dengan kuat pada daerah kulit kepala target—biasanya lobus frontal (misalnya, Fp1, Fp2) atau oksipital (misalnya, O1, O2)—tergantung pada sinyal minat Anda. Pastikan elektroda memiliki kontak kulit yang baik dan tidak longgar.</p>
+<figure class="align-center" id="id2">
+<img alt="Penempatan elektroda gel EEG" src="../../../_images/eeg_place.jpg" />
+<figcaption>
+<p><span class="caption-text">Penempatan elektroda gel EEG</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="langkah-4-buka-perangkat-lunak-chords-untuk-memvisualisasikan-sinyal">
+<h2>Langkah 4: Buka Perangkat Lunak Chords untuk Memvisualisasikan Sinyal<a class="headerlink" href="#langkah-4-buka-perangkat-lunak-chords-untuk-memvisualisasikan-sinyal" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Buka browser berbasis Chromium seperti <strong>Google Chrome</strong>, <strong>Microsoft Edge</strong>, <strong>Opera</strong>, atau <strong>Brave</strong>.</p></li>
+<li><p>Kunjungi: <a class="reference external" href="https://chords.upsidedownlabs.tech">https://chords.upsidedownlabs.tech</a></p></li>
+<li><p>Klik tombol <strong>Visualize Now</strong> di halaman utama dan kemudian klik tombol <strong>Chords-Visualizer</strong> di halaman berikutnya.</p></li>
+<li><p>Hubungkan perangkat Anda melalui <strong>Serial</strong> dengan memilih port perangkat Anda.</p></li>
+<li><p>Mulai visualisasi real-time sinyal EEG Anda.</p></li>
+</ol>
+</section>
+<section id="langkah-5-cara-memeriksa-apakah-sinyal-benar">
+<h2>Langkah 5: Cara Memeriksa Apakah Sinyal Benar<a class="headerlink" href="#langkah-5-cara-memeriksa-apakah-sinyal-benar" title="Link to this heading">#</a></h2>
+<p>Untuk memverifikasi penempatan elektroda yang benar dan kualitas sinyal yang baik, coba tindakan berikut dan amati respons EEG yang diharapkan.</p>
+<ul class="simple">
+<li><p><strong>Kedipan Mata</strong></p></li>
+</ul>
+<p>Kedipan menciptakan lonjakan tajam di sinyal EEG - ini adalah artefak EOG yang disebabkan oleh gerakan mata.</p>
+<figure class="align-center" id="id3">
+<img alt="Bentuk gelombang kedipan mata" src="../../../_images/eye_blink.jpg" />
+<figcaption>
+<p><span class="caption-text">Bentuk gelombang kedipan mata</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Rahang Mengatup</strong></p></li>
+</ul>
+<p>Rahang mengatup kuat menghasilkan artefak EMG di sinyal EEG - ini disebabkan oleh aktivitas otot wajah.</p>
+<figure class="align-center" id="id4">
+<img alt="Bentuk gelombang rahang mengatup" src="../../../_images/jaw_clench.jpg" />
+<figcaption>
+<p><span class="caption-text">Bentuk gelombang rahang mengatup</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Gelombang Alpha (Mata Tertutup)</strong></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ini mungkin atau mungkin tidak mudah diamati untuk semua pengguna.</p>
+</div>
+<p>Tutup mata Anda dan rileks. Kami merekam EEG dari korteks frontal untuk mengamati gelombang alpha (8–12 Hz), yang muncul lebih jelas saat Anda tenang.</p>
+<figure class="align-center" id="id5">
+<img alt="Gelombang alpha EEG" src="../../../_images/alpha_waves.jpg" />
+<figcaption>
+<p><span class="caption-text">Gelombang alpha EEG</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Tes Lilin Beta</strong></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ini mungkin atau mungkin tidak mudah diamati untuk semua pengguna.</p>
+</div>
+<p>Untuk mencoba ini:
+Buka <strong>Perangkat Lunak Chords</strong> → <strong>Chords Visualizer</strong> → <strong>FFT Visualizer</strong> → Hubungkan perangkat Anda (Serial/Bluetooth).
+Kemudian, aktifkan fitur <strong>Beta Candle</strong>. Fokus dalam pada lilin. Saat fokus Anda meningkat, kecerahan lilin dan nilai numerik harus meningkat. Saat Anda tidak fokus, nilai turun dan lilin redup atau padam.</p>
+<figure class="align-center" id="id6">
+<img alt="Tes lilin beta" src="../../../_images/beta_candle.jpg" />
+<figcaption>
+<p><span class="caption-text">Tes lilin beta</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Jika semua atau sebagian besar respons ini terlihat jelas, setup Anda benar, dan sinyal EEG Anda cukup stabil untuk analisis.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modul 4 : Potensial Aksi dan Propagasinya &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/neuroscience-basics-for-biopotential-signals/module-4/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/courses/neuroscience-basics-for-biopotential-signals/module-4/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Modul 5 : Sinaps" href="../module-5/index.html" />
+    <link rel="prev" title="Modul 3 : Sifat Membran Pasif" href="../module-3/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Neuroscience Basics For Biopotential Signals</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module-1/index.html">Modul 1: Sistem Saraf Manusia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-2/index.html">Modul 2: Memahami potensial istirahat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-3/index.html">Modul 3 : Sifat Membran Pasif</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modul 4 : Potensial Aksi dan Propagasinya</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-5/index.html">Modul 5 : Sinaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-6/index.html">Modul 6: Sinyal Biopotensial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-7/index.html">Modul 7: EMG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-8/index.html">Module 8: ECG/EKG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-9/index.html">Module 9 : EEG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-10/index.html">Module 10 : EOG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-11/index.html">Module 11 : Conclusion</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extracellular Electrophysiology Acquisition</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../open-ephys/index.html">Course Curriculum</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-1/index.html">Teori Hari 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-2/index.html">Teori Hari 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-3/index.html">Teori Hari 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-4/index.html">Teori Hari 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/exday1-nokit.html">Latihan Hari ke-1: Tanpa Perangkat Keras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/exday2-nokit.html">Latihan Hari 2: Tanpa Perangkat Keras</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Courses</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">&lt;no title&gt;</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Modul 4 : Potensial Aksi dan Propagasinya</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="modul-4-potensial-aksi-dan-propagasinya">
+<span id="neuroscience-basics-for-biopotential-signals-module-4"></span><h1>Modul 4 : Potensial Aksi dan Propagasinya<a class="headerlink" href="#modul-4-potensial-aksi-dan-propagasinya" title="Link to this heading">#</a></h1>
+<p>Potensial aksi adalah perubahan cepat, sementara dalam perbedaan potensial elektrik (tegangan) membran neuron,
+yang penting untuk mentransmisikan sinyal ke bawah akson. Ini adalah mekanisme fundamental di mana
+neuron berkomunikasi satu sama lain dan sel lain. Kata lain yang digunakan untuk potensial aksi adalah “spike”.
+Dalam modul ini, kita akan mempelajari fase, mekanisme dan faktor yang mempengaruhi propagasi potensial aksi. <a class="footnote-reference brackets" href="#id17" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>Selama potensial aksi, potensial elektrik bergerak dari potensial istirahat negatif ke nilai positif,
+dan mengalami undershoot, dan kemudian kembali ke potensial istirahat. <a class="footnote-reference brackets" href="#id17" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<section id="saluran-ion-berpintu-tegangan">
+<h2>4.1 Saluran Ion Berpintu Tegangan<a class="headerlink" href="#saluran-ion-berpintu-tegangan" title="Link to this heading">#</a></h2>
+<p>Dalam pelajaran sebelumnya, kita telah mempelajari tentang saluran ion kebocoran pasif yang tidak mampu menghasilkan perubahan cepat
+dalam potensial membran neuron, jadi di sini kita memerlukan jenis saluran ion baru yang disebut Saluran Ion Berpintu Tegangan.</p>
+<p>Saluran berpintu tegangan adalah protein membran khusus yang membuka atau menutup sebagai respons terhadap perubahan dalam potensial membran. Pembukaan dan penutupan terkoordinasi mereka
+memungkinkan neuron mentransmisikan sinyal dengan cepat dan efektif di seluruh sistem saraf. Potensial aksi timbul dari aktivitas dua saluran ion berpintu tegangan utama: saluran Na⁺ berpintu tegangan dan saluran K⁺. Saluran ini membuka dan menutup pada saat tertentu, menghasilkan aliran ion, yang mengarah ke potensial aksi.</p>
+<figure class="align-default">
+<img alt="voltage-gated-on-Ion-channels" src="../../../_images/voltage-gated-on-Ion-channels.png" />
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Saluran ion berpintu tegangan membuka ketika potensial membran neuron mencapai nilai tertentu yang disebut nilai ambang. <a class="footnote-reference brackets" href="#id17" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+</div>
+</section>
+<section id="fase-potensial-aksi">
+<h2>4.2 Fase Potensial Aksi<a class="headerlink" href="#fase-potensial-aksi" title="Link to this heading">#</a></h2>
+<figure class="align-default">
+<img alt="phases-of-the-action-potential" src="../../../_images/phases-of-the-action-potential.png" />
+</figure>
+<p>Potensial aksi terdiri dari beberapa fase berbeda, masing-masing ditandai dengan perubahan spesifik dalam potensial membran dan gerakan ion :</p>
+<section id="fase-istirahat">
+<h3>Fase Istirahat<a class="headerlink" href="#fase-istirahat" title="Link to this heading">#</a></h3>
+<p>Pada fase istirahat, neuron memiliki potensial istirahat sekitar -70mv, dan saluran natrium dan
+kalium berpintu tegangan ditutup.</p>
+</section>
+<section id="fase-depolarisasi-fase-naik-1">
+<h3>Fase Depolarisasi (Fase Naik) <a class="footnote-reference brackets" href="#id17" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#fase-depolarisasi-fase-naik-1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Stimulus menyebabkan potensial membran menjadi kurang negatif.</p></li>
+<li><p>Jika depolarisasi mencapai ambang (sekitar -55 mV), saluran Na⁺ berpintu tegangan membuka.</p></li>
+<li><p>Ion Na⁺ masuk ke neuron karena gradien elektrokimia, mengarah ke kenaikan cepat dalam potensial membran, sering mencapai +30 mV.</p></li>
+</ul>
+</section>
+<section id="fase-repolarisasi-fase-turun-1">
+<h3>Fase Repolarisasi (Fase Turun) <a class="footnote-reference brackets" href="#id17" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#fase-repolarisasi-fase-turun-1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Pada puncak depolarisasi, saluran Na⁺ menutup.</p></li>
+<li><p>Setelah sekitar 1ms, saluran natrium menjadi tidak aktif yaitu saluran diblokir dan saluran kalium menjadi terbuka.</p></li>
+<li><p>Ion K⁺ keluar dari neuron, menyebabkan potensial membran menurun dan kembali ke tingkat istirahat.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Saluran natrium membuka segera, tetapi saluran kalium membutuhkan waktu. <a class="footnote-reference brackets" href="#id17" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+</div>
+</section>
+<section id="fase-hiperpolarisasi-undershoot-1">
+<h3>Fase Hiperpolarisasi (Undershoot) <a class="footnote-reference brackets" href="#id17" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#fase-hiperpolarisasi-undershoot-1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Potensial membran sementara menjadi lebih negatif daripada potensial istirahat (sekitar -80 mV) karena pembukaan berkepanjangan saluran K⁺.</p></li>
+<li><p>Fase ini membuat neuron kurang mungkin menembakkan potensial aksi lain segera.</p></li>
+</ul>
+</section>
+<section id="kembali-ke-fase-istirahat-1">
+<h3>Kembali ke Fase Istirahat <a class="footnote-reference brackets" href="#id17" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#kembali-ke-fase-istirahat-1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Saluran K⁺ menutup, dan pompa natrium-kalium (Na⁺/K⁺ ATPase) memulihkan potensial membran istirahat.</p></li>
+<li><p>Neuron siap menembakkan potensial aksi lain ketika dirangsang dengan tepat.</p></li>
+</ul>
+</section>
+</section>
+<section id="propagasi-potensial-aksi">
+<h2>4.3 Propagasi Potensial Aksi<a class="headerlink" href="#propagasi-potensial-aksi" title="Link to this heading">#</a></h2>
+<p>Propagasi potensial aksi mengacu pada gerakan potensial aksi (sinyal elektrik cepat, sementara)
+sepanjang membran sel yang dapat tereksitasi, seperti neuron atau sel otot. Propagasi potensial aksi
+memungkinkan komunikasi dalam sistem saraf dan kontraksi otot. Proses ini melibatkan urutan peristiwa
+yang memastikan sinyal ditransmisikan dari badan sel ke terminal akson, di mana ia dapat memicu
+pelepasan neurotransmitter atau kontraksi otot.</p>
+<p>Potensial aksi biasanya bergerak dalam satu arah sepanjang akson, dari badan sel menuju terminal akson. Ini disebabkan oleh periode refrakter, yang mencegah
+propagasi mundur. <a class="footnote-reference brackets" href="#id17" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<section id="periode-refrakter">
+<h3>Periode Refrakter<a class="headerlink" href="#periode-refrakter" title="Link to this heading">#</a></h3>
+<p>Periode refrakter mengacu pada periode waktu setelah potensial aksi di mana neuron tidak mampu
+menembakkan potensial aksi lain, atau memerlukan stimulus yang lebih kuat dari biasanya untuk melakukannya. Periode ini memastikan bahwa
+potensial aksi menyebar dalam satu arah (tanpa membalik arah) dan bahwa sel memiliki waktu yang cukup untuk
+mengatur ulang potensial membrannya ke keadaan istirahat.</p>
+<figure class="align-default">
+<img alt="Refractory Period" src="../../../_images/refractory-period.png" />
+</figure>
+<section id="jenis-periode-refrakter">
+<h4>Jenis Periode Refrakter<a class="headerlink" href="#jenis-periode-refrakter" title="Link to this heading">#</a></h4>
+<section id="periode-refrakter-absolut-1">
+<h5>Periode Refrakter Absolut: <a class="footnote-reference brackets" href="#id17" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#periode-refrakter-absolut-1" title="Link to this heading">#</a></h5>
+<p><strong>Definisi:</strong> Ini adalah periode selama dan segera setelah potensial aksi ketika neuron sepenuhnya
+tidak mampu menembakkan potensial aksi lain, tidak peduli seberapa kuat stimulusnya.</p>
+<p><strong>Durasi:</strong> Ini berlangsung dari awal depolarisasi hingga akhir repolarisasi (sampai potensial membran kembali ke nilai negatif yang cukup).
+Penyebab: Selama periode refrakter absolut, saluran Na⁺ berpintu tegangan terbuka atau tidak aktif, mencegah depolarisasi lebih lanjut. Gerbang inaktivasi saluran Na⁺ ditutup, yang berarti tidak ada potensial aksi baru yang dapat dimulai sampai mereka diatur ulang.</p>
+<p><strong>Signifikansi:</strong> Periode ini memastikan bahwa potensial aksi berjalan hanya dalam satu arah sepanjang akson, karena wilayah yang telah mengalami depolarisasi tidak dapat tereksitasi segera. Ini juga mencegah tumpang tindih potensial aksi.</p>
+</section>
+</section>
+<section id="periode-refrakter-relatif-1">
+<h4>Periode Refrakter Relatif: <a class="footnote-reference brackets" href="#id17" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#periode-refrakter-relatif-1" title="Link to this heading">#</a></h4>
+<p><strong>Definisi:</strong> Ini adalah periode yang mengikuti periode refrakter absolut, di mana neuron dapat menghasilkan potensial aksi lain,
+tetapi hanya jika stimulus lebih kuat dari biasanya.</p>
+<p><strong>Durasi:</strong> Periode refrakter relatif dimulai setelah repolarisasi, biasanya dimulai selama tahap akhir hiperpolarisasi, dan berakhir ketika potensial membran kembali ke tingkat istirahatnya.</p>
+<p><strong>Penyebab:</strong> Selama periode ini, saluran K⁺ berpintu tegangan masih terbuka, menyebabkan potensial membran lebih negatif dari biasanya (hiperpolarisasi). Meskipun beberapa saluran Na⁺ kembali ke keadaan istirahat dan mampu membuka kembali, tidak semuanya diatur ulang, jadi stimulus yang lebih kuat dari biasanya diperlukan untuk mengatasi keadaan ini.</p>
+<p><strong>Signifikansi:</strong> Periode refrakter relatif memungkinkan kemungkinan potensial aksi baru tetapi mencegah penembakan berlebihan, memastikan bahwa neuron tidak menembak terlalu sering.</p>
+</section>
+<section id="faktor-yang-mempengaruhi-kecepatan-propagasi">
+<h4>Faktor yang mempengaruhi kecepatan propagasi<a class="headerlink" href="#faktor-yang-mempengaruhi-kecepatan-propagasi" title="Link to this heading">#</a></h4>
+<section id="mielinasi-1">
+<h5>Mielinasi : <a class="footnote-reference brackets" href="#id17" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#mielinasi-1" title="Link to this heading">#</a></h5>
+<p><strong>Selubung Mielin:</strong> Banyak akson ditutupi mielin, zat berlemak yang mengisolasi akson dan meningkatkan kecepatan propagasi potensial aksi.</p>
+<p><strong>Nodus Ranvier:</strong> Potensial aksi melompat antara nodus Ranvier (celah di selubung mielin) melalui proses yang dikenal sebagai konduksi saltatori. Ini secara signifikan mempercepat transmisi impuls dibandingkan konduksi kontinyu di akson tidak bermielin.</p>
+<figure class="align-default">
+<img alt="Myelination" src="../../../_images/myelination.png" />
+</figure>
+</section>
+<section id="diameter-akson-1">
+<h5>Diameter Akson : <a class="footnote-reference brackets" href="#id17" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#diameter-akson-1" title="Link to this heading">#</a></h5>
+<p>Diameter akson memainkan peran penting dalam menentukan kecepatan di mana potensial aksi berjalan sepanjangnya. Secara khusus, diameter akson yang lebih besar menghasilkan transmisi potensial aksi yang lebih cepat. Ini karena akson yang lebih lebar menawarkan resistansi lebih sedikit terhadap aliran ion. Akibatnya, ion natrium dapat bergerak lebih cepat, yang memfasilitasi regenerasi potensial aksi yang lebih cepat di segmen akson yang berdekatan. Pada dasarnya, semakin besar akson, semakin efisien ia dapat menghantarkan sinyal elektrik karena resistansi aliran ion yang berkurang.</p>
+<div class="admonition-fakta-penting admonition">
+<p class="admonition-title">Fakta Penting</p>
+<p>Ketika mielin rusak, seperti dalam penyakit demielinasi seperti multiple sclerosis, area akson yang sebelumnya terisolasi menjadi terpapar. Ini mengarah ke peningkatan kapasitansi membran yang terpapar, yang berarti ia dapat menyimpan lebih banyak muatan. Akibatnya, ini memungkinkan sebagian arus elektrik bocor keluar dari akson, mengurangi efisiensi transmisi sinyal. Akibatnya, potensial aksi yang mencapai bagian akson yang tidak bermielin ini mulai melemah atau meluruh, mencegahnya berhasil disebarkan lebih jauh sepanjang akson. Pada dasarnya, kehilangan mielin mengganggu aliran sinyal elektrik normal, mengarah ke kegagalan komunikasi antara sel saraf (yaitu, potensial aksi berhenti menyebar).</p>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="bagian-info-tambahan">
+<h2>4.4 Bagian Info Tambahan<a class="headerlink" href="#bagian-info-tambahan" title="Link to this heading">#</a></h2>
+<p>Tetrodotoxin (TTX) adalah neurotoksin kuat yang dikenal untuk memblokir fungsi saraf, mengarah ke paralisis dan berpotensi
+kematian. Ini ditemukan di hewan tertentu, khususnya ikan buntal (fugu), tetapi juga di organisme laut lainnya,
+seperti spesies tertentu gurita, newts, dan katak.</p>
+<section id="mekanisme-aksi">
+<h3>4.4.1 Mekanisme Aksi:<a class="headerlink" href="#mekanisme-aksi" title="Link to this heading">#</a></h3>
+<p>Tetrodotoxin bekerja dengan mengikat secara selektif ke saluran natrium berpintu tegangan di membran sel saraf,
+memblokir ion natrium memasuki sel. Ini mengganggu potensial aksi, yang penting untuk pensinyalan saraf.</p>
+<section id="memblokir-saluran-natrium">
+<h4>4.4.2 Memblokir Saluran Natrium:<a class="headerlink" href="#memblokir-saluran-natrium" title="Link to this heading">#</a></h4>
+<p>TTX mengikat ke pori luar saluran natrium berpintu tegangan, mencegah influx ion natrium selama depolarisasi. Ini memblokir generasi potensial aksi.</p>
+</section>
+<section id="efek-pada-fungsi-saraf">
+<h4>4.4.3 Efek pada Fungsi Saraf:<a class="headerlink" href="#efek-pada-fungsi-saraf" title="Link to this heading">#</a></h4>
+<p>Ketidakmampuan untuk menghasilkan potensial aksi mencegah saraf berkomunikasi satu sama lain, mengarah ke paralisis dan kegagalan pernapasan.</p>
+</section>
+<section id="sumber-tetrodotoxin">
+<h4>4.4.4 Sumber Tetrodotoxin :<a class="headerlink" href="#sumber-tetrodotoxin" title="Link to this heading">#</a></h4>
+<p>Tetrodotoxin diproduksi oleh bakteri tertentu, bukan langsung oleh hewan yang membawanya. Hewan ini mengakumulasi TTX melalui diet mereka, biasanya dengan mengonsumsi mikroorganisme penghasil TTX seperti spesies Vibrio tertentu.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Meskipun toksisitasnya, banyak hewan yang membawa TTX tidak terluka olehnya karena adaptasi di saluran natrium mereka, yang mencegah TTX mengikat secara efektif.
+Tetrodotoxin sangat kuat. Sebanyak 2–3 mg TTX cukup untuk membunuh manusia. Mekanisme di mana ia menyebabkan kematian terutama melalui paralisis pernapasan karena pemblokiran transmisi saraf.</p>
+</div>
+</section>
+<section id="penelitian-medis-dan-penggunaan">
+<h4>4.4.5 Penelitian Medis dan Penggunaan :<a class="headerlink" href="#penelitian-medis-dan-penggunaan" title="Link to this heading">#</a></h4>
+<p>Meskipun toksisitasnya, TTX telah menarik perhatian dalam penelitian medis untuk potensinya sebagai penghilang rasa sakit dan sebagai alat untuk mempelajari fungsi saluran natrium.
+Manajemen Nyeri: Karena kemampuannya memblokir saluran natrium dan potensinya menghambat jalur nyeri tanpa mempengaruhi fungsi sensorik lainnya, TTX telah diselidiki untuk penggunaan dalam pengobatan nyeri terlokalisasi (misalnya, pada pasien dengan kondisi nyeri kronis seperti nyeri neuropatik atau nyeri pasca operasi).
+Penelitian Saluran Natrium: TTX adalah alat berharga dalam neurosains dan farmakologi untuk mempelajari peran saluran natrium dalam fungsi saraf.</p>
+<div class="admonition-fakta-penting admonition">
+<p class="admonition-title">Fakta Penting</p>
+<p>Ikan buntal dimakan untuk rasa halusnya yang halus dan sensasi kesemutan, mati rasa yang disebabkan TTX ketika dimakan dalam dosis kecil. <a class="footnote-reference brackets" href="#id18" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+</div>
+</section>
+</section>
+</section>
+<section id="ringkasan">
+<h2>4.5 Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
+<p>Dalam modul ini, kita menjelajahi bagaimana neuron menghasilkan lonjakan elektrik cepat yang disebut potensial aksi, yang memungkinkan komunikasi jarak jauh. Kita belajar bagaimana saluran natrium dan kalium berpintu tegangan membuka dan menutup secara terkoordinasi untuk menghasilkan fase utama potensial aksi: istirahat, depolarisasi, repolarisasi, hiperpolarisasi, dan kembali ke istirahat.
+Kita mempelajari propagasi potensial aksi, termasuk peran periode refrakter absolut dan relatif, yang memastikan transmisi satu arah dan mencegah penembakan berlebihan.</p>
+<p>Kita juga memeriksa faktor yang mempengaruhi kecepatan konduksi, seperti mielinasi (konduksi saltatori) dan diameter akson, dan belajar bagaimana demielinasi mengganggu propagasi sinyal.</p>
+<p>Akhirnya, kita melihat Tetrodotoxin (TTX) sebagai contoh bagaimana memblokir saluran natrium dapat menghentikan potensial aksi sepenuhnya.
+Modul ini membangun fondasi untuk Modul 5, di mana kita mempelajari bagaimana neuron berkomunikasi satu sama lain di sinaps.</p>
+</section>
+<section id="referensi">
+<h2>4.6 Referensi<a class="headerlink" href="#referensi" title="Link to this heading">#</a></h2>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id17" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>,<a role="doc-backlink" href="#id6">6</a>,<a role="doc-backlink" href="#id7">7</a>,<a role="doc-backlink" href="#id8">8</a>,<a role="doc-backlink" href="#id9">9</a>,<a role="doc-backlink" href="#id10">10</a>,<a role="doc-backlink" href="#id12">11</a>,<a role="doc-backlink" href="#id14">12</a>,<a role="doc-backlink" href="#id15">13</a>)</span>
+<p><a class="reference external" href="https://openbooks.lib.msu.edu/neuroscience/chapter/action-potentials/">Henley, C. (2021, January 1). Action Potentials. Pressbooks.</a></p>
+</aside>
+<aside class="footnote brackets" id="id18" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.jstage.jst.go.jp/article/pjab/84/5/84_5_147/_article/-char/en">Toshio NARAHASHI, Tetrodotoxin, Proceedings of the Japan Academy, Series B, 2008, Volume 84, Issue 5, Pages 147-154, Released on J-STAGE May 15, 2008, Online ISSN 1349-2896, Print ISSN 0386-2208, https://doi.org/10.2183/pjab.84.147</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

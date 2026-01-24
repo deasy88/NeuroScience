@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Teori Hari 2 &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/open-ephys/theory-day-2/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/courses/open-ephys/theory-day-2/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Teori Hari 3" href="../theory-day-3/index.html" />
+    <link rel="prev" title="Teori Hari 1" href="../theory-day-1/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Neuroscience Basics For Biopotential Signals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-1/index.html">Modul 1: Sistem Saraf Manusia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-2/index.html">Modul 2: Memahami potensial istirahat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-3/index.html">Modul 3 : Sifat Membran Pasif</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-4/index.html">Modul 4 : Potensial Aksi dan Propagasinya</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-5/index.html">Modul 5 : Sinaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-6/index.html">Modul 6: Sinyal Biopotensial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-7/index.html">Modul 7: EMG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-8/index.html">Module 8: ECG/EKG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-9/index.html">Module 9 : EEG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-10/index.html">Module 10 : EOG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-basics-for-biopotential-signals/module-11/index.html">Module 11 : Conclusion</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extracellular Electrophysiology Acquisition</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Course Curriculum</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../theory-day-1/index.html">Teori Hari 1</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Teori Hari 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theory-day-3/index.html">Teori Hari 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theory-day-4/index.html">Teori Hari 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exday1-nokit.html">Latihan Hari ke-1: Tanpa Perangkat Keras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exday2-nokit.html">Latihan Hari 2: Tanpa Perangkat Keras</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Courses</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Course Curriculum</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Teori Hari 2</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="teori-hari-2">
+<span id="theory-day-2"></span><h1>Teori Hari 2<a class="headerlink" href="#teori-hari-2" title="Link to this heading">#</a></h1>
+<nav class="contents local" id="daftar-isi">
+<p class="topic-title">Daftar Isi</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#rasio-impedansi-menentukan-transmisi-sinyal" id="id1">Rasio Impedansi Menentukan Transmisi Sinyal</a></p>
+<ul>
+<li><p><a class="reference internal" href="#mengapa-impedansi-penting" id="id2">Mengapa Impedansi Penting?</a></p></li>
+<li><p><a class="reference internal" href="#merepresentasikan-komponen-sebagai-impedansi" id="id3">Merepresentasikan Komponen sebagai Impedansi</a></p></li>
+<li><p><a class="reference internal" href="#impedansi-elektroda" id="id4">Impedansi Elektroda</a></p></li>
+<li><p><a class="reference internal" href="#mengurangi-impedansi-elektroda" id="id5">Mengurangi Impedansi Elektroda</a></p></li>
+<li><p><a class="reference internal" href="#impedansi-shunt" id="id6">Impedansi Shunt</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#penguat-amplifier" id="id7">Penguat (Amplifier)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#mengapa-penguat-diperlukan" id="id8">Mengapa Penguat Diperlukan</a></p></li>
+<li><p><a class="reference internal" href="#penguat-operasional" id="id9">Penguat Operasional</a></p></li>
+<li><p><a class="reference internal" href="#penguat-memiliki-impedansi-masukan-tinggi" id="id10">Penguat Memiliki Impedansi Masukan Tinggi</a></p></li>
+<li><p><a class="reference internal" href="#penguat-memiliki-impedansi-keluaran-rendah" id="id11">Penguat Memiliki Impedansi Keluaran Rendah</a></p></li>
+<li><p><a class="reference internal" href="#perilaku-keluaran-penguat" id="id12">Perilaku Keluaran Penguat</a></p></li>
+<li><p><a class="reference internal" href="#umpan-balik-negatif-mencegah-kejenuhan" id="id13">Umpan Balik Negatif Mencegah Kejenuhan</a></p></li>
+<li><p><a class="reference internal" href="#op-amp-sebagai-headstage" id="id14">Op-Amp sebagai Headstage</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Kemarin, kita menyatakan bahwa sebuah sistem akuisisi harus:</p>
+<ul class="simple">
+<li><p><em>Mendeteksi</em> perubahan potensial listrik</p></li>
+<li><p><strong>Secara *akurat mentransfer* sinyal ke keluaran sistem</strong></p></li>
+<li><p>Membedakan <em>sinyal</em> biologis dari <em>noise</em> listrik</p></li>
+</ul>
+<section id="rasio-impedansi-menentukan-transmisi-sinyal">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Rasio Impedansi Menentukan Transmisi Sinyal</a><a class="headerlink" href="#rasio-impedansi-menentukan-transmisi-sinyal" title="Link to this heading">#</a></h2>
+<figure class="align-center">
+<img alt="../../../_images/black_box_recording_system.png" src="../../../_images/black_box_recording_system.png" />
+</figure>
+<p>Sinyal V<sub>ec</sub> dihasilkan pada ujung elektroda. V<sub>in</sub> adalah tegangan yang masuk ke sistem akuisisi, dan V<sub>out</sub> adalah
+keluaran akhir sistem. Transfer sinyal yang akurat berarti meminimalkan kehilangan sinyal antara V<sub>ec</sub>, V<sub>in</sub>, dan V<sub>out</sub>.</p>
+<p>Perilaku ini mengikuti prinsip <strong>pembagi tegangan</strong>, di mana tegangan pada komponen yang tersusun seri ditentukan
+oleh rasio impedansinya.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<center>
+<iframe width="560" height="340"
+src="https://www.youtube.com/embed/fVloDI4b1ts"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+</center>
+<br><section id="mengapa-impedansi-penting">
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Mengapa Impedansi Penting?</a><a class="headerlink" href="#mengapa-impedansi-penting" title="Link to this heading">#</a></h3>
+<p>Gambar di bawah ini menunjukkan rangkaian ekuivalen dari sebuah elektroda. Sinyal V<sub>ec</sub> harus melewati elektroda
+untuk mencapai V<sub>in</sub>. Dari sana, arus neuron dapat mengalir ke ground melalui dua jalur paralel:</p>
+<ul class="simple">
+<li><p>Melalui sistem akuisisi</p></li>
+<li><p>Melalui <strong>impedansi shunt</strong> yang tidak diinginkan</p></li>
+</ul>
+<p>Impedansi shunt terutama bersifat kapasitif dan direpresentasikan oleh C<sub>s</sub>. Kapasitansi parasitik ini muncul dari
+isolasi elektroda, kabel, dan konektor. Walaupun tidak dapat dihindari, efeknya sangat memengaruhi transmisi sinyal.</p>
+<figure class="align-center">
+<img alt="Rangkaian ekuivalen yang menunjukkan elektroda dan kapasitansi shunt" src="../../../_images/circuit_electrode_shunt_capacitance.png" />
+</figure>
+</section>
+<section id="merepresentasikan-komponen-sebagai-impedansi">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Merepresentasikan Komponen sebagai Impedansi</a><a class="headerlink" href="#merepresentasikan-komponen-sebagai-impedansi" title="Link to this heading">#</a></h3>
+<p>Setiap komponen dapat direpresentasikan sebagai impedansinya (Z):</p>
+<figure class="align-center">
+<img alt="Rangkaian ekuivalen dengan representasi impedansi" src="../../../_images/circuit_impedance_shunt_capacitance.png" />
+</figure>
+<p>Impedansi kapasitansi shunt Z<sub>cs</sub> dan impedansi sistem akuisisi Z<sub>a</sub> tersusun paralel. Keduanya dapat digabungkan
+menjadi satu impedansi ekuivalen Z<sub>a</sub>’.</p>
+<figure class="align-center">
+<img alt="Pembagi tegangan yang dibentuk oleh impedansi elektroda dan penguat" src="../../../_images/shunt_amplifier_voltage_divider.png" />
+</figure>
+<p>Hal ini menghasilkan sebuah pembagi tegangan:</p>
+<div class="math notranslate nohighlight">
+\[Vin = \frac{Za'}{Za' + Ze} Vec\]</div>
+<p>Rasio antara Z<sub>e</sub> dan Z<sub>a</sub>’ menentukan seberapa besar V<sub>ec</sub> yang muncul pada V<sub>in</sub>.</p>
+<p><strong>Untuk mempertahankan amplitudo sinyal, impedansi elektroda |Ze| harus rendah dan impedansi masukan sistem |Za|’ harus tinggi.</strong></p>
+</section>
+<section id="impedansi-elektroda">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Impedansi Elektroda</a><a class="headerlink" href="#impedansi-elektroda" title="Link to this heading">#</a></h3>
+<p>Impedansi elektroda mencerminkan hambatan terhadap perpindahan muatan pada antarmuka elektroda–elektrolit.
+Impedansi ini terdiri dari:</p>
+<ul class="simple">
+<li><p>Hambatan logam R<sub>m</sub></p></li>
+<li><p>Hambatan larutan R<sub>s</sub></p></li>
+<li><p>Hambatan lapisan ganda R<sub>e</sub></p></li>
+<li><p>Kapasitansi lapisan ganda C<sub>e</sub></p></li>
+</ul>
+<figure class="align-center">
+<img alt="../../../_images/circuit_double_layer_interface.png" src="../../../_images/circuit_double_layer_interface.png" />
+</figure>
+<p>Untuk elektroda terpolarisasi, R<sub>e</sub> sangat besar sehingga arus terutama mengalir melalui C<sub>e</sub>.
+Oleh karena itu, impedansi elektroda didominasi oleh kapasitansi lapisan ganda.</p>
+</section>
+<section id="mengurangi-impedansi-elektroda">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Mengurangi Impedansi Elektroda</a><a class="headerlink" href="#mengurangi-impedansi-elektroda" title="Link to this heading">#</a></h3>
+<p>Karena impedansi elektroda didominasi oleh C<sub>e</sub>, meningkatkan C<sub>e</sub> akan menurunkan Z<sub>e</sub>.</p>
+<div class="math notranslate nohighlight">
+\[C = \frac{\epsilon A}{d}\]</div>
+<p>Kapasitansi meningkat dengan cara:</p>
+<ul class="simple">
+<li><p>Memperbesar luas permukaan elektroda</p></li>
+<li><p>Mengurangi jarak pemisah efektif</p></li>
+</ul>
+<p>Metode praktis meliputi:</p>
+<ul class="simple">
+<li><p>Pelapisan elektroda dengan emas (electroplating)</p></li>
+<li><p>Pelapisan dengan polimer konduktif</p></li>
+<li><p>Menggunakan oksida logam seperti IrOx</p></li>
+</ul>
+<p>Impedansi elektroda umumnya diukur pada <strong>1 kHz</strong>, di mana pelapisan dapat menurunkan impedansi hingga 10×.</p>
+</section>
+<section id="impedansi-shunt">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Impedansi Shunt</a><a class="headerlink" href="#impedansi-shunt" title="Link to this heading">#</a></h3>
+<p>Impedansi shunt terdiri dari:</p>
+<ul class="simple">
+<li><p>Kapasitansi shunt C<sub>s</sub></p></li>
+<li><p>Hambatan shunt R<sub>sh</sub></p></li>
+</ul>
+<p>Pada frekuensi sekitar 1 kHz, impedansi kapasitif mendominasi, sehingga R<sub>sh</sub> sering diabaikan.</p>
+<p>Kapasitansi shunt berasal dari:</p>
+<ul class="simple">
+<li><p>Isolasi antara elektroda dan elektrolit</p></li>
+<li><p>Kabel dan konektor</p></li>
+</ul>
+<p>Nilai tipikal:</p>
+<ul class="simple">
+<li><p>Kawat tungsten: ~50–100 pF</p></li>
+<li><p>Probe silikon: ~5–20 pF/cm</p></li>
+</ul>
+<div class="admonition-coba-sendiri admonition">
+<p class="admonition-title">Coba sendiri</p>
+<p>Jelajahi efek impedansi elektroda dan shunt menggunakan model interaktif berikut:</p>
+<p><a class="reference external" href="https://tinyurl.com/yepsdold">https://tinyurl.com/yepsdold</a></p>
+</div>
+<p>Impedansi shunt menurun seiring peningkatan frekuensi:</p>
+<div class="math notranslate nohighlight">
+\[Z = \frac{1}{2 \pi f C}\]</div>
+<p>Karena impedansi shunt tidak dapat dihindari, kompensasi dilakukan dengan meningkatkan impedansi sistem akuisisi.</p>
+</section>
+</section>
+<section id="penguat-amplifier">
+<span id="refamplifierintro"></span><h2><a class="toc-backref" href="#id7" role="doc-backlink">Penguat (Amplifier)</a><a class="headerlink" href="#penguat-amplifier" title="Link to this heading">#</a></h2>
+<section id="mengapa-penguat-diperlukan">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Mengapa Penguat Diperlukan</a><a class="headerlink" href="#mengapa-penguat-diperlukan" title="Link to this heading">#</a></h3>
+<p>Sinyal ekstraseluler bertindak sebagai sumber tegangan lemah dengan impedansi keluaran yang tidak nol.
+Jika impedansi rangkaian rendah, tegangan sinyal akan turun secara signifikan akibat aliran arus.</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://tinyurl.com/yfvzdxbz"><img alt="Sumber tegangan ideal vs nyata dengan impedansi keluaran" src="../../../_images/output_impedance.png" />
+</a>
+</figure>
+<p>Penguat mencegah hal ini dengan menyediakan <strong>impedansi masukan yang sangat tinggi</strong>, sehingga meminimalkan arus
+yang ditarik dari elektroda.</p>
+</section>
+<section id="penguat-operasional">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Penguat Operasional</a><a class="headerlink" href="#penguat-operasional" title="Link to this heading">#</a></h3>
+<p>Penguat operasional (op-amp) memiliki:</p>
+<ul class="simple">
+<li><p>Dua masukan (+ dan −)</p></li>
+<li><p>Satu keluaran</p></li>
+<li><p>Dua rel catu daya</p></li>
+</ul>
+<figure class="align-center">
+<img alt="../../../_images/op-amp-basic.png" src="../../../_images/op-amp-basic.png" />
+</figure>
+</section>
+<section id="penguat-memiliki-impedansi-masukan-tinggi">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">Penguat Memiliki Impedansi Masukan Tinggi</a><a class="headerlink" href="#penguat-memiliki-impedansi-masukan-tinggi" title="Link to this heading">#</a></h3>
+<p>Impedansi masukan penguat Z<sub>a</sub> sangat tinggi, sehingga mencegah aliran arus dari elektroda dan mempertahankan V<sub>ec</sub>.</p>
+<figure class="align-center">
+<img alt="../../../_images/circuit_electrode_shunt_amp.png" src="../../../_images/circuit_electrode_shunt_amp.png" />
+</figure>
+</section>
+<section id="penguat-memiliki-impedansi-keluaran-rendah">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Penguat Memiliki Impedansi Keluaran Rendah</a><a class="headerlink" href="#penguat-memiliki-impedansi-keluaran-rendah" title="Link to this heading">#</a></h3>
+<p>Impedansi keluaran yang rendah memungkinkan penguat menyuplai arus ke komponen lanjutan seperti:</p>
+<ul class="simple">
+<li><p>Kabel</p></li>
+<li><p>Multiplexer</p></li>
+<li><p>ADC</p></li>
+</ul>
+<p>Hal ini memastikan bahwa arus disuplai oleh penguat, bukan oleh elektroda.</p>
+</section>
+<section id="perilaku-keluaran-penguat">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Perilaku Keluaran Penguat</a><a class="headerlink" href="#perilaku-keluaran-penguat" title="Link to this heading">#</a></h3>
+<p>Op-amp menghasilkan keluaran berupa selisih tegangan antara kedua masukannya:</p>
+<ul class="simple">
+<li><p>Selisih positif → keluaran jenuh pada rel positif</p></li>
+<li><p>Selisih negatif → keluaran jenuh pada rel negatif</p></li>
+</ul>
+<p>Tanpa umpan balik, op-amp bertindak sebagai komparator dengan penguatan yang sangat tinggi.</p>
+</section>
+<section id="umpan-balik-negatif-mencegah-kejenuhan">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Umpan Balik Negatif Mencegah Kejenuhan</a><a class="headerlink" href="#umpan-balik-negatif-mencegah-kejenuhan" title="Link to this heading">#</a></h3>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://tinyurl.com/ygby3xqh"><img alt="../../../_images/op_amp_feedback.png" src="../../../_images/op_amp_feedback.png" />
+</a>
+</figure>
+<p>Umpan balik negatif memaksa keluaran menyesuaikan hingga kedua masukan sama.
+Hal ini memungkinkan:</p>
+<ul class="simple">
+<li><p>Pengukuran tegangan yang akurat</p></li>
+<li><p>Impedansi masukan yang tinggi</p></li>
+<li><p>Operasi linier yang stabil</p></li>
+</ul>
+</section>
+<section id="op-amp-sebagai-headstage">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Op-Amp sebagai Headstage</a><a class="headerlink" href="#op-amp-sebagai-headstage" title="Link to this heading">#</a></h3>
+<p>Penguat headstage:</p>
+<ul class="simple">
+<li><p>Mencegah penarikan arus dari elektroda</p></li>
+<li><p>Menolak noise common-mode</p></li>
+<li><p>Menskalakan sinyal agar sesuai dengan rentang masukan ADC</p></li>
+</ul>
+<div class="video_wrapper align-center" style="padding-bottom: 56.250000%; padding-top: 30px; position: relative; text-align: center; width: 100%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/NP6nE5P82e8" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

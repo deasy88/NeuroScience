@@ -1,0 +1,953 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Muscle BioAmp Shield &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hardware/bioamp/muscle-bioamp-shield/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/hardware/bioamp/muscle-bioamp-shield/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Muscle BioAmp Patchy" href="../muscle-bioamp-patchy/index.html" />
+    <link rel="prev" title="BioAmp EXG Pill" href="../bioamp-exg-pill/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">BioAmp Hardware</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../neuro-play-ground-lite/index.html">Neuro PlayGround (NPG) Lite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bioamp-exg-pill/index.html">BioAmp EXG Pill</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Muscle BioAmp Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-patchy/index.html">Muscle BioAmp Patchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-blip/index.html">Muscle BioAmp Blip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../heart-bioamp-candy/index.html">Heart BioAmp Candy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bioamp-v1.5/index.html">BioAmp v1.5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-candy/index.html">Muscle BioAmp Candy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-biscute/index.html">Muscle BioAmp Biscute</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Hardware</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Muscle BioAmp Shield</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="muscle-bioamp-shield">
+<span id="id1"></span><h1>Muscle BioAmp Shield<a class="headerlink" href="#muscle-bioamp-shield" title="Link to this heading">#</a></h1>
+<p><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">v0.3</span></p>
+<section id="ringkasan">
+<h2>Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
+<p>Muscle BioAmp Shield adalah perisai Arduino Uno Elektromiografi (EMG) all-in-one untuk belajar neurosains dengan mudah yang terinspirasi dari
+BackYard Brains (BYB) <a class="reference external" href="https://backyardbrains.com/products/muscleSpikerShield">Muscle Spiker shield</a> dan menyediakan fitur serupa seperti output servo hobi, tombol pengguna, LED Bar, output Audio, dan
+input baterai. Ini sempurna untuk pemula karena mereka dapat dengan mudah menumpuknya di atas Arduino Uno untuk merekam, memvisualisasikan dan mendengarkan sinyal otot mereka
+untuk membuat proyek luar biasa di domain Human-Computer Interface (HCI).</p>
+<figure class="align-center">
+<img alt="../../../_images/muscle-bioamp-shield.jpg" src="../../../_images/muscle-bioamp-shield.jpg" />
+</figure>
+</section>
+<section id="fitur-spesifikasi">
+<h2>Fitur &amp; Spesifikasi<a class="headerlink" href="#fitur-spesifikasi" title="Link to this heading">#</a></h2>
+<p>Muscle BioAmp Shield dilengkapi dengan berbagai opsi plug-and-play sehingga Anda dapat menghubungkan ratusan papan ekstensi seperti layar OLED,
+layar karakter, akselerometer, dan pengontrol servo untuk beberapa nama saja menggunakan antarmuka STEMMA I2C. Anda juga mendapatkan port STEMMA
+digital dan STEMMA analog. Pada port STEMMA analog Anda dapat menghubungkan BioAmp EXG Pill tambahan atau sensor lain dengan output analog. Pada port STEMMA digital Anda dapat menghubungkan sensor digital atau aktuator apa pun pilihan Anda.</p>
+</section>
+<section id="perangkat-keras">
+<h2>Perangkat Keras<a class="headerlink" href="#perangkat-keras" title="Link to this heading">#</a></h2>
+<p>Gambar di bawah menunjukkan gambaran cepat desain perangkat keras.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mt-4 sd-mb-4 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text"><strong>PCB Depan</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="../../../_images/Muscle-BioAmp-Shield-Front.png" src="../../../_images/Muscle-BioAmp-Shield-Front.png" />
+</figure>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text"><strong>PCB Belakang</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="../../../_images/Muscle-BioAmp-Shield-Back.png" src="../../../_images/Muscle-BioAmp-Shield-Back.png" />
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../../_images/24_Assembled.jpg"><img alt="../../../_images/24_Assembled.jpg" src="../../../_images/24_Assembled.jpg" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><cite>PCB Dirakit</cite></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id5">
+<img alt="../../../_images/dimensions2.png" src="../../../_images/dimensions2.png" />
+<figcaption>
+<p><span class="caption-text"><cite>Tata Letak PCB</cite></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
+<img alt="../../../_images/Schematic.png" src="../../../_images/Schematic.png" />
+<figcaption>
+<p><span class="caption-text"><cite>Diagram Skematik</cite></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="isi-kit">
+<h2>Isi Kit<a class="headerlink" href="#isi-kit" title="Link to this heading">#</a></h2>
+<p>Ada 2 varian tersedia untuk kit Muscle BioAmp Shield v0.3 - satu datang dengan perisai dirakit dan yang lainnya berisi PCB kosong sensor dan komponen secara terpisah yang dapat Anda rakit dengan cukup mudah.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../../_images/kit-contents-assembled.png"><img alt="../../../_images/kit-contents-assembled.png" src="../../../_images/kit-contents-assembled.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><cite>Isi kit Muscle BioAmp Shield dirakit</cite></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../../../_images/kit-contents-unassembled.png"><img alt="../../../_images/kit-contents-unassembled.png" src="../../../_images/kit-contents-unassembled.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><cite>Isi kit Muscle BioAmp Shield tidak dirakit</cite></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Klik tautan di bawah untuk melihat unboxing kit:</p>
+<div class="video_wrapper align-center" style="padding-bottom: 56.250000%; padding-top: 30px; position: relative; text-align: center; width: 100%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/w8yw12SUe6Q" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></section>
+<section id="persyaratan-perangkat-lunak">
+<h2>Persyaratan perangkat lunak<a class="headerlink" href="#persyaratan-perangkat-lunak" title="Link to this heading">#</a></h2>
+<p>Sebelum Anda mulai menggunakan kit, silakan unduh <a class="reference external" href="https://www.arduino.cc/en/software">Arduino IDE v1.8.19 (legacy IDE)</a>. Dengan menggunakan ini Anda akan dapat mengunggah sketsa arduino di papan pengembangan Anda dan memvisualisasikan data di laptop Anda.</p>
+<figure class="align-center" id="id9">
+<img alt="Arduino IDE v1.8.19 (legacy IDE)" src="../../../_images/arduino-ide.png" />
+<figcaption>
+<p><span class="caption-text">Arduino IDE v1.8.19 (legacy IDE)</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Kunjungi Upside Down Labs <a class="reference external" href="https://chords.upsidedownlabs.tech">Chords Web</a> untuk memvisualisasikan sinyal bio-potensial Anda langsung di browser.</p>
+<figure class="align-center" id="id10">
+<img alt="Halaman Peluncuran Chords Web" src="../../../_images/chords_landing_page.png" />
+<figcaption>
+<p><span class="caption-text">Halaman Peluncuran Chords Web</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Memulai dengan Chords Web</strong></p>
+<div class="video_wrapper align-center" style="padding-bottom: 56.250000%; padding-top: 30px; position: relative; text-align: center; width: 100%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/IVIPnk9z75g" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></section>
+<section id="merakit-kit">
+<h2>Merakit Kit<a class="headerlink" href="#merakit-kit" title="Link to this heading">#</a></h2>
+<p>Anda dapat mendapatkan kantong bagian Muscle BioAmp Shield Anda sendiri dari <a class="reference external" href="https://linktr.ee/Upside_Down_Labs_stores">toko online kami</a> (pengiriman ke seluruh dunia)
+dan untuk merakit perisai Anda dapat melihat <a class="reference external" href="https://upsidedownlabs.github.io/DIY-Muscle-BioAmp-Shield/ibom.html">BOM interaktif ini</a> atau panduan langkah demi langkah di bawah ini.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ikuti bentuk kuning yang disorot untuk merakit perisai Anda!</p>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mt-2 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id11">
+<img alt="../../../_images/01_Bare_Board.jpg" src="../../../_images/01_Bare_Board.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 1 - Papan Kosong</strong></span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id12">
+<img alt="../../../_images/02_1M_Resistors.jpg" src="../../../_images/02_1M_Resistors.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 2 - Resistor 1M</strong></span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id13">
+<img alt="../../../_images/03_330R_Resistors.jpg" src="../../../_images/03_330R_Resistors.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 3 - Resistor 330R</strong></span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id14">
+<img alt="../../../_images/04_10K_Resistors.jpg" src="../../../_images/04_10K_Resistors.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 4 - Resistor 10K</strong></span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id15">
+<img alt="../../../_images/05_22K_Resistors.jpg" src="../../../_images/05_22K_Resistors.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 5 - Resistor 22K</strong></span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id16">
+<img alt="../../../_images/06_1K_Resistors.jpg" src="../../../_images/06_1K_Resistors.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 6 - Resistor 1K</strong></span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id17">
+<img alt="../../../_images/07_220K_Resistors.jpg" src="../../../_images/07_220K_Resistors.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 7 - Resistor 220K</strong></span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id18">
+<img alt="../../../_images/08_1nF_Capacitors.jpg" src="../../../_images/08_1nF_Capacitors.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 8 - Kapasitor 1nF</strong></span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id19">
+<img alt="../../../_images/09_100nF_Capacitors.jpg" src="../../../_images/09_100nF_Capacitors.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 9 - Kapasitor 100nF</strong></span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id20">
+<img alt="../../../_images/10_100pF_Capacitors.jpg" src="../../../_images/10_100pF_Capacitors.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 10 - Kapasitor 100pF</strong></span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id21">
+<img alt="../../../_images/11_Angled_Header_Pins.jpg" src="../../../_images/11_Angled_Header_Pins.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 11 - Pin Header Miring</strong></span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id22">
+<img alt="../../../_images/12_5x5mm_Buttons.jpg" src="../../../_images/12_5x5mm_Buttons.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 12 - Tombol 5x5mm</strong></span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id23">
+<img alt="../../../_images/13_OptoIsolator.jpg" src="../../../_images/13_OptoIsolator.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 13 - OptoIsolator</strong></span><a class="headerlink" href="#id23" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id24">
+<img alt="../../../_images/14_JST_PH_Angled_Connectors.jpg" src="../../../_images/14_JST_PH_Angled_Connectors.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 14 - Konektor JST PH Miring</strong></span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id25">
+<img alt="../../../_images/15_JST_PH_Straight_Connectors.jpg" src="../../../_images/15_JST_PH_Straight_Connectors.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 15 - Konektor JST PH Lurus</strong></span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id26">
+<img alt="../../../_images/16_IC_Socket.jpg" src="../../../_images/16_IC_Socket.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 16 - Soket IC</strong></span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id27">
+<img alt="../../../_images/17_IC.jpg" src="../../../_images/17_IC.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 17 - IC</strong></span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id28">
+<img alt="../../../_images/18_LEDs.jpg" src="../../../_images/18_LEDs.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 18 - LED</strong></span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id29">
+<img alt="../../../_images/19_3.5mm_Headphone_Jack.jpg" src="../../../_images/19_3.5mm_Headphone_Jack.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 19 - Jack Headphone 3.5mm</strong></span><a class="headerlink" href="#id29" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id30">
+<img alt="../../../_images/20_2.2uF_Capacitor.jpg" src="../../../_images/20_2.2uF_Capacitor.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 20 - Kapasitor 2.2uF</strong></span><a class="headerlink" href="#id30" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id31">
+<img alt="../../../_images/21_1uF_Capacitor.jpg" src="../../../_images/21_1uF_Capacitor.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 21 - Kapasitor 1uF</strong></span><a class="headerlink" href="#id31" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id32">
+<img alt="../../../_images/22_470uF_Capacitor.jpg" src="../../../_images/22_470uF_Capacitor.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 22 - Kapasitor 470uF</strong></span><a class="headerlink" href="#id32" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id33">
+<img alt="../../../_images/23_Header_Pins.jpg" src="../../../_images/23_Header_Pins.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 23 - Pin Header</strong></span><a class="headerlink" href="#id33" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default" id="id34">
+<img alt="../../../_images/24_Assembled.jpg" src="../../../_images/24_Assembled.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>Langkah 24 - Perisai Dirakit</strong></span><a class="headerlink" href="#id34" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Masih tidak dapat memahami perakitan? Anda dapat mengikuti video yang disediakan di bawah untuk merakit Perisai Anda.</p>
+<div class="video_wrapper" style="padding-bottom: 56.250000%; padding-top: 30px; position: relative; width: 100%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/dcuCihh3yn4" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></section>
+<section id="menggunakan-sensor">
+<h2>Menggunakan Sensor<a class="headerlink" href="#menggunakan-sensor" title="Link to this heading">#</a></h2>
+<section id="langkah-1-tumpuk-pada-arduino-uno">
+<h3>Langkah 1: Tumpuk pada Arduino Uno<a class="headerlink" href="#langkah-1-tumpuk-pada-arduino-uno" title="Link to this heading">#</a></h3>
+<p>Tumpuk Muscle BioAmp Shield di atas Arduino Uno dengan benar.</p>
+<figure class="align-center">
+<img alt="../../../_images/shield-arduino-connection.gif" src="../../../_images/shield-arduino-connection.gif" />
+</figure>
+</section>
+<section id="langkah-2-menghubungkan-kabel-elektroda">
+<h3>Langkah 2: Menghubungkan Kabel Elektroda<a class="headerlink" href="#langkah-2-menghubungkan-kabel-elektroda" title="Link to this heading">#</a></h3>
+<p>Hubungkan Kabel BioAmp ke Muscle BioAmp Shield seperti yang ditunjukkan.</p>
+<figure class="align-center">
+<img alt="../../../_images/electrode-cable-connection.gif" src="../../../_images/electrode-cable-connection.gif" />
+</figure>
+</section>
+<section id="langkah-3-persiapan-kulit">
+<h3>Langkah 3: Persiapan Kulit<a class="headerlink" href="#langkah-3-persiapan-kulit" title="Link to this heading">#</a></h3>
+<p>Oleskan Gel Persiapan Kulit Nuprep pada permukaan kulit tempat elektroda akan ditempatkan untuk menghilangkan sel kulit mati dan membersihkan kulit dari kotoran. Setelah menggosok permukaan kulit secara menyeluruh, bersihkan dengan tisu alkohol atau tisu basah.</p>
+<p>Untuk informasi lebih lanjut, silakan lihat langkah-langkah detail <span class="xref std std-ref">persiapan kulit</span>.</p>
+</section>
+<section id="langkah-4-penempatan-elektroda">
+<h3>Langkah 4: Penempatan Elektroda<a class="headerlink" href="#langkah-4-penempatan-elektroda" title="Link to this heading">#</a></h3>
+<p>Kami memiliki 2 opsi untuk mengukur sinyal EMG, baik menggunakan elektroda gel atau menggunakan band BioAmp Otot berbasis elektroda kering. Anda dapat mencoba keduanya satu per satu.</p>
+<section id="menggunakan-elektroda-gel">
+<h4>Menggunakan elektroda gel<a class="headerlink" href="#menggunakan-elektroda-gel" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Hubungkan kabel BioAmp ke elektroda gel,</p></li>
+<li><p>Kupas backing plastik dari elektroda</p></li>
+<li><p>Tempatkan kabel IN+ dan IN- di lengan dekat saraf ulnar &amp; REF (referensi) di bagian belakang tangan Anda seperti yang ditunjukkan di diagram koneksi.</p></li>
+</ol>
+<figure class="align-center">
+<img alt="../../../_images/electrode-placement.gif" src="../../../_images/electrode-placement.gif" />
+</figure>
+</section>
+<section id="menggunakan-band-bioamp-otot">
+<h4>Menggunakan Band BioAmp Otot<a class="headerlink" href="#menggunakan-band-bioamp-otot" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Hubungkan kabel BioAmp ke Band BioAmp Otot dengan cara sehingga IN+ dan IN- ditempatkan di lengan dekat saraf ulnar &amp; REF (referensi) di sisi jauh band.</p></li>
+<li><p>Sekarang letakkan tetesan kecil gel elektroda antara kulit dan bagian logam kabel BioAmp untuk mendapatkan hasil terbaik.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Kunjungi dokumentasi lengkap tentang cara <a class="reference internal" href="../../../guides/usage-guides/using-bioamp-bands/index.html#using-bioamp-bands"><span class="std std-ref">merakit dan menggunakan Band BioAmp</span></a> atau ikuti video youtube yang diberikan di bawah.</p>
+<p><strong>Tutorial tentang cara menggunakan band:</strong></p>
+<div class="video_wrapper align-center" style="padding-bottom: 56.250000%; padding-top: 30px; position: relative; text-align: center; width: 100%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/xYZdw0aesa0" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dalam demonstrasi ini kami merekam sinyal EMG dari saraf ulnar, tetapi Anda dapat merekam EMG dari area lain juga (bisep, trisep, kaki, rahang dll) sesuai kebutuhan proyek Anda. Pastikan untuk menempatkan elektroda IN+, IN- pada otot yang ditargetkan dan REF pada bagian tulang.</p>
+</div>
+</section>
+</section>
+<section id="langkah-5-hubungkan-arduino-uno-ke-laptop-anda">
+<h3>Langkah 5: Hubungkan Arduino UNO ke laptop Anda<a class="headerlink" href="#langkah-5-hubungkan-arduino-uno-ke-laptop-anda" title="Link to this heading">#</a></h3>
+<p>Hubungkan Arduino UNO R3 Anda ke laptop menggunakan kabel USB (Type A to Type B).</p>
+<figure class="align-center">
+<img alt="../../../_images/arduino-laptop-connection.gif" src="../../../_images/arduino-laptop-connection.gif" />
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pastikan laptop Anda tidak terhubung ke charger dan duduk 5m jauh dari peralatan AC apa pun untuk akuisisi sinyal terbaik.</p>
+</div>
+</section>
+<section id="langkah-6-visualisasikan-sinyal-emg-di-laptop">
+<h3>Langkah 6: Visualisasikan sinyal EMG di laptop<a class="headerlink" href="#langkah-6-visualisasikan-sinyal-emg-di-laptop" title="Link to this heading">#</a></h3>
+<p>Salin tempel salah satu sketsa arduino yang diberikan di bawah di Arduino IDE v1.8.19 yang Anda unduh sebelumnya:</p>
+<p><span class="fab fa-github pst-color-primary"></span> <a class="reference external" href="https://github.com/upsidedownlabs/Muscle-BioAmp-Arduino-Firmware/blob/main/2_EMGFilter/2_EMGFilter.ino">EMG Filter</a></p>
+<p><span class="fab fa-github pst-color-primary"></span> <a class="reference external" href="https://github.com/upsidedownlabs/Muscle-BioAmp-Arduino-Firmware/blob/main/3_EMGEnvelope/3_EMGEnvelope.ino">EMG Envelope</a></p>
+<p>Untuk memvisualisasikan sinyal EMG, gunakan <a class="reference external" href="https://chords.upsidedownlabs.tech/">Chords Web</a> untuk visualisasi sinyal bio-potensial real-time yang cepat dan tanpa masalah langsung dari browser Anda, tanpa menginstal perangkat lunak apa pun.</p>
+<figure class="align-center" id="id37">
+<img alt="Memvisualisasikan sinyal EMG di Chords Web" src="../../../_images/chords_emg_signal.png" />
+<figcaption>
+<p><span class="caption-text">Memvisualisasikan sinyal EMG di Chords Web</span><a class="headerlink" href="#id37" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Anda juga dapat menggunakan Serial Plotter Arduino IDE untuk memvisualisasikan sinyal:</p>
+<p>Pergi ke <code class="docutils literal notranslate"><span class="pre">tools</span></code> dari menu bar, pilih opsi <code class="docutils literal notranslate"><span class="pre">board</span></code> lalu pilih Arduino UNO. Di menu yang sama,
+pilih port COM tempat Arduino Uno Anda terhubung. Untuk mengetahui port COM yang benar,
+putuskan sambungan papan Anda dan buka kembali menu. Entri yang menghilang harus
+port COM yang benar. Sekarang unggah kode, &amp; buka serial plotter dari menu <code class="docutils literal notranslate"><span class="pre">tools</span></code> untuk memvisualisasikan
+sinyal EMG.</p>
+<p>Setelah membuka serial plotter pastikan untuk memilih baud rate ke 115200.</p>
+<p>Sekarang tekuk lengan Anda untuk memvisualisasikan sinyal otot secara real-time di laptop Anda.</p>
+<figure class="align-center">
+<img alt="../../../_images/visualise-emg.gif" src="../../../_images/visualise-emg.gif" />
+</figure>
+</section>
+<section id="langkah-7-visualisasikan-sinyal-emg-di-led">
+<h3>Langkah 7: Visualisasikan sinyal EMG di LED<a class="headerlink" href="#langkah-7-visualisasikan-sinyal-emg-di-led" title="Link to this heading">#</a></h3>
+<p>Salin tempel Sketsa Arduino yang diberikan di bawah di Arduino IDE:</p>
+<p><span class="fab fa-github pst-color-primary"></span> <a class="reference external" href="https://github.com/upsidedownlabs/BioAmp-EXG-Pill/blob/main/software/LEDBarGraph/LEDBarGraph.ino">LED Bar Graph</a></p>
+<p>Pastikan Anda telah memilih papan dan port COM yang benar. Sekarang unggah kode, dan tekuk lengan Anda. Anda akan melihat bar LED naik. Kekuatan yang lebih Anda terapkan, bar LED lebih naik.</p>
+<figure class="align-center">
+<img alt="../../../_images/led-graph.gif" src="../../../_images/led-graph.gif" />
+</figure>
+</section>
+<section id="langkah-8-dengarkan-sinyal-emg-anda">
+<h3>Langkah 8: Dengarkan sinyal EMG Anda<a class="headerlink" href="#langkah-8-dengarkan-sinyal-emg-anda" title="Link to this heading">#</a></h3>
+<p>Anda dapat mendengarkan sinyal otot (EMG) di speaker atau earphone/headphone berkabel. Mari coba keduanya.</p>
+<section id="mendengarkan-emg-di-speaker">
+<h4>Mendengarkan EMG di speaker<a class="headerlink" href="#mendengarkan-emg-di-speaker" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Hubungkan kabel BioAmp AUX di speaker bluetooth yang memiliki dukungan jack 3.5mm.</p></li>
+<li><p>Nyalakan speaker dan putar volume ke maksimum.</p></li>
+<li><p>Tekuk dan dengarkan otot Anda.</p></li>
+</ol>
+<figure class="align-center">
+<img alt="../../../_images/listening-emg-speakers.gif" src="../../../_images/listening-emg-speakers.gif" />
+</figure>
+</section>
+<section id="mendengarkan-emg-di-earphone-headphone-berkabel">
+<h4>Mendengarkan EMG di earphone/headphone berkabel<a class="headerlink" href="#mendengarkan-emg-di-earphone-headphone-berkabel" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Pasang earphone atau headphone berkabel Anda di jack 3.5mm BioAmp v1.5.</p></li>
+<li><p>Pasang di telinga Anda.</p></li>
+<li><p>Tekuk dan dengarkan otot Anda.</p></li>
+</ol>
+<figure class="align-center">
+<img alt="../../../_images/listening-emg-earphones.gif" src="../../../_images/listening-emg-earphones.gif" />
+</figure>
+</section>
+</section>
+<section id="langkah-9-mengontrol-motor-servo">
+<h3>Langkah 9: Mengontrol motor servo<a class="headerlink" href="#langkah-9-mengontrol-motor-servo" title="Link to this heading">#</a></h3>
+<p>Hubungkan servo claw ke Muscle BioAmp Shield.</p>
+<p>Salin tempel Sketsa Arduino yang diberikan di bawah di Arduino IDE:</p>
+<p><span class="fab fa-github pst-color-primary"></span> <a class="reference external" href="https://github.com/upsidedownlabs/Muscle-BioAmp-Arduino-Firmware/blob/main/5_ServoControl/5_ServoControl.ino">Servo Controller</a></p>
+<p>Pastikan Anda telah memilih papan dan port COM yang benar. Sekarang unggah kode, dan tekuk lengan Anda untuk mengontrol servo claw secara real-time.</p>
+<figure class="align-center">
+<img alt="../../../_images/servo-control.gif" src="../../../_images/servo-control.gif" />
+</figure>
+</section>
+<section id="langkah-10-mengontrol-servo-claw">
+<h3>Langkah 10: Mengontrol servo claw<a class="headerlink" href="#langkah-10-mengontrol-servo-claw" title="Link to this heading">#</a></h3>
+<p>Hubungkan servo claw ke Muscle BioAmp Shield.</p>
+<p>Salin tempel Sketsa Arduino yang diberikan di bawah di Arduino IDE:</p>
+<p><span class="fab fa-github pst-color-primary"></span> <a class="reference external" href="https://github.com/upsidedownlabs/Muscle-BioAmp-Arduino-Firmware/tree/main/4_ClawController">Claw Controller</a></p>
+<p>Pastikan Anda telah memilih papan dan port COM yang benar. Sekarang unggah kode, dan tekuk lengan Anda untuk mengontrol servo claw secara real-time.</p>
+<figure class="align-center">
+<img alt="../../../_images/claw-control.gif" src="../../../_images/claw-control.gif" />
+</figure>
+</section>
+<section id="langkah-11-menghubungkan-baterai-9v">
+<h3>Langkah 11: Menghubungkan baterai 9V<a class="headerlink" href="#langkah-11-menghubungkan-baterai-9v" title="Link to this heading">#</a></h3>
+<p>Sampai sekarang, daya untuk sistem EMG berasal dari laptop melalui kabel USB Arduino Uno tetapi ada 2 cara di mana Anda dapat membuat sistem portabel:</p>
+<ul class="simple">
+<li><p><strong>Menggunakan baterai 9V:</strong> Hubungkan baterai 9V langsung ke Muscle BioAmp Shield menggunakan kabel snap 9V.</p></li>
+<li><p><strong>Menggunakan Power Bank:</strong> Alih-alih menghubungkan kabel USB Arduino Uno ke laptop, Anda dapat menghubungkannya langsung ke power bank.</p></li>
+</ul>
+<figure class="align-center">
+<img alt="../../../_images/9v-battery.gif" src="../../../_images/9v-battery.gif" />
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Jangan gunakan baterai 9V saat mengontrol servo claw menggunakan Muscle BioAmp Shield. Sebaliknya hubungkan Arduino UNO ke power bank atau langsung ke laptop Anda.</p>
+</div>
+</section>
+<section id="langkah-12-fungsi-lain-yang-dapat-anda-jelajahi">
+<h3>Langkah 12: Fungsi lain yang dapat Anda jelajahi<a class="headerlink" href="#langkah-12-fungsi-lain-yang-dapat-anda-jelajahi" title="Link to this heading">#</a></h3>
+<section id="menggunakan-port-i2c">
+<h4>Menggunakan port I2C<a class="headerlink" href="#menggunakan-port-i2c" title="Link to this heading">#</a></h4>
+<p>Ada 2 port I2C tersedia di Muscle BioAmp Shield dan Anda dapat menghubungkan ratusan perangkat yang memiliki kompatibilitas I2C menggunakan kabel STEMMA 4-pin JST PH 2.0 mm yang disediakan.</p>
+<p>Beberapa contohnya adalah: <code class="docutils literal notranslate"><span class="pre">layar</span> <span class="pre">OLED</span></code>, <code class="docutils literal notranslate"><span class="pre">layar</span> <span class="pre">karakter</span></code>, <code class="docutils literal notranslate"><span class="pre">sensor</span> <span class="pre">suhu</span></code>, <code class="docutils literal notranslate"><span class="pre">akselerometer</span></code>, <code class="docutils literal notranslate"><span class="pre">gyroscope</span></code>, <code class="docutils literal notranslate"><span class="pre">sensor</span> <span class="pre">cahaya</span></code>, <code class="docutils literal notranslate"><span class="pre">Perangkat</span> <span class="pre">Keras</span> <span class="pre">BioAmp</span></code>, dll.</p>
+</section>
+<section id="menggunakan-port-stemma-digital">
+<h4>Menggunakan port STEMMA Digital<a class="headerlink" href="#menggunakan-port-stemma-digital" title="Link to this heading">#</a></h4>
+<p>Hubungkan pin I/O digital D6 Arduino Uno menggunakan konektor STEMMA digital.</p>
+</section>
+<section id="menggunakan-port-stemma-analog">
+<h4>Menggunakan port STEMMA Analog<a class="headerlink" href="#menggunakan-port-stemma-analog" title="Link to this heading">#</a></h4>
+<p>Hubungkan pin input analog A2 Arduino Uno menggunakan konektor STEMMA analog.</p>
+</section>
+<section id="menggunakan-tombol-pengguna">
+<h4>Menggunakan tombol pengguna<a class="headerlink" href="#menggunakan-tombol-pengguna" title="Link to this heading">#</a></h4>
+<p>Program 2 tombol pengguna sesuai kebutuhan proyek Anda.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

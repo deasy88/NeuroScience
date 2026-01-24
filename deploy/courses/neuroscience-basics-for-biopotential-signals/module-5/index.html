@@ -1,0 +1,688 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modul 5 : Sinaps &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/neuroscience-basics-for-biopotential-signals/module-5/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/courses/neuroscience-basics-for-biopotential-signals/module-5/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Modul 6: Sinyal Biopotensial" href="../module-6/index.html" />
+    <link rel="prev" title="Modul 4 : Potensial Aksi dan Propagasinya" href="../module-4/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Neuroscience Basics For Biopotential Signals</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module-1/index.html">Modul 1: Sistem Saraf Manusia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-2/index.html">Modul 2: Memahami potensial istirahat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-3/index.html">Modul 3 : Sifat Membran Pasif</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-4/index.html">Modul 4 : Potensial Aksi dan Propagasinya</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modul 5 : Sinaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-6/index.html">Modul 6: Sinyal Biopotensial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-7/index.html">Modul 7: EMG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-8/index.html">Module 8: ECG/EKG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-9/index.html">Module 9 : EEG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-10/index.html">Module 10 : EOG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-11/index.html">Module 11 : Conclusion</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extracellular Electrophysiology Acquisition</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../open-ephys/index.html">Course Curriculum</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-1/index.html">Teori Hari 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-2/index.html">Teori Hari 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-3/index.html">Teori Hari 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-4/index.html">Teori Hari 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/exday1-nokit.html">Latihan Hari ke-1: Tanpa Perangkat Keras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/exday2-nokit.html">Latihan Hari 2: Tanpa Perangkat Keras</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Courses</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">&lt;no title&gt;</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Modul 5 : Sinaps</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="modul-5-sinaps">
+<span id="neuroscience-basics-for-biopotential-signals-module-5"></span><h1>Modul 5 : Sinaps<a class="headerlink" href="#modul-5-sinaps" title="Link to this heading">#</a></h1>
+<p>Sinaps adalah persimpangan antara dua neuron (sel saraf) atau antara neuron dan sel lain, seperti sel otot atau sel kelenjar yang memungkinkan mereka berkomunikasi. Ini adalah situs di mana sinyal elektrik atau kimia ditransmisikan dari satu sel ke sel lain.</p>
+<section id="jenis-sinaps">
+<h2>5.1 Jenis sinaps<a class="headerlink" href="#jenis-sinaps" title="Link to this heading">#</a></h2>
+<p>Ada umumnya 2 jenis utama sinaps : Sinaps Elektrik dan Sinaps Kimia</p>
+<section id="sinaps-elektrik-1">
+<h3>1. Sinaps elektrik <a class="footnote-reference brackets" href="#id10" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#sinaps-elektrik-1" title="Link to this heading">#</a></h3>
+<section id="a-struktur">
+<h4>a. Struktur<a class="headerlink" href="#a-struktur" title="Link to this heading">#</a></h4>
+<p>Dibentuk oleh gap junctions (saluran yang menghubungkan sitoplasma dua neuron yang berdekatan) yang memiliki pori untuk memungkinkan aliran ion langsung antara neuron yang berdekatan.</p>
+</section>
+<section id="b-mekanisme">
+<h4>b. Mekanisme<a class="headerlink" href="#b-mekanisme" title="Link to this heading">#</a></h4>
+<p>Cepat dan bidirectional, memfasilitasi pensinyalan cepat dan koordinasi.</p>
+</section>
+</section>
+<section id="sinaps-kimia-1">
+<h3>2. Sinaps kimia <a class="footnote-reference brackets" href="#id10" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#sinaps-kimia-1" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h4>a. Struktur<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>Terdiri dari neuron presinaptik (yang mengirim sinyal) dan neuron postsynaptik (yang menerima sinyal), dipisahkan oleh celah sinaptik.</p>
+</section>
+<section id="id7">
+<h4>b. Mekanisme<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Ketika potensial aksi (sinyal elektrik) mencapai terminal akson, ini memicu pelepasan neurotransmitter (sinyal kimia) dari vesikel ke dalam celah sinaptik. (Celah sinaptik adalah ruang sangat kecil antara dua neuron yang lebarnya 20 hingga 40 nm)</p></li>
+<li><p>Neurotransmitter ini mengikat ke reseptor spesifik pada membran postsynaptik, mengarah ke perubahan di neuron postsynaptik (baik eksitatori atau inhibitori).</p></li>
+<li><p>Lambat dibandingkan sinaps elektrik dan unidirectional .</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Selama waktu yang sangat lama, para ilmuwan percaya bahwa sinaps elektrik hadir di seluruh sistem saraf (BERKEMBANG) tetapi kenyataannya adalah sinaps kimia yang lebih umum.</p></li>
+<li><p>Saat akson neuron presinaptik mendekati sinaps, ia membengkak sedikit dan wilayah ini dikenal sebagai terminal presinaptik.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="perbedaan-utama">
+<h3>5.1.1 Perbedaan utama<a class="headerlink" href="#perbedaan-utama" title="Link to this heading">#</a></h3>
+<p>Ada 2 jenis utama reseptor : <strong>Reseptor Ionotropik</strong> dan <strong>Reseptor Metabotropik</strong>. Ketika neurotransmitter mengikat ke reseptor ionotropik, ini menyebabkan reseptor berubah bentuk, memungkinkan ion mengalir melalui saluran. Proses ini mengarah ke perubahan cepat dalam potensial membran postsynaptik, menghasilkan eksitasi atau inhibisi neuron. Reseptor metabotropik bekerja melalui jalur pensinyalan kimia di dalam sel. Sinyal ini dapat mencapai nukleus dan menyalakan atau mematikan gen tertentu. Karena ini, reseptor metabotropik dapat mengubah protein apa yang diproduksi sel dan mempengaruhi fungsi seluler jangka panjang.</p>
+<div class="admonition-fakta-penting admonition">
+<p class="admonition-title">Fakta Penting</p>
+<ul class="simple">
+<li><p>Di sistem saraf yang berkembang, sinaps elektrik lebih umum.</p></li>
+<li><p>Di sistem saraf yang berkembang, sinaps kimia lebih umum.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="epsp-dan-ipsp-2">
+<h2>5.2 EPSP dan IPSP <a class="footnote-reference brackets" href="#id11" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a><a class="headerlink" href="#epsp-dan-ipsp-2" title="Link to this heading">#</a></h2>
+<p>Ketika sinaps kimia melepaskan neurotransmitter, mereka melekat ke reseptor pada membran postsynaptik. Ini mengubah aliran ion masuk atau keluar neuron, menciptakan perubahan elektrik kecil yang disebut potensial postsynaptik. Pergeseran ini sedikit menaikkan atau menurunkan potensial membran dari tingkat istirahat biasanya sekitar –70 mV. Ada dua jenis utama: EPSP dan IPSP.</p>
+<section id="potensial-postsynaptik-eksitatori-epsp">
+<h3>Potensial Postsynaptik Eksitatori (EPSP)<a class="headerlink" href="#potensial-postsynaptik-eksitatori-epsp" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>EPSP terjadi ketika neurotransmitter eksitatori - paling umum glutamat - membuka saluran Na⁺ atau Ca²⁺.</p></li>
+<li><p>Ion positif masuk neuron, menyebabkan depolarisasi (membran menjadi kurang negatif).</p></li>
+<li><p>Ini membawa neuron lebih dekat ke ambang yang diperlukan untuk menembakkan potensial aksi.</p></li>
+<li><p>Ukuran EPSP tergantung pada berapa banyak neurotransmitter yang dilepaskan, berapa banyak reseptor yang diaktifkan, seberapa jauh sinyal dari axon hillock, dan seberapa banyak ia meluruh sepanjang membran.</p></li>
+<li><p>Jika cukup EPSP tiba bersama dan mendorong membran ke sekitar -55 mV di axon hillock, potensial aksi dipicu.</p></li>
+</ul>
+</section>
+<section id="potensial-postsynaptik-inhibitori-ipsp">
+<h3>Potensial Postsynaptik Inhibitori (IPSP)<a class="headerlink" href="#potensial-postsynaptik-inhibitori-ipsp" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IPSP terjadi ketika neurotransmitter inhibitori - terutama GABA - membuka saluran Cl⁻ (membiarkan Cl⁻ masuk) atau saluran K⁺ (membiarkan K⁺ keluar).</p></li>
+<li><p>Ini menambahkan lebih banyak muatan negatif di dalam neuron, menyebabkan hiperpolarisasi, yang membuat neuron kurang mungkin menembak.</p></li>
+<li><p>Seperti EPSP, IPSP adalah graded (Ukuran mereka tidak tetap - tergantung pada kekuatan input.) dan melemah saat mereka berjalan menuju axon hillock.</p></li>
+</ul>
+<section id="poin-penting">
+<h4>Poin Penting<a class="headerlink" href="#poin-penting" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>EPSP dan IPSP adalah perubahan kecil dari potensial istirahat –70 mV yang disebabkan oleh pergeseran dalam permeabilitas ion dan gaya elektrik dasar. <a class="reference internal" href="../module-2/index.html#neuroscience-basics-for-biopotential-signals-module-2"><span class="std std-ref">(Modul 2)</span></a></p></li>
+<li><p>Seberapa jauh dan seberapa kuat mereka menyebar tergantung pada resistansi membran (Rm), resistansi internal (Ri), kapasitansi (Cm), konstanta panjang (λ), dan konstanta waktu (τ). <a class="reference internal" href="../module-3/index.html#neuroscience-basics-for-biopotential-signals-module-3"><span class="std std-ref">(Modul 3)</span></a></p></li>
+<li><p>Ketika banyak EPSP bergabung dan mencapai ambang, neuron menembakkan potensial aksi. IPSP bekerja melawan proses ini, mencegah membran mencapai ambang dan mengurangi peluang menembak. <a class="reference internal" href="../module-4/index.html#neuroscience-basics-for-biopotential-signals-module-4"><span class="std std-ref">(Modul 4)</span></a></p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="eksperimen-bernard-katz">
+<h2>5.3 Eksperimen Bernard Katz<a class="headerlink" href="#eksperimen-bernard-katz" title="Link to this heading">#</a></h2>
+<p>Eksperimen Bernard Katz, dilakukan pada pertengahan abad ke-20 oleh fisiolog Bernard Katz dan koleganya, sangat penting dalam memahami transmisi sinaptik, khususnya di junction neuromuskular. Berikut adalah gambaran rinci eksperimen dan signifikansinya:</p>
+<section id="gambaran-eksperimen">
+<h3>5.3.1 Gambaran Eksperimen<a class="headerlink" href="#gambaran-eksperimen" title="Link to this heading">#</a></h3>
+<section id="konteks">
+<h4>1. Konteks<a class="headerlink" href="#konteks" title="Link to this heading">#</a></h4>
+<p>Katz mempelajari junction neuromuskular di katak, tempat neuron motor terhubung dengan serat otot. Tujuannya adalah mencari tahu bagaimana sinyal saraf memicu otot berkontraksi.</p>
+</section>
+<section id="metode">
+<h4>2. Metode<a class="headerlink" href="#metode" title="Link to this heading">#</a></h4>
+<p>Katz menggunakan elektrofisiologi untuk mempelajari bagaimana sel otot merespons elektrik ketika neuron motor mengaktifkan mereka. Ia mengukur potensial postsynaptik di serat otot setelah merangsang neuron motor dan juga mengamati bagaimana mengubah konsentrasi ion kalsium mempengaruhi respons ini.</p>
+</section>
+<section id="temuan">
+<h4>3. Temuan<a class="headerlink" href="#temuan" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Katz mengamati bahwa ketika neuron presinaptik melepaskan neurotransmitter (terutama asetilkolin), serat otot menghasilkan potensial end-plate (EPP). Potensial end-plate adalah perubahan elektrik kecil yang dihasilkan di serat otot ketika neuron motor melepaskan neurotransmitter di junction neuromuskular.</p></li>
+<li><p>Ia memperhatikan bahwa kekuatan EPP berubah tergantung pada berapa banyak molekul neurotransmitter yang dilepaskan.</p></li>
+<li><p>Ketika ia menurunkan konsentrasi kalsium dalam larutan sekitar, EPP menjadi lebih kecil, menunjukkan bahwa kalsium penting untuk pelepasan neurotransmitter.</p></li>
+</ul>
+</section>
+<section id="pelepasan-kuantal">
+<h4>4. Pelepasan Kuantal<a class="headerlink" href="#pelepasan-kuantal" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Salah satu penemuan utama Katz adalah ide pelepasan kuantal, yang berarti neurotransmitter dilepaskan dalam paket kecil tetap alih-alih terus menerus.</p></li>
+<li><p>Ia mengonfirmasi ini dengan mempelajari potensial end-plate miniatur (MEPP), yang terjadi bahkan tanpa stimulasi. Potensial end-plate miniatur adalah sinyal elektrik spontan kecil yang terlihat di serat otot bahkan ketika neuron motor tidak menembak.</p></li>
+</ul>
+</section>
+</section>
+<section id="signifikansi">
+<h3>5.3.2 Signifikansi :<a class="headerlink" href="#signifikansi" title="Link to this heading">#</a></h3>
+<p>Bernard Katz mempelajari junction neuromuskular katak dan menemukan bahwa neurotransmitter dilepaskan dalam paket diskrit (kuanta). Menggunakan elektrofisiologi, ia menunjukkan bahwa Kalsium penting untuk pelepasan neurotransmitter - kalsium lebih rendah → EPP lebih kecil. Temuan-temuan ini membuktikan bahwa transmisi sinaptik dikuantisasi, bukan kontinyu, dan membuatnya memenangkan Hadiah Nobel (1970).</p>
+</section>
+</section>
+<section id="protein-snare-3">
+<h2>5.4 Protein SNARE <a class="footnote-reference brackets" href="#id12" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a><a class="headerlink" href="#protein-snare-3" title="Link to this heading">#</a></h2>
+<p>Protein SNARE adalah protein khusus yang membantu neuron dalam melepaskan neurotransmitter. Ada 2 jenis:</p>
+<ul class="simple">
+<li><p><strong>v-SNAREs (vesicle SNAREs)</strong>: Protein ini terletak di membran vesikel sinaptik. v-SNARE yang paling umum adalah synaptobrevin (juga dikenal sebagai VAMP).</p></li>
+<li><p><strong>t-SNAREs (target SNAREs)</strong>: Protein ini ditemukan di membran presinaptik dan berinteraksi dengan v-SNAREs untuk memfasilitasi fusi vesikel. t-SNARE utama termasuk syntaxin dan SNAP-25.</p></li>
+</ul>
+<section id="mekanisme-kerja">
+<h3>Mekanisme Kerja<a class="headerlink" href="#mekanisme-kerja" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Docking Vesikel</strong>: v-SNAREs dan t-SNAREs membentuk kompleks, membawa vesikel dekat dengan membran presinaptik.</p></li>
+<li><p><strong>Fusi</strong>: Ketika potensial aksi tiba, ion kalsium masuk ke terminal presinaptik, memicu perubahan konformasi dalam kompleks SNARE yang menyebabkan fusi vesikel dengan membran.</p></li>
+<li><p><strong>Pelepasan Neurotransmitter</strong>: Setelah vesikel fusi dengan membran, neurotransmitter dilepaskan ke dalam celah sinaptik.</p></li>
+</ol>
+</section>
+</section>
+<section id="penjumlahan-sinaptik">
+<h2>5.5 Penjumlahan Sinaptik<a class="headerlink" href="#penjumlahan-sinaptik" title="Link to this heading">#</a></h2>
+<p>Penjumlahan sinaptik adalah cara neuron menjumlahkan semua EPSP dan IPSP yang diterimanya dari ribuan sinaps untuk memutuskan apakah harus menembakkan potensial aksi. Karena setiap EPSP atau IPSP sangat kecil (sekitar 0.2–1 mV), satu sinaps tidak pernah cukup untuk membuat neuron menembak. Sebaliknya, neuron bergantung pada efek gabungan dari banyak input.</p>
+<section id="jenis-penjumlahan-sinaptik">
+<h3>5.5.1 Jenis Penjumlahan Sinaptik<a class="headerlink" href="#jenis-penjumlahan-sinaptik" title="Link to this heading">#</a></h3>
+<p>Ada dua jenis penjumlahan utama:</p>
+<section id="penjumlahan-temporal">
+<h4>1. Penjumlahan Temporal<a class="headerlink" href="#penjumlahan-temporal" title="Link to this heading">#</a></h4>
+<p>Penjumlahan temporal terjadi ketika beberapa EPSP atau IPSP tiba satu demi satu dalam urutan cepat di sinaps yang sama.</p>
+<ul>
+<li><p>Jika mereka terjadi dekat dalam waktu, mereka menjumlah karena membran belum kembali sepenuhnya ke tingkat istirahatnya.</p></li>
+<li><p>Proses ini sangat bergantung pada konstanta waktu (τ):</p>
+<p><strong>a. τ yang lebih panjang berarti EPSP bertahan lebih lama → lebih mudah untuk menjumlah</strong></p>
+<p><strong>b. τ yang lebih pendek berarti EPSP memudar cepat → lebih sulit untuk menjumlah</strong></p>
+</li>
+</ul>
+</section>
+<section id="penjumlahan-spasial">
+<h4>2. Penjumlahan Spasial<a class="headerlink" href="#penjumlahan-spasial" title="Link to this heading">#</a></h4>
+<p>Penjumlahan spasial terjadi ketika EPSP atau IPSP tiba pada waktu yang sama dari sinaps berbeda yang terletak di bagian dendrit yang berbeda.</p>
+<ul>
+<li><p>Input dari banyak neuron presinaptik bertemu di axon hillock dan bergabung di sana.</p></li>
+<li><p>Ini bergantung pada konstanta panjang (λ):</p>
+<p><strong>a. λ yang lebih besar memungkinkan EPSP berjalan lebih jauh dengan lebih sedikit peluruhan</strong></p>
+<p><strong>b. λ yang lebih kecil menyebabkan EPSP mati sebelum mencapai hillock</strong></p>
+</li>
+</ul>
+</section>
+</section>
+<section id="interaksi-epsp-dan-ipsp">
+<h3>5.5.2 Interaksi EPSP dan IPSP<a class="headerlink" href="#interaksi-epsp-dan-ipsp" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Neuron terus menerus menerima sinyal eksitatori dan inhibitori.</p></li>
+<li><p>EPSP membuat sel lebih positif → meningkatkan peluang menembak</p></li>
+<li><p>IPSP membuat sel lebih negatif → mengurangi peluang menembak</p></li>
+<li><p>Di axon hillock, neuron secara efektif melakukan perhitungan:</p>
+<p><strong>Input bersih = total EPSP - total IPSP</strong></p>
+</li>
+<li><p>Jika depolarisasi bersih ini mencapai sekitar -55 mV → neuron menembakkan potensial aksi.</p></li>
+<li><p>Jika inhibisi melebihi eksitasi → tidak ada potensial aksi yang terjadi.
+Ini adalah cara dasar neuron menghitung informasi.</p></li>
+</ul>
+</section>
+<section id="bagaimana-penjumlahan-sinaptik-menghasilkan-sinyal-biopotensial-eeg-ecg-emg-eog">
+<h3>5.5.3 Bagaimana Penjumlahan Sinaptik Menghasilkan Sinyal Biopotensial (EEG, ECG, EMG, EOG)<a class="headerlink" href="#bagaimana-penjumlahan-sinaptik-menghasilkan-sinyal-biopotensial-eeg-ecg-emg-eog" title="Link to this heading">#</a></h3>
+<p>Sinyal biopotensial yang diukur dari tubuh—seperti EEG, ECG, EMG, dan EOG—bukan rekaman dari neuron tunggal atau potensial aksi tunggal.
+Sebaliknya, sinyal ini berasal dari potensial postsynaptik (EPSP + IPSP) yang dijumlahkan dari ribuan hingga jutaan sel yang menembak bersama. Aktivitas elektrik gabungan ini menciptakan perubahan tegangan yang cukup besar untuk dideteksi oleh elektroda di kulit atau kulit kepala.</p>
+</section>
+</section>
+<section id="informasi-tambahan-toksin-dan-efeknya">
+<h2>5.6 Informasi Tambahan (Toksin dan Efeknya)<a class="headerlink" href="#informasi-tambahan-toksin-dan-efeknya" title="Link to this heading">#</a></h2>
+<section id="toksin-botulinum-botox">
+<h3>5.6.1 Toksin Botulinum (Botox)<a class="headerlink" href="#toksin-botulinum-botox" title="Link to this heading">#</a></h3>
+<p><strong>Mekanisme</strong>: Botox diproduksi oleh bakteri Clostridium botulinum dan bekerja dengan memotong protein SNARE spesifik (terutama SNAP-25).</p>
+<p><strong>Efek</strong>: Ini mencegah fusi vesikel dan pelepasan neurotransmitter, menyebabkan paralisis otot. Botox digunakan secara terapeutik untuk kondisi seperti kejang otot dan prosedur kosmetik dengan memaralisis otot sementara dan mengurangi kerutan dan garis halus pada kulit.</p>
+</section>
+<section id="toksin-tetani">
+<h3>5.6.2 Toksin Tetani<a class="headerlink" href="#toksin-tetani" title="Link to this heading">#</a></h3>
+<p><strong>Mekanisme</strong>: Diproduksi oleh Clostridium tetani, toksin tetani juga menargetkan protein SNARE, khususnya synaptobrevin.</p>
+<p><strong>Efek</strong>: Toksin ini menghambat pelepasan neurotransmitter yang memediasi sinyal inhibitori dalam sistem saraf, menyebabkan kontraksi otot berlebihan dan kejang (tetani). Ini menyebabkan kondisi yang parah dan berpotensi mengancam jiwa.</p>
+<div class="admonition-info-bonus admonition">
+<p class="admonition-title">Info Bonus</p>
+<p><strong>Apakah paku berkarat benar-benar menyebabkan tetani?</strong></p>
+<p>Paku berkarat sendiri tidak langsung menyebabkan tetani. Bakteri yang menyebabkan tetani, Clostridium tetani, umumnya ditemukan di tanah, kotoran hewan, dan debu. Meskipun paku berkarat dapat membuat luka tusukan dalam yang memungkinkan bakteri ini masuk ke tubuh, itu adalah bakteri, bukan karat, yang menimbulkan risiko. Jika luka terkontaminasi dengan C. tetani, tetani dapat berkembang, itulah sebabnya penting untuk menjaga luka bersih dan vaksinasi terkini.</p>
+</div>
+</section>
+</section>
+<section id="ringkasan">
+<h2>5.7 Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
+<p>Dalam modul 5, kita menjelajahi bagaimana sinaps memungkinkan komunikasi antara neuron, perbedaan antara sinaps elektrik dan kimia, bagaimana neurotransmitter menciptakan EPSP dan IPSP, dan bagaimana neuron menjumlahkan sinyal ini melalui penjumlahan sinaptik. Kita juga belajar tentang pelepasan kuantal, peran protein SNARE, dan bagaimana toksin mempengaruhi fungsi sinaptik. Semua ini memberi kita dasar untuk memahami bagaimana kelompok besar neuron menghasilkan aktivitas elektrik yang dapat diukur. Di modul berikutnya, kita akan membangun pengetahuan ini dan mempelajari sinyal biopotensial seperti EEG, EMG, ECG, dan EOG—bagaimana mereka dihasilkan, bagaimana kita merekamnya, dan apa yang mereka beri tahu kita tentang tubuh.</p>
+</section>
+<section id="referensi">
+<h2>5.8 Referensi<a class="headerlink" href="#referensi" title="Link to this heading">#</a></h2>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id10" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id4">2</a>)</span>
+<p><a class="reference external" href="https://openbooks.lib.msu.edu/neuroscience/chapter/synapse-structure/">Henley, C. (2021, January 1). Struktur Sinaps. Pressbooks.</a></p>
+</aside>
+<aside class="footnote brackets" id="id11" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.kenhub.com/en/library/physiology/postsynaptic-potentials">Potensial Postsynaptik</a></p>
+</aside>
+<aside class="footnote brackets" id="id12" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">3</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1146/annurev.cellbio.19.110701.155609">Ungar, D., &amp; Hughson, F. M. (2003). Struktur dan Fungsi Protein SNARE. Annual Review of Cell and Developmental Biology, 19(1), 493–517.</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

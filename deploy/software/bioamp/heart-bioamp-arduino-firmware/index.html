@@ -1,0 +1,817 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Firmware Arduino BioAmp Jantung (ECG) &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'software/bioamp/heart-bioamp-arduino-firmware/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/software/bioamp/heart-bioamp-arduino-firmware/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Brain (EEG) BioAmp Arduino Firmware" href="../brain-bioamp-arduino-firmware/index.html" />
+    <link rel="prev" title="Firmware Arduino BioAmp Mata (EOG)" href="../eye-bioamp-arduino-firmware/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Chords</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-web/index.html">Chords-Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-python/index.html">Chords-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-lsl-connector/index.html">Chords-LSL-Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-lsl-visualizer/index.html">Chords-LSL-Visualizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-java/index.html">Chords-Java</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../tools/npg-lite-flasher/index.html">NPG Lite Flasher</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">BioAmp Software</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../muscle-bioamp-arduino-firmware/index.html">Muscle (EMG) BioAmp Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eye-bioamp-arduino-firmware/index.html">Firmware Arduino BioAmp Mata (EOG)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Firmware Arduino BioAmp Jantung (ECG)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brain-bioamp-arduino-firmware/index.html">Brain (EEG) BioAmp Arduino Firmware</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Software</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Firmware Arduino BioAmp Jantung (ECG)</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="firmware-arduino-bioamp-jantung-ecg">
+<span id="heart-bioamp-arduino-firmware"></span><h1>Firmware Arduino BioAmp Jantung (ECG)<a class="headerlink" href="#firmware-arduino-bioamp-jantung-ecg" title="Link to this heading">#</a></h1>
+<section id="apa-itu-elektrokardiografi-ecg">
+<h2>Apa itu Elektrokardiografi (ECG)?<a class="headerlink" href="#apa-itu-elektrokardiografi-ecg" title="Link to this heading">#</a></h2>
+<p>Elektrokardiografi <a class="reference external" href="https://www.mayoclinic.org/tests-procedures/ekg/about/pac-20384983">[1]</a> adalah proses
+menghasilkan elektrokardiogram (ECG atau EKG), rekaman aktivitas listrik jantung
+melalui siklus jantung berulang.
+Ini adalah elektrogram jantung yang merupakan grafik tegangan versus waktu dari aktivitas listrik
+jantung menggunakan elektroda yang ditempatkan pada kulit. Elektroda ini mendeteksi perubahan listrik kecil yang
+merupakan konsekuensi dari depolarisasi otot jantung diikuti oleh repolarisasi selama
+setiap siklus jantung (detak jantung).</p>
+<p>Untuk mengetahui lebih lanjut tentang ECG <a class="reference external" href="https://en.wikipedia.org/wiki/Electrocardiography">kunjungi di sini</a>.</p>
+<section id="untuk-siapa-ini">
+<h3>Untuk siapa ini?<a class="headerlink" href="#untuk-siapa-ini" title="Link to this heading">#</a></h3>
+<p>Siapa pun yang menggunakan Hardware BioAmp untuk pertama kali — baik Anda siswa, hobiis, pendidik atau hanya penasaran. Tidak perlu pengalaman!</p>
+<p>👉 Untuk mempelajari Hardware BioAmp kami lihat <a class="reference internal" href="../../../hardware/index.html#upsidedownlabs-hardware-home"><span class="std std-ref">halaman hardware</span></a>.</p>
+</section>
+</section>
+<section id="panduan-pengaturan-langkah-demi-langkah">
+<h2>Panduan Pengaturan Langkah demi Langkah<a class="headerlink" href="#panduan-pengaturan-langkah-demi-langkah" title="Link to this heading">#</a></h2>
+<p>Dengan hardware di tangan Anda, Anda hanya beberapa langkah lagi untuk membuka potensinya — mari siapkan software!</p>
+<section id="langkah-1-mengunduh-repository-github-untuk-hardware">
+<h3>Langkah 1: Mengunduh Repository GitHub untuk Hardware<a class="headerlink" href="#langkah-1-mengunduh-repository-github-untuk-hardware" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ini adalah kode yang dibutuhkan Arduino Anda untuk membaca sinyal Jantung (ECG).</p></li>
+<li><p>Anda memiliki dua cara mudah untuk mendapatkan kode yang akan membantu Anda membaca sinyal ECG Anda:</p></li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Cukup Unduh (direkomendasikan untuk pemula)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Pergi ke halaman GitHub: <a class="reference external" href="https://github.com/upsidedownlabs/Heart-BioAmp-Arduino-Firmware">Heart BioAmp Arduino Firmware</a></p></li>
+<li><p class="sd-card-text">Klik tombol hijau “<strong>Code</strong>” &gt; Download ZIP</p></li>
+<li><p class="sd-card-text">Ekstrak folder dan simpan di tempat yang mudah ditemukan.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Klon menggunakan Git (untuk pengguna ahli)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul>
+<li><p class="sd-card-text">Instal Git untuk OS Anda: <a class="reference external" href="https://git-scm.com/">https://git-scm.com/</a></p></li>
+<li><p class="sd-card-text">Klon repository GitHub ini menggunakan</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/upsidedownlabs/Heart-BioAmp-Arduino-Firmware
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</details></section>
+<section id="langkah-2-aplikasi-yang-diperlukan">
+<h3>Langkah 2: Aplikasi yang Diperlukan<a class="headerlink" href="#langkah-2-aplikasi-yang-diperlukan" title="Link to this heading">#</a></h3>
+<p>Sebelum mulai menggunakan kit, silakan unduh atau buka berikut:</p>
+<ol class="arabic simple">
+<li><p><strong>Arduino IDE</strong></p>
+<ul class="simple">
+<li><p>Kami membutuhkan Arduino IDE untuk mengunggah kode ke board Arduino Anda</p></li>
+<li><p>Link untuk mengunduh IDE untuk OS Anda: <a class="reference external" href="https://www.arduino.cc/en/software">https://www.arduino.cc/en/software</a></p></li>
+</ul>
+</li>
+<li><p><strong>Situs Web Chords</strong></p>
+<ul class="simple">
+<li><p>Kami akan menggunakan Situs Web Chords untuk memvisualisasikan Sinyal Jantung!</p></li>
+<li><p>Buka situs web ini: <a class="reference external" href="https://chords.upsidedownlabs.tech">Chords Web</a></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="langkah-3-hubungkan-hardware-anda">
+<span id="heart-bioamp-arduino-firmware-connect-hardware"></span><h3>Langkah 3: Hubungkan Hardware Anda<a class="headerlink" href="#langkah-3-hubungkan-hardware-anda" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Hubungkan Hardware ke Arduino UNO Anda menggunakan jumper wires.</p></li>
+<li><p>Ikuti diagram wiring yang tepat dari <a class="reference internal" href="../../../hardware/index.html#upsidedownlabs-hardware-home"><span class="std std-ref">dokumentasi hardware</span></a> hardware yang Anda gunakan.</p></li>
+<li><p>Hardware yang kompatibel dengan Firmware BioAmp Jantung:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../hardware/bioamp/bioamp-exg-pill/index.html#bioamp-exg-pill"><span class="std std-ref">Bioamp EXG Pill</span></a></p></li>
+<li><p><a class="reference internal" href="../../../hardware/bioamp/heart-bioamp-candy/index.html#heart-bioamp-candy"><span class="std std-ref">Heart BioAmp Candy</span></a></p></li>
+</ul>
+</li>
+</ol>
+<p>Ini seperti menyusun puzzle!</p>
+</section>
+<section id="langkah-4-persiapan-kulit-dan-penempatan-elektroda">
+<h3>Langkah 4: Persiapan Kulit dan Penempatan Elektroda<a class="headerlink" href="#langkah-4-persiapan-kulit-dan-penempatan-elektroda" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Menggunakan Elektroda Gel:</strong></p></li>
+</ul>
+<ol class="arabic">
+<li><p><strong>Siapkan kulit Anda</strong></p>
+<ul class="simple">
+<li><p>Pilih area di mana Anda akan menempatkan elektroda.</p></li>
+<li><p>Lap area dada menggunakan <strong>swab alkohol</strong> atau <strong>Gel Nuprep</strong> untuk menghilangkan minyak dan sel mati — ini meningkatkan kejelasan sinyal.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Butuh bantuan dengan persiapan kulit? Lihat panduan lengkap di sini: <a class="reference internal" href="../../../guides/usage-guides/skin-preparation/index.html#skin-preparation"><span class="std std-ref">Panduan Persiapan Kulit</span></a></p>
+</div>
+</li>
+<li><p>Pasang kawat ke elektroda, lalu pasang elektroda ke kulit (lihat diagram di bawah):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IN+</span></code> (positif): Sisi kiri dada, lebih dekat ke jantung</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN–</span></code> (negatif): Sisi kiri dada, tepat di bawah tulang selangka, dekat dengan elektroda positif.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REF</span></code> (referensi): Sisi kanan dada, jauh dari jantung (di atas tulang rusuk)</p></li>
+</ul>
+</li>
+</ol>
+<figure class="align-center" id="id5">
+<img alt="Penempatan ECG" src="../../../_images/skin-prep-ecg.png" />
+<figcaption>
+<p><span class="caption-text">Penempatan ECG</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Menggunakan BioAmp Band:</strong> Untuk BioAmp Band, lihat dokumentasi berikut: <a class="reference internal" href="../../../guides/usage-guides/using-bioamp-bands/index.html#using-bioamp-bands"><span class="std std-ref">Menggunakan BioAmp Bands</span></a></p></li>
+</ul>
+</section>
+<section id="langkah-5-cara-mengunggah-kode-ke-arduino">
+<span id="heart-bioamp-arduino-firmware-code-upload"></span><h3>Langkah 5: Cara Mengunggah Kode ke Arduino<a class="headerlink" href="#langkah-5-cara-mengunggah-kode-ke-arduino" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Buka folder yang Anda unduh: <strong>Heart-BioAmp-Arduino-Firmware</strong></p></li>
+<li><p>Di dalamnya, Anda akan menemukan beberapa subfolder.</p></li>
+<li><p>Pilih folder untuk eksperimen yang ingin Anda coba. (Untuk pemula: mulai dengan yang pertama dan maju langkah demi langkah untuk pengalaman belajar yang lebih baik)</p></li>
+<li><p>Di dalam folder itu, buka file <strong>.ino</strong> menggunakan <strong>Arduino IDE</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Sebagai contoh:</p>
+<ul>
+<li><p>Untuk mencoba sinyal mentah: buka <code class="docutils literal notranslate"><span class="pre">1_FixedSampling.ino</span></code></p></li>
+<li><p>Untuk mencoba sinyal terfilter: buka <code class="docutils literal notranslate"><span class="pre">2_ECGFilter.ino</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Anda akan menemukan semua eksperimen tercantum di bawah, masing-masing dengan <a class="reference internal" href="#heart-bioamp-arduino-firmware-exp-list"><span class="std std-ref">instruksi langkah demi langkah</span></a>. Cukup gulir ke yang sedang Anda kerjakan untuk memulai dengan pengaturan yang benar.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Hubungkan Arduino Anda</p>
+<ul class="simple">
+<li><p>Hubungkan board Arduino Anda ke port USB komputer Anda menggunakan kabel USB.</p></li>
+<li><p>Tunggu sistem operasi menginstal driver USB yang diperlukan.</p></li>
+</ul>
+</li>
+<li><p>Di Arduino IDE:</p>
+<ul class="simple">
+<li><p>Pergi ke <strong>Tools &gt; Board &gt; Arduino UNO</strong> pilih model board Anda (misalnya, “Arduino Uno” atau “Arduino Nano” jika Anda wiring ke Nano)</p></li>
+<li><p>Pergi ke <strong>Tools &gt; Port &gt; [pilih port COM yang benar]</strong></p></li>
+</ul>
+</li>
+<li><p>Verifikasi (Kompilasi) Sketch</p>
+<ul class="simple">
+<li><p>Klik tombol “<strong>✔️ Verify</strong>” (atau tekan <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">R</span></code>).</p></li>
+<li><p>Tunggu “<strong>Done compiling.</strong>” Jika muncul error, periksa ulang Anda membuka file .ino yang benar.</p></li>
+</ul>
+</li>
+<li><p>Klik tombol <strong>✓</strong> Upload (atau tekan <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">U</span></code>) untuk mengirim kode ke Arduino Anda.</p>
+<ul class="simple">
+<li><p>IDE akan mengkompilasi lagi dan kemudian mengirim kode ke board Anda.</p></li>
+<li><p>LED onboard berlabel “<strong>L</strong>” mungkin berkedip selama upload. Saat Anda melihat “<strong>Done uploading</strong>”, firmware baru sedang berjalan.</p></li>
+</ul>
+</li>
+<li><p>Buka Serial Monitor dan Serial Plotter (Opsional)</p>
+<ul class="simple">
+<li><p>Untuk serial monitor dan plotter, kami merekomendasikan menggunakan <a class="reference external" href="https://chords.upsidedownlabs.tech">Chords Web</a>. Namun, jika Anda belajar mengembangkan, Anda mungkin juga menemukan opsi ini berguna.</p></li>
+<li><p>Untuk Serial Monitor: Di IDE, klik <strong>Tools → Serial Monitor</strong> (atau tekan <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">M</span></code>).</p></li>
+<li><p>Pastikan baud rate di kanan bawah Serial Monitor disetel ke <code class="docutils literal notranslate"><span class="pre">115200</span></code> (atau apa pun yang ditentukan oleh sketch Serial.begin(115200);).</p></li>
+<li><p>Anda harus mulai melihat baris angka. Itu adalah pembacaan Anda.</p></li>
+<li><p>Untuk Serial Plotter: Di IDE, klik <strong>Tools → Serial Plotter</strong>.</p></li>
+<li><p>Anda harus mulai melihat plotting grafik dan memvisualisasikan gelombang.</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Ingat untuk menutup <strong>Serial Monitor &amp; Serial Plotter</strong> di <strong>Arduino IDE</strong> sebelum memulai Chords Visualizer.</p></li>
+</ul>
+</div>
+</section>
+<section id="langkah-6-visualisasikan-sinyal-jantung-anda">
+<span id="heart-bioamp-arduino-firmware-visualize-signals"></span><h3>Langkah 6: Visualisasikan Sinyal Jantung Anda!<a class="headerlink" href="#langkah-6-visualisasikan-sinyal-jantung-anda" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Buka situs web ini: <a class="reference external" href="https://chords.upsidedownlabs.tech">Chords Web</a></p></li>
+<li><p>Klik: Visualize Now → lalu pilih Serial Wizard.</p></li>
+<li><p>Pilih port COM yang benar (sama dari Arduino IDE).</p></li>
+<li><p>Klik Connect.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Selalu <strong>putuskan charger laptop</strong> Anda saat testing. Mengapa? Charging dapat memperkenalkan noise 50 Hz yang mempengaruhi sinyal.</p></li>
+</ul>
+</div>
+<p>🎉 Sekarang duduklah, rileks, dan diam—atau ambil napas dalam—Anda akan melihat detak jantung Anda hidup sebagai gelombang ECG real-time yang menari di layar!</p>
+</section>
+</section>
+<section id="mari-jelajahi-semua-eksperimen-langkah-demi-langkah">
+<span id="heart-bioamp-arduino-firmware-exp-list"></span><h2>Mari jelajahi semua eksperimen langkah demi langkah<a class="headerlink" href="#mari-jelajahi-semua-eksperimen-langkah-demi-langkah" title="Link to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">1. Fixed Sampling</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>1. Tujuan Program &amp; Gambaran</strong></p>
+<p class="sd-card-text">Program <strong>Fixed Sampling</strong> membaca sinyal listrik mentah jantung Anda (ECG)
+menggunakan pin analog dan mencetaknya ke Serial Monitor. Ini berguna untuk memahami
+seperti apa sinyal jantung yang tidak terfilter. Anggap saja seperti melihat “bahan mentah” sebelum memasak.</p>
+<p class="sd-card-text"><strong>2. Cara Kerjanya</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">analogRead(A0)</span></code> membaca tegangan dari sensor Heart BioAmp.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Serial.println()</span></code> mencetak nilai-nilai itu ke komputer.</p></li>
+<li><p class="sd-card-text">Timer memastikan nilai dibaca pada tingkat yang stabil.</p></li>
+</ul>
+<p class="sd-card-text">Anda dapat melihat bagaimana detak jantung mengubah waveform.</p>
+<p class="sd-card-text"><strong>3. Lakukan Hardware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Lihat wiring sesuai instruksi yang diberikan di <a class="reference internal" href="#heart-bioamp-arduino-firmware-connect-hardware"><span class="std std-ref">Connect Your Hardware</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>4. Unggah Firmware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk proyek ini, navigasi ke folder repository (Heart-BioAmp-Arduino-Firmware/1_FixedSampling) dan pilih <code class="docutils literal notranslate"><span class="pre">1_FixedSampling.ino</span></code>.</p></li>
+<li><p class="sd-card-text">Untuk mengunggah firmware, lihat <a class="reference internal" href="#heart-bioamp-arduino-firmware-code-upload"><span class="std std-ref">How to upload the Code to Arduino</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>5. Visualisasikan sinyal Anda</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Ikuti langkah-langkah yang diberikan di <a class="reference internal" href="#heart-bioamp-arduino-firmware-visualize-signals"><span class="std std-ref">Visualize Your Heart Signals!</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>6. Menjalankan &amp; Mengamati Hasil</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Angka-angka melompat naik turun dengan cepat, mencerminkan setiap fluktuasi kecil dalam tegangan ECG mentah.</p></li>
+<li><p class="sd-card-text">Baseline wander (drift lambat naik/turun selama detik).</p></li>
+<li><p class="sd-card-text">High‑frequency spikes (noise otot, interferensi line).</p></li>
+<li><p class="sd-card-text">Puncak yang sesuai dengan detak jantung terkubur dalam noise dan drift—ini murni sinyal tidak terfilter Anda.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">2. ECG Filter</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>1. Tujuan Program &amp; Gambaran</strong></p>
+<p class="sd-card-text">Program <strong>ECG Filter</strong> melewatkan ECG mentah Anda melalui filter band-pass digital (0.5–44.5 Hz),
+menghilangkan drift baseline dan noise frekuensi tinggi sehingga Anda melihat waveform jantung yang benar.</p>
+<p class="sd-card-text">ECG nyata memiliki tren wandering lambat (misalnya drift terkait pernapasan) dan
+interferensi frekuensi tinggi (noise otot, hum powerline). Filter band-pass mengisolasi
+band klinis yang relevan 0.5–44 Hz di mana kompleks QRS dan gelombang T hidup.</p>
+<p class="sd-card-text"><strong>2. Cara Kerjanya</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Menggunakan filter IIR band-pass orde dan koefisien yang dipilih untuk memotong tajam di bawah 0.5 Hz dan di atas 44.5 Hz.</p></li>
+<li><p class="sd-card-text">Menerapkan filter sampel-by-sampel di dalam loop fixed-rate yang sama.</p></li>
+<li><p class="sd-card-text">Mencetak nilai terfilter ke Serial Monitor.</p></li>
+<li><p class="sd-card-text">Untuk mempelajari lebih lanjut tentang filter dan cara menghasilkan filter baru, kunjungi:  <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html</a></p></li>
+</ul>
+<p class="sd-card-text"><strong>3. Lakukan Hardware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Lihat wiring sesuai instruksi yang diberikan di <a class="reference internal" href="#heart-bioamp-arduino-firmware-connect-hardware"><span class="std std-ref">Connect Your Hardware</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>4. Unggah Firmware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk proyek ini, pergi ke folder repository (Heart-BioAmp-Arduino-Firmware/2_ECGFilter) dan pilih <code class="docutils literal notranslate"><span class="pre">2_ECGFilter.ino</span></code>.</p></li>
+<li><p class="sd-card-text">Untuk mengunggah firmware, lihat <a class="reference internal" href="#heart-bioamp-arduino-firmware-code-upload"><span class="std std-ref">How to upload the Code to Arduino</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>5. Visualisasikan sinyal Anda</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Ikuti langkah-langkah yang diberikan di <a class="reference internal" href="#heart-bioamp-arduino-firmware-visualize-signals"><span class="std std-ref">Visualize Your Heart Signals!</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>6. Menjalankan &amp; Mengamati Hasil</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Waveform halus, terpusat di mana kompleks QRS (spike utama jantung) dan gelombang T menonjol dengan jelas.</p></li>
+<li><p class="sd-card-text">Anda harus dengan mudah melihat pola berulang satu spike besar (R‑peak) diikuti oleh gelombang yang lebih kecil (gelombang P dan T).</p></li>
+<li><p class="sd-card-text">Jika Anda fleks atau batuk pelan, Anda mungkin melihat artefak transient—ini akan ditekan dibandingkan dengan sinyal tidak terfilter.</p></li>
+</ul>
+<p class="sd-card-text">Untuk panduan detail, kunjungi <strong>Halaman Instructables</strong> kami: <a class="reference external" href="https://www.instructables.com/Record-Publication-Grade-ECG-at-Your-Home-Using-Bi/">Record Publication Grade ECG at Your Home Using BioAmp EXG Pill</a></p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">3. Heart Rate Detection</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Program <strong>Heart Rate Detection</strong> mengubah sinyal ECG terfilter Anda menjadi readout detak jantung numerik langsung.
+Saat Arduino terus menerus sampling waveform ECG yang dibersihkan dari BioAmp EXG Pill, sketch ini
+mengidentifikasi puncak gelombang R karakteristik detak jantung dan menandai waktu kejadiannya. Dengan mengukur
+waktu antara puncak berurutan, ini menghitung detak per menit (BPM) Anda dan mencetak hasilnya ke
+Serial Monitor, memberikan tampilan real-time detak jantung Anda tanpa software atau display eksternal.</p>
+<p class="sd-card-text">Di bawah kap, sketch beroperasi seperti stetoskop digital: ini mempertahankan scan berjalan dari
+ECG masuk, dan setiap kali sinyal naik tajam di atas threshold yang dipilih—menunjukkan gelombang R—itu
+menandai itu sebagai satu detak. Kemudian menghitung interval sejak detak sebelumnya dan menerapkan konversi standar
+(60 000 ms dibagi interval) untuk menentukan BPM. Pendekatan ini memberikan pengukuran detak jantung yang segera dan
+intuitif, mengubah spike biopotensial mentah menjadi data yang bermakna dan dapat dibaca manusia.</p>
+<p class="sd-card-text">Untuk panduan detail, kunjungi <strong>Halaman Instructables</strong> kami: <a class="reference external" href="https://www.instructables.com/Measuring-Heart-Rate-Using-BioAmp-EXG-Pill/">Measuring Heart Rate Using BioAmp EXG Pill</a></p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">4. Heart Beat Detection</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Program <strong>Heart Beat Detection</strong> mengubah waveform ECG terfilter Anda menjadi hitungan detak jantung yang andal
+dengan memantau “energi” sinyal daripada puncak mentah. Saat Arduino terus membaca ECG bersih
+dari BioAmp EXG Pill, sketch ini menghitung ukuran variabilitas sinyal jangka pendek—pada dasarnya envelope atau deviasi standar
+tegangan. Setiap kali envelope itu melonjak di atas threshold yang disetel
+(menunjukkan perubahan tegangan cepat dari gelombang R), kode mendaftarkan satu detak jantung dan kemudian menunggu
+sinyal turun di bawah threshold lagi, memastikan setiap detak dihitung hanya sekali.</p>
+<p class="sd-card-text">Dengan melacak saat envelope melintasi thresholdnya, sketch membangun tally real-time detak jantung Anda.
+Daripada hanya mencari spike tegangan, ini menggunakan envelope untuk menghaluskan noise dan
+drift baseline, membuatnya jauh lebih kuat dalam pengaturan sehari-hari yang kurang terkendali. Hasilnya adalah
+counter detak jantung yang bergantung yang bekerja bahkan jika amplitudo ECG bervariasi atau elektroda Anda bergeser sedikit—sempurna untuk
+monitoring detak jantung dasar tanpa sirkuit deteksi puncak yang kompleks.</p>
+<p class="sd-card-text">Untuk panduan detail, kunjungi <strong>Halaman Instructables</strong> kami: <a class="reference external" href="https://www.instructables.com/Detecting-Heart-Beats-Using-BioAmp-EXG-Pill/">Detecting Heart Beats Using BioAmp EXG Pill</a></p>
+<p class="sd-card-text">Lihat Visualisasi Demo di <strong>YouTube</strong>:</p>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/uB5R-vGJjJo" style="border: 0; height: 345px; width: 560px">
+</iframe></div></div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">5. BLE Heart Rate Detection</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Akan didokumentasikan.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">6. Faster Heart Rate Detection</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>1. Tujuan Program &amp; Gambaran</strong></p>
+<p class="sd-card-text">Sketch <strong>Faster Heart Rate Detection</strong> memberikan fungsionalitas beat-to-BPM yang sama seperti pendahulunya
+tetapi dalam paket yang sangat dioptimalkan. Ini membaca ECG Anda dari BioAmp EXG Pill dan Muscle BioAmp Shield pada tingkat
+125 Hz yang terkendali, menerapkan filter band-pass Butterworth 4-tahap untuk mengisolasi band jantung 0.5–44.5 Hz,
+lalu mendeteksi setiap gelombang R menggunakan metode envelope buffer berjalan. Daripada crossing threshold sederhana,
+ini menggunakan jendela kecil sampel terkini untuk menghitung mean dan deviasi standar, menandai detak jantung hanya ketika sampel masuk
+melebihi mean + 0.5 × stddev dan menghormati interval debounce singkat.</p>
+<p class="sd-card-text"><strong>2. Cara Kerjanya</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Sampling tingkat tetap pada 125 Hz menggunakan timer mikrodetik (micros() + loop timer) memastikan interval data konsisten dengan overhead timing yang sangat sedikit.</p></li>
+<li><p class="sd-card-text">Filter Butterworth IIR 4-seksi inlined (ECGFilter()) menghilangkan drift baseline dan noise frekuensi tinggi dalam satu pass, menghindari biaya call fungsi.</p></li>
+<li><p class="sd-card-text">Deteksi puncak berbasis envelope di atas buffer melingkar 26-sampel menghitung mean dan deviasi standar on-the-fly, menandai detak jantung hanya ketika sampel saat ini melebihi mean + 0.5 × stddev.</p></li>
+<li><p class="sd-card-text">Logika debounce (peakCooldownPeriod = 2 ms) menggunakan hanya dua Boolean dan timestamp untuk mencegah re-trigger palsu pada detak yang sama.</p></li>
+<li><p class="sd-card-text">Buffer timing melingkar (timeBuffer/sumBuffer, ukuran 5) rata-rata interval inter-beat terkini sebelum mengonversi ke BPM, menghaluskan ketidakteraturan tanpa loop besar.</p></li>
+</ul>
+<p class="sd-card-text"><strong>3. Lakukan Hardware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Lihat wiring sesuai instruksi yang diberikan di <a class="reference internal" href="#heart-bioamp-arduino-firmware-connect-hardware"><span class="std std-ref">Connect Your Hardware</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>4. Unggah Firmware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk proyek ini, pergi ke folder repository (Heart-BioAmp-Arduino-Firmware/6_Faster_HeartRateDetection) dan pilih <code class="docutils literal notranslate"><span class="pre">6_Faster_HeartRateDetection.ino</span></code>.</p></li>
+<li><p class="sd-card-text">Untuk mengunggah firmware, lihat <a class="reference internal" href="#heart-bioamp-arduino-firmware-code-upload"><span class="std std-ref">How to upload the Code to Arduino</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>5. Visualisasikan sinyal Anda</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Ikuti langkah-langkah yang diberikan di <a class="reference internal" href="#heart-bioamp-arduino-firmware-visualize-signals"><span class="std std-ref">Visualize Your Heart Signals!</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>6. Menjalankan &amp; Mengamati Hasil</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Pembacaan Halus: Berkat buffer moving-average kecil, BPM yang ditampilkan tetap stabil, bahkan jika detak datang sedikit awal atau terlambat.</p></li>
+<li><p class="sd-card-text">Penggunaan CPU Rendah: Loop tetap cepat dan responsif, sehingga Anda dapat menambahkan display atau fitur nirkabel tanpa kehilangan detak jantung.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">7. OLED BPM</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Program OLED BPM mengubah detak jantung terukur Arduino Anda menjadi display on-screen real-time. Saat sensor BioAmp dan kode deteksi beat Anda menghitung BPM, sketch ini:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Merender angka besar, mudah dibaca pada layar OLED 128×64 sehingga Anda dapat melihat detak jantung saat ini sekilas.</p></li>
+<li><p class="sd-card-text">Memperbarui display secara instan setiap kali detak jantung baru terdeteksi, menjaga BPM yang ditampilkan sinkron dengan denyut nadi Anda.</p></li>
+<li><p class="sd-card-text">Opsional menganimasikan ikon pulsing atau bar sederhana di samping angka, memberikan isyarat visual “detak jantung”.</p></li>
+</ul>
+<p class="sd-card-text">Singkatnya, OLED BPM membuat setup Arduino Anda berfungsi sebagai monitor detak jantung standalone—tidak perlu PC, ponsel, atau plotting eksternal.</p>
+<p class="sd-card-text">Untuk panduan detail, kunjungi <strong>Halaman Instructables</strong> kami: <a class="reference external" href="https://www.instructables.com/Heartrate-on-OLED-Display-in-Real-Time/">Heartrate on OLED Display in Real Time</a></p>
+</div>
+</details><p>✅ <strong>And That’s it!, Congrats on making your neuroscience project using BioAmp Hardware.</strong></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

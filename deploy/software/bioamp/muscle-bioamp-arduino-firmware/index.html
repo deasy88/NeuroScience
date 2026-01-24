@@ -1,0 +1,1440 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Muscle (EMG) BioAmp Firmware &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'software/bioamp/muscle-bioamp-arduino-firmware/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/software/bioamp/muscle-bioamp-arduino-firmware/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Firmware Arduino BioAmp Mata (EOG)" href="../eye-bioamp-arduino-firmware/index.html" />
+    <link rel="prev" title="NPG Lite Flasher" href="../../tools/npg-lite-flasher/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Chords</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-web/index.html">Chords-Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-python/index.html">Chords-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-lsl-connector/index.html">Chords-LSL-Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-lsl-visualizer/index.html">Chords-LSL-Visualizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chords/chords-java/index.html">Chords-Java</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../tools/npg-lite-flasher/index.html">NPG Lite Flasher</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">BioAmp Software</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Muscle (EMG) BioAmp Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eye-bioamp-arduino-firmware/index.html">Firmware Arduino BioAmp Mata (EOG)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../heart-bioamp-arduino-firmware/index.html">Firmware Arduino BioAmp Jantung (ECG)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brain-bioamp-arduino-firmware/index.html">Brain (EEG) BioAmp Arduino Firmware</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Software</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Muscle (EMG) BioAmp Firmware</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="muscle-emg-bioamp-firmware">
+<span id="muscle-bioamp-arduino-firmware"></span><h1>Muscle (EMG) BioAmp Firmware<a class="headerlink" href="#muscle-emg-bioamp-firmware" title="Link to this heading">#</a></h1>
+<section id="apa-itu-electromyography-emg">
+<h2>Apa itu Electromyography (EMG)?<a class="headerlink" href="#apa-itu-electromyography-emg" title="Link to this heading">#</a></h2>
+<p>Electromyography (EMG) <a class="reference external" href="https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/electromyography-emg">[1]</a> adalah teknik untuk mengevaluasi dan merekam aktivitas listrik yang dihasilkan oleh otot rangka.
+EMG dilakukan menggunakan instrumen yang disebut electromyograph untuk menghasilkan rekaman yang disebut electromyogram.
+Sebuah electromyograph mendeteksi potensi listrik yang dihasilkan oleh sel otot
+ketika sel-sel ini diaktifkan secara elektrik atau neurologis. Sinyal dapat dianalisis untuk mendeteksi kelainan,
+tingkat aktivasi, atau urutan rekrutmen, atau untuk menganalisis biomekanika gerakan manusia atau hewan.
+Dalam ilmu komputer, EMG juga digunakan sebagai middleware dalam pengenalan gestur menuju memungkinkan input aksi fisik ke komputer sebagai bentuk interaksi manusia-komputer.</p>
+<p>Untuk mempelajari lebih lanjut tentang EMG <a class="reference external" href="https://en.wikipedia.org/wiki/Electromyography">kunjungi di sini</a>.</p>
+<section id="siapa-yang-ditujukan-ini">
+<h3>Siapa yang ditujukan ini?<a class="headerlink" href="#siapa-yang-ditujukan-ini" title="Link to this heading">#</a></h3>
+<p>Siapa saja yang menggunakan Hardware BioAmp Muscle untuk pertama kalinya — baik Anda siswa, hobiis, pendidik, atau hanya penasaran. Tidak diperlukan pengalaman!</p>
+<p>👉 Untuk mempelajari Hardware BioAmp kami checkout <a class="reference internal" href="../../../hardware/index.html#upsidedownlabs-hardware-home"><span class="std std-ref">halaman hardware</span></a>.</p>
+</section>
+</section>
+<section id="panduan-setup-langkah-demi-langkah">
+<h2>Panduan Setup Langkah demi Langkah<a class="headerlink" href="#panduan-setup-langkah-demi-langkah" title="Link to this heading">#</a></h2>
+<p>Dengan hardware di tangan Anda, Anda hanya beberapa langkah lagi untuk membuka potensinya — mari kita siapkan software!</p>
+<section id="langkah-1-mengunduh-repository-github-untuk-hardware">
+<h3>Langkah 1: Mengunduh Repository GitHub untuk Hardware<a class="headerlink" href="#langkah-1-mengunduh-repository-github-untuk-hardware" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ini adalah kode yang dibutuhkan Arduino Anda untuk membaca sinyal Muscle (EMG).</p></li>
+<li><p>Anda memiliki dua cara mudah untuk mendapatkan kode yang akan membantu Anda membaca sinyal EMG Anda:</p></li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Unduh Sederhana (direkomendasikan untuk pemula)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Kunjungi halaman GitHub: <a class="reference external" href="https://github.com/upsidedownlabs/Muscle-BioAmp-Arduino-Firmware">Muscle BioAmp Arduino Firmware</a></p></li>
+<li><p class="sd-card-text">Klik tombol hijau “<strong>Code</strong>” &gt; Download ZIP</p></li>
+<li><p class="sd-card-text">Ekstrak folder dan simpan di tempat yang mudah ditemukan.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Klon menggunakan Git (untuk pengguna yang mahir teknologi)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul>
+<li><p class="sd-card-text">Instal Git untuk OS Anda: <a class="reference external" href="https://git-scm.com/">https://git-scm.com/</a></p></li>
+<li><p class="sd-card-text">Klon repository GitHub ini menggunakan</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/upsidedownlabs/Muscle-BioAmp-Arduino-Firmware
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</details></section>
+<section id="langkah-2-aplikasi-yang-diperlukan">
+<h3>Langkah 2: Aplikasi yang Diperlukan<a class="headerlink" href="#langkah-2-aplikasi-yang-diperlukan" title="Link to this heading">#</a></h3>
+<p>Sebelum Anda mulai menggunakan kit, silakan unduh atau buka berikut ini:</p>
+<ol class="arabic simple">
+<li><p><strong>Arduino IDE</strong></p>
+<ul class="simple">
+<li><p>Kami membutuhkan Arduino IDE untuk mengunggah kode ke papan Arduino Anda</p></li>
+<li><p>Tautan untuk mengunduh IDE untuk OS Anda: <a class="reference external" href="https://www.arduino.cc/en/software">https://www.arduino.cc/en/software</a></p></li>
+</ul>
+</li>
+<li><p><strong>Website Chords</strong></p>
+<ul class="simple">
+<li><p>Kami akan menggunakan Website Chords untuk memvisualisasikan Sinyal Muscle!</p></li>
+<li><p>Buka website ini: <a class="reference external" href="https://chords.upsidedownlabs.tech">Chords Web</a></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="langkah-3-hubungkan-hardware-anda">
+<span id="muscle-bioamp-arduino-firmware-connect-hardware"></span><h3>Langkah 3: Hubungkan Hardware Anda<a class="headerlink" href="#langkah-3-hubungkan-hardware-anda" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Pasang Hardware ke Arduino UNO Anda menggunakan jumper wire.</p></li>
+<li><p>Ikuti diagram wiring yang tepat dari <a class="reference internal" href="../../../hardware/index.html#upsidedownlabs-hardware-home"><span class="std std-ref">dokumentasi hardware</span></a> hardware yang Anda gunakan.</p></li>
+<li><p>Hardware yang kompatibel dengan Firmware Muscle BioAmp:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../hardware/bioamp/bioamp-exg-pill/index.html#bioamp-exg-pill"><span class="std std-ref">Bioamp EXG Pill</span></a></p></li>
+<li><p><a class="reference internal" href="../../../hardware/bioamp/muscle-bioamp-candy/index.html#muscle-bioamp-candy"><span class="std std-ref">Muscle Bioamp Candy</span></a></p></li>
+<li><p><a class="reference internal" href="../../../hardware/bioamp/muscle-bioamp-patchy/index.html#muscle-bioamp-patchy"><span class="std std-ref">Muscle Bioamp Patchy</span></a></p></li>
+<li><p><a class="reference internal" href="../../../hardware/bioamp/muscle-bioamp-blip/index.html#muscle-bioamp-blip"><span class="std std-ref">Muscle Bioamp Blip</span></a></p></li>
+<li><p><a class="reference internal" href="../../../hardware/bioamp/muscle-bioamp-biscute/index.html#muscle-bioamp-biscute"><span class="std std-ref">Muscle Bioamp Biscute</span></a></p></li>
+<li><p><a class="reference internal" href="../../../hardware/bioamp/muscle-bioamp-shield/index.html#muscle-bioamp-shield"><span class="std std-ref">Muscle Bioamp Shield</span></a></p></li>
+</ul>
+</li>
+</ol>
+<p>Ini seperti menyusun puzzle!</p>
+</section>
+<section id="langkah-4-persiapan-kulit-dan-penempatan-elektroda">
+<h3>Langkah 4: Persiapan Kulit dan Penempatan Elektroda<a class="headerlink" href="#langkah-4-persiapan-kulit-dan-penempatan-elektroda" title="Link to this heading">#</a></h3>
+<p>Ada dua cara menggunakan Elektroda Gel atau Muscle BioAmp Band.</p>
+<ul class="simple">
+<li><p><strong>Menggunakan Elektroda Gel:</strong></p></li>
+</ul>
+<ol class="arabic">
+<li><p><strong>Siapkan kulit Anda</strong></p>
+<ul class="simple">
+<li><p>Pilih area tempat Anda akan menempatkan elektroda.</p></li>
+<li><p>Bersihkan kulit menggunakan <strong>sapuan alkohol</strong> atau <strong>Gel Nuprep</strong> untuk menghilangkan minyak dan sel mati — ini meningkatkan kejelasan sinyal.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Butuh bantuan dengan persiapan kulit? Lihat panduan lengkap di sini: <a class="reference internal" href="../../../guides/usage-guides/skin-preparation/index.html#skin-preparation"><span class="std std-ref">Panduan Persiapan Kulit</span></a></p>
+</div>
+</li>
+<li><p><strong>Tempelkan kabel ke elektroda, lalu tempelkan elektroda ke kulit</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IN+</span></code> (positif): Tempatkan ini di <strong>lengan bawah bagian dalam</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN–</span></code> (negatif): Tempatkan <strong>2–3 cm dari IN+</strong>, mengikuti arah serat otot.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REF</span></code> (referensi): Tempatkan di area <strong>tulang atau netral elektrik</strong>, seperti <strong>tulang siku</strong> atau <strong>persendian pergelangan tangan</strong>.</p></li>
+<li><p>Lihat diagram di bawah untuk penempatan yang akurat.</p></li>
+<li><p>Pastikan <strong>sisi lengket membuat kontak kuat</strong> dengan kulit untuk performa terbaik.</p></li>
+</ul>
+</li>
+</ol>
+<figure class="align-center" id="id5">
+<img alt="Penempatan EMG" src="../../../_images/skin-prep-emg.png" />
+<figcaption>
+<p><span class="caption-text">Penempatan EMG</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Menggunakan Muscle BioAmp Band:</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Hubungkan kabel BioAmp ke Muscle BioAmp Band dengan cara sehingga IN+ dan IN- ditempatkan di lengan dekat saraf ulnaris &amp; REF (referensi) di sisi jauh band.</p></li>
+<li><p>Sekarang letakkan setetes kecil gel elektroda antara kulit dan bagian logam kabel BioAmp untuk mendapatkan hasil terbaik</p></li>
+</ol>
+<figure class="align-center" id="id6">
+<img alt="Penempatan Muscle BioAmp Band" src="../../../_images/step-5c.png" />
+<figcaption>
+<p><span class="caption-text">Penempatan Muscle BioAmp Band</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="langkah-5-cara-mengunggah-kode-ke-arduino">
+<span id="muscle-bioamp-arduino-firmware-code-upload"></span><h3>Langkah 5: Cara Mengunggah Kode ke Arduino<a class="headerlink" href="#langkah-5-cara-mengunggah-kode-ke-arduino" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Buka folder yang Anda unduh: <strong>Muscle-BioAmp-Arduino-Firmware</strong></p></li>
+<li><p>Di dalamnya, Anda akan menemukan beberapa subfolder.</p></li>
+<li><p>Pilih folder untuk eksperimen yang ingin Anda coba. (Untuk pemula: mulai dengan yang pertama dan lanjutkan langkah demi langkah ke yang berikutnya untuk pembelajaran yang lebih baik )</p></li>
+<li><p>Di dalam folder itu, buka file <strong>.ino</strong> menggunakan <strong>Arduino IDE</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Sebagai contoh:</p>
+<ul>
+<li><p>Untuk mencoba sinyal mentah: buka <code class="docutils literal notranslate"><span class="pre">01_Fixed_Sampling.ino</span></code></p></li>
+<li><p>Untuk mencoba sinyal yang difilter: buka <code class="docutils literal notranslate"><span class="pre">02_EMG_Filter.ino</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Anda akan menemukan semua eksperimen tercantum di bawah, masing-masing dengan <a class="reference internal" href="#muscle-bioamp-arduino-firmware-exp-list"><span class="std std-ref">instruksi langkah demi langkah</span></a>. Gulir ke yang sedang Anda kerjakan untuk memulai dengan setup yang tepat.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Hubungkan Arduino Anda</p>
+<ul class="simple">
+<li><p>Pasang papan Arduino Anda ke port USB komputer menggunakan kabel USB.</p></li>
+<li><p>Tunggu sistem operasi menginstal driver USB yang diperlukan.</p></li>
+</ul>
+</li>
+<li><p>Di Arduino IDE:</p>
+<ul class="simple">
+<li><p>Pergi ke <strong>Tools &gt; Board &gt; Arduino UNO</strong> pilih model papan Anda (misalnya, “Arduino Uno” atau “Arduino Nano” jika Anda wiring ke Nano)</p></li>
+<li><p>Pergi ke <strong>Tools &gt; Port &gt; [pilih port COM yang benar]</strong></p></li>
+</ul>
+</li>
+<li><p>Verifikasi (Kompilasi) Sketch</p>
+<ul class="simple">
+<li><p>Klik tombol “<strong>✔️ Verify</strong>” (atau tekan <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">R</span></code>).</p></li>
+<li><p>Tunggu “<strong>Done compiling.</strong>” Jika muncul error, periksa ulang Anda membuka file .ino yang benar.</p></li>
+</ul>
+</li>
+<li><p>Klik tombol <strong>✓</strong> Upload (atau tekan <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">U</span></code>) untuk mengirim kode ke Arduino Anda.</p>
+<ul class="simple">
+<li><p>IDE akan mengkompilasi lagi dan mengirim kode ke papan Anda.</p></li>
+<li><p>LED onboard yang diberi label “<strong>L</strong>” mungkin berkedip selama upload. Saat Anda melihat “<strong>Done uploading</strong>”, firmware baru sedang berjalan.</p></li>
+</ul>
+</li>
+<li><p>Buka Serial Monitor dan Serial Plotter (Opsional)</p>
+<ul class="simple">
+<li><p>Untuk serial monitor dan plotter, kami merekomendasikan menggunakan <a class="reference external" href="https://chords.upsidedownlabs.tech">Chords Web</a>. Namun, jika Anda belajar mengembangkan, Anda mungkin juga menemukan opsi ini berguna.</p></li>
+<li><p>Untuk Serial Monitor: Di IDE, klik <strong>Tools → Serial Monitor</strong> (atau tekan <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">M</span></code>).</p></li>
+<li><p>Pastikan baud rate di kanan bawah Serial Monitor disetel ke <code class="docutils literal notranslate"><span class="pre">115200</span></code> (atau apa pun yang ditentukan oleh baris Serial.begin(115200); sketch).</p></li>
+<li><p>Anda harus mulai melihat baris-baris angka. Itu adalah pembacaan Anda.</p></li>
+<li><p>Untuk Serial Plotter: Di IDE, klik <strong>Tools → Serial Plotter</strong>.</p></li>
+<li><p>Anda harus mulai melihat plotting grafik dan memvisualisasikan gelombang.</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Ingat untuk menutup <strong>Serial Monitor &amp; Serial Plotter</strong> di <strong>Arduino IDE</strong> sebelum memulai Visualizer Chords.</p></li>
+</ul>
+</div>
+</section>
+<section id="langkah-6-visualisasikan-sinyal-muscle-anda">
+<span id="muscle-bioamp-arduino-firmware-visualize-signals"></span><h3>Langkah 6: Visualisasikan Sinyal Muscle Anda!<a class="headerlink" href="#langkah-6-visualisasikan-sinyal-muscle-anda" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Buka website: <a class="reference external" href="https://chords.upsidedownlabs.tech">Chords Web</a></p></li>
+<li><p>Klik: <strong>Visualize Now</strong> → lalu pilih <strong>Serial Wizard</strong>.</p></li>
+<li><p>Pilih port <strong>COM</strong> yang benar (sama dari Arduino IDE).</p></li>
+<li><p>Klik <strong>Connect</strong>.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Selalu <strong>cabut charger laptop</strong> Anda saat testing. Mengapa? Charging dapat memperkenalkan noise 50 Hz yang mempengaruhi sinyal.</p></li>
+</ul>
+</div>
+<p>🎉 Sekarang gerakkan tangan Anda atau kepalkan tinju — Anda akan melihat gelombang EMG real-time di layar!</p>
+</section>
+</section>
+<section id="mari-kita-jelajahi-semua-eksperimen-langkah-demi-langkah">
+<span id="muscle-bioamp-arduino-firmware-exp-list"></span><h2>Mari kita jelajahi semua eksperimen langkah demi langkah<a class="headerlink" href="#mari-kita-jelajahi-semua-eksperimen-langkah-demi-langkah" title="Link to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">1. Fixed Sampling</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>1. Tujuan Program &amp; Gambaran</strong></p>
+<p class="sd-card-text">Sketch <strong>Fixed Sampling</strong> mendemonstrasikan sampling kontinyu, interval reguler dari pembacaan tegangan EMG (electromyography)
+mentah dari sensor Muscle BioAmp. Dengan membaca tegangan analog pada tingkat tetap
+(misalnya, 500 sampel per detik), Anda mendapatkan aliran data EMG yang stabil.
+Ini bertindak sebagai fondasi untuk setiap demonstrasi pemrosesan sinyal berikutnya.
+Pemula dapat melihat seperti apa sinyal “mentah” muscle sebelum filtering atau deteksi envelope.</p>
+<p class="sd-card-text"><strong>2. Cara Kerjanya</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Inisialisasi Pin Sensor</p>
+<ul class="simple">
+<li><p class="sd-card-text">Sketch menyetel pin input analog Arduino (misalnya, A0) untuk membaca nilai tegangan dari sensor BioAmp.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Set Tingkat Sampling</p>
+<ul class="simple">
+<li><p class="sd-card-text">Timer (menggunakan <code class="docutils literal notranslate"><span class="pre">micros()</span></code> atau <code class="docutils literal notranslate"><span class="pre">delayMicroseconds()</span></code>) memastikan kita memanggil <code class="docutils literal notranslate"><span class="pre">analogRead(A0)</span></code> pada interval yang tepat.</p></li>
+<li><p class="sd-card-text">Misalnya, membaca setiap 2 milidetik → ~500 Hz sampling.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Cetak Nilai Mentah</p>
+<ul class="simple">
+<li><p class="sd-card-text">Pengguna melihat fluktuasi tegangan mentah yang sesuai dengan kontraksi otot.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Loop Selamanya</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">loop()</span></code> berlanjut selamanya, terus membaca dan mencetak.</p></li>
+</ul>
+</li>
+</ol>
+<p class="sd-card-text"><strong>3. Lakukan Hardware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Lihat wiring sesuai instruksi yang diberikan di <a class="reference internal" href="#muscle-bioamp-arduino-firmware-connect-hardware"><span class="std std-ref">Connect Your Hardware</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>4. Unggah Firmware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk proyek ini, navigasi ke folder repository (Muscle-BioAmp-Arduino-Firmware/01_Fixed_Sampling) dan pilih <code class="docutils literal notranslate"><span class="pre">01_Fixed_Sampling.ino</span></code>.</p></li>
+<li><p class="sd-card-text">Untuk mengunggah firmware, lihat <a class="reference internal" href="#muscle-bioamp-arduino-firmware-code-upload"><span class="std std-ref">How to upload the Code to Arduino</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>5. Visualisasikan sinyal Anda</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Ikuti langkah-langkah yang diberikan di <a class="reference internal" href="#muscle-bioamp-arduino-firmware-visualize-signals"><span class="std std-ref">Visualize Your Muscle Signals!</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>6. Menjalankan &amp; Mengamati Hasil</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Tidak Ada Kontraksi Otot → Nilai mentah akan menunjukkan noise seperti lonjakan.</p></li>
+<li><p class="sd-card-text">Fleks Otot → Tiba-tiba nilai melonjak naik atau turun.</p></li>
+<li><p class="sd-card-text">Istirahatkan Otot → Nilai kembali menuju titik tengah.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">Untuk panduan detail, kunjungi halaman Instructables kami: <a class="reference external" href="https://www.instructables.com/Visualizing-Muscle-Signals-EMG-Using-Worlds-Most-A/">Visualizing Muscle Signals (EMG)</a></p>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">2. EMG Filter</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>1. Tujuan Program &amp; Gambaran</strong></p>
+<p class="sd-card-text">Sketch <strong>EMG Filter</strong> memperoleh data EMG mentah dari sensor Muscle BioAmp dan menerapkan filter band-pass
+(sekitar 74.5 Hz–149.5 Hz) untuk mengisolasi sinyal otot.
+Dengan menghilangkan artefak gerakan frekuensi rendah dan noise frekuensi tinggi, Anda mendapatkan aliran EMG yang lebih bersih dan stabil.
+Output yang difilter ini ideal untuk tugas hilir seperti deteksi envelope atau kontrol perangkat.</p>
+<p class="sd-card-text"><strong>2. Cara Kerjanya</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Inisialisasi Pin Sensor</p>
+<ul class="simple">
+<li><p class="sd-card-text">Sketch mengkonfigurasi pin input analog Arduino (misalnya, A0) untuk membaca nilai tegangan dari sensor BioAmp.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Set Tingkat Sampling</p>
+<ul class="simple">
+<li><p class="sd-card-text">Timer (menggunakan <code class="docutils literal notranslate"><span class="pre">micros()</span></code> atau <code class="docutils literal notranslate"><span class="pre">delayMicroseconds()</span></code>) memastikan kita memanggil <code class="docutils literal notranslate"><span class="pre">analogRead(A0)</span></code> pada interval yang tepat.</p></li>
+<li><p class="sd-card-text">Misalnya, membaca setiap 2 milidetik → ~500 Hz sampling.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Terapkan Filter Band-Pass</p>
+<ul class="simple">
+<li><p class="sd-card-text">Setiap pembacaan analog baru dilewatkan melalui filter digital (biasanya diimplementasikan melalui koefisien FIR atau IIR). Kode filter mempertahankan array kecil (buffer) dari input dan output terbaru, menghitung jumlah tertimbang untuk menghasilkan nilai yang difilter.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Cetak Nilai Mentah</p>
+<ul class="simple">
+<li><p class="sd-card-text">Nilai floating-point yang difilter dikirim melalui Serial (misalnya, Serial.print(filteredValue);), sehingga Anda melihat gelombang EMG yang halus.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Loop Selamanya</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">loop()</span></code> berulang selamanya: baca → filter → cetak → delay untuk mempertahankan tingkat sampling.</p></li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk mempelajari lebih lanjut tentang filter dan cara menghasilkan filter baru, kunjungi:  <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html</a></p></li>
+</ul>
+<p class="sd-card-text"><strong>3. Lakukan Hardware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Lihat wiring sesuai instruksi yang diberikan di <a class="reference internal" href="#muscle-bioamp-arduino-firmware-connect-hardware"><span class="std std-ref">Connect Your Hardware</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>4. Unggah Firmware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk proyek ini, pergi ke folder repository (Muscle-BioAmp-Arduino-Firmware/02_EMG_Filter) dan pilih <code class="docutils literal notranslate"><span class="pre">02_EMG_Filter.ino</span></code>.</p></li>
+<li><p class="sd-card-text">Untuk mengunggah firmware, lihat <a class="reference internal" href="#muscle-bioamp-arduino-firmware-code-upload"><span class="std std-ref">How to upload the Code to Arduino</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>5. Visualisasikan sinyal Anda</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Ikuti langkah-langkah yang diberikan di <a class="reference internal" href="#muscle-bioamp-arduino-firmware-visualize-signals"><span class="std std-ref">Visualize Your Muscle Signals!</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>6. Menjalankan &amp; Mengamati Hasil</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Tidak Ada Kontraksi Otot → Output yang difilter melayang dekat nol (noise baseline kecil).</p></li>
+<li><p class="sd-card-text">Fleks Otot → Anda melihat lonjakan halus dalam nilai yang difilter (misalnya, lonjak ke 0.05–0.10), dengan noise dihilangkan.</p></li>
+<li><p class="sd-card-text">Istirahatkan Otot → Output yang difilter kembali ke baseline dengan lancar, dengan fluktuasi minimal.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">3. EMG Envelope</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>1. Tujuan Program &amp; Gambaran</strong></p>
+<p class="sd-card-text">Sketch <strong>EMG Envelope</strong> membaca data EMG mentah, menerapkan filter band-pass (≈ 74.5 Hz–149.5 Hz),
+lalu menghitung envelope dari sinyal yang difilter. Envelope adalah representasi smoothed, rectified
+dari amplitudo aktivasi otot. Ini umumnya digunakan dalam kontrol prostetik, robotika, dan penelitian biomedis
+untuk mendeteksi kapan otot berkontraksi dan dengan kekuatan berapa.</p>
+<p class="sd-card-text"><strong>2. Cara Kerjanya</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Inisialisasi Pin Sensor</p>
+<ul class="simple">
+<li><p class="sd-card-text">Baca nilai analog pada A0 pada tingkat tetap (misalnya, 500 Hz) dan lewatkan setiap sampel melalui filter band-pass digital (diimplementasikan melalui koefisien FIR atau IIR).</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Full-Wave Rectification</p>
+<ul class="simple">
+<li><p class="sd-card-text">Konversi sampel yang difilter ke nilai absolutnya:</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">rectified</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">filteredValue</span><span class="p">);</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p class="sd-card-text">Low-Pass (Smoothing) Filter</p>
+<ul class="simple">
+<li><p class="sd-card-text">Terapkan rata-rata bergerak sederhana atau rata-rata bergerak eksponensial ke rectified untuk menghasilkan envelope:</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">static</span> <span class="nb">float</span> <span class="n">prevEnvelope</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="nb">float</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
+
+<span class="nb">float</span> <span class="n">envelope</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">rectified</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">prevEnvelope</span><span class="p">;</span>
+
+<span class="n">prevEnvelope</span> <span class="o">=</span> <span class="n">envelope</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p class="sd-card-text">Cetak Envelope</p>
+<ul class="simple">
+<li><p class="sd-card-text">Kirim nilai envelope yang smoothed via Serial.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Loop Selamanya</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">loop()</span></code> berulang selamanya: baca →  filter → rectify → smooth → cetak → delay untuk mempertahankan tingkat sampling.</p></li>
+</ul>
+</li>
+</ol>
+<p class="sd-card-text"><strong>3. Lakukan Hardware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Lihat wiring sesuai instruksi yang diberikan di <a class="reference internal" href="#muscle-bioamp-arduino-firmware-connect-hardware"><span class="std std-ref">Connect Your Hardware</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>4. Unggah Firmware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk proyek ini, navigasi ke folder repository (Muscle-BioAmp-Arduino-Firmware/03_EMG_Envelope) dan pilih <code class="docutils literal notranslate"><span class="pre">03_EMG_Envelope.ino</span></code>.</p></li>
+<li><p class="sd-card-text">Untuk mengunggah firmware, lihat <a class="reference internal" href="#muscle-bioamp-arduino-firmware-code-upload"><span class="std std-ref">How to upload the Code to Arduino</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>5. Visualisasikan sinyal Anda</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Ikuti langkah-langkah yang diberikan di <a class="reference internal" href="#muscle-bioamp-arduino-firmware-visualize-signals"><span class="std std-ref">Visualize Your Muscle Signals!</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>6. Menjalankan &amp; Mengamati Hasil</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Otot Istirahat → Nilai envelope tetap dekat nol.</p></li>
+<li><p class="sd-card-text">Fleks Lambat → Envelope meningkat secara bertahap.</p></li>
+<li><p class="sd-card-text">Fleks Kuat → Envelope puncak lebih tinggi.</p></li>
+<li><p class="sd-card-text">Envelope berubah dengan lancar, membuat threshold mudah dideteksi.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">For a detailed guide, visit our Instructables page: <a class="reference external" href="https://www.instructables.com/Recording-Publication-Grade-Muscle-Signals-Using-B/">Recording Publication Grade Muscle Signals Using BioAmp EXG Pill</a></p>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">4. Claw Controller</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>1. Tujuan Program &amp; Gambaran</strong></p>
+<p class="sd-card-text">Sketch <strong>Claw Controller</strong> menggunakan data envelope EMG untuk menggerakkan mekanisme “claw” yang didukung servo.
+Saat Anda fleks otot, servo menutup claw; saat Anda istirahat, claw terbuka.
+Ini mendemonstrasikan prostetik atau gripper robotik bio-kontrol sederhana,
+mengilustrasikan bagaimana sinyal EMG dapat diterjemahkan ke gerakan mekanik.</p>
+<p class="sd-card-text"><strong>2. Cara Kerjanya</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Peroleh &amp; Filter (seperti di EMG_Filter) untuk mendapatkan nilai EMG yang difilter pada ~500 Hz.</p></li>
+<li><p class="sd-card-text">Hitung Envelope (seperti di EMG_Envelope) dengan merektifikasi dan smoothing nilai yang difilter.</p></li>
+<li><p class="sd-card-text">Petakan Envelope ke Sudut Servo</p>
+<ul class="simple">
+<li><p class="sd-card-text">Sesuaikan konstanta scaling sehingga kontraksi otot tipikal memetakan ke 0–180°.</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">angle</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">envelope</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">);</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p class="sd-card-text">Kontrol Servo</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;Servo.h&gt;</span>
+<span class="n">Servo</span> <span class="n">clawServo</span><span class="p">;</span>
+<span class="o">...</span>
+<span class="n">clawServo</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>  <span class="o">//</span> <span class="n">PWM</span> <span class="n">pin</span> <span class="mi">9</span>
+<span class="n">clawServo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">angle</span><span class="p">);</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p class="sd-card-text">Loop Selamanya</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">loop()</span></code> berulang selamanya: baca → filter → envelope → map → tulis ke servo → delay.</p></li>
+</ul>
+</li>
+</ol>
+<p class="sd-card-text"><strong>3. Perform the Hardware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Refer to wiring as per instructions given in <a class="reference internal" href="#muscle-bioamp-arduino-firmware-connect-hardware"><span class="std std-ref">Connect Your Hardware</span></a></p></li>
+<li><p class="sd-card-text">Additionally connect:</p>
+<ul>
+<li><p class="sd-card-text">Servo VCC (Red) → Arduino 5 V (or external 5 V supply for stable power)</p></li>
+<li><p class="sd-card-text">Servo GND (Black/Brown) → Arduino GND (and common ground if external supply used)</p></li>
+<li><p class="sd-card-text">Servo Signal (Yellow/Orange) → Arduino D9 (PWM pin)</p></li>
+</ul>
+</li>
+</ul>
+<p class="sd-card-text"><strong>4. Unggah Firmware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk proyek ini, navigasi ke folder repository (Muscle-BioAmp-Arduino-Firmware/04_Claw_Controller) dan pilih <code class="docutils literal notranslate"><span class="pre">04_Claw_Controller.ino</span></code>.</p></li>
+<li><p class="sd-card-text">Untuk mengunggah firmware, lihat <a class="reference internal" href="#muscle-bioamp-arduino-firmware-code-upload"><span class="std std-ref">How to upload the Code to Arduino</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>5. Visualisasikan sinyal Anda</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Ikuti langkah-langkah yang diberikan di <a class="reference internal" href="#muscle-bioamp-arduino-firmware-visualize-signals"><span class="std std-ref">Visualize Your Muscle Signals!</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>6. Menjalankan &amp; Mengamati Hasil</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Otot Istirahat → Servo istirahat pada sudut minimum (sering 0° atau posisi “buka” yang ditentukan).</p></li>
+<li><p class="sd-card-text">Fleks Sedang → Servo bergerak sebagian (misalnya, 90°).</p></li>
+<li><p class="sd-card-text">Fleks Kuat → Servo bergerak ke maksimum (180°, claw tertutup penuh).</p></li>
+<li><p class="sd-card-text">Istirahat → Servo kembali ke sudut buka. Sesuaikan mapping jika arah terbalik.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">Untuk panduan detail, kunjungi halaman Instructables kami: <a class="reference external" href="https://www.instructables.com/Controlling-a-Servo-Claw-With-Muscle-Signals-EMG-U/">Controlling Servo Claw With Muscle Signals Using Muscle BioAmp Shield</a></p>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">5. Servo Control</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>1. Tujuan Program &amp; Gambaran</strong></p>
+<p class="sd-card-text">Sketch <strong>Servo Control</strong> adalah demonstrasi generik menggunakan amplitudo envelope EMG untuk menggerakkan
+motor servo tunggal. Alih-alih mekanisme claw, ini memetakan envelope langsung ke sudut rotasi servo.
+Contoh ini dapat digunakan kembali untuk mengontrol lengan robotik, roda, atau struktur apa pun yang digerakkan servo berdasarkan
+usaha otot.</p>
+<p class="sd-card-text"><strong>2. Cara Kerjanya</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Peroleh &amp; Filter EMG pada A0 pada ~500 Hz (filter sama seperti EMG_Filter).</p></li>
+<li><p class="sd-card-text">Hitung Envelope dengan merektifikasi dan smoothing nilai yang difilter.</p></li>
+<li><p class="sd-card-text">Petakan Envelope ke Sudut Servo</p>
+<ul class="simple">
+<li><p class="sd-card-text">Sesuaikan konstanta sehingga kontraksi tipikal mencakup rentang servo yang diinginkan.</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">angle</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">envelope</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">);</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p class="sd-card-text">Kontrol Servo</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;Servo.h&gt;</span>
+<span class="n">Servo</span> <span class="n">myServo</span><span class="p">;</span>
+<span class="o">...</span>
+<span class="n">myServo</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
+<span class="n">myServo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">angle</span><span class="p">);</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p class="sd-card-text">Loop Selamanya</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">loop()</span></code> berulang selamanya: baca → filter → envelope → map → tulis → delay.</p></li>
+</ul>
+</li>
+</ol>
+<p class="sd-card-text"><strong>3. Perform the Hardware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Refer to wiring as per instructions given in <a class="reference internal" href="#muscle-bioamp-arduino-firmware-connect-hardware"><span class="std std-ref">Connect Your Hardware</span></a></p></li>
+<li><p class="sd-card-text">Additionally connect:</p>
+<ul>
+<li><p class="sd-card-text">Servo VCC (Red) → Arduino 5 V (or external 5 V supply for stable power)</p></li>
+<li><p class="sd-card-text">Servo GND (Black/Brown) → Arduino GND (and common ground if external supply used)</p></li>
+<li><p class="sd-card-text">Servo Signal (Yellow/Orange) → Arduino D9 (PWM pin)</p></li>
+</ul>
+</li>
+</ul>
+<p class="sd-card-text"><strong>4. Firmware Upload</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">For this project, navigate to the repository folder (Muscle-BioAmp-Arduino-Firmware/05_Servo_Control) and select <code class="docutils literal notranslate"><span class="pre">05_Servo_Control.ino</span></code>.</p></li>
+<li><p class="sd-card-text">To upload firmware, refer to <a class="reference internal" href="#muscle-bioamp-arduino-firmware-code-upload"><span class="std std-ref">How to upload the Code to Arduino</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>5. Visualize your signal</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Follow the steps given in <a class="reference internal" href="#muscle-bioamp-arduino-firmware-visualize-signals"><span class="std std-ref">Visualize Your Muscle Signals!</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>6. Running &amp; Observing Results</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Relaxed Muscle → Servo rests at minimum angle (often 0° or defined “open” position).</p></li>
+<li><p class="sd-card-text">Flex Gently → Servo moves gradually between 0° and 180°, proportional to muscle strength.</p></li>
+<li><p class="sd-card-text">Strong Flex → Servo moves to maximum (180°).</p></li>
+<li><p class="sd-card-text">Relax → Servo returns to open angle. Adjust mapping if directions are inverted.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">6. LED BarGraph</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>1. Tujuan Program &amp; Gambaran</strong></p>
+<p class="sd-card-text">Sketch <strong>LED BarGraph</strong> memvisualisasikan aktivasi otot dengan menyalakan baris LED secara proporsional dengan amplitudo envelope EMG.
+Saat kekuatan kontraksi meningkat, lebih banyak LED yang menyala (seperti meter VU).
+Ini memberikan umpan balik visual langsung tanpa perlu komputer.</p>
+<p class="sd-card-text"><strong>2. Cara Kerjanya</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Peroleh &amp; Filter EMG pada A0 pada ~500 Hz (filter band-pass seperti di EMG_Filter).</p></li>
+<li><p class="sd-card-text">Hitung Envelope dengan merektifikasi dan menerapkan rata-rata bergerak.</p></li>
+<li><p class="sd-card-text">Skalakan Envelope ke Jumlah LED</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="nb">int</span> <span class="n">NUM_LEDS</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+
+<span class="nb">int</span> <span class="n">numLit</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">envelope</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">NUM_LEDS</span><span class="p">);</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p class="sd-card-text">Perbarui LED</p></li>
+</ol>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk setiap indeks <code class="docutils literal notranslate"><span class="pre">i</span></code> dari <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">sampai</span> <span class="pre">NUM_LEDS–1</span></code>:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">numLit</span><span class="p">)</span> <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPins</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">HIGH</span><span class="p">);</span>
+<span class="k">else</span> <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPins</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">LOW</span><span class="p">);</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p class="sd-card-text">Loop Selamanya</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">loop()</span></code> berulang selamanya: baca → filter → envelope → map → set LED → delay (misalnya, 10 ms).</p></li>
+</ul>
+</li>
+</ol>
+<p class="sd-card-text"><strong>3. Lakukan Hardware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Lihat wiring sesuai instruksi yang diberikan di <a class="reference internal" href="#muscle-bioamp-arduino-firmware-connect-hardware"><span class="std std-ref">Connect Your Hardware</span></a></p></li>
+<li><p class="sd-card-text">Selain itu hubungkan:</p>
+<ul>
+<li><p class="sd-card-text">Anoda setiap LED → resistor 220 Ω → pin digital Arduino D2–D9.</p></li>
+<li><p class="sd-card-text">Katoda setiap LED → GND Arduino.</p></li>
+<li><p class="sd-card-text">Ikat semua ground bersama.</p></li>
+</ul>
+</li>
+</ul>
+<p class="sd-card-text"><strong>4. Unggah Firmware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk proyek ini, navigasi ke folder repository (Muscle-BioAmp-Arduino-Firmware/06_LED_BarGraph) dan pilih <code class="docutils literal notranslate"><span class="pre">06_LED_BarGraph.ino</span></code>.</p></li>
+<li><p class="sd-card-text">Untuk mengunggah firmware, lihat <a class="reference internal" href="#muscle-bioamp-arduino-firmware-code-upload"><span class="std std-ref">How to upload the Code to Arduino</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>5. Visualisasikan sinyal Anda</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Ikuti langkah-langkah yang diberikan di <a class="reference internal" href="#muscle-bioamp-arduino-firmware-visualize-signals"><span class="std std-ref">Visualize Your Muscle Signals!</span></a></p></li>
+</ul>
+<p class="sd-card-text"><strong>6. Menjalankan &amp; Mengamati Hasil</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Otot Istirahat → Beberapa atau nol LED menyala.</p></li>
+<li><p class="sd-card-text">Fleks Pelan → LED menyala secara progresif dari LED 1 sampai LED 8 saat envelope meningkat.</p></li>
+<li><p class="sd-card-text">Fleks Kuat → Semua 8 LED menyala.</p></li>
+<li><p class="sd-card-text">Istirahat → LED mati dalam urutan menurun.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">7. Muscle Strength Game</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Sketch <strong>Muscle Strength Game</strong> adalah demonstrasi interaktif menggunakan Muscle BioAmp Shield dan Arduino (Uno atau Nano), sering disajikan di dalam setup “dashboard” kreatif. Ini membaca sinyal EMG dari lengan Anda untuk mengontrol pointer servo yang bergerak maju saat Anda fleks otot.</p>
+<p class="sd-card-text">Saat kontraksi otot Anda kuat dan berkelanjutan, pointer servo maju menuju tujuan (seperti “mengalahkan Thanos”). Jika kontraksi melemah atau berhenti, pointer secara bertahap bergerak kembali, mendorong upaya berkelanjutan. Ini mengubah aktivitas fisik menjadi tantangan visual real-time — semakin keras dan lama Anda fleks, semakin banyak daya yang Anda hasilkan, dan semakin banyak kemajuan yang Anda buat dalam permainan.</p>
+<p class="sd-card-text">Dengan mengubah usaha fisik menjadi umpan balik real-time, ini adalah cara yang menarik untuk memotivasi olahraga dan rehabilitasi.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">Untuk panduan detail, kunjungi halaman Instructables kami: <a class="reference external" href="https://www.instructables.com/Making-a-Muscle-Strength-Game-Using-Muscle-BioAmp-/">Making a Muscle Strength Game Using Muscle BioAmp Shield &amp; Arduino Uno</a></p>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">8. EMG Scrolling</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Sketch EMG Scrolling memungkinkan Anda menggulir konten di layar—baik halaman web, dokumen teks,
+atau tampilan TFT/OLED—menggunakan hanya kontraksi otot. Fleksing di atas satu threshold menggulir “ke bawah,” dan
+rileks di bawah threshold lainnya menggulir “ke atas.” Ini bisa menjadi cara hands-free untuk menavigasi dokumen panjang atau
+membantu pengguna dengan mobilitas terbatas.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">Untuk panduan detail, kunjungi halaman Instructables kami: <a class="reference external" href="https://www.instructables.com/Scroll-YouTube-Shorts-Using-2-Channel-EMG-Signals/">Scroll YouTube Shorts Using 2 Channel EMG Signals</a></p>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">9. 2 Channel LCD BarGraph</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Sketch <strong>2 Channel LCD BarGraph</strong> membaca sinyal EMG dari dua channel terpisah (dua sensor BioAmp Muscle)
+dan menampilkan envelope mereka berdampingan di LCD 16×2 sebagai dua bar graph horizontal.
+Ini memungkinkan Anda membandingkan kelompok otot kiri vs. kanan (misalnya, bisep kiri vs. kanan) secara real-time.
+Ini adalah alat pendidikan untuk memahami aktivasi otot bilateral dan untuk mengembangkan aplikasi seperti
+prostetik adaptif yang memantau dua kelompok otot secara simultan.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">Untuk panduan detail, kunjungi halaman Instructables kami: <a class="reference external" href="https://www.instructables.com/Visualizing-2-Channel-EMG-on-LCD-Display-Module/">Visualizing 2 Channel EMG on LCD Display Module</a></p>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">10. EMG Rehab Game</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>1. Tujuan Program &amp; Gambaran</strong></p>
+<p class="sd-card-text">Sketch <strong>EMG Rehab Game</strong> adalah permainan berfokus rehabilitasi yang menantang pasien (atau pengguna)
+untuk mencapai threshold EMG spesifik untuk durasi yang ditetapkan. Misalnya, permainan mungkin memerlukan pengguna untuk menahan
+kontraksi otot selama 2 detik, lalu rileks selama 2 detik, mengulangi siklus 10 kali.
+Ini membantu dalam rehabilitasi pasca-luka atau pasca-operasi, di mana terapis ingin mengukur kekuatan otot (peak envelope)
+dan daya tahan (waktu ditahan). Permainan mungkin menampilkan umpan balik di LCD atau via Serial Monitor, mendorong pasien untuk menyelesaikan setiap tahap.</p>
+<p class="sd-card-text"><strong>2. Cara Kerjanya</strong></p>
+<ol class="arabic">
+<li><p class="sd-card-text"><strong>Inisialisasi Hardware &amp; Variabel</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Di <code class="docutils literal notranslate"><span class="pre">setup()</span></code>, panggil:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pinMode(A0, INPUT);                         // sensor EMG pada A0
+Serial.begin(115200);                       // Untuk debugging &amp; prompt
+Wire.begin();                               // Untuk I²C jika menggunakan LCD
+LiquidCrystal_I2C lcd(0x27, 16, 2);         // Jika menggunakan LCD I²C
+lcd.init();
+lcd.backlight();
+
+enum State { HOLD, REST, COMPLETE };
+State currentState = HOLD;
+unsigned long stateStartTime = millis();
+int cycleCount = 0;
+const int MAX_CYCLES = 10;                  // Total siklus
+const unsigned long HOLD_DURATION = 2000;   // 2 detik
+const unsigned long REST_DURATION = 2000;   // 2 detik
+const float HOLD_THRESHOLD = 0.030;         // Threshold envelope untuk &quot;tahan&quot;
+const float REST_THRESHOLD = 0.005;         // Threshold envelope untuk &quot;istirahat&quot;
+float envelope = 0;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p class="sd-card-text">Ini menyiapkan state machine, counter siklus, timing, dan threshold.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>Sampling, Filtering, dan Envelope</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Di <code class="docutils literal notranslate"><span class="pre">loop()</span></code>, sampel pada ~500 Hz (setiap 2 ms), terapkan filter band-pass, lalu hitung envelope:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unsigned</span> <span class="n">long</span> <span class="n">nowMicros</span> <span class="o">=</span> <span class="n">micros</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">nowMicros</span> <span class="o">-</span> <span class="n">lastMicros</span> <span class="o">&gt;=</span> <span class="mi">2000</span><span class="p">)</span> <span class="p">{</span>       <span class="o">//</span> <span class="mi">2000</span> <span class="n">µs</span> <span class="o">=</span> <span class="mi">2</span> <span class="n">ms</span>
+    <span class="n">lastMicros</span> <span class="o">=</span> <span class="n">nowMicros</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">rawValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">);</span>
+    <span class="nb">float</span> <span class="n">filtered</span> <span class="o">=</span> <span class="n">applyBandPassFilter</span><span class="p">(</span><span class="n">rawValue</span><span class="p">);</span>
+    <span class="nb">float</span> <span class="n">rectified</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">filtered</span><span class="p">);</span>
+    <span class="n">envelope</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">rectified</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">prevEnvelope</span><span class="p">;</span>
+    <span class="n">prevEnvelope</span> <span class="o">=</span> <span class="n">envelope</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="sd-card-text"><strong>Logika State Machine</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Lacak tahap mana (HOLD, REST, atau COMPLETE) yang sedang dilakukan pengguna, dengan <code class="docutils literal notranslate"><span class="pre">stateStartTime</span></code> menandai awal tahap itu:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unsigned</span> <span class="n">long</span> <span class="n">now</span> <span class="o">=</span> <span class="n">millis</span><span class="p">();</span>
+<span class="n">switch</span> <span class="p">(</span><span class="n">currentState</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">HOLD</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">cycleCount</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">now</span> <span class="o">-</span> <span class="n">stateStartTime</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">displayMessage</span><span class="p">(</span><span class="s2">&quot;Tahan selama 2d&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">envelope</span> <span class="o">&gt;=</span> <span class="n">HOLD_THRESHOLD</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">stateStartTime</span> <span class="o">&gt;=</span> <span class="n">HOLD_DURATION</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">currentState</span> <span class="o">=</span> <span class="n">REST</span><span class="p">;</span>
+                <span class="n">stateStartTime</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span>
+                <span class="n">displayMessage</span><span class="p">(</span><span class="s2">&quot;Istirahat selama 2d&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">stateStartTime</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Reset</span> <span class="n">timer</span> <span class="n">tahan</span> <span class="n">jika</span> <span class="n">envelope</span> <span class="n">turun</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+
+    <span class="k">case</span> <span class="n">REST</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">envelope</span> <span class="o">&lt;=</span> <span class="n">REST_THRESHOLD</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">stateStartTime</span> <span class="o">&gt;=</span> <span class="n">REST_DURATION</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">cycleCount</span><span class="o">++</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">cycleCount</span> <span class="o">&lt;</span> <span class="n">MAX_CYCLES</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">currentState</span> <span class="o">=</span> <span class="n">HOLD</span><span class="p">;</span>
+                    <span class="n">stateStartTime</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span>
+                    <span class="n">displayMessage</span><span class="p">(</span><span class="s2">&quot;Siklus &quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">cycleCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/10: Tahan&quot;</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="n">currentState</span> <span class="o">=</span> <span class="n">COMPLETE</span><span class="p">;</span>
+                    <span class="n">displayMessage</span><span class="p">(</span><span class="s2">&quot;Latihan Selesai!&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">stateStartTime</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Reset</span> <span class="n">timer</span> <span class="n">istirahat</span> <span class="n">jika</span> <span class="n">envelope</span> <span class="n">naik</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+
+    <span class="k">case</span> <span class="n">COMPLETE</span><span class="p">:</span>
+        <span class="o">//</span> <span class="n">Opsional</span> <span class="n">bunyi</span> <span class="n">buzzer</span> <span class="n">atau</span> <span class="n">hentikan</span> <span class="n">pemrosesan</span>
+        <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>displayMessage(String msg)</strong> dapat membersihkan/memperbarui LCD atau cetak via Serial:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">displayMessage</span><span class="p">(</span><span class="n">String</span> <span class="n">msg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Atau</span> <span class="n">jika</span> <span class="n">tidak</span> <span class="n">ada</span> <span class="n">LCD</span><span class="p">:</span>
+
+<span class="n">void</span> <span class="n">displayMessage</span><span class="p">(</span><span class="n">String</span> <span class="n">msg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="sd-card-text"><strong>Loop Forever</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Each iteration: sample → filter → envelope → update state → display prompt → delay.</p></li>
+</ul>
+</li>
+</ol>
+<p class="sd-card-text"><strong>3. Lakukan Perangkat Keras</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Lihat <a class="reference internal" href="#muscle-bioamp-arduino-firmware-connect-hardware"><span class="std std-ref">Connect Your Hardware</span></a> untuk wiring sensor.</p></li>
+<li><p class="sd-card-text">Selain itu hubungkan (jika menggunakan LCD dan/atau buzzer):</p></li>
+<li><p class="sd-card-text"><strong>Sensor BioAmp → Arduino</strong></p>
+<ul>
+<li><p class="sd-card-text">BioAmp VCC → Arduino 5 V</p></li>
+<li><p class="sd-card-text">BioAmp GND → Arduino GND</p></li>
+<li><p class="sd-card-text">BioAmp OUT → Arduino A0</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>LCD I²C Opsional</strong></p>
+<ul>
+<li><p class="sd-card-text">LCD VCC → Arduino 5 V</p></li>
+<li><p class="sd-card-text">LCD GND → Arduino GND</p></li>
+<li><p class="sd-card-text">LCD SDA → Arduino A4 (Uno/Nano)</p></li>
+<li><p class="sd-card-text">LCD SCL → Arduino A5 (Uno/Nano)</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>Buzzer pada D10 Opsional</strong></p>
+<ul>
+<li><p class="sd-card-text">Buzzer + → Arduino D10</p></li>
+<li><p class="sd-card-text">Buzzer – → Arduino GND</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Ikat semua ground bersama.</p></li>
+</ul>
+<p class="sd-card-text"><strong>4. Unggah Firmware</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Untuk proyek ini, navigasi ke <cite>10_EMG_Rehab_Game/EMG_Rehab_Game.ino</cite> dan klik <strong>Buka</strong>.</p></li>
+<li><p class="sd-card-text">Untuk mengunggah firmware, lihat <a class="reference internal" href="#muscle-bioamp-arduino-firmware-code-upload"><span class="std std-ref">How to upload the Code to Arduino</span></a></p></li>
+<li><p class="sd-card-text"><strong>Juga Instal &amp; Verifikasi Library LCD (jika menggunakan LCD)</strong></p></li>
+<li><p class="sd-card-text">Pergi ke <strong>Sketch → Include Library → Manage Libraries…</strong></p></li>
+<li><p class="sd-card-text">Cari <strong>“LiquidCrystal I2C”</strong> dan instal <strong>LiquidCrystal I2C by Frank de Brabander</strong>.</p></li>
+<li><p class="sd-card-text">Konfirmasi alamat I²C (misalnya, <cite>0x27</cite> atau <cite>0x3F</cite>) dalam kode cocok dengan modul Anda.</p></li>
+</ul>
+<p class="sd-card-text"><strong>5. Visualisasikan Sinyal Anda</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Prompt LCD Pada-Perangkat</strong></p></li>
+<li><p class="sd-card-text">Setelah unggah, LCD menampilkan:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hold</span> <span class="k">for</span> <span class="mi">2</span><span class="n">s</span>
+<span class="n">Cycle</span> <span class="mi">1</span><span class="o">/</span><span class="mi">10</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p class="sd-card-text">Setelah menahan 2 detik di atas <cite>0.030</cite>, diperbarui ke:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Rest</span> <span class="k">for</span> <span class="mi">2</span><span class="n">s</span>
+<span class="n">Cycle</span> <span class="mi">1</span><span class="o">/</span><span class="mi">10</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p class="sd-card-text">Setelah istirahat 2 detik di bawah <cite>0.005</cite>, diperbarui ke:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hold</span> <span class="k">for</span> <span class="mi">2</span><span class="n">s</span>
+<span class="n">Cycle</span> <span class="mi">2</span><span class="o">/</span><span class="mi">10</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p class="sd-card-text">Ulangi sampai:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Exercise Complete!
+</pre></div>
+</div>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Monitor Serial (Opsional)</strong></p></li>
+<li><p class="sd-card-text">Buka <strong>Tools → Serial Monitor</strong> (115200 baud).</p></li>
+<li><p class="sd-card-text">Kode mencetak pesan yang sama via Serial, misalnya:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hold for 2s
+Rest for 2s
+Cycle 3/10: Hold
+…
+Exercise Complete!
+</pre></div>
+</div>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Plotter Serial (Opsional)</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Buka <strong>Tools → Serial Plotter</strong> (115200 baud).</p></li>
+<li><p class="sd-card-text">Modifikasi sketch sehingga setiap loop juga mencetak:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">envelope</span><span class="p">);</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p class="sd-card-text">Plotter menampilkan waveform envelope, mengonfirmasi crossing threshold.</p></li>
+</ol>
+<p class="sd-card-text"><strong>6. Menjalankan &amp; Mengamati Hasil</strong></p>
+<ol class="arabic simple" start="4">
+<li><p class="sd-card-text"><strong>Mulai Program</strong>
+- LCD atau Serial menampilkan:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hold</span> <span class="k">for</span> <span class="mi">2</span><span class="n">s</span>
+<span class="n">Cycle</span> <span class="mi">1</span><span class="o">/</span><span class="mi">10</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p class="sd-card-text"><strong>Tahap 1: Tahan selama 2 detik</strong>
+- Fleks otot Anda sehingga <code class="docutils literal notranslate"><span class="pre">envelope</span> <span class="pre">&gt;=</span> <span class="pre">0.030</span></code> terus menerus.
+- Jika envelope turun di bawah <cite>0.030</cite> sebelum 2 d, timer reset.
+- Jika ditahan selama 2000 ms, kode beralih ke <strong>REST</strong>:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Rest</span> <span class="k">for</span> <span class="mi">2</span><span class="n">s</span>
+<span class="n">Cycle</span> <span class="mi">1</span><span class="o">/</span><span class="mi">10</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p class="sd-card-text"><strong>Tahap 2: Istirahat selama 2 detik</strong>
+- Rileks sehingga <code class="docutils literal notranslate"><span class="pre">envelope</span> <span class="pre">&lt;=</span> <span class="pre">0.005</span></code> terus menerus.
+- Jika envelope naik di atas <cite>0.005</cite> terlalu dini, timer istirahat reset.
+- Setelah 2000 ms, <cite>cycleCount</cite> bertambah ke 1, kode beralih ke <strong>HOLD</strong> lagi:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hold</span> <span class="k">for</span> <span class="mi">2</span><span class="n">s</span>
+<span class="n">Cycle</span> <span class="mi">2</span><span class="o">/</span><span class="mi">10</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p class="sd-card-text"><strong>Ulangi untuk 10 Siklus</strong>
+- Setiap siklus hold/rest menambah <cite>cycleCount</cite>.
+- Opsional, buzzer bunyi sekali.
+- Setelah Siklus 10, beralih ke <strong>COMPLETE</strong> dan tampilkan:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Exercise Complete!
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p class="sd-card-text"><strong>Berhenti Dini</strong>
+- Jika envelope turun di bawah <cite>HOLD_THRESHOLD</cite> selama tahap hold, Anda restart 2 d hold.
+- Jika envelope naik di atas <cite>REST_THRESHOLD</cite> selama istirahat, Anda restart 2 d istirahat.</p></li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Pemecahan Masalah</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Pesan Tidak Muncul di LCD</strong></p>
+<ul>
+<li><p class="sd-card-text">Konfirmasi <strong>LiquidCrystal I2C</strong> terinstal dan alamat I²C benar.</p></li>
+<li><p class="sd-card-text">Periksa wiring SDA → A4, SCL → A5 (atau pin benar pada board lain).</p></li>
+<li><p class="sd-card-text">Sesuaikan potensiometer kontras LCD.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>Envelope Tidak Pernah Mencapai HOLD_THRESHOLD</strong></p>
+<ul>
+<li><p class="sd-card-text">Gunakan <strong>Serial Plotter</strong> untuk melihat envelope mentah.</p></li>
+<li><p class="sd-card-text">Turunkan <strong>HOLD_THRESHOLD</strong> (misalnya, 0.020) sehingga fleks sedang terdaftar.</p></li>
+<li><p class="sd-card-text">Pastikan elektroda sensor BioAmp terpasang kuat dan ground umum.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>Sesi Berlangsung Terlalu Cepat atau Lambat</strong></p>
+<ul>
+<li><p class="sd-card-text">Jika tahap hold selesai terlalu mudah, naikkan <strong>HOLD_THRESHOLD</strong> (misalnya, ke 0.035).</p></li>
+<li><p class="sd-card-text">Jika tahap istirahat tidak pernah selesai, naikkan <strong>REST_THRESHOLD</strong> (misalnya, ke 0.010).</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>Buzzer Tidak Bunyi</strong></p>
+<ul>
+<li><p class="sd-card-text">Verifikasi buzzer + → D10 dan buzzer – → GND.</p></li>
+<li><p class="sd-card-text">Pastikan kode memanggil:</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">tone</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+
+<span class="o">-</span> <span class="n">Sesuaikan</span> <span class="n">frekuensi</span> <span class="p">(</span><span class="mi">1000</span> <span class="n">Hz</span><span class="p">)</span> <span class="n">atau</span> <span class="n">durasi</span> <span class="p">(</span><span class="mi">500</span> <span class="n">ms</span><span class="p">)</span> <span class="n">sesuai</span> <span class="n">kebutuhan</span><span class="o">.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Monitor Serial Menampilkan Gibberish</strong></p>
+<ul>
+<li><p class="sd-card-text">Konfirmasi baud Monitor Serial adalah <strong>115200</strong>.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>LCD Menampilkan Teks Tidak Lengkap</strong></p>
+<ul>
+<li><p class="sd-card-text">Kode memanggil <code class="docutils literal notranslate"><span class="pre">lcd.clear()</span></code> sebelum setiap prompt baru. Jika sisa tetap ada, sisipkan:</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text">untuk memungkinkan LCD membersihkan sepenuhnya.</p>
+</div>
+</details></div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">11. EMG Counter</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Sketch <strong>EMG Counter</strong> menjaga hitungan berjalan berapa banyak kejadian kontraksi otot
+yang berbeda terjadi dalam sesi. Setiap kali envelope EMG Anda
+melintasi di atas threshold yang ditentukan (dan sebelumnya di bawah),
+counter bertambah satu. Ini berguna untuk melacak jumlah
+repetisi yang Anda lakukan dalam latihan atau untuk memantau kejadian aktivasi otot.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">Untuk panduan detail, kunjungi halaman Instructables kami: <a class="reference external" href="https://www.instructables.com/Exercise-Monitoring-Using-Wearable-Muscle-Sensor-E/">Exercise Monitoring Using Wearable Muscle Sensor (EMG)</a></p>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">12. 2 Channel EMG Game Controller</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Sketch <strong>2 Channel EMG Game Controller</strong> memungkinkan dua channel EMG (dua sensor Muscle BioAmp terpisah)
+bertindak sebagai kontrol independen untuk menavigasi kursor atau karakter dalam lingkungan game.
+Channel 1 mengontrol gerakan horizontal (kiri/kanan), dan Channel 2 mengontrol gerakan vertikal (atas/bawah).
+Dengan fleksing kelompok otot yang berbeda, Anda dapat memindahkan titik pada layar TFT, mengirim penekanan tombol panah ke PC,
+atau memanipulasi sprite dalam aplikasi web.</p>
+<p class="sd-card-text">Untuk walkthrough detail, ikuti tutorial YouTube untuk proyek ini:</p>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/zJ_Ei5tvHiQ" style="border: 0; height: 345px; width: 560px">
+</iframe></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">Untuk panduan detail, kunjungi halaman Instructables kami: <a class="reference external" href="https://www.instructables.com/Controlling-Video-Games-Using-Muscle-Signals-EMG/">Controlling Video Games Using Muscle Signals (EMG)</a></p>
+</div>
+</div>
+</details><p>✅ <strong>Dan Itu saja!, Selamat telah membuat proyek neuroscience Anda menggunakan Hardware BioAmp.</strong></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

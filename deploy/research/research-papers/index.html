@@ -1,0 +1,776 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Penelitian menggunakan Hardware BioAmp &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'research/research-papers/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/research/research-papers/index.html" />
+    <link rel="icon" href="../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="DIY Kits" href="../../kits/index.html" />
+    <link rel="prev" title="Experiments done so far" href="../experiments/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Research Experiments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../experiments/index.html">Experiments done so far</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Research Papers</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Penelitian menggunakan Hardware BioAmp</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Research</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Penelitian menggunakan Hardware BioAmp</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="penelitian-menggunakan-hardware-bioamp">
+<span id="research-papers"></span><h1>Penelitian menggunakan Hardware BioAmp<a class="headerlink" href="#penelitian-menggunakan-hardware-bioamp" title="Link to this heading">#</a></h1>
+<p>Di bawah ini adalah daftar makalah penelitian yang telah menggunakan hardware BioAmp untuk penelitian mereka. Anda dapat mengklik judul makalah untuk melihatnya atau klik <a class="reference external" href="https://docs.google.com/spreadsheets/d/1PvCvDChmfluVT6FGZGGMHOx0uguboAdeQ9vF9-XD28U/edit?usp=sharing">di sini</a> untuk mendapatkan daftar lengkap semua makalah penelitian yang telah diterbitkan sejauh ini.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+2025</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Title</p></th>
+<th class="head"><p>Authors</p></th>
+<th class="head"><p>University of authors</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/10821594">EOG-Assist Real-Time EOG-Based Eye Tracking for Assistive Systems</a></p></td>
+<td><p>Barath S Narayan, Sreyas Janamanchi, Achintya Harsha, Nitheezkant R, Prashanth Jonna, Madhav Rao</p></td>
+<td><p>IIIT Bangalore, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-031-80839-5_18">Patient Biomedical Monitoring-Remote Care System</a></p></td>
+<td><p>D Sri Chandana Charudatta, B. Sidharth Reddy, CH. Pavan Sai, S. Srinivas</p></td>
+<td><p>Vardhaman College of Engineering, Hyderabad, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/10864323">ADHDWare A Software to Detect Attention Deficit Hyperactivity Disorder (ADHD) Using ECG</a></p></td>
+<td><p>Medha Wyawahare, Milind Rane, Mansi Chavan, Samruddhi Chavan, Madhura Birajdar</p></td>
+<td><p>VIT Pune, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://link.springer.com/chapter/10.1007/978-981-97-8627-5_10">An EMG-Based Cost-Effective Prosthetic Hand</a></p></td>
+<td><p>Rajdeep Saha, Abhijit Biswas, Saradwat Sen, Sayani Dhali</p></td>
+<td><p>Supreme Knowledge Foundation Group of Institution, West Bengal, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/10927360">Eog Based Virtual Keypad Design for Human Computer Interface</a></p></td>
+<td><p>Dhanalakshmi Subramanian, PoongothaiMarimuthu, Monisha L, Sathvika I, Shri Harinii K, Ayodeji Olalekan Salau, Sofiya Parveen A</p></td>
+<td><p>Coimbatore Institute of Technology (India), Afe Babalola University (Nigeria), Saveetha Institute of Medical and Technical Sciences (India)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/10929920">Analysis of UMASC Design Requirements for Biomedical Applications and Smart Healthcare</a></p></td>
+<td><p>Moustafa Nawito &amp; Moustafa Nawito</p></td>
+<td><p>International University of Applied Sciences (Germany), Cairo university (Cairo,Egypt)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-031-84543-7_21">Kontho An AI-Driven Smart Glove for Enhanced Sign Language Communication</a></p></td>
+<td><p>Dyuti Dasgupta, Soumyajit Datta, Jeet Nandigrami, Debaditya Ghosh</p></td>
+<td><p>Heritage Institute of Technology, Kolkata, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://dl.acm.org/doi/full/10.1145/3706598.3714095">ProtoPCB Reclaiming Printed Circuit Board E-waste as Prototyping Material</a></p></td>
+<td><p>Jasmine Lu, Sai Rishitha Boddu, Pedro Lopes</p></td>
+<td><p>University of Chicago, USA</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.mdpi.com/2076-3425/15/5/481">Assistive Artificial Intelligence in Epilepsy and Its Impact on Epilepsy Care in Low-and Middle-Income Countries</a></p></td>
+<td><p>Nabin Koirala, Shishir Raj Adhikari, Mukesh Adhikari, Taruna Yadav, Abdul Rauf Anwar, Dumitru Ciolac, Bibhusan Shrestha, Ishan Adhikari, Bishesh Khanal, Muthuraman Muthuraman</p></td>
+<td><p>Yale University (USA), University of Connecticut (USA), Nathan Kline Institute for Psychiatric Research (USA), Nepal Applied Mathematics and Informatics Institute for Research (Nepal), University of North Carolina (USA), Paris Brain Institute (France), State University of Medicine and Pharmacy “Nicolae Testemitanu” (Moldova), Kathmandu University Hospital (Nepal), University of Texas (USA), University of Wurzburg (Germany), University of Augsburg (Germany)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://link.springer.com/article/10.1007/s13246-025-01557-7">An adaptive segmentation scheme based on recurring action potentials for sEMG controlled movement decoding</a></p></td>
+<td><p>Nikhil Vivek Shrivas, Anil Sharma, Ila Sharma</p></td>
+<td><p>Malaviya National Institute of Technology, Jaipur, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.mdpi.com/2079-9292/14/11/2097">Developing a Novel Muscle Fatigue Index for Wireless sEMG Sensors Metrics and Regression Models for Real-Time Monitoring</a></p></td>
+<td><p>Dimitrios Miaoulis, Ioannis Stivaros, Stavros Koubias</p></td>
+<td><p>University of Patras, Greece</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.mdpi.com/2673-2688/6/6/107">On the Deployment of Edge AI Models for Surface Electromyography-Based Hand Gesture Recognition</a></p></td>
+<td><p>Andres Gomez-Bautista, Diego Mendez, Catalina Alvarado-Rojas, Ivan F. Mondragon, Julian D. Colorado</p></td>
+<td><p>Pontificia Universidad Javeriana, Colombia</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://link.springer.com/chapter/10.1007/978-981-96-3247-3_11">Real-Time Seizure Detection Using Approximate Entropy Analysis Through Electroencephalogram Data</a></p></td>
+<td><p>SK Adharsh Kirtan, V. Sumeethra, V. Vadivukkarasi &amp; K. Santhi</p></td>
+<td><p>Peepal Prodigy Senior Secondary School, Coimbatore,India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://link.springer.com/chapter/10.1007/978-981-96-2694-6_22">An Electrooculogram-Based Control System Utilizing Multi-directional Eye Movements for ALS Patients</a></p></td>
+<td><p>Manikrao Dhore, Gaurav Gaikwad</p></td>
+<td><p>Vishwakarma Institute of Technology, Pune, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://link.springer.com/chapter/10.1007/978-981-96-2697-7_1">EOG-Based Authentication System for Specially Abled Users</a></p></td>
+<td><p>Manikrao Dhore &amp; Ankit Gaikwad</p></td>
+<td><p>Vishwakarma Institute of Technology, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://link.springer.com/chapter/10.1007/978-981-96-2697-7_4">Music Recommendation System Based on EEG Signals A Hybrid LSTM-GRU Approach</a></p></td>
+<td><p>Varikuti Sai Soumya Reddy &amp; Surekha Paneerselvam</p></td>
+<td><p>Amrita School of Engineering, Amrita Vishwa Vidyapeetham,Bengaluru, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/document/11029260">Hands-Free UAV Control Real-Time Eye Movement Detection Using EOG And LSTM Networks</a></p></td>
+<td><p>Niloofar Zendehdel, Khosro Ghorbani Zadeh,Haodong Chen, Yun Seong Song , Ming C. Leu</p></td>
+<td><p>Missouri University of Science and Technology, Rolla, MO (USA), Children’s Hospital, Seattle, WA (USA)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://dx.doi.org/10.2139/ssrn.5287405">Understanding Cognitive Expertise through EEG A Comparative Study of Decision-Making Patterns in Professionals and Novices</a></p></td>
+<td><p>Sushma C, Saranya TS, Sandeep Kumar Gupta</p></td>
+<td><p>School of Liberal Studies, CMR University Bangalore, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://arxiv.org/abs/2507.02187">VergeIO Depth-Aware Eye Interaction on Glasses</a></p></td>
+<td><p>Xiyuxing Zhang, Duc Vu, Chengyi Shen, Yuntao Wang,Yuanchun Shi, Justin Chan</p></td>
+<td><p>Carnegie Mellon University (Pennsylvania), Tsinghua University (China), Michigan State University (USA), Zhejiang University (China)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.tandfonline.com/doi/abs/10.1080/10255842.2025.2526017">A permutation importance and ensemble learning based feature selection approach for muscular intent decoding</a></p></td>
+<td><p>Anil Sharma, Ila Sharma</p></td>
+<td><p>Malaviya National Institute of Technology, Jaipur, Rajasthan, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/11069491">Cyber Physical System with Real-Time Gesture Recognition for ISL Translation</a></p></td>
+<td><p>A Afzal Pasha, Mohammed Ali Mohammed Al Sakkaf, Syeeda Aiemen Dania Saleem, N Rakesh, Hema Malini B H, Laxmisagar H S</p></td>
+<td><p>BMS Institute of Technology and Management, Bengaluru, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/11077172">An Experimental Study on Analysis of Brain Signals using Phase Plane Visualization</a></p></td>
+<td><p>Helan Satish, Meghana Chandana, G Sai Praneeth</p></td>
+<td><p>VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/11080820">Design and Development of a Low-Cost Prosthetic Arm Towards Enhanced Grip Patterns, Versatility, and Accessibility</a></p></td>
+<td><p>Hetav Shah, Dev Shah &amp; Maryam Kaveshgar</p></td>
+<td><p>Ahmedabad University, Ahmedabad, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/11159221">Wearable Ear-Centric Physiological Sensing With On-Edge Physics-Informed Neural Networks for Negative Mental State Detection</a></p></td>
+<td><p>Ngoc-Dau Mai, Yudi April Nando, Wan-Young Chung</p></td>
+<td><p>Pukyong National University, Busan, South Korea</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://dx.doi.org/10.2139/ssrn.5433395">Understanding The Impact of AI On the Cognitive Thinking of Students</a></p></td>
+<td><p>Nipun Dhawan, Shubhan Bhasin, Apoorva Gupta, Jabez Timothy Khalkho</p></td>
+<td><p>Amity International School, Sector 46, Noida, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/11181161">Quantum Stress Monitoring Wearable In-Ear EEG Powered by Hybrid Quantum-Classical Convolutional Neural Networks</a></p></td>
+<td><p>Ngoc-Dau Mai, Yudi April Nando, Yunli Lee, Wan-Young Chung</p></td>
+<td><p>Pukyong National University (South Korea), Sunway University (Malaysia)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://link.springer.com/chapter/10.1007/978-981-96-7473-2_14">Developing an IoT-Driven BCI Framework for Real-Time Neural Signal Decoding to Speech Conversion</a></p></td>
+<td><p>Prateek Malagund, Misbah Zohar, V Gagan, Neha Achar, Mustafa Basthikodi</p></td>
+<td><p>Sahyadri College of Engineering and Management, Mangaluru, Karnataka, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://link.springer.com/article/10.1007/s44436-025-00014-2">A causal machine learning approach for investigating learners mental states through electroencephalography (EEG)</a></p></td>
+<td><p>Anupama Jawale, Ruta Prabhu, Amiya Kumar Tripathy</p></td>
+<td><p>Narsee Monjee College of Commerce and Economics, Mumbai (India),  Don Bosco Institute of Technology, Mumbai (India)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://link.springer.com/chapter/10.1007/978-981-96-6707-9_3">Single Channel EEG Classification for Motor Task</a></p></td>
+<td><p>Joel George, Joel Jose, Lakshmi S. Nair, Sandra Skaria, P Suresh, Y Sheena</p></td>
+<td><p>Muthoot Institute of Technology and Science, Varikoli, Kerala, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://doi.org/10.1049/icp.2025.3634">Embedded electronic system for remote heart rate monitoring in heart diseases</a></p></td>
+<td><p>Jorge A Rodriguez-Hernández, Alejandro Bastida, Karla A Malacara-Hernandez, Ricardo E Carrillo-Gaona, Magdalena Delabra-Salinas, Ernesto Rios-Willars, Francisco G Hernández Rivera</p></td>
+<td><p>System Faculty / Autonomous University of Coahuila (Mexico), National College of Professional Technical Education(Mexico), Nursing Faculty /Autonomous University of Coahuila (Mexico)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://link.springer.com/chapter/10.1007/978-981-96-7249-3_29">VisionGrip Revolutionizing Motor Functionality in Carpal Tunnel Syndrome and Radial Nerve Palsy Patients Through EOG-Controlled Robotic Claw</a></p></td>
+<td><p>G NirmalaPriya, M E Paramasivam, S Prema, B Roopa</p></td>
+<td><p>Rajalakshmi Institute of Technology, Chennai (India), Sona College of Technology, Salem (India) RM Institute of Science and Technology, Chennai (India)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-032-06697-8_30">IoT-Based Health Monitoring System Using Four in One Electrogram Sensor</a></p></td>
+<td><p>Jigme Nidup, Adithya Gattadi &amp; K Naresh</p></td>
+<td><p>Vellore Institute of Technology, Vellore, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.mdpi.com/2076-3417/15/23/12434">Interactive Platform for Hand Motor Rehabilitation Using Electromyography and Optical Tracking</a></p></td>
+<td><p>Luz A. Garcia-Villalba, Alma G. Rodríguez-Ramírez, Luis A. Rodríguez-Picón, Luis Carlos Méndez-González and Shaban Mousavi Ghasemlou</p></td>
+<td><p>Autonomous University of Ciudad Juarez, Chihuahua , Mexico</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+2024</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Title</p></th>
+<th class="head"><p>Authors</p></th>
+<th class="head"><p>University of authors</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://doi.org/10.60087/jklst.v3.n4.p247">Classification of obstructive sleep apnea using bio-control feedback EEG biosensor device</a></p></td>
+<td><p>Sean Lennon, Srushti Kulkarni</p></td>
+<td><p>Independent researchers</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://doi.org/10.60087/jklst.v3.n4.p148">A Wearable EMG Sensor for Continuous Wrist Neuromuscular Activity Monitoring</a></p></td>
+<td><p>Lalita Chilmakuri, Ayush Kumar Mishra, Divyansh Shokeen, Paakhi Gupta, Harmankaur Harjeetsingh Wadhwa, Karan Dhingra, Saloni Verma</p></td>
+<td><p>University of Cincinnati (USA), University of Ottawa (Canada), Cornell University (USA), Independent researchers from India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://doi.org/10.1115/ISFA2024-140778">Implementing Eye Movement Tracking for UAV Navigation</a></p></td>
+<td><p>Niloofar Zendehdel, Haodong Chen, Yun Seong Song, Ming C. Leu</p></td>
+<td><p>Missouri University of Science and Technology, USA</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://doi.org/10.1007/s00604-024-06595-8">WSe2/chitosan-based wearable multi-functional platform for monitoring electrophysiological signals, pulse rate, respiratory rate, and body movements</a></p></td>
+<td><p>Shuvam Mukherjee, Sushmee Badhulika</p></td>
+<td><p>Indian Institute of Technology Hyderabad, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/document/10585066">IoT Driven Bioelectrical Signals Detection and Monitoring System</a></p></td>
+<td><p>Megha Chakole, Ishwari Ainchwar, Vaishnavi Budhe, Anikeit Babhale, Atharva Katolkar, Sanjay Dorle</p></td>
+<td><p>Yeshwantrao Chavan College of Engineering, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://pubs.rsc.org/en/content/articlehtml/2024/ma/d4ma00151f">Shellac-mediated laser-induced reduced graphene oxide film on paper and fabric- exceptional performance in flexible fuel cell, supercapacitor and electrocardiography applications</a></p></td>
+<td><p>Pavar Sai Kumar, Vanmathi S, Himanshi Awasthi, Imran Khan, Ritesh Kumar Singh, Vimal Kumar Sharma, Chandrani Pramanik, Sanket Goel</p></td>
+<td><p>BITS Pilani (Hyderabad Campus, India), Graphene Center Tata Steel Limited (India)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://doi.org/10.1016/j.bspc.2024.106486">Blink-induced artifacts in aqueous flare measurements by EOG-based spot fluorometer and their reduction using unsupervised clustering</a></p></td>
+<td><p>Sirisha Tadepalli, Roselin Kiruba, Surekha Paneerselvam, Abhilash Ravikumar, Rachapalle Reddi Sudhir, Prema Padmanabhan, Sangly P. Srinivas</p></td>
+<td><p>Amrita School of Engineering (India), SRM University (Chennai, India), Department of Cornea and Refractive Surgery (Sankara Nethralaya, India), Indiana University (USA)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://doi.org/10.17148/IARJSET.2024.11439">NeuroSync- Thoughts to Character Conversion Through Deep Learning Ensemble Model</a></p></td>
+<td><p>Dr Vijayalaxmi Mekali, Anusha Phaniraj, Kartik Bhatt, Sahithi Bhashyam, Vipul Kant Tripathi</p></td>
+<td><p>K.S Institute of Technology, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://doi.org/10.21015/vtse.v12i1.1593">EOG Based Text and Voice Controlled Remote Interpreter for Quadriplegic Patients</a></p></td>
+<td><p>Rania A, Fahad Shamim, Sarmad Shams, Murk Saleem, Roz Nisha</p></td>
+<td><p>Liaquat University of Medical and Health Sciences, Pakistan</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/document/10468364">Investigating EMG Fatigue Markers of Biceps Muscle- A Comparative Study Through Mono Fractal and Band Power Analysis</a></p></td>
+<td><p>Saurabh Chaudhari, Pallab Das, Uttaran Bhattacharjee, Cheruvu Siva Kumar, Manjunatha Mahadevappa</p></td>
+<td><p>Indian Institute of Technology Kharagpur, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://doi.org/10.1061/9780784485293.083">Application of Paper-Based Wearable Electronics (PBWE) for Objective Assessment of Fatigue in Lower Back of Construction Workers</a></p></td>
+<td><p>Oluwaseun Olabode, J. Alfredo Ocegueda, Ramses V. Martinez, Behzad Esmaeili</p></td>
+<td><p>Purdue University, USA</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/document/10420266">Comparative Analysis of AD8232 and BioAmp EXG Pill Analog Front-End Devices in ECG Signal Processing</a></p></td>
+<td><p>Tanakrit Mamee, Panason Manorost, Chakkapong Chamroon, Kittiya Thunsiri</p></td>
+<td><p>Chiang Mai University, Thailand</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/10420107">EOG-based Blink Authentication</a></p></td>
+<td><p>B Kaushik, M Vinay Kumar, Sirisha Tadepalli, Ashish Vats, R Bhargav</p></td>
+<td><p>Amrita School of Engineering, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/10675996">CNN factored sEMG based Limb Angle Prediction on the Edge- Advancing Model Predictive Control of Robotic Rehabilitative Systems</a></p></td>
+<td><p>Nitheezkant R, Achintya Harsha, Barath S Narayan, Aamod B K, Anshul Madurwar, Prashanth Jonna</p></td>
+<td><p>IIIT Bangalore, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://hosei.ecats-library.jp/da/repository/00030618/gradcis_19_22T0015.pdf">Leveraging FMCW Radar for Eye Blink Detection A Comprehensive Exploration and Evaluation</a></p></td>
+<td><p>Xinze Zhang</p></td>
+<td><p>Hosei University, Tokyo, Japan</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4930855">Development of Flexible Electrode-Based SEMG Instrumentation System for Effortful Swallow Evaluation on Suprahyoid Muscles</a></p></td>
+<td><p>Rengganis Ridwan Heru Santoso, Damar Rastri  Adhika, S Suprijanto, Fathur Rahman</p></td>
+<td><p>Bandung Institute of Technology(Indonesia), Telkom University(Indonesia)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/10716934">EEG-Driven Emotional Mapping Using Machine Learning Algorithms</a></p></td>
+<td><p>Priya Darshini B, Vytheeswar P, Arunagiri K,Jagath S, Surendhar S</p></td>
+<td><p>KPR Institute of Engineering and Technology, Coimbatore, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/10725697">Enhancing Quality of Life An AI-Enabled Assistive System Integrating BCI and Transformer Model for Elderly and Disabled Individuals</a></p></td>
+<td><p>N.V.S. Sasi Preetham, Vallam Koushik, Surekha Paneerselvam</p></td>
+<td><p>Amrita School of Engineering Bengaluru Amrita Vishwa Vidyapeetham, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/10744320">Wireless Control of 4 D.O.F. Robotic Arm using EMG Muscle Sensors</a></p></td>
+<td><p>Dinesh Patil, Meet Nathwani, Shivanand Nemane, Mohit Patil, Shilpa Sondkar</p></td>
+<td><p>Vishwakarma Institute of Technology, Pune, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/10752240">An Efficient sEMG Signal Acquisition System for Decoding of Hand Movements</a></p></td>
+<td><p>Anil Sharma, Ila Sharma</p></td>
+<td><p>Malaviya National Institute of Technology, Jaipur, Rajasthan, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/10779962">Revolutionizing Neurological Diagnosis Innovations in ErrP for Enhanced Detection</a></p></td>
+<td><p>Praseeda B Nair, Godwinraj D, Little Therese Mathew, N Sreedu Krishna, Sheryl Varghese</p></td>
+<td><p>Amaljyothi College of Engineering, Kottayam, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/10785105">End-to-End Processing-on-Chip Wearable Ear EEG Device with Tiny Neural Network for Multilevel Stress Detection</a></p></td>
+<td><p>Ngoc-Dau Mai, Yudi April Nando, Wan-Young Chung</p></td>
+<td><p>Pukyong National University, Busan, South Korea</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-031-74682-6_5">Neural Stress Mapping with Machine Learning from EEG Data</a></p></td>
+<td><p>Meenakshi Raghupathy, Sakshi Salunkhe, Shweta Dhende, Kishor Bhangale, Dipali Dhake</p></td>
+<td><p>Pimpri Chinchwad College of Engineering and Research, Ravet, Pune, India</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+2023</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Title</p></th>
+<th class="head"><p>Authors</p></th>
+<th class="head"><p>University of authors</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/document/10308150">EMG Interface for SCI Patients</a></p></td>
+<td><p>Alphi Kurian Shajan, Ananthu V, Bageeradhan K H, Jayaraj J, Sruthy Manmadhan</p></td>
+<td><p>NSS College of Engineering, India</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://doi.org/10.1007/978-3-031-47055-4_27">Enhancing Sustainable Development Through Electrooculography Based Computer Control System for Individuals with Mobility Limitations</a></p></td>
+<td><p>Pragya Bhalla, Diksha Tiwary, Manasvi Aggarwal, Sakshi Sharma, Monika Kaushik, Megha Agarwal</p></td>
+<td><p>Bhagwan Parshuram Institute of Technology, GGSIPU, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://doi.org/10.1016/j.bios.2023.115414">A Non-Newtonian liquid metal enabled enhanced electrography</a></p></td>
+<td><p>Veronika Timosina, Tim Cole, Hongda Lu, Jian Shu, Xiangbo Zhou, Chengchen Zhang, Jinhong Guo, Omid Kavehei, Shi-Yang Tang</p></td>
+<td><p>University of Birmingham (UK), University of Wollongong (Australia), University of Science and Technology of China, University of New South Wales (Australia), Chongqing Medical University (China), University of Sydney (Australia)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://doi.org/10.1007/978-3-031-47055-4">Sustainable Development through Machine Learning, AI and IoT</a></p></td>
+<td><p>Pawan Whig, Nuno Silva, Ahmed A. Elngar, Nagender Aneja, Pavika Sharma</p></td>
+<td><p>Vivekananda Institute of Professional Studies (India), UnifAI Technology (UK), Beni-Suef University (Egypt), Universiti Brunei Darussalam, Parshuram Institute of Technology (India)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://doi.org/10.1063/5.0149403">Eye blink detection using electrooculography based on support vector machine</a></p></td>
+<td><p>Hassanein R. Mahmood, Mohammed S. Irshayyid, Manaf K. Hussien, Riyadh A. Abedraba</p></td>
+<td><p>University of Wasit, Iraq</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://doi.org/10.1051/e3sconf/202339101106">Computing and Monitoring various Biopotential signals using Machine Learning algorithms</a></p></td>
+<td><p>Devi P. Sri Vidya, Krishna C.H. Sai, P. Sai Srinivas, S.K. Ashraf, K. Sushith</p></td>
+<td><p>Gokaraju Rangaraju Institute of Engineering and Technology, India</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://ncbi.nlm.nih.gov/pmc/articles/PMC10426815/">Using Open Neuroscience to Advance Equity in the Pedagogy and Research Infrastructure in Colleges/Universities still Financially Impacted by COVID-19- The Emergence of a Global Resource Network Aimed at Integrating Neuroscience and Society</a></p></td>
+<td><p>Andre Maia Chagas, Turhan Canli, Donya Ziadlou, Paul M. Forlano, Sreyashi Samaddar, Elizabeth Chua, Karen A. Baskerville, Kinning Poon, Lorenz S. Neuwirth</p></td>
+<td><p>University of Sussex (United Kingdom), Stony Brook University (USA), The City University of New York (USA), Lincoln University (USA), SUNY Old Westbury (USA)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://doi.org/10.5281/zenodo.5524414">Towards FAIR Principles for Open Hardware</a></p></td>
+<td><p>Nadica Miljkovic, Ana Trisovic, Limor Peer</p></td>
+<td><p>University of Belgrade (Serbia), Harvard University (USA), Yale University (USA)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+2022</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Title</p></th>
+<th class="head"><p>Authors</p></th>
+<th class="head"><p>University of authors</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://doi.org/10.31185/ejuow.Vol10.Iss3.352">Development of Low-Cost Biosignal Acquisition System for ECG, EMG, and EOG</a></p></td>
+<td><p>Hassanein Riyadh Mahmood, Manaf K. Hussein, Riyadh A. Abedraba</p></td>
+<td><p>University of Wasit, Iraq</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Telah menerbitkan makalah penelitian Anda sendiri menggunakan hardware BioAmp? Kirim ke kami di <a class="reference external" href="mailto:contact&#37;&#52;&#48;upsidedownlabs&#46;tech">contact<span>&#64;</span>upsidedownlabs<span>&#46;</span>tech</a> dan kami akan menambahkannya ke daftar!</p>
+</div>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

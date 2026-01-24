@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Latihan Hari ke-1: Tanpa Perangkat Keras &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/open-ephys/exday1-nokit';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/courses/open-ephys/exday1-nokit.html" />
+    <link rel="icon" href="../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Latihan Hari 2: Tanpa Perangkat Keras" href="exday2-nokit.html" />
+    <link rel="prev" title="Teori Hari 4" href="theory-day-4/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Neuroscience Basics For Biopotential Signals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience-basics-for-biopotential-signals/module-1/index.html">Modul 1: Sistem Saraf Manusia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience-basics-for-biopotential-signals/module-2/index.html">Modul 2: Memahami potensial istirahat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience-basics-for-biopotential-signals/module-3/index.html">Modul 3 : Sifat Membran Pasif</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience-basics-for-biopotential-signals/module-4/index.html">Modul 4 : Potensial Aksi dan Propagasinya</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience-basics-for-biopotential-signals/module-5/index.html">Modul 5 : Sinaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience-basics-for-biopotential-signals/module-6/index.html">Modul 6: Sinyal Biopotensial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience-basics-for-biopotential-signals/module-7/index.html">Modul 7: EMG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience-basics-for-biopotential-signals/module-8/index.html">Module 8: ECG/EKG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience-basics-for-biopotential-signals/module-9/index.html">Module 9 : EEG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience-basics-for-biopotential-signals/module-10/index.html">Module 10 : EOG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience-basics-for-biopotential-signals/module-11/index.html">Module 11 : Conclusion</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extracellular Electrophysiology Acquisition</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Course Curriculum</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="theory-day-1/index.html">Teori Hari 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theory-day-2/index.html">Teori Hari 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theory-day-3/index.html">Teori Hari 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theory-day-4/index.html">Teori Hari 4</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Latihan Hari ke-1: Tanpa Perangkat Keras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exday2-nokit.html">Latihan Hari 2: Tanpa Perangkat Keras</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Courses</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Course Curriculum</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Latihan Hari ke-1: Tanpa Perangkat Keras</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="latihan-hari-ke-1-tanpa-perangkat-keras">
+<span id="exday1-nokit"></span><h1>Latihan Hari ke-1: Tanpa Perangkat Keras<a class="headerlink" href="#latihan-hari-ke-1-tanpa-perangkat-keras" title="Link to this heading">#</a></h1>
+<nav class="contents local" id="daftar-isi">
+<p class="topic-title">Daftar Isi</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#menggunakan-multimeter" id="id1">1. Menggunakan Multimeter</a></p></li>
+<li><p><a class="reference internal" href="#mengukur-tegangan" id="id2">2. Mengukur Tegangan</a></p></li>
+<li><p><a class="reference internal" href="#hukum-ohm" id="id3">3. Hukum Ohm</a></p></li>
+<li><p><a class="reference internal" href="#resistor" id="id4">4. Resistor</a></p></li>
+<li><p><a class="reference internal" href="#pembagi-tegangan" id="id5">5. Pembagi Tegangan</a></p></li>
+<li><p><a class="reference internal" href="#kapasitor" id="id6">6. Kapasitor</a></p></li>
+<li><p><a class="reference internal" href="#sinyal-bolak-balik-ac" id="id7">7. Sinyal Bolak-Balik (AC)</a></p></li>
+<li><p><a class="reference internal" href="#impedansi" id="id8">8. Impedansi</a></p></li>
+<li><p><a class="reference internal" href="#pembagi-tegangan-kapasitif" id="id9">9. Pembagi Tegangan Kapasitif</a></p></li>
+</ul>
+</nav>
+<section id="menggunakan-multimeter">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">1. Menggunakan Multimeter</a><a class="headerlink" href="#menggunakan-multimeter" title="Link to this heading">#</a></h2>
+<p>Kita akan menggunakan simulator rangkaian untuk memodelkan berbagai pengaturan pada multimeter. Multimeter dapat digunakan untuk mengukur tegangan, resistansi, dan arus.</p>
+<div class="admonition-latihan admonition">
+<p class="admonition-title">Latihan</p>
+<p>Pertama, kita akan mengukur resistansi sebuah resistor.</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://tinyurl.com/y65o842d"><img alt="../../_images/ohmmeter_sim.png" src="../../_images/ohmmeter_sim.png" />
+</a>
+</figure>
+<p>Pengaturan:</p>
+<ul class="simple">
+<li><p>Tambahkan Ohmmeter ke rangkaian (Draw/Outputs and Labels/Add Ohmmeter).</p></li>
+<li><p>Hubungkan ke resistor dan jalankan simulator.</p></li>
+<li><p>Klik kanan pada Ohmmeter, pilih <strong>View in New Scope</strong>.</p></li>
+<li><p>Atur scope untuk menampilkan nilai resistansi, bukan tegangan. Klik kanan pada scope lalu pilih <strong>Properties</strong>. Pilih <strong>Show Resistance</strong> alih-alih <strong>Show Voltage</strong>.</p></li>
+</ul>
+<p>1A. Baca nilai resistor dalam Ohm dari scope.</p>
+<p>Sekarang kita akan mengukur tegangan pada dua baterai.</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://tinyurl.com/y35xq4tr"><img alt="../../_images/voltmeter_sim.png" src="../../_images/voltmeter_sim.png" />
+</a>
+</figure>
+<p>Pengaturan:</p>
+<ul class="simple">
+<li><p>Tambahkan Voltmeter ke rangkaian, hubungkan melintang pada baterai, lalu jalankan simulator.</p></li>
+<li><p>Tegangan berapa yang Anda ukur?</p></li>
+<li><p>Bagaimana cara membuat Voltmeter menampilkan pengukuran tegangan negatif?</p></li>
+</ul>
+</div>
+</section>
+<section id="mengukur-tegangan">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">2. Mengukur Tegangan</a><a class="headerlink" href="#mengukur-tegangan" title="Link to this heading">#</a></h2>
+<div class="admonition-latihan admonition">
+<p class="admonition-title">Latihan</p>
+<p>Perhatikan simulasi ini. Sebuah sinyal keluaran tegangan dihasilkan di sisi kiri, yang menyalakan dan mematikan LED pada frekuensi tertentu. Tujuan kita adalah mengukur karakteristik dari keluaran tegangan ini.</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://tinyurl.com/y3fugler"><img alt="../../_images/squarewave_sim.png" src="../../_images/squarewave_sim.png" />
+</a>
+</figure>
+<p>2A. Hubungkan voltmeter melintang pada LED. Ini mirip dengan penggunaan multimeter di laboratorium. Berapa amplitudo sinyal dalam Volt? Dengan frekuensi berapa amplitudo sinyal berubah?</p>
+<p>2B. Visualisasikan tegangan pada LED dalam scope baru. Ini mirip dengan penggunaan osiloskop di laboratorium. Apakah tegangan yang diukur sekarang berbeda? Dengan frekuensi berapa amplitudo sinyal berubah, dan bagaimana Anda menggambarkan bentuk sinyal ini?</p>
+<p>2C. Apa kelebihan osiloskop dibandingkan multimeter?</p>
+<p>2D. Ubah sinyal tegangan sehingga menghasilkan gelombang sinus 50 Hz.</p>
+</div>
+</section>
+<section id="hukum-ohm">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">3. Hukum Ohm</a><a class="headerlink" href="#hukum-ohm" title="Link to this heading">#</a></h2>
+<p>Hukum Ohm menjelaskan hubungan antara tegangan (V), arus (I), dan resistansi (R):</p>
+<div class="math notranslate nohighlight">
+\[V = IR\]</div>
+<p>Jika melihat keseluruhan rangkaian, kita dapat menggunakan hukum ini untuk menghitung berapa besar arus yang akan mengalir. Berikut adalah rangkaian sederhana dengan sebuah baterai dan dua resistor. Arus mengalir dari terminal positif baterai ke terminal negatif baterai. Resistor-resistor tersebut tersusun <strong>seri</strong> karena hanya ada satu jalur aliran arus.</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://tinyurl.com/y4r8nsnj"><img alt="../../_images/resistors_series_sim.png" src="../../_images/resistors_series_sim.png" />
+</a>
+</figure>
+<div class="admonition-latihan admonition">
+<p class="admonition-title">Latihan</p>
+<p>3A. Klik gambar untuk membuka simulator.
+Klik kanan pada kawat bagian atas di rangkaian, lalu pilih <strong>Edit</strong> untuk menampilkan arus yang mengalir melalui kawat tersebut. Klik dua kali pada salah satu resistor untuk menurunkan nilainya. Apa yang terjadi pada arus di rangkaian?</p>
+</div>
+</section>
+<section id="resistor">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">4. Resistor</a><a class="headerlink" href="#resistor" title="Link to this heading">#</a></h2>
+<p>Berikut simulasi lain yang menunjukkan Hukum Ohm. Kali ini, arus mengalir dari sumber tegangan 5 Volt (hijau terang) ke ground (abu-abu, bumi), melalui salah satu dari dua resistor. Resistor-resistor tersebut tersusun <strong>paralel</strong> karena arus dapat mengalir melalui resistor yang satu <em>atau</em> yang lain.</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://www.falstad.com/circuit/e-ohms.html"><img alt="../../_images/resistors_parallel_sim.png" src="../../_images/resistors_parallel_sim.png" />
+</a>
+</figure>
+<div class="admonition-latihan admonition">
+<p class="admonition-title">Latihan</p>
+<p>Pengaturan:</p>
+<ul class="simple">
+<li><p>Klik gambar untuk membuka simulator.</p></li>
+<li><p>Klik kanan pada sebuah resistor dan pilih <strong>View in new scope</strong>.</p></li>
+<li><p>Lakukan hal yang sama untuk resistor lainnya. Anda dapat menekan <strong>Reset</strong> untuk memulai ulang simulasi dan menyinkronkan scope.</p></li>
+</ul>
+<p>4A. Apa yang Anda perkirakan akan terjadi pada tegangan di resistor sebelah kiri jika resistansinya digandakan? Apa yang akan terjadi pada arusnya?</p>
+<p>4B. Apa yang akan terjadi pada tegangan dan arus di resistor sebelah kanan ketika resistor yang lain digandakan nilainya?</p>
+<p>Sekarang gandakan nilai resistor sebelah kiri di simulator dan lihat apakah perkiraan Anda benar.</p>
+</div>
+</section>
+<section id="pembagi-tegangan">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">5. Pembagi Tegangan</a><a class="headerlink" href="#pembagi-tegangan" title="Link to this heading">#</a></h2>
+<p>Tegangan selalu diukur relatif terhadap suatu titik yang kita anggap sebagai 0V. Pada baterai, terminal negatif adalah 0V.</p>
+<p>Tegangan (energi potensial) akan “turun” pada setiap resistor, karena energi potensial diubah menjadi bentuk energi lain seperti panas atau cahaya. Dalam rangkaian yang diberi daya oleh baterai 9V, seluruh 9V energi potensial dari sumber baterai <em>harus</em> turun pada komponen rangkaian, untuk kembali ke 0V di terminal negatif baterai.</p>
+<p>Pada setiap rangkaian di bawah ini, arus melalui R1 harus sama dengan arus melalui R2, karena keduanya adalah resistor seri. Mengikuti Hukum Ohm, dengan arus yang sama, resistor yang lebih besar akan memiliki penurunan tegangan yang lebih besar (V = IR). Total penurunan tegangan pada rangkaian harus sama dengan tegangan yang diberikan.</p>
+<figure class="align-center">
+<img alt="../../_images/voltage_divider.png" src="../../_images/voltage_divider.png" />
+</figure>
+<p>Oleh karena itu, dalam rangkaian dengan beberapa resistor seri, perbandingan nilai resistansinya menentukan berapa besar tegangan yang turun pada masing-masing resistor. Dengan demikian, kita dapat membagi tegangan dari suatu sumber pada resistor-resistor untuk menghasilkan tegangan keluaran V<sub>out</sub>:</p>
+<div class="math notranslate nohighlight">
+\[|Vout| = |Vin| \frac{R2}{R1+R2}\]</div>
+<div class="admonition-latihan admonition">
+<p class="admonition-title">Latihan</p>
+<p>5A. Menggunakan simulator (layar penuh kosong di sini: <a class="reference external" href="https://tinyurl.com/y477e9qd">https://tinyurl.com/y477e9qd</a>), bangun rangkaian pembagi tegangan dengan menggunakan:</p>
+<ul class="simple">
+<li><p>sebuah baterai 3V (buat sumber tegangan 1-terminal dan atur ke 3V)</p></li>
+<li><p>2 resistor</p></li>
+<li><p>sebuah kawat pembacaan (klik kanan lalu <strong>Edit</strong> untuk menampilkan tegangan V<sub>out</sub>)</p></li>
+</ul>
+<p>Untuk menghasilkan tegangan keluaran V<sub>out</sub> sebesar 2,1V pada kawat pembacaan.</p>
+<p>5B. Ubah perbandingan nilai resistor hingga tegangan keluaran yang terbaca setara dengan ukuran potensial aksi yang diukur pada cairan ekstraseluler.</p>
+</div>
+</section>
+<section id="kapasitor">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">6. Kapasitor</a><a class="headerlink" href="#kapasitor" title="Link to this heading">#</a></h2>
+<p>Ada dua jenis kapasitor. Kapasitor terpolarisasi harus digunakan dengan orientasi tertentu. Biasanya, kapasitor keramik tidak terpolarisasi dan dapat digunakan pada kedua arah, sedangkan kapasitor elektrolit berbentuk tabung <strong>terpolarisasi</strong>. Kaki negatif ditandai dengan simbol ‘-’, dan kaki positif biasanya lebih panjang.</p>
+<p><span class="xref std std-ref">Seperti dibahas pada handout Teori</span>, kapasitor muncul di mana pun muatan dapat dipisahkan pada dua permukaan konduktif yang dipisahkan oleh bahan isolator yang mencegah kedua pelat bersentuhan. Membran sel adalah kapasitor, demikian pula elektroda.</p>
+<div class="math notranslate nohighlight">
+\[Q = C * V\]</div>
+<p>Jumlah muatan (Q) yang dapat dipisahkan oleh sebuah kapasitor bergantung pada kapasitansinya (C, diukur dalam farad) dan tegangan (V) pada kapasitor tersebut.</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://tinyurl.com/y5nglnv7"><img alt="../../_images/capacitor_membrane.png" src="../../_images/capacitor_membrane.png" />
+</a>
+</figure>
+<div class="admonition-latihan admonition">
+<p class="admonition-title">Latihan</p>
+<p>Pengaturan:</p>
+<p>Simulator menunjukkan ‘membran sel’ sederhana yang direpresentasikan sebagai sebuah kapasitor dan sebuah resistor. Mengubah sumber tegangan intraseluler akan mengubah tegangan pada membran sel. Cairan ekstraseluler selalu berada pada 0 V.</p>
+<p>6A. Tegangan awal pada kapasitor seharusnya -72 mV. Jika tidak, atur slider Tegangan ke sekitar -70 mV. Klik <strong>Reset</strong> untuk melihat arus mengalir melalui rangkaian hingga kapasitor terisi hingga 72 mV. Ke arah mana arus mengalir? Mengapa arus berhenti mengalir?</p>
+<p>6B. Dengan menggunakan slider <strong>Voltage</strong>, atur sumber tegangan ke 0 mV, lalu ke 20 mV. Apa yang terjadi pada aliran arus di rangkaian?</p>
+<p>6C. Dapatkah Anda meniru sebuah potensial aksi dengan mengubah tegangan intraseluler?</p>
+</div>
+<div class="admonition-latihan admonition">
+<p class="admonition-title">Latihan</p>
+<p>Pada simulasi ini, Anda dapat mengisi dan mengosongkan sebuah kapasitor dan melihat aliran arus melalui rangkaian.</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://tinyurl.com/y6ov8bnn"><img alt="../../_images/charging_cap_sim.png" src="../../_images/charging_cap_sim.png" />
+</a>
+</figure>
+<p>6D. Ubah simulasi sehingga kapasitor saat mengosongkan muatannya dapat menyalakan sebuah LED (Draw/Outputs and Labels/Add LED). Simulator akan menampilkan LED berwarna merah ketika menyala.</p>
+<p>6E. Visualisasikan proses pengisian dan pengosongan tegangan pada kapasitor. Bagaimana cara membuat proses pengisian dan pengosongan menjadi lebih lambat?</p>
+<p>6F. Tingkatkan nilai kapasitansi kapasitor. Berapa lama waktu yang dibutuhkan kapasitor untuk benar-benar mengosongkan muatannya?</p>
+</div>
+</section>
+<section id="sinyal-bolak-balik-ac">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">7. Sinyal Bolak-Balik (AC)</a><a class="headerlink" href="#sinyal-bolak-balik-ac" title="Link to this heading">#</a></h2>
+<p>Baterai menyediakan arus searah (<em>direct current</em>) dalam satu arah. Sebaliknya, potensial aksi dan LFP yang kita ukur dari neuron dapat mengalir ke dua arah; ini adalah <strong>arus bolak-balik (alternating current)</strong>. Anda sendiri telah menghasilkan arus bolak-balik pada latihan 6C.</p>
+<p>Arus bolak-balik memiliki frekuensi, yaitu seberapa cepat arah arus tersebut berubah. Potensial aksi memiliki frekuensi yang sangat tinggi, sedangkan input sinaptik dan penjumlahannya jauh lebih lambat.</p>
+<p>Berikut adalah demo di mana sinyal bolak-balik meningkat dan menurun frekuensinya. Di bagian bawah halaman, Anda dapat melihat gelombang yang divisualisasikan.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Saat Anda memiliki kapasitor di dalam simulator, sebaiknya klik <strong>Reset</strong> setiap kali Anda melakukan perubahan, karena kapasitor akan menyimpan muatan dan dapat menimbulkan efek yang aneh.</p>
+</div>
+<div class="admonition-latihan admonition">
+<p class="admonition-title">Latihan</p>
+<p>7A. Tekan <strong>Play Audio</strong> untuk mendengar bagaimana suara dimodulasi saat frekuensi meningkat.</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://tinyurl.com/yyrvugha"><img alt="../../_images/audio_sweep.png" src="../../_images/audio_sweep.png" />
+</a>
+</figure>
+</div>
+</section>
+<section id="impedansi">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">8. Impedansi</a><a class="headerlink" href="#impedansi" title="Link to this heading">#</a></h2>
+<p>Karena arus bolak-balik memiliki frekuensi, kita perlu menggunakan istilah <strong>Impedansi</strong> (Z) alih-alih <strong>Resistansi</strong> untuk menggambarkan bagaimana komponen rangkaian menghambat aliran arus. Lihat handout teori untuk informasi lebih lanjut.</p>
+<p>Besarnya impedansi sebuah kapasitor, yang juga disebut reaktansi (X<sub>c</sub>), bergantung pada:</p>
+<div class="math notranslate nohighlight">
+\[Xc = \frac{1}{2 \pi fC}\]</div>
+<p>Di mana <em>f</em> adalah frekuensi perubahan arah arus, dan <em>C</em> adalah kapasitansi.</p>
+<p>Impedansi yang diberikan oleh kapasitor bervariasi terhadap frekuensi. Karena kita tertarik pada sinyal dengan frekuensi tertentu (misalnya 1000 Hz untuk potensial aksi), kita harus memastikan rangkaian perekaman dirancang sedemikian rupa sehingga frekuensi yang kita minati mengalami hambatan yang kecil.</p>
+<p>Ketika Anda melihat sebuah kapasitor di dalam rangkaian, Anda tahu bahwa Anda harus memikirkan frekuensi sinyalnya. Arus searah yang stabil tidak memiliki frekuensi, sehingga X<sub>c</sub> bernilai tak hingga: kapasitor hanya melewatkan sinyal bolak-balik.</p>
+<div class="admonition-latihan admonition">
+<p class="admonition-title">Latihan</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://tinyurl.com/y3sbgfl6"><img alt="../../_images/cap_freq_circuits.png" src="../../_images/cap_freq_circuits.png" />
+</a>
+</figure>
+<p>Pengaturan:</p>
+<p>Berikut adalah dua rangkaian dengan sumber tegangan bolak-balik masing-masing 15 dan 40 Hz. Pada osiloskop di bagian bawah simulator, jejak tegangan dari sumber dan kapasitor ditampilkan.</p>
+<p>8A. Visualisasikan arus pada rangkaian (misalnya arus yang mengalir melalui sebuah bagian kawat). Anda dapat menambahkan scope baru untuk ini atau klik dua kali pada kawat dan pilih <strong>show current</strong>. Rangkaian mana yang memiliki amplitudo arus lebih besar?</p>
+<p>8B. Tambahkan rangkaian ketiga, diberi daya oleh sumber tegangan bolak-balik 120 Hz. Apa yang terjadi pada arus saat frekuensi meningkat?</p>
+<p>(Pertanyaan bonus: apa yang terjadi pada penurunan tegangan pada kapasitor ketika frekuensi meningkat?)</p>
+</div>
+</section>
+<section id="pembagi-tegangan-kapasitif">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">9. Pembagi Tegangan Kapasitif</a><a class="headerlink" href="#pembagi-tegangan-kapasitif" title="Link to this heading">#</a></h2>
+<p>Karena kapasitor menghambat aliran arus, kita dapat menggunakannya untuk membangun pembagi tegangan, sama seperti pembagi tegangan berbasis resistor yang ditunjukkan sebelumnya.</p>
+<div class="admonition-latihan admonition">
+<p class="admonition-title">Latihan</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="https://tinyurl.com/yxdwvulv"><img alt="../../_images/cap_voltage_div.png" src="../../_images/cap_voltage_div.png" />
+</a>
+</figure>
+<p>9A. Ubah nilai kapasitansi C pada kapasitor pertama untuk menguji apakah rumus pembagi tegangan resistor juga berlaku untuk kapasitor.</p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,2 +1,2 @@
-# upsidedownlabs.github.io
-Upside Down Labs 
+# NeuroScience.github.io
+Edvolution Laboratory STEAM

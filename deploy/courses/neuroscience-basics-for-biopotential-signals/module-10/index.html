@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 10 : EOG &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/neuroscience-basics-for-biopotential-signals/module-10/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/courses/neuroscience-basics-for-biopotential-signals/module-10/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Module 11 : Conclusion" href="../module-11/index.html" />
+    <link rel="prev" title="Module 9 : EEG" href="../module-9/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../software/index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Neuroscience Basics For Biopotential Signals</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../module-1/index.html">Modul 1: Sistem Saraf Manusia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-2/index.html">Modul 2: Memahami potensial istirahat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-3/index.html">Modul 3 : Sifat Membran Pasif</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-4/index.html">Modul 4 : Potensial Aksi dan Propagasinya</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-5/index.html">Modul 5 : Sinaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-6/index.html">Modul 6: Sinyal Biopotensial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-7/index.html">Modul 7: EMG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-8/index.html">Module 8: ECG/EKG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-9/index.html">Module 9 : EEG</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 10 : EOG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module-11/index.html">Module 11 : Conclusion</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extracellular Electrophysiology Acquisition</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../open-ephys/index.html">Course Curriculum</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-1/index.html">Teori Hari 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-2/index.html">Teori Hari 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-3/index.html">Teori Hari 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/theory-day-4/index.html">Teori Hari 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/exday1-nokit.html">Latihan Hari ke-1: Tanpa Perangkat Keras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-ephys/exday2-nokit.html">Latihan Hari 2: Tanpa Perangkat Keras</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Courses</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">&lt;no title&gt;</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Module 10 : EOG</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-10-eog">
+<span id="neuroscience-basics-for-biopotential-signals-module-10"></span><h1>Module 10 : EOG<a class="headerlink" href="#module-10-eog" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Terminologi Dasar</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Elektrookulografi (Electrooculography)</strong> : Teknik untuk mengukur aktivitas listrik mata.</p></li>
+<li><p><strong>Elektrookulograf (Electrooculograph)</strong> : Perangkat untuk mengukur aktivitas listrik mata.</p></li>
+<li><p><strong>Elektrookulogram (Electrooculogram)</strong> : Representasi grafis dari aktivitas listrik mata.</p></li>
+</ol>
+</li>
+</ul>
+<section id="pendahuluan">
+<h2>10.1 Pendahuluan<a class="headerlink" href="#pendahuluan" title="Link to this heading">#</a></h2>
+<p>Elektrookulografi (EOG) adalah teknik elektrofisiologi non-invasif yang digunakan untuk merekam aktivitas listrik
+yang dihasilkan oleh pergerakan mata. Metode ini paling umum digunakan untuk menilai fungsi retina,
+khususnya <strong>Retinal Pigment Epithelium (RPE)</strong>.</p>
+<p><strong>Rentang frekuensi EOG : 0,1 hingga 20 Hz</strong> <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+</section>
+<section id="prinsip-dasar">
+<h2>10.2 Prinsip Dasar<a class="headerlink" href="#prinsip-dasar" title="Link to this heading">#</a></h2>
+<p>Prinsip dasar EOG didasarkan pada fakta bahwa mata manusia bertindak sebagai sebuah dipol listrik,
+di mana kornea (bagian depan mata) bermuatan positif dan retina (bagian belakang mata) bermuatan negatif.
+Hal ini menghasilkan potensial tetap korneo-retina dengan nilai berkisar antara 2 mV hingga 10 mV,
+dengan nilai tipikal sekitar 5–6 mV pada manusia.</p>
+</section>
+<section id="cara-kerja">
+<h2>10.3 Cara Kerja<a class="headerlink" href="#cara-kerja" title="Link to this heading">#</a></h2>
+<section id="penempatan-elektroda">
+<h3>10.3.1 Penempatan Elektroda<a class="headerlink" href="#penempatan-elektroda" title="Link to this heading">#</a></h3>
+<p>Pada EOG, elektroda permukaan ditempatkan pada kulit di sekitar mata untuk menangkap aktivitas listrik
+yang berkaitan dengan pergerakan mata dengan cara berikut:</p>
+<ul class="simple">
+<li><p><strong>EOG Horizontal</strong> : Elektroda diposisikan di kanthus luar (sudut) kedua mata untuk mendeteksi
+pergerakan mata ke kiri dan kanan.</p></li>
+<li><p><strong>EOG Vertikal</strong> : Elektroda ditempatkan di atas dan di bawah satu mata untuk mendeteksi
+pergerakan ke atas, ke bawah, serta kedipan mata.</p></li>
+</ul>
+</section>
+<section id="deteksi-sinyal">
+<h3>10.3.2 Deteksi Sinyal<a class="headerlink" href="#deteksi-sinyal" title="Link to this heading">#</a></h3>
+<p>Mata manusia bertindak sebagai dipol listrik, dengan kornea bermuatan positif relatif terhadap retina.
+Ketika mata bergerak, orientasi dipol ini berubah dan menghasilkan perbedaan tegangan yang dapat diukur
+oleh elektroda. Perubahan tegangan ini berkaitan dengan pergerakan mata seperti saccade, smooth pursuit,
+dan kedipan mata, serta direkam sebagai sinyal EOG.</p>
+</section>
+<section id="penguatan-dan-penyaringan-sinyal">
+<h3>10.3.3 Penguatan dan Penyaringan Sinyal<a class="headerlink" href="#penguatan-dan-penyaringan-sinyal" title="Link to this heading">#</a></h3>
+<p>Sinyal EOG merupakan sinyal bioelektrik dengan amplitudo rendah, umumnya diukur dalam satuan mikrovolt
+hingga milivolt. Oleh karena itu, sinyal terlebih dahulu diperkuat agar sesuai untuk akuisisi digital.
+Selanjutnya, dilakukan penyaringan untuk menghilangkan gangguan yang tidak diinginkan seperti:</p>
+<p><strong>Perangkat keras Upside Down Labs yang kompatibel untuk akuisisi dan pemrosesan sinyal EOG:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../hardware/bioamp/neuro-play-ground-lite/index.html#neuro-play-ground-lite"><span class="std std-ref">Neuro PlayGround Lite</span></a></p></li>
+<li><p><a class="reference internal" href="../../../hardware/bioamp/bioamp-exg-pill/index.html#bioamp-exg-pill"><span class="std std-ref">Bioamp EXG Pill</span></a></p></li>
+</ul>
+<p>Kami menyediakan perangkat lunak <strong>open source</strong> <a class="reference internal" href="../../../software/index.html#upsidedownlabs-software-home"><span class="std std-ref">Chords</span></a> dengan fitur
+visualisasi sinyal, perekaman data (opsi simpan dan unduh yang mudah), plotting berbasis waktu,
+serta analisis frekuensi dan bandpower.</p>
+</section>
+</section>
+<section id="aplikasi-eog">
+<h2>10.4 Aplikasi EOG<a class="headerlink" href="#aplikasi-eog" title="Link to this heading">#</a></h2>
+<section id="aplikasi-klinis">
+<h3>10.4.1 Aplikasi Klinis<a class="headerlink" href="#aplikasi-klinis" title="Link to this heading">#</a></h3>
+<section id="oftalmologi-dan-neurologi">
+<h4>1. Oftalmologi dan Neurologi<a class="headerlink" href="#oftalmologi-dan-neurologi" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Digunakan untuk menilai fungsi retinal pigment epithelium (RPE) dalam mendeteksi penyakit seperti
+<strong>Best vitelliform macular dystrophy</strong> dan makulopati lainnya. <a class="footnote-reference brackets" href="#id5" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
+<li><p>Digunakan dalam diagnosis dan pemantauan gangguan pergerakan mata seperti nistagmus,
+kelainan saccade, dan kelumpuhan saraf motorik okular.</p></li>
+</ul>
+</section>
+<section id="kedokteran-tidur">
+<h4>2. Kedokteran Tidur<a class="headerlink" href="#kedokteran-tidur" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Digunakan dalam evaluasi gangguan tidur (seperti narkolepsi, sleep apnea, dan parasomnia)
+melalui penentuan tahap tidur pada polisomnografi, khususnya untuk mengamati fase
+<strong>REM (Rapid Eye Movement)</strong> yang berkaitan dengan mimpi saat tidur.</p></li>
+</ul>
+</section>
+</section>
+<section id="interaksi-manusiakomputer-hci">
+<h3>10.4.2 Interaksi Manusia–Komputer (HCI)<a class="headerlink" href="#interaksi-manusiakomputer-hci" title="Link to this heading">#</a></h3>
+<section id="pemasaran-dan-periklanan">
+<h4>1. Pemasaran dan Periklanan<a class="headerlink" href="#pemasaran-dan-periklanan" title="Link to this heading">#</a></h4>
+<p>Pelacakan mata berbasis EOG digunakan dalam riset pemasaran untuk menganalisis perilaku konsumen,
+misalnya bagian iklan atau situs web yang paling menarik perhatian.</p>
+</section>
+<section id="pelacakan-tatapan-gaze-tracking">
+<h4>2. Pelacakan Tatapan (Gaze Tracking)<a class="headerlink" href="#pelacakan-tatapan-gaze-tracking" title="Link to this heading">#</a></h4>
+<p>EOG merupakan bagian dari sistem pelacakan tatapan dalam HCI untuk memahami ke mana seseorang melihat
+pada sebuah layar. Teknologi ini digunakan dalam antarmuka pengguna yang lebih intuitif serta aplikasi
+realitas virtual (VR), gim, dan media interaktif.</p>
+</section>
+</section>
+<section id="teknologi-asistif">
+<h3>10.4.3 Teknologi Asistif<a class="headerlink" href="#teknologi-asistif" title="Link to this heading">#</a></h3>
+<section id="alat-bantu-komunikasi">
+<h4>1. Alat Bantu Komunikasi<a class="headerlink" href="#alat-bantu-komunikasi" title="Link to this heading">#</a></h4>
+<p>EOG banyak digunakan dalam teknologi asistif bagi individu dengan disabilitas berat
+(misalnya <strong>locked-in syndrome</strong>). Metode ini memungkinkan komunikasi melalui deteksi
+gerakan mata untuk memilih huruf, kata, atau simbol di layar.</p>
+</section>
+<section id="sistem-kendali">
+<h4>2. Sistem Kendali<a class="headerlink" href="#sistem-kendali" title="Link to this heading">#</a></h4>
+<p>Pergerakan mata yang direkam oleh EOG dapat diintegrasikan ke dalam sistem kendali berbagai perangkat,
+seperti kursi roda atau komputer, untuk membantu individu dengan keterbatasan mobilitas.</p>
+</section>
+</section>
+<section id="pemantauan-pengemudi-menggunakan-pelacakan-mata">
+<h3>10.4.4 Pemantauan Pengemudi Menggunakan Pelacakan Mata<a class="headerlink" href="#pemantauan-pengemudi-menggunakan-pelacakan-mata" title="Link to this heading">#</a></h3>
+<p>EOG digunakan dalam sistem otomotif untuk memantau tingkat perhatian pengemudi, mendeteksi tanda-tanda
+kelelahan atau kantuk, serta menilai tingkat fokus. Dengan menganalisis pergerakan mata,
+sistem dapat mengidentifikasi penurunan konsentrasi dan memberikan peringatan atau
+menyesuaikan fitur keselamatan kendaraan.</p>
+</section>
+<section id="proyek-menggunakan-eog">
+<h3>Proyek Menggunakan EOG<a class="headerlink" href="#proyek-menggunakan-eog" title="Link to this heading">#</a></h3>
+<p>Anda dapat memanfaatkan perangkat keras BioAmp kami untuk membuat berbagai aplikasi.
+Beberapa contoh aplikasi ditampilkan di bawah ini:</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mt-4 sd-mb-4 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Mendeteksi Gerakan Mata Atas dan Bawah Menggunakan EOG</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Tracking-UP-and-DOWN-Movements-of-Eyes-Using-EOG/"><span>https://www.instructables.com/Tracking-UP-and-DOWN-Movements-of-Eyes-Using-EOG/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Mengontrol Servo Claw Menggunakan Kedipan Mata (EOG)</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Control-a-Servo-Claw-Using-Your-Eye-Blinks-EOG/"><span>https://www.instructables.com/Control-a-Servo-Claw-Using-Your-Eye-Blinks-EOG/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Mengontrol Gim Dino Menggunakan Kedipan Mata (EOG)</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Control-Dino-Game-Using-Eye-Blinks-EOG/"><span>https://www.instructables.com/Control-Dino-Game-Using-Eye-Blinks-EOG/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Detektor Kantuk Menggunakan Sinyal EOG dengan BioAmp EXG Pill</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Drowsiness-Detector-by-Detecting-EOG-Signals-Using/"><span>https://www.instructables.com/Drowsiness-Detector-by-Detecting-EOG-Signals-Using/</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Visualisasi Impuls Listrik Mata (EOG) Menggunakan BioAmp EXG Pill</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://www.instructables.com/Visualizing-Electrical-Impulses-of-Eyes-EOG-Using-/"><span>https://www.instructables.com/Visualizing-Electrical-Impulses-of-Eyes-EOG-Using-/</span></a></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="kelebihan-eog">
+<h2>10.5 Kelebihan EOG<a class="headerlink" href="#kelebihan-eog" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Metode non-invasif dan aman</p></li>
+<li><p>Resolusi temporal tinggi</p></li>
+<li><p>Dapat digunakan saat kelopak mata sebagian tertutup (misalnya saat tidur)</p></li>
+<li><p>Mendukung kontrol tanpa tangan pada aplikasi asistif dan HCI</p></li>
+<li><p>Efektif untuk pemantauan jangka panjang dan kontinu</p></li>
+</ul>
+</section>
+<section id="keterbatasan-eog">
+<h2>10.6 Keterbatasan EOG<a class="headerlink" href="#keterbatasan-eog" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Presisi spasial terbatas</strong> : Hanya menunjukkan arah gerakan mata, bukan detail gerakan kecil.</p></li>
+<li><p><strong>Dipengaruhi noise dan interferensi</strong> : Gerakan otot wajah, kedipan, dan gangguan listrik.</p></li>
+<li><p><strong>Detail spasial terbatas</strong> : Tidak menunjukkan titik pandang secara spesifik.</p></li>
+<li><p><strong>Drift sinyal seiring waktu</strong> : Pergeseran baseline pada perekaman jangka panjang.</p></li>
+<li><p><strong>Ketidaknyamanan elektroda</strong> : Penempatan di sekitar mata dapat terasa tidak nyaman.</p></li>
+</ol>
+</section>
+<section id="ringkasan">
+<h2>10.7 Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
+<p>Elektrookulografi merupakan teknik non-invasif yang penting untuk merekam pergerakan mata dengan
+resolusi temporal tinggi. Meskipun memiliki keterbatasan dalam akurasi spasial, EOG tetap banyak
+digunakan dalam diagnostik klinis, studi tidur, teknologi asistif, dan interaksi manusia–komputer
+karena kesederhanaan, keamanan, dan keandalannya.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Konten ini disediakan hanya untuk tujuan pembelajaran. Selalu konsultasikan dengan tenaga medis
+profesional untuk penerapan klinis.</strong></p>
+</div>
+</section>
+<section id="referensi">
+<h2>10.8 Referensi<a class="headerlink" href="#referensi" title="Link to this heading">#</a></h2>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1016/j.protcy.2013.12.338">Banerjee A., Datta S., Pal M., Konar A., Tibarewala D. N., Janarthanan R. “Classifying electrooculogram to detect directional eye movements.” Procedia Technology, Vol. 10 (2013), pp. 67–75.</a></p>
+</aside>
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/31277871/">Creel DJ. The electrooculogram. Handb Clin Neurol. 2019;160:495-499. doi:10.1016/B978-0-444-64032-1.00033-3</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

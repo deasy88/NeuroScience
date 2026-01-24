@@ -1,0 +1,1034 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chords-Python &#8212; upsidedownlabs.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=91514681" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'software/chords/chords-python/index';</script>
+    <link rel="canonical" href="docs.upsidedownlabs.tech/software/chords/chords-python/index.html" />
+    <link rel="icon" href="../../../_static/ideas.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Chords-LSL-Connector" href="../chords-lsl-connector/index.html" />
+    <link rel="prev" title="Chords-Web" href="../chords-web/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/ideas.png" class="logo__image only-light" alt="upsidedownlabs.github.io  documentation - Home"/>
+    <img src="../../../_static/ideas.png" class="logo__image only-dark pst-js-only" alt="upsidedownlabs.github.io  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../hardware/index.html">
+    Hardware
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Software
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../research/index.html">
+    Research
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../kits/index.html">
+    DIY Kits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guides/index.html">
+    Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../courses/index.html">
+    Courses
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Chords</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chords-web/index.html">Chords-Web</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chords-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chords-lsl-connector/index.html">Chords-LSL-Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chords-lsl-visualizer/index.html">Chords-LSL-Visualizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chords-java/index.html">Chords-Java</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../tools/npg-lite-flasher/index.html">NPG Lite Flasher</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">BioAmp Software</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../bioamp/muscle-bioamp-arduino-firmware/index.html">Muscle (EMG) BioAmp Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bioamp/eye-bioamp-arduino-firmware/index.html">Firmware Arduino BioAmp Mata (EOG)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bioamp/heart-bioamp-arduino-firmware/index.html">Firmware Arduino BioAmp Jantung (ECG)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bioamp/brain-bioamp-arduino-firmware/index.html">Brain (EEG) BioAmp Arduino Firmware</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Software</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Chords-Python</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="chords-python">
+<span id="chords-pythons"></span><h1>Chords-Python<a class="headerlink" href="#chords-python" title="Link to this heading">#</a></h1>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/bj7exKRsuZ8" style="border: 0; height: 345px; width: 560px">
+</iframe></div><section id="ringkasan">
+<h2>Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
+<p>Chords-Python adalah sekumpulan alat sumber terbuka untuk merekam sinyal bio-potensial seperti <strong>ECG</strong>, <strong>EMG</strong>, <strong>EEG</strong>, atau <strong>EOG</strong>, bersama dengan visualisasi menggunakan perangkat keras BioAmp. Ini ideal untuk tujuan pendidikan karena mempromosikan Neurosains DIY dan membuat eksplorasi sinyal bio-potensial lebih mudah diakses untuk siswa dan peneliti.</p>
+</section>
+<section id="fitur">
+<h2>Fitur<a class="headerlink" href="#fitur" title="Link to this heading">#</a></h2>
+</section>
+<section id="persyaratan-perangkat-lunak">
+<h2>Persyaratan Perangkat Lunak<a class="headerlink" href="#persyaratan-perangkat-lunak" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.arduino.cc/en/software">Arduino IDE</a> – Diperlukan untuk mengunggah firmware Chords Arduino ke papan pengembangan Anda.</p></li>
+<li><p><a class="reference external" href="https://www.python.org/downloads/">Python</a> – Pastikan Anda memiliki versi terbaru yang terinstal.</p></li>
+<li><p><a class="reference external" href="https://code.visualstudio.com/">VS Code</a> atau editor kode lainnya (Sebagai alternatif, Anda dapat menggunakan Command Prompt).</p></li>
+</ul>
+</section>
+<section id="persyaratan-perangkat-keras">
+<h2>Persyaratan Perangkat Keras<a class="headerlink" href="#persyaratan-perangkat-keras" title="Link to this heading">#</a></h2>
+<p>Untuk menggunakan Chords-Python, Anda memerlukan:</p>
+<ul class="simple">
+<li><p>Papan pengembangan (<a class="reference external" href="https://github.com/upsidedownlabs/Chords-Arduino-Firmware/blob/main/README.md">Compatible Boards</a>)</p></li>
+<li><p>Kabel USB (tipe tergantung pada papan)</p></li>
+<li><p><a class="reference external" href="https://docs.upsidedownlabs.tech/hardware/index.html">BioAmp Hardware</a> dan aksesorinya</p></li>
+</ul>
+</section>
+<section id="menyiapkan-perangkat-keras">
+<h2>Menyiapkan perangkat keras<a class="headerlink" href="#menyiapkan-perangkat-keras" title="Link to this heading">#</a></h2>
+<p>Buat semua koneksi sesuai dengan <a class="reference external" href="https://docs.upsidedownlabs.tech/hardware/index.html">perangkat keras yang Anda gunakan</a> , termasuk koneksi sensor dengan papan pengembangan, koneksi tubuh dengan sensor, dan koneksi dari papan pengembangan ke laptop Anda.</p>
+</section>
+<section id="mengunggah-kode">
+<h2>Mengunggah kode<a class="headerlink" href="#mengunggah-kode" title="Link to this heading">#</a></h2>
+<p>Setelah Anda semua siap, saatnya mengunggah kode ke papan pengembangan Anda. Pergi ke repositori GitHub <a class="reference external" href="https://github.com/upsidedownlabs/Chords-Arduino-Firmware">Chords Arduino Firmware</a> , gulir ke bawah ke tabel papan yang didukung, cari nama papan Anda, dan klik sketsa Arduino yang sesuai dengan baris tersebut.
+Salin sketsa dan tempel ke Arduino IDE.
+Pergi ke tools, pilih papan Anda, dan port COM yang benar. Sekarang, tekan tombol upload.</p>
+</section>
+<section id="membuka-chords-python">
+<span id="using-chords-python"></span><h2>Membuka Chords-Python<a class="headerlink" href="#membuka-chords-python" title="Link to this heading">#</a></h2>
+<p>Ada dua cara untuk menggunakan Chords-Python:</p>
+<p><strong>A. Menggunakan Paket Python `chordspy` (Direkomendasikan)</strong></p>
+<p><strong>B. Menjalankan Script Secara Manual dari Repository</strong></p>
+<section id="a-menggunakan-paket-chordspy">
+<h3>A. Menggunakan paket chordspy<a class="headerlink" href="#a-menggunakan-paket-chordspy" title="Link to this heading">#</a></h3>
+<p>Ini adalah cara paling lancar untuk memulai. Ikuti langkah-langkah di bawah ini:</p>
+<ol class="arabic">
+<li><p><strong>Instal Python</strong>
+Pastikan versi terbaru Python terinstal.</p></li>
+<li><p><strong>Buat dan Aktifkan Virtual Environment</strong>:</p>
+<ul>
+<li><p><strong>Pada Windows</strong>:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m venv .venv</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.venv\Scripts\activate</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Pada macOS/Linux</strong>:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 -m venv .venv</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source .venv/bin/activate</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Instal Paket</strong>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install chordspy</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Luncurkan Antarmuka Web</strong>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">chordspy</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Antarmuka web akan terbuka di mana Anda dapat menghubungkan perangkat dan mengakses aplikasi.</p>
+<figure class="align-center" id="id22">
+<img alt="Interface in Light Mode" src="../../../_images/light-interface.png" />
+<figcaption>
+<p><span class="caption-text">Interface in Light Mode</span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id23">
+<img alt="Interface in Dark Mode" src="../../../_images/dark-interface.png" />
+<figcaption>
+<p><span class="caption-text">Interface in Dark Mode</span><a class="headerlink" href="#id23" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="b-running-scripts-manually-alternative">
+<h3>B. Running Scripts Manually (Alternative)<a class="headerlink" href="#b-running-scripts-manually-alternative" title="Link to this heading">#</a></h3>
+<p>If you prefer running scripts directly (for development, debugging, or customization):</p>
+<ol class="arabic">
+<li><p><strong>Download the Repository</strong>:</p>
+<ul class="simple">
+<li><p>You can download the Chords-Python repository from GitHub by visiting the following link: <a class="reference external" href="https://github.com/upsidedownlabs/Chords-Python/">Chords-Python</a>.</p></li>
+<li><p>Or, you can clone the repository using Git by running the following command:</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/upsidedownlabs/Chords-Python.git</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Create and Activate a Virtual Environment</strong> (if not already):</p>
+<ul>
+<li><p><strong>On Windows</strong>:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m venv .venv</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.venv\Scripts\activate</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>On macOS/Linux</strong>:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 -m venv .venv</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source .venv/bin/activate</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Install Requirements</strong>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install -r requirements.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Run the Application</strong>:</p>
+<p>Navigate to the <cite>chordspy</cite> folder and run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m chordspy.app                          # To launch the web interface</span>
+<span class="go">python -m chordspy.connection --protocol usb    # To start LSL stream via USB</span>
+<span class="go">python -m chordspy.connection --protocol ble    # To start LSL stream via BLE</span>
+<span class="go">python -m chordspy.connection --protocol wifi   # To start LSL stream via WiFi</span>
+</pre></div>
+</div>
+<p>To run any application, open a new terminal:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python chordspy.gui.py         # GUI Application</span>
+<span class="go">python chordspy.ffteeg.py      # EEG with FFT Analysis</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="koneksi">
+<h2>Koneksi<a class="headerlink" href="#koneksi" title="Link to this heading">#</a></h2>
+<p>Langkah pertama adalah membuat koneksi dengan perangkat Anda dan memulai stream.</p>
+<p>Ada tiga opsi koneksi yang tersedia:</p>
+<ul class="simple">
+<li><p>Wi-Fi</p></li>
+<li><p>Bluetooth</p></li>
+<li><p>Serial (USB)</p></li>
+</ul>
+<section id="wi-fi">
+<h3>Wi-Fi<a class="headerlink" href="#wi-fi" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Unggah firmware Wi-Fi melalui repositori <code class="docutils literal notranslate"><span class="pre">Chords-Arduino-Firmware</span></code></p></li>
+<li><p>Nyalakan perangkat dan hubungkan ke access point yang dibuat oleh perangkat (misalnya, <code class="docutils literal notranslate"><span class="pre">npg-lite-2</span></code>)</p></li>
+<li><p>Di antarmuka web:</p>
+<ul class="simple">
+<li><p>Klik tombol <strong>Wi-Fi</strong></p></li>
+<li><p>Klik tombol <strong>Connect</strong></p></li>
+</ul>
+</li>
+</ol>
+<p>Notifikasi pop-up akan muncul yang menunjukkan koneksi berhasil.</p>
+</section>
+<section id="bluetooth">
+<h3>Bluetooth<a class="headerlink" href="#bluetooth" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Unggah firmware Bluetooth melalui repositori <code class="docutils literal notranslate"><span class="pre">Chords-Arduino-Firmware</span></code></p></li>
+<li><p>Nyalakan perangkat dan aktifkan Bluetooth di komputer Anda</p></li>
+<li><p>Di antarmuka web:</p>
+<ul class="simple">
+<li><p>Klik tombol <strong>Bluetooth</strong></p></li>
+<li><p>Pilih perangkat Anda dari daftar perangkat yang tersedia</p></li>
+<li><p>Tekan tombol <strong>Connect</strong></p></li>
+</ul>
+</li>
+</ol>
+<p>Notifikasi pop-up akan muncul yang menunjukkan koneksi berhasil.</p>
+</section>
+<section id="serial-usb">
+<h3>Serial (USB)<a class="headerlink" href="#serial-usb" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Unggah firmware Serial melalui repositori <code class="docutils literal notranslate"><span class="pre">Chords-Arduino-Firmware</span></code></p></li>
+<li><p>Hubungkan perangkat ke komputer Anda menggunakan kabel USB</p></li>
+<li><p>Di antarmuka web:</p>
+<ul class="simple">
+<li><p>Klik tombol <strong>Serial</strong></p></li>
+<li><p>Klik tombol <strong>Connect</strong></p></li>
+</ul>
+</li>
+</ol>
+<p>Notifikasi pop-up akan muncul yang menunjukkan koneksi berhasil.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Langkah koneksi penting karena memulai LSL Stream, yang diperlukan untuk menjalankan aplikasi.</p>
+</div>
+</section>
+</section>
+<section id="csv-logging">
+<h2>CSV Logging<a class="headerlink" href="#csv-logging" title="Link to this heading">#</a></h2>
+<p>Data mentah yang diterima dari perangkat dapat dicatat ke file CSV untuk analisis lebih lanjut atau penyimpanan. Fitur opsional ini dapat diaktifkan atau dinonaktifkan di antarmuka web.</p>
+<p>Untuk menggunakan logging CSV:</p>
+<ol class="arabic simple">
+<li><p>Klik tombol <strong>Start recording</strong> untuk mulai mencatat
+- File dengan nama dibuat <code class="docutils literal notranslate"><span class="pre">ChordsPy_{timestamp}.csv</span></code> di folder yang sama.
+- File menyertakan kolom untuk counter dan data channel</p></li>
+<li><p>Klik tombol <strong>Stop recording</strong> untuk mengakhiri pencatatan
+- File akan disimpan di folder yang sama</p></li>
+</ol>
+<figure class="align-center" id="id24">
+<img alt="CSV Logging" src="../../../_images/csv.png" />
+<figcaption>
+<p><span class="caption-text">CSV Logging</span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="aplikasi">
+<h2>Aplikasi<a class="headerlink" href="#aplikasi" title="Link to this heading">#</a></h2>
+<p>Ada banyak aplikasi yang tersedia yang streaming LSL dan dapat dijalankan untuk berbagai tujuan.</p>
+<p>Daftar aplikasi yang tersedia:</p>
+<section id="ecg-with-heart-rate">
+<h3>1. <cite>ECG with Heart Rate</cite><a class="headerlink" href="#ecg-with-heart-rate" title="Link to this heading">#</a></h3>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/tZud2tc-TGI" style="border: 0; height: 345px; width: 560px">
+</iframe></div><section id="id2">
+<h4>Ringkasan<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p><strong>ECG with Heart Rate</strong> adalah aplikasi real-time yang dirancang untuk memvisualisasikan dan menganalisis data Elektrokardiogram (ECG) menggunakan protokol Lab Streaming Layer (LSL). Dibangun dengan Python dan PyQt5, aplikasi ini menyediakan antarmuka grafis untuk memantau sinyal ECG, mendeteksi R-peaks (detak jantung), dan menghitung detak jantung secara real-time. Ini menerapkan teknik pemrosesan sinyal dan menggunakan pustaka <cite>neurokit2</cite> untuk memperkirakan deteksi R-peak dan detak jantung.</p>
+</section>
+<section id="id3">
+<h4>Fitur<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>Jendela GUI akan muncul, menampilkan sinyal ECG real-time bersama dengan detak jantung yang dihitung.</p>
+<figure class="align-center" id="id25">
+<img alt="Heart Rate with ECG" src="../../../_images/heartbeat_ecg.png" />
+<figcaption>
+<p><span class="caption-text">Heart Rate with ECG</span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="emg-with-envelope">
+<h3>2. <cite>EMG with Envelope</cite><a class="headerlink" href="#emg-with-envelope" title="Link to this heading">#</a></h3>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/TiDwSQEY2eY" style="border: 0; height: 345px; width: 560px">
+</iframe></div><section id="id4">
+<h4>Ringkasan<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p><strong>EMG with Envelope</strong> adalah aplikasi berbasis Python yang dirancang untuk memvisualisasikan dan menganalisis sinyal Elektromiografi (EMG) secara real-time. Ini terhubung ke stream data EMG menggunakan protokol Lab Streaming Layer (LSL), memproses sinyal untuk mengekstrak envelope EMG, dan menampilkan sinyal EMG yang difilter dan envelope-nya dalam antarmuka grafis yang ramah pengguna. Dibangun dengan <cite>PyQt5</cite> dan <cite>pyqtgraph</cite>, aplikasi ini menyediakan alat visualisasi responsif dan interaktif untuk siswa, peneliti, atau pengembang yang bekerja dengan data EMG.</p>
+</section>
+<section id="id5">
+<h4>Fitur<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>Jendela GUI akan muncul, menampilkan sinyal EMG real-time bersama dengan Envelope EMG yang dihitung.</p>
+<figure class="align-center" id="id26">
+<img alt="EMG with Envelope" src="../../../_images/emgenvelope.png" />
+<figcaption>
+<p><span class="caption-text">EMG with Envelope</span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="eog-with-blinks">
+<h3>3. <cite>EOG with Blinks</cite><a class="headerlink" href="#eog-with-blinks" title="Link to this heading">#</a></h3>
+<p><strong>EOG with Blinks</strong> adalah aplikasi berbasis Python yang dirancang untuk memvisualisasikan dan mendeteksi kedipan mata secara real-time menggunakan sinyal Elektrookulografi (EOG). Dibangun dengan framework PyQt5 dan PyQtGraph untuk plotting, aplikasi ini terhubung ke stream LSL (Lab Streaming Layer) untuk memperoleh data EOG, memproses sinyal menggunakan filter low-pass, dan mendeteksi kedipan berdasarkan threshold dinamis. Aplikasi ini menyediakan antarmuka dual-plot untuk menampilkan sinyal EOG yang difilter dan kedipan yang terdeteksi, menjadikannya alat yang berguna untuk pemantauan dan analisis data EOG secara real-time.</p>
+</section>
+<section id="id6">
+<h3>Fitur<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>Jendela GUI akan muncul, menampilkan sinyal EOG real-time bersama dengan Kedipan yang ditandai sebagai titik Merah.</p>
+<figure class="align-center" id="id27">
+<img alt="EOG with Blinks" src="../../../_images/eog.png" />
+<figcaption>
+<p><span class="caption-text">EOG with Blinks</span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="eeg-with-fft">
+<h3>4. <cite>EEG with FFT</cite><a class="headerlink" href="#eeg-with-fft" title="Link to this heading">#</a></h3>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/yVD9KmyZgxA" style="border: 0; height: 345px; width: 560px">
+</iframe></div><section id="id7">
+<h4>Ringkasan<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p><strong>EEG with FFT and Brainwave Power</strong> adalah aplikasi berbasis Python yang dirancang untuk memvisualisasikan dan menganalisis sinyal Elektroensefalografi (EEG) secara real-time. Ini terhubung ke stream data EEG menggunakan protokol Lab Streaming Layer (LSL), memproses sinyal untuk menghilangkan noise, dan melakukan Fast Fourier Transform (FFT) untuk menghitung daya dari berbagai band frekuensi gelombang otak (Delta, Theta, Alpha, Beta, dan Gamma). Aplikasi ini menyediakan antarmuka pengguna grafis (GUI) yang dibangun dengan <cite>PyQt5</cite> dan <cite>pyqtgraph</cite> untuk visualisasi real-time sinyal EEG mentah, hasil FFT, dan distribusi daya gelombang otak.</p>
+</section>
+<section id="id8">
+<h4>Fitur<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<p>Jendela GUI akan muncul, menampilkan sinyal EEG real-time bersama dengan FFT yang dihitung dan distribusi daya gelombang otak.</p>
+<figure class="align-center" id="id28">
+<img alt="EEG with FFT" src="../../../_images/ffteeg.png" />
+<figcaption>
+<p><span class="caption-text">EEG with FFT</span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Untuk memastikan Anda merekam sinyal berkualitas tinggi, lihat panduan detail di sini: <a class="reference internal" href="../../../guides/troubleshoot/recording_quality_eeg/index.html#recording-quality-eeg"><span class="std std-ref">Troubleshooting EEG Signal Quality</span></a>.</p>
+</div>
+</section>
+</section>
+<section id="eeg-tug-of-war-game">
+<h3>5. <cite>EEG Tug of War Game</cite><a class="headerlink" href="#eeg-tug-of-war-game" title="Link to this heading">#</a></h3>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/XAhcYg1J_7k" style="border: 0; height: 345px; width: 560px">
+</iframe></div><section id="id9">
+<h4>Ringkasan<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<p><strong>EEG Tug of War Game</strong> adalah aplikasi berbasis Python yang memanfaatkan sinyal Elektroensefalografi (EEG) untuk membuat permainan interaktif dua pemain. Pemain mengontrol gerakan bola di layar dengan memodulasi aktivitas otak mereka, khususnya band frekuensi Alpha dan Beta. Permainan menggunakan protokol Lab Streaming Layer (LSL) untuk memperoleh data EEG real-time, memproses sinyal untuk menghitung daya relatif dalam band Alpha dan Beta, dan menerjemahkannya menjadi gaya yang menggerakkan bola. Pemain pertama bertujuan untuk mendorong bola ke sisi lawan untuk mencetak skor dan memenangkan permainan. Aplikasi dibangun menggunakan pustaka <cite>pygame</cite> untuk antarmuka grafis dan terintegrasi dengan <cite>pylsl</cite> untuk akuisisi data EEG.</p>
+</section>
+<section id="id10">
+<h4>Fitur<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<p>Jendela permainan akan terbuka, menampilkan tombol untuk <strong>START/RESTART</strong>, <strong>PLAY/PAUSE</strong>, dan <strong>EXIT</strong>. Tombol-tombol ini menawarkan kontrol intuitif, memungkinkan pemain untuk dengan mudah memulai, menjeda, melanjutkan, atau keluar dari permainan sesuai kebutuhan.</p>
+<figure class="align-center" id="id29">
+<img alt="EEG Tug of War" src="../../../_images/game.png" />
+<figcaption>
+<p><span class="caption-text">EEG Tug of War</span><a class="headerlink" href="#id29" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Untuk instruksi detail, lihat Instructable <a class="reference external" href="https://www.instructables.com/Play-Tug-of-War-Game-With-Your-Mind-Using-EEG-1/#ible-footer-portal">EEG Tug of War Game</a>.</p>
+</section>
+</section>
+<section id="eeg-beetle-game">
+<h3>6. <cite>EEG Beetle Game</cite><a class="headerlink" href="#eeg-beetle-game" title="Link to this heading">#</a></h3>
+<section id="id12">
+<h4>Ringkasan<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<p><strong>EEG Beetle Game</strong> adalah aplikasi berbasis Python yang menggunakan sinyal Elektroensefalografi (EEG) untuk mengontrol gerakan kumbang dalam lingkungan permainan 2D. Permainan memanfaatkan protokol Lab Streaming Layer (LSL) untuk memperoleh data EEG real-time, memproses sinyal untuk mendeteksi tingkat fokus pengguna, dan menerjemahkannya menjadi gerakan ke atas atau ke bawah kumbang. Aplikasi dibangun menggunakan pustaka <cite>pygame</cite> untuk antarmuka permainan dan terintegrasi dengan teknik pemrosesan sinyal untuk menganalisis data EEG secara real-time.</p>
+</section>
+<section id="id13">
+<h4>Fitur<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<p>Jendela GUI akan muncul, menampilkan semua pesan kalibrasi, diikuti dengan permainan dimulai, dan akhirnya menampilkan permainan dengan kumbang.</p>
+<figure class="align-center" id="id30">
+<img alt="EEG Beetle Game" src="../../../_images/beetle.png" />
+<figcaption>
+<p><span class="caption-text">EEG Beetle Game</span><a class="headerlink" href="#id30" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="gui">
+<h3>7. <cite>GUI</cite><a class="headerlink" href="#gui" title="Link to this heading">#</a></h3>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/BseTIdoimws" style="border: 0; height: 345px; width: 560px">
+</iframe></div><section id="id14">
+<h4>Ringkasan<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
+<p>Aplikasi <strong>GUI</strong> adalah alat berbasis Python yang dirancang untuk memvisualisasikan stream data real-time dari perangkat Arduino menggunakan protokol Lab Streaming Layer (LSL). Aplikasi terhubung ke stream LSL, mengambil data multi-channel, dan memplotnya secara real-time menggunakan pustaka <cite>pyqtgraph</cite>.</p>
+</section>
+<section id="id15">
+<h4>Fitur<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
+<p>Jendela GUI akan muncul yang menampilkan data secara real-time.</p>
+<figure class="align-center" id="id31">
+<img alt="GUI" src="../../../_images/gui.jpg" />
+<figcaption>
+<p><span class="caption-text">GUI</span><a class="headerlink" href="#id31" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="eog-keystroke-emulator">
+<h3>8. <cite>EOG Keystroke Emulator</cite><a class="headerlink" href="#eog-keystroke-emulator" title="Link to this heading">#</a></h3>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/ZJmUUtHJj08" style="border: 0; height: 345px; width: 560px">
+</iframe></div><section id="id16">
+<h4>Ringkasan<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
+<p><strong>EOG Keystroke Emulator</strong> adalah aplikasi berbasis Python yang dirancang untuk mendeteksi kedipan mata menggunakan sinyal Elektrookulografi (EOG) dan menerjemahkannya menjadi keystroke. Aplikasi memanfaatkan protokol Lab Streaming Layer (LSL) untuk memperoleh data EOG real-time, memproses sinyal untuk mendeteksi kedipan, dan mensimulasikan penekanan spacebar setiap kali kedipan terdeteksi. Aplikasi dibangun menggunakan pustaka <cite>tkinter</cite> untuk antarmuka pengguna grafis (GUI) dan terintegrasi dengan <cite>pyautogui</cite> untuk emulasi keystroke.</p>
+</section>
+<section id="id17">
+<h4>Fitur<a class="headerlink" href="#id17" title="Link to this heading">#</a></h4>
+<p>Jendela kecil muncul di sudut, menampilkan tombol <em>Connect</em>. Setelah terhubung, tombol <em>Start</em> menjadi terlihat. Menekan tombol <em>Start</em> memulai deteksi kedipan, dan setiap kedipan yang terdeteksi memicu penekanan tombol spacebar.</p>
+<figure class="align-center" id="id32">
+<img alt="Keystroke Emulator" src="../../../_images/keystroke.png" />
+<figcaption>
+<p><span class="caption-text">Keystroke Emulator</span><a class="headerlink" href="#id32" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="csv-plotter">
+<h3>9. <cite>CSV Plotter</cite><a class="headerlink" href="#csv-plotter" title="Link to this heading">#</a></h3>
+<div class="video_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/wMnCOprRpZo" style="border: 0; height: 345px; width: 560px">
+</iframe></div><section id="id18">
+<h4>Ringkasan<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
+<p><strong>CSV Plotter</strong> adalah aplikasi berbasis Python yang dirancang untuk memvisualisasikan data dari file CSV. Dibangun menggunakan pustaka <cite>tkinter</cite> untuk antarmuka pengguna grafis (GUI) dan <cite>plotly</cite> untuk visualisasi data, alat ini memungkinkan pengguna untuk memuat file CSV, memilih channel data tertentu, dan menghasilkan plot garis interaktif.</p>
+</section>
+<section id="id19">
+<h4>Fitur<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
+<p>Pop-up kecil akan muncul, menyediakan opsi untuk memuat file, memilih channel, dan memplot data.</p>
+<figure class="align-center" id="id33">
+<img alt="CSV Plotter" src="../../../_images/csvplotter.png" />
+<figcaption>
+<p><span class="caption-text">CSV Plotter</span><a class="headerlink" href="#id33" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="eog-morse-decoder">
+<h3>10. <cite>EOG Morse Decoder</cite><a class="headerlink" href="#eog-morse-decoder" title="Link to this heading">#</a></h3>
+<section id="id20">
+<h4>Ringkasan<a class="headerlink" href="#id20" title="Link to this heading">#</a></h4>
+<p><strong>EOG Morse Decoder</strong> adalah aplikasi berbasis Python yang memungkinkan pengguna untuk memasukkan kode Morse menggunakan gerakan mata yang terdeteksi melalui sinyal Elektrookulografi (EOG). Dengan menggerakkan mata ke kiri atau kanan, Anda dapat menghasilkan titik dan garis, dan dengan melakukan kedipan ganda atau triple, Anda dapat mengirim karakter atau backspace. Aplikasi ini ideal untuk komunikasi tanpa tangan dan penelitian aksesibilitas.</p>
+<figure class="align-center" id="id34">
+<img alt="Morse Decoder" src="../../../_images/morse_decoder.png" />
+<figcaption>
+<p><span class="caption-text">Morse Decoder</span><a class="headerlink" href="#id34" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="id21">
+<h3>Fitur<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<p>Jendela GUI akan muncul yang memungkinkan Anda untuk memasukkan kode Morse menggunakan gerakan mata dan menampilkan teks yang didekode secara real-time.</p>
+<section id="penempatan-elektroda">
+<h4>Penempatan Elektroda<a class="headerlink" href="#penempatan-elektroda" title="Link to this heading">#</a></h4>
+<p>Penempatan elektroda yang tepat sangat penting untuk deteksi sinyal EOG yang akurat. Tabel di bawah menunjukkan konfigurasi elektroda yang direkomendasikan:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin Elektroda</p></th>
+<th class="head"><p>Deskripsi</p></th>
+<th class="head"><p>Penempatan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A0P</p></td>
+<td><p>Channel 1 Positif</p></td>
+<td><p>Di bawah mata</p></td>
+</tr>
+<tr class="row-odd"><td><p>A0N</p></td>
+<td><p>Channel 1 Negatif</p></td>
+<td><p>Di atas mata</p></td>
+</tr>
+<tr class="row-even"><td><p>A1P</p></td>
+<td><p>Channel 2 Positif</p></td>
+<td><p>Di kiri mata kiri</p></td>
+</tr>
+<tr class="row-odd"><td><p>A1N</p></td>
+<td><p>Channel 2 Negatif</p></td>
+<td><p>Di kanan mata kanan</p></td>
+</tr>
+<tr class="row-even"><td><p>REF</p></td>
+<td><p>Referensi</p></td>
+<td><p>Bagian tulang di belakang telinga</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Channel 1 (A0P/A0N) mendeteksi gerakan mata vertikal untuk deteksi kedipan</p></li>
+<li><p>Channel 2 (A1P/A1N) mendeteksi gerakan mata horizontal untuk deteksi kiri/kanan</p></li>
+<li><p>Persiapan kulit dan kualitas kontak elektroda yang tepat sangat penting untuk performa optimal</p></li>
+</ul>
+</div>
+<figure class="align-center" id="id35">
+<img alt="Electrode Placement Diagram" src="../../../_images/morse-Code_electrode_placement.jpg" />
+<figcaption>
+<p><span class="caption-text">Electrode Placement Diagram</span><a class="headerlink" href="#id35" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="cara-kerja">
+<h4>Cara Kerja<a class="headerlink" href="#cara-kerja" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Akuisisi Sinyal</strong>: Aplikasi terhubung ke stream LSL dan terus membaca data EOG vertikal dan horizontal dari dua channel.</p></li>
+<li><p><strong>Filtering</strong>: Filter notch (50Hz), filter high-pass (1Hz), dan filter low-pass (10Hz) diterapkan untuk menghilangkan interferensi powerline dan mengisolasi frekuensi yang relevan.</p></li>
+<li><p><strong>Pelacakan Baseline</strong>: Baseline rolling dipertahankan untuk EOG horizontal untuk beradaptasi dengan karakteristik sinyal individu.</p></li>
+<li><p><strong>Deteksi Envelope</strong>: Envelope sinyal EOG vertikal dihitung untuk deteksi kedipan yang andal.</p></li>
+<li><p><strong>Deteksi Gerakan</strong>: Deviasi EOG horizontal dari baseline dianalisis untuk mengklasifikasikan gerakan mata kiri dan kanan.</p></li>
+<li><p><strong>Input Kode Morse</strong>:</p>
+<ul>
+<li><p>Gerakan mata kiri → Titik (.)</p></li>
+<li><p>Gerakan mata kanan → Garis (-)</p></li>
+<li><p>Kedipan ganda → Mengirim urutan Morse saat ini sebagai huruf</p></li>
+<li><p>Kedipan triple → Backspace (menghapus karakter terakhir)</p></li>
+</ul>
+</li>
+<li><p><strong>Tampilan GUI</strong>: Visualisasi real-time menampilkan threshold deteksi, level sinyal, isi buffer, dan pesan yang didekode.</p></li>
+</ul>
+</section>
+<section id="menyesuaikan-deteksi-untuk-sinyal-neural-anda">
+<h4>Menyesuaikan Deteksi untuk Sinyal Neural Anda<a class="headerlink" href="#menyesuaikan-deteksi-untuk-sinyal-neural-anda" title="Link to this heading">#</a></h4>
+<p>Aplikasi ini menyediakan GUI intuitif untuk menyesuaikan sensitivitas deteksi secara real-time:</p>
+<p><strong>Penyesuaian Threshold Interaktif:</strong></p>
+<ul class="simple">
+<li><p><strong>Threshold Deteksi Kedipan</strong>: Klik atau tarik marker orange pada batang deteksi kedipan untuk menyesuaikan threshold (rentang: 40-260). Nilai yang lebih tinggi memerlukan kedipan yang lebih kuat.</p></li>
+<li><p><strong>Threshold Gerakan Mata</strong>: Klik atau tarik marker orange pada batang gerakan mata untuk menyesuaikan threshold (rentang: 40-260). Nilai yang lebih tinggi memerlukan gerakan mata yang lebih besar.</p></li>
+</ul>
+<p><strong>Feedback Visual:</strong></p>
+<ul class="simple">
+<li><p>Batang deteksi kedipan menampilkan nilai envelope saat ini (hijau ketika di bawah threshold, merah ketika di atas)</p></li>
+<li><p>Batang gerakan mata menampilkan deviasi dari baseline (biru ketika di bawah threshold, ungu untuk gerakan kiri, merah untuk gerakan kanan)</p></li>
+<li><p>Marker threshold menampilkan nilai threshold saat ini dan dapat ditarik untuk penyesuaian</p></li>
+</ul>
+<p><strong>Parameter Timing</strong> (dapat disesuaikan dalam kode jika diperlukan):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BLINK_DEBOUNCE_MS</span></code> (default: 200ms): Waktu minimum antara deteksi kedipan terpisah</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOUBLE_BLINK_MS</span></code> (default: 1000ms): Jendela waktu untuk deteksi kedipan ganda</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TRIPLE_BLINK_MS</span></code> (default: 1500ms): Jendela waktu untuk deteksi kedipan triple</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EYE_MOVEMENT_DEBOUNCE_MS</span></code> (default: 750ms): Waktu minimum antara deteksi gerakan mata terpisah</p></li>
+</ul>
+<p><strong>Tips untuk Performa Optimal:</strong></p>
+<ul class="simple">
+<li><p>Pastikan NPG Lite terisi daya dan tidak terhubung ke laptop pengisi daya atau perangkat bertenaga AC</p></li>
+<li><p>Duduk jauh dari peralatan bertenaga AC</p></li>
+<li><p>Pastikan persiapan kulit dan kualitas kontak elektroda yang tepat. Baca <a class="reference internal" href="../../../guides/usage-guides/skin-preparation/index.html#skin-preparation"><span class="std std-ref">Panduan Persiapan Kulit</span></a> untuk instruksi detail.</p></li>
+<li><p>Mulai dengan nilai threshold default dan sesuaikan menggunakan slider GUI berdasarkan kekuatan sinyal Anda</p></li>
+<li><p>Pastikan penempatan elektroda yang tepat untuk sinyal EOG vertikal dan horizontal yang bersih</p></li>
+<li><p>Pertahankan posisi pandang netral selama perhitungan baseline awal saat startup</p></li>
+<li><p>Gunakan batang visualisasi real-time untuk memantau kualitas sinyal dan sesuaikan threshold sesuai</p></li>
+</ul>
+</section>
+<section id="pemecahan-masalah">
+<h4>Pemecahan Masalah<a class="headerlink" href="#pemecahan-masalah" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Jika gerakan tidak terdeteksi dengan andal, gunakan GUI untuk menyesuaikan threshold secara real-time dengan mengklik/menarik marker orange</p></li>
+<li><p>Pastikan elektroda ditempatkan dengan benar: EOG vertikal di atas/di bawah satu mata, EOG horizontal di sudut luar kedua mata</p></li>
+<li><p>Tetap rileks dan pertahankan posisi pandang netral selama perhitungan baseline awal</p></li>
+<li><p>Periksa batang visualisasi real-time untuk memastikan sinyal terdeteksi dengan benar</p></li>
+<li><p>Jika kedipan atau gerakan terlalu sensitif, tingkatkan threshold masing-masing menggunakan slider GUI</p></li>
+<li><p>Jika kedipan atau gerakan tidak cukup sensitif, turunkan threshold menggunakan slider GUI</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="buat-aplikasi-kustom">
+<h2>Buat Aplikasi Kustom<a class="headerlink" href="#buat-aplikasi-kustom" title="Link to this heading">#</a></h2>
+<p>Anda dapat membuat aplikasi kustom menggunakan framework yang disediakan dengan mengikuti langkah-langkah berikut:</p>
+<ol class="arabic simple">
+<li><p>Konfigurasi Metadata Aplikasi:</p></li>
+</ol>
+<p>Edit file <code class="docutils literal notranslate"><span class="pre">apps.yaml</span></code> di folder <code class="docutils literal notranslate"><span class="pre">config</span></code> dengan detail aplikasi Anda:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Judul</span><span class="nv"> </span><span class="s">Aplikasi</span><span class="nv"> </span><span class="s">Anda&quot;</span>
+<span class="w">  </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;path/to/your/icon.png&quot;</span>
+<span class="w">  </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your_hex_color&quot;</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;path/to/{app_name}.py&quot;</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Deskripsi</span><span class="nv"> </span><span class="s">singkat</span><span class="nv"> </span><span class="s">aplikasi</span><span class="nv"> </span><span class="s">Anda&quot;</span>
+<span class="w">  </span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Kategori</span><span class="nv"> </span><span class="s">Anda&quot;</span>
+</pre></div>
+</div>
+<p>Tambahkan ini sebagai entri baru dalam daftar YAML. Ganti semua placeholder dengan detail aktual Anda.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Path <code class="docutils literal notranslate"><span class="pre">icon</span></code> harus relatif terhadap direktori root aplikasi</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> harus dalam format HEX (mis., “#FF5733”)</p></li>
+<li><p>Path <code class="docutils literal notranslate"><span class="pre">script</span></code> harus menunjuk ke file Python Anda</p></li>
+</ul>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Buat skrip aplikasi:</p></li>
+</ol>
+<p>Buat skrip Python baru di direktori utama dengan nama aplikasi Anda. Skrip harus berisi:</p>
+<ul class="simple">
+<li><p>Penanganan koneksi stream LSL untuk menerima data perangkat</p></li>
+<li><p>Komponen antarmuka pengguna menggunakan PyQt5/PyQtGraph</p></li>
+<li><p>Logika pemrosesan data untuk sinyal yang masuk</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Gunakan aplikasi yang ada di repositori sebagai implementasi referensi untuk:
+- setup lsl dan akuisisi data
+- Tata letak UI canggih
+- Contoh pemrosesan sinyal
+- Optimasi performa</p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Upside Down Labs.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

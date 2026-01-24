@@ -1,0 +1,109 @@
+/* =====================================================
+   DESIGN SYSTEM – ABU MUDA ESTETIK
+   ===================================================== */
+:root {
+    /* Background */
+    --primary-soft: #f5f6f8;
+    --primary-main: #e5e7eb;
+    --primary-hover: #d1d5db;
+
+    /* Sidebar khusus */
+    --sidebar-bg: #f7f8fa;
+    --sidebar-hover: #eef0f3;
+    --sidebar-active: #e3e6ea;
+    --sidebar-border: #e5e7eb;
+
+    /* Text */
+    --text-main: #111827;
+    --text-soft: #374151;
+    --text-muted: #6b7280;
+}
+
+/* =====================================================
+   NAVBAR ATAS
+   ===================================================== */
+.bd-header {
+    background-color: var(--primary-main) !important;
+    min-height: 56px;
+    padding: 0.25rem 1rem;
+    border-bottom: 1px solid var(--sidebar-border);
+}
+
+.bd-header .navbar-nav .nav-link {
+    color: var(--text-main) !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+}
+
+.bd-header .navbar-nav .nav-link:hover {
+    background-color: var(--primary-hover) !important;
+    color: #000 !important;
+}
+
+/* =====================================================
+   SIDEBAR KIRI
+   ===================================================== */
+.bd-sidebar-primary {
+    background-color: var(--sidebar-bg) !important;
+    border-right: 1px solid var(--sidebar-border);
+    padding: 1rem 0.5rem;
+}
+
+/* Judul Section (Hardware, Software, dll) */
+.bd-sidebar-primary .caption {
+    color: var(--text-muted);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.9rem 1rem 0.3rem;
+}
+
+/* Item Menu */
+.bd-sidebar-primary a {
+    display: block;
+    color: var(--text-soft) !important;
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    margin: 0.15rem 0.5rem;
+    border-radius: 10px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Hover */
+.bd-sidebar-primary a:hover {
+    background-color: var(--sidebar-hover) !important;
+    color: var(--text-main) !important;
+}
+
+/* Aktif */
+.bd-sidebar-primary .current > a {
+    background-color: var(--sidebar-active) !important;
+    color: var(--text-main) !important;
+    font-weight: 600;
+}
+
+/* Sub-item */
+.bd-sidebar-primary ul ul a {
+    padding-left: 1.6rem;
+    font-size: 0.84rem;
+    color: #4b5563 !important;
+}
+
+/* =====================================================
+   LOGO
+   ===================================================== */
+.bd-header .navbar-brand img {
+    max-height: 36px;
+}
+
+/* =====================================================
+   KONTEN
+   ===================================================== */
+.bd-main .bd-content {
+    max-width: 1200px;
+    padding-top: 1.5rem;
+}
