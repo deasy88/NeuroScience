@@ -4,7 +4,7 @@
 .. _upsidedownlabs_docs_home:
 
 =================================================
-Upside Down Labs Documentation
+Neuro Science Lab Indonesia
 =================================================
 
 .. figure:: media/banner.*
