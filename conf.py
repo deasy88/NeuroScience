@@ -15,9 +15,9 @@ import pydata_sphinx_theme
 
 sys.path.append(str(Path(".").resolve()))
 
-project = 'upsidedownlabs.github.io'
-copyright = '2025, Upside Down Labs'
-author = 'Upside Down Labs'
+project = 'Ideas Edvolution Technology'
+copyright = '2026, Ideas Edvolution Technology'
+author = 'Ideas Edvolution Technology'
 
 # Configure PDF build and sidebar links
 latex_documents = []

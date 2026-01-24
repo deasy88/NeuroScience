@@ -392,57 +392,57 @@ Mari jelajahi semua eksperimen langkah demi langkah
         
 .. dropdown:: 5. BCI Toggle
 
-    The BCI Toggle program enables hands-free toggling of the built-in LED using sustained focus. 
-    By maintaining your concentration for 4–5 seconds, the system switches the LED on or off, 
-    like flipping a switch using your brain. This method can be extended to control other devices, 
-    making it a stepping stone for brain-controlled automation.
+    Program BCI Toggle memungkinkan pengaktifan/penonaktifan LED bawaan tanpa menggunakan tangan dengan fokus yang berkelanjutan.
+    Dengan mempertahankan konsentrasi Anda selama 4–5 detik, sistem akan menghidupkan atau mematikan LED,
+    seperti membalik sakelar menggunakan otak Anda. Metode ini dapat diperluas untuk mengontrol perangkat lain,
+    menjadikannya batu loncatan untuk otomatisasi yang dikendalikan otak.
 
-    For this project, you need to do **electrode placement** as per the given figure: 
+    Untuk proyek ini, Anda perlu melakukan **penempatan elektroda** sesuai dengan gambar yang diberikan:
 
     .. figure:: media/eeg-f1-f2.png
         :align: center
-        :alt: Placement between F1 and F2 
+        :alt: Penempatan antara F1 dan F2
         
-        Electrode Placement between F1 and F2 
+        Penempatan Elektroda di antara F1 dan F2 
 
 
-    For detailed guide, visit our **Instructables Page**: `Controlling LEDs of Arduino Uno R4 With Your Mind (EEG) <https://www.instructables.com/Controlling-LEDs-of-Arduino-Uno-R4-With-Your-Mind-/>`_
+    Untuk panduan detail, kunjungi **Halaman Instructables** kami: `Mengontrol LED Arduino Uno R4 dengan Pikiran Anda (EEG) <https://www.instructables.com/Controlling-LEDs-of-Arduino-Uno-R4-With-Your-Mind-/>`_
 
-    For a detailed walkthrough, follow along with the **YouTube** tutorial for this project:
+    Untuk panduan langkah demi langkah yang lebih detail, ikuti tutorial **YouTube** untuk proyek ini:
 
     .. youtube:: _GDfogfElII
 
     .. note::
 
-        This project will only work with **Arduino UNO R4 Minima and R4 WiFi** board.
+        Proyek ini hanya akan berfungsi dengan papan **Arduino UNO R4 Minima dan R4 WiFi**.
 
 
 .. dropdown:: 6. BCI Spiral
 
-    The BCI Spiral program is one of the most engaging and interesting sketch as it transforms your focus into gameplay. 
-    
-    Running on the Arduino UNO R4 WiFi, it controls the 12×8 LED matrix on the board. 
-    As you concentrate, LEDs begin to light up in a clockwise spiral pattern. 
-    
-    The more intense and sustained your focus, the more the spiral progresses. 
-    If your concentration lapses, the spiral unwinds in reverse. This sketch creates an immersive and intuitive 
-    brain-training game driven entirely by your EEG signals.
+    Program BCI Spiral adalah salah satu sketsa yang paling menarik dan menarik, karena mengubah fokus Anda menjadi permainan.
 
-    For this project, you need to do **electrode placement** as per the given figure: 
+    Berjalan di Arduino UNO R4 WiFi, program ini mengontrol matriks LED 12×8 di papan. 
+    Saat Anda berkonsentrasi, LED mulai menyala dalam pola spiral searah jarum jam.
+
+    Semakin intens dan berkelanjutan fokus Anda, semakin banyak spiral yang berkembang.
+    Jika konsentrasi Anda menurun, spiral akan membuka kembali secara terbalik. Sketsa ini menciptakan permainan pelatihan otak yang imersif dan intuitif yang sepenuhnya didorong oleh sinyal EEG Anda.
+    Permainan melatih otak yang sepenuhnya didorong oleh sinyal EEG Anda.
+
+    Untuk proyek ini, Anda perlu melakukan **penempatan elektroda** sesuai dengan gambar yang diberikan:
 
     .. figure:: media/eeg-f1-f2.png
         :align: center
-        :alt: Placement between F1 and F2 
+        :alt: Penempatan antara F1 dan F2
 
-    For detailed guide, visit our **Instructables Page**: `Controlling LEDs of Arduino Uno R4 With Your Mind (EEG) <https://www.instructables.com/Controlling-LEDs-of-Arduino-Uno-R4-With-Your-Mind-/>`_
+    Untuk panduan detail, kunjungi **Halaman Instructables** kami: `Mengontrol LED Arduino Uno R4 dengan Pikiran Anda (EEG) <https://www.instructables.com/Controlling-LEDs-of-Arduino-Uno-R4-With-Your-Mind-/>`_
 
-    For a detailed walkthrough, follow along with the **YouTube** tutorial for this project:
+    Untuk panduan langkah demi langkah yang lebih detail, ikuti tutorial **YouTube** untuk proyek ini:
 
     .. youtube:: _GDfogfElII
 
     .. note::
 
-        This project will only work with **Arduino UNO R4 WiFi** board.
+        Proyek ini hanya akan berfungsi dengan papan **Arduino UNO R4 WiFi** board.
 
 
 ✅ **And That’s it!, Congrats on making your neuroscience project using BioAmp Hardware.**
