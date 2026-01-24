@@ -9,7 +9,7 @@ Neuro Science Lab Indonesia
 
 .. figure:: media/banner.*
    :align: center
-   :alt: Upside Down Labs Banner
+   :alt: Neuro Science Lab Indonesia
 
 
 .. raw:: html
