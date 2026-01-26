@@ -15,7 +15,7 @@ import pydata_sphinx_theme
 
 sys.path.append(str(Path(".").resolve()))
 
-project = 'Ideas Edvolution Technology'
+project = 'Neuro Science Lab Indonesia'
 copyright = '2026, Ideas Edvolution Technology'
 author = 'Ideas Edvolution Technology'
 
@@ -71,7 +71,7 @@ html_favicon = "_static/logo/ideas.png"
 html_sourcelink_suffix = ""
 html_last_updated_fmt = ""
 html_theme_path = [pydata_sphinx_theme.Path()]
-html_baseurl = "docs.upsidedownlabs.tech"
+html_baseurl = "https://dokumen.edvolution-technology.com/"
 html_css_files = [
     'css/custom.css',
 ]
@@ -122,12 +122,12 @@ html_context = {
     "doc_path": "",
     "conf_py_path": "",
     "show_license": True,
-    "pages_url": "https://docs.upsidedownlabs.tech",
+    "pages_url": "https://dokumen.edvolution-technology.com/",
     "pages_slug": "",
-    "docs_url": "https://docs.upsidedownlabs.tech",
+    "docs_url": "https://dokumen.edvolution-technology.com/",
     "edit_page_url_template": "{{ my_vcs_site }}{{ file_name }}",
     "edit_page_provider_name": "GitHub",
-    "my_vcs_site": "https://github.com/upsidedownlabs/upsidedownlabs.github.io/edit/main",
+    "my_vcs_site": "https://github.com/deasy88/NeuroScience/edit/main",
     "pdfs": pdfs
 }
 

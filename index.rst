@@ -1,13 +1,13 @@
 :html_theme.sidebar_secondary.remove: true
 :sd_hide_title: true
 
-.. _upsidedownlabs_docs_home:
+.. _Neuro Science Lab Indonesia_dokumen_home:
 
 =================================================
 Neuro Science Lab Indonesia
 =================================================
 
-.. figure:: media/banner.*
+.. figure:: media/banner-baru.*
    :align: center
    :alt: Neuro Science Lab Indonesia
 
@@ -15,7 +15,7 @@ Neuro Science Lab Indonesia
 .. raw:: html
 
    <div style="text-align:center; margin:2rem 0 3rem 0;">
-     <h2 style="margin-bottom:0.5rem;">Selamat datang di Situs Dokumen Ideas Edvolution Technologi!</h2>
+     <h2 style="margin-bottom:0.5rem;">Selamat datang di Situs Dokumen Ideas Edvolution Technology!</h2>
      <p style="max-width:720px; margin:auto; color:#4b5563;">
         Kami senang Anda berada di sini menjelajahi dunia menarik neurosains.
         Platform kami didedikasikan untuk memberikan Anda sumber daya komprehensif tentang
