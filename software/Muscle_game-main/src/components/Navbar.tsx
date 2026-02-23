@@ -30,7 +30,7 @@ const Navbar = ({ isDisplay }: { isDisplay: boolean }) => {
           <div className="flex flex-row gap-2 items-center group">
             <Link href="/">
               <div className="font-rancho font-bold text-2xl duration-300 pl-2 bg-gradient-to-r from-yellow-500  to-orange-500 text-transparent bg-clip-text ">
-              Muscle Melody
+              BumbleSound
               </div>
             </Link>
       
