@@ -1,0 +1,26 @@
+{
+  "name": "Muscle_game",
+  "short_name": "Muscle_game",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/Muscle-logo-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Muscle-logo-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-Muscle.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}
